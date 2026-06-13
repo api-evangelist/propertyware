@@ -1,0 +1,13 @@
+{
+  "company": "example_company",
+  "email": "example_email",
+  "firstName": "example_firstName",
+  "homePhone": "example_homePhone",
+  "id": 1,
+  "lastName": "example_lastName",
+  "mobilePhone": "example_mobilePhone",
+  "namedOnLease": true,
+  "primary": true,
+  "role": "example_role",
+  "workPhone": "example_workPhone"
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CloseWorkOrder",
+  "description": "JSON Schema for CloseWorkOrder",
+  "type": "object",
+  "required": [
+    "timeCardEntry"
+  ],
+  "properties": {
+    "category": {
+      "type": "string",
+      "description": "This classifies the work order into a category."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments for closing workorder."
+    },
+    "completedDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the work was completed."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the work was started."
+    },
+    "timeCardEntry": {
+      "type": "array",
+      "description": "List of TimeCard Entries to update",
+      "items": {
+        "$ref": "#/components/schemas/TimeCardEntry"
+      }
+    }
+  }
+}

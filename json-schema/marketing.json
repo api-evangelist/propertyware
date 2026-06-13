@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Marketing",
+  "description": "Marketing Information",
+  "type": "object",
+  "properties": {
+    "availableDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Available date to lease for a unit/building."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Marketing description."
+    },
+    "featured": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if property is featured for rent or sale."
+    },
+    "featuredForRent": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the unit/building is featured for rent."
+    },
+    "featuredForSale": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if unit/building is featured for sale."
+    },
+    "forSale": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if this building/unit is for sale."
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude for geolocation of this building/unit."
+    },
+    "leaseTerms": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Lease terms of a unit/building."
+    },
+    "leaseTermsUnits": {
+      "type": "string",
+      "description": "Unit/building lease terms units."
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude for geolocation of this building/unit."
+    },
+    "marketingName": {
+      "type": "string",
+      "description": "Marketing name."
+    },
+    "mlsLeaseNumber": {
+      "type": "string",
+      "description": "MLS lease number of this building/unit."
+    },
+    "mlsNumber": {
+      "type": "string",
+      "description": "MLS number of this building/unit."
+    },
+    "otherTenantCharges": {
+      "type": "string",
+      "description": "Other tenant charges."
+    },
+    "parcelNumber": {
+      "type": "string",
+      "description": "Parcel number of this building/unit."
+    },
+    "petsAllowed": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if pets are allowed in a unit/building."
+    },
+    "postingTitle": {
+      "type": "string",
+      "description": "Posting title name for marketing this building/unit."
+    },
+    "publishedForRent": {
+      "type": "boolean",
+      "example": false,
+      "description": "Published For Rent"
+    },
+    "publishedForSale": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the unit/building is published for sale."
+    },
+    "salePrice": {
+      "type": "number",
+      "format": "double",
+      "description": "Sale price of this building/unit."
+    },
+    "saleTerms": {
+      "type": "string",
+      "description": "Sale terms of this building/unit."
+    },
+    "shortDescription": {
+      "type": "string",
+      "description": "Marketing short description."
+    },
+    "smokingAllowed": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if smoking is allowed in this unit/building."
+    },
+    "specials": {
+      "type": "string",
+      "description": "Specials of this building/unit."
+    }
+  }
+}

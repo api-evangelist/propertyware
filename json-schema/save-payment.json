@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SavePayment",
+  "description": "Tenant Payment for Request",
+  "type": "object",
+  "required": [
+    "amount",
+    "contactID",
+    "date",
+    "depositDate",
+    "destinationAccountID",
+    "leaseID",
+    "paymentType",
+    "refNo"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "contactID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the contact associated with lease payment"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Post Date."
+    },
+    "depositDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Payment deposit date."
+    },
+    "destinationAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Bank GL account ID to deposit."
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the lease associated with this payment."
+    },
+    "paymentType": {
+      "type": "string",
+      "description": "Payment type.",
+      "enum": [
+        "CHECK",
+        "CHECK21",
+        "CASHIERS_CHECK",
+        "CREDIT_CARD",
+        "CASH",
+        "MONEY_ORDER",
+        "OTHER",
+        "CLICKPAY",
+        "SECTION8",
+        "EPAY",
+        "ECHECK",
+        "NACHA",
+        "RENTMONEY",
+        "PUBLIC_ASSISTANCE",
+        "PAYMENT_TYPE_NA"
+      ]
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Payment reference number"
+    }
+  }
+}

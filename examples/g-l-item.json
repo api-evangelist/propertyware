@@ -1,0 +1,14 @@
+{
+  "comment": "example_comment",
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "glentries": [],
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "leaseID": 1,
+  "ownerID": 1,
+  "transactionType": "example_transactionType",
+  "txDate": "2024-01-01",
+  "vendorID": 1
+}

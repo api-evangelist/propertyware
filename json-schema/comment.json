@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Comment",
+  "description": "Comment",
+  "type": "object",
+  "properties": {
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "text": {
+      "type": "string",
+      "description": "Comment text."
+    }
+  }
+}

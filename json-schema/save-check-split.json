@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveCheckSplit",
+  "description": "SaveCheckfor Request",
+  "type": "object",
+  "required": [
+    "glAccountID",
+    "portfolioID"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Check Split amount."
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Check Location Building ID."
+    },
+    "comments": {
+      "type": "string",
+      "description": "CheckSplit Comments."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Split GL Account ID."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Portfolio id to apply payment."
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Check Location Unit ID."
+    }
+  }
+}

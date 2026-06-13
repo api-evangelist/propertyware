@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveCharge",
+  "description": "Charge for Request",
+  "type": "object",
+  "required": [
+    "amount",
+    "date",
+    "glAccountID",
+    "leaseID"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Post Date."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "GL Account ID."
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Lease ID."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Charge reference No."
+    }
+  }
+}

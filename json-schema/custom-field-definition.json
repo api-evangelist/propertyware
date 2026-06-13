@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CustomFieldDefinition",
+  "description": "Custom field definition.",
+  "type": "object",
+  "properties": {
+    "dataType": {
+      "type": "string"
+    },
+    "defaultValue": {
+      "type": "string"
+    },
+    "fieldName": {
+      "type": "string"
+    },
+    "groupName": {
+      "type": "string"
+    },
+    "requiredField": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "billID": 1,
+  "comments": "example_comments",
+  "hourlyRate": 1.0,
+  "hourlySurcharge": 1.0,
+  "hours": 1.0,
+  "id": 1,
+  "vendorID": 1,
+  "workDate": "2024-01-01T00:00:00Z"
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreditMemo",
+  "description": "Transaction",
+  "type": "object",
+  "required": [
+    "amount",
+    "date"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments"
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Post date."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the general ledger account associated with this credit memo."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the lease associated with this credit memo."
+    },
+    "parentTxID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the payment causing this prepay application."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this credit memo."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference number."
+    }
+  }
+}

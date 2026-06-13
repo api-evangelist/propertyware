@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveBillSplit",
+  "description": "Split",
+  "type": "object",
+  "required": [
+    "amount",
+    "glAccountID",
+    "portfolioID"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Split amount."
+    },
+    "amountPaid": {
+      "type": "number",
+      "format": "double",
+      "description": "Split amount paid."
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Building ID associated to split."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Split comments."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Split GL Account ID."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "markupDiscountSplit": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if markup discount split."
+    },
+    "paid": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if Bill Split is paid."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Portfolio ID associated to split."
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unit ID associated to split."
+    }
+  }
+}

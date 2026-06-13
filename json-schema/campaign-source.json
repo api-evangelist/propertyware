@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CampaignSource",
+  "description": "CampaignSource",
+  "type": "object",
+  "properties": {
+    "callTrackingGroupID": {
+      "type": "string",
+      "description": "Call tracking group id."
+    },
+    "default": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the campaign source."
+    },
+    "referrerDomain": {
+      "type": "string",
+      "description": "Referrer domain."
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "amount": 1.0,
+  "bills": [],
+  "checkNumber": "example_checkNumber",
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "lines": [],
+  "memo": "example_memo",
+  "nameOnCheck": "example_nameOnCheck",
+  "paymentAccountID": 1,
+  "paymentDate": "2024-01-01",
+  "paymentMethod": "PAYMENT_METHOD_CHECK",
+  "toBePrinted": true,
+  "vendorID": 1
+}

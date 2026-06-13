@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JournalEntrySplit",
+  "description": "Journal Entry Split",
+  "type": "object",
+  "required": [
+    "creditAmount",
+    "debitAmount",
+    "glAccountID"
+  ],
+  "properties": {
+    "creditAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Credit amount."
+    },
+    "debitAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Debit amount."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the general ledger account associated with this journal entry split."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    }
+  }
+}

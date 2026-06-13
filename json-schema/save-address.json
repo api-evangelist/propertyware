@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveAddress",
+  "description": "Address.",
+  "type": "object",
+  "required": [
+    "country"
+  ],
+  "properties": {
+    "address": {
+      "type": "string",
+      "description": "Primary street and/or unit address. Required only if country is USA or Canada.",
+      "minLength": 0,
+      "maxLength": 50
+    },
+    "addressCont": {
+      "type": "string",
+      "description": "Address continuation.",
+      "minLength": 0,
+      "maxLength": 20
+    },
+    "city": {
+      "type": "string",
+      "description": "City. Required only if Country is United States / Canada.",
+      "minLength": 0,
+      "maxLength": 30
+    },
+    "country": {
+      "type": "string",
+      "description": "Country. For US addresses, this value should be \"United States\". For other countries, this should be the full country name (Canada, United Kingdom, ...)",
+      "minLength": 0,
+      "maxLength": 30
+    },
+    "postalCode": {
+      "type": "string",
+      "description": "Zip. Required only if Country is United States / Canada.",
+      "minLength": 0,
+      "maxLength": 20
+    },
+    "stateRegion": {
+      "type": "string",
+      "description": "State. Required only if Country is United States / Canada.",
+      "minLength": 0,
+      "maxLength": 20
+    }
+  }
+}

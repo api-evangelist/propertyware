@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InspectionArea",
+  "description": "Inspection Area",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "items": {
+      "type": "array",
+      "description": "List of items in the inspection.",
+      "items": {
+        "$ref": "#/components/schemas/InspectionItem"
+      }
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the inspection area."
+    }
+  }
+}

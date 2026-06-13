@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Refund",
+  "description": "Tenant Refund",
+  "type": "object",
+  "required": [
+    "amount",
+    "date"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Post date."
+    },
+    "destinationAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the bank account to send the refund from."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the general ledger account associated with the refund."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the lease associated with the refund."
+    },
+    "payeePayer": {
+      "type": "string",
+      "description": "Name of the payee."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with the refund."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference number."
+    },
+    "toBePrinted": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the check is to be printed."
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CurrentAsset",
+  "description": "Current Asset for Request",
+  "type": "object",
+  "properties": {
+    "discountAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is a discount account."
+    },
+    "escrowAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is a escrow account."
+    },
+    "excludeFrom1099": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is excluded from 1099 tax forms."
+    },
+    "excludeFromPayInFull": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is a tax account."
+    },
+    "excludeLateFee": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if excluded from late fees."
+    },
+    "rentAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is a rent account."
+    },
+    "taxAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is a tax account."
+    }
+  }
+}

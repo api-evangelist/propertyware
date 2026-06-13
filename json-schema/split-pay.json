@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SplitPay",
+  "description": "JSON Schema for SplitPay",
+  "type": "object",
+  "properties": {
+    "amountToPay": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount to pay."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    }
+  }
+}

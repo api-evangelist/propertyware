@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CurrentLiability",
+  "description": "Current Liability for Request",
+  "type": "object",
+  "properties": {
+    "discountAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is a discount account."
+    },
+    "escrowAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is a escrow account."
+    },
+    "excludeFrom1099": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is excluded from 1099 tax forms."
+    },
+    "excludeFromPayInFull": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is excluded from paying in full."
+    },
+    "excludeLateFee": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is excluded from late fees."
+    },
+    "rentAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is a rent account."
+    },
+    "securityDepositAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is security deposit account"
+    },
+    "taxAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is a tax account."
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveBankDeposit",
+  "description": "Bank Deposit for Request",
+  "type": "object",
+  "required": [
+    "bankGLAccountID",
+    "dateOpened",
+    "listOfTxIDs"
+  ],
+  "properties": {
+    "bankGLAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Bank general ledger account ID."
+    },
+    "dateOpened": {
+      "type": "string",
+      "format": "date",
+      "description": "Date opened."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description"
+    },
+    "listOfTxIDs": {
+      "type": "string",
+      "description": "Comma separated list of Transaction IDs."
+    }
+  }
+}

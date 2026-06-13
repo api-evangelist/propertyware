@@ -1,0 +1,9 @@
+{
+  "checkDate": "2024-01-01",
+  "checkSplits": [],
+  "comments": "example_comments",
+  "destinationAccountID": 1,
+  "refNo": "example_refNo",
+  "toBePrinted": true,
+  "vendorID": 1
+}

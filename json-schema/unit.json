@@ -1,0 +1,215 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Unit",
+  "description": "Unit",
+  "type": "object",
+  "properties": {
+    "abbreviation": {
+      "type": "string",
+      "description": "Property abbreviation."
+    },
+    "active": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the property is active or inactive."
+    },
+    "address": {
+      "$ref": "#/components/schemas/Address"
+    },
+    "amenities": {
+      "type": "array",
+      "description": "Property amenities list.",
+      "items": {
+        "$ref": "#/components/schemas/Amenity"
+      }
+    },
+    "areaUnits": {
+      "type": "string",
+      "description": "Property total area units.",
+      "enum": [
+        "Sq Ft",
+        "Sq M"
+      ],
+      "default": "Sq Ft"
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this unit."
+    },
+    "category": {
+      "type": "string",
+      "description": "Property category.",
+      "enum": [
+        "RESIDENTIAL",
+        "COMMERCIAL"
+      ]
+    },
+    "county": {
+      "type": "string",
+      "description": "Property region of a state."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "customFields": {
+      "type": "array",
+      "description": "Custom fields.",
+      "items": {
+        "$ref": "#/components/schemas/CustomField"
+      }
+    },
+    "floorNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Floor number."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "idNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Unique identifier for Global Search."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Related lease ID."
+    },
+    "maintenanceNotice": {
+      "type": "string",
+      "description": "Property maintenance description."
+    },
+    "maintenanceSpendingLimitTime": {
+      "type": "string",
+      "description": "Property maintenance spending limit.",
+      "enum": [
+        "NO_LIMIT",
+        "MONTHLY_LIMIT",
+        "YEARLY_LIMIT"
+      ]
+    },
+    "management": {
+      "$ref": "#/components/schemas/ManagementSettings"
+    },
+    "marketing": {
+      "$ref": "#/components/schemas/Marketing"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the property."
+    },
+    "neighborhood": {
+      "type": "string",
+      "description": "Property neighborhood."
+    },
+    "numberFloors": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number floors"
+    },
+    "numberOfBathrooms": {
+      "type": "number",
+      "format": "double",
+      "description": "Number of bathrooms in the property."
+    },
+    "numberOfBedrooms": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of bedrooms in the property."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "ID of the portfolio associated with this property."
+    },
+    "propertyManagerList": {
+      "type": "array",
+      "description": "Property manager details.",
+      "items": {
+        "$ref": "#/components/schemas/PropertyManager"
+      }
+    },
+    "ready": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the property is ready to lease."
+    },
+    "rentable": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the property is available for rent."
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "Property search tag."
+    },
+    "status": {
+      "type": "string",
+      "description": "Property status (occupied/vacant)."
+    },
+    "syndicate": {
+      "type": "boolean",
+      "example": false,
+      "description": "Property syndicate."
+    },
+    "targetDeposit": {
+      "type": "string",
+      "description": "Target deposit."
+    },
+    "targetRent": {
+      "type": "number",
+      "format": "double",
+      "description": "Property target rent."
+    },
+    "targetRentUnits": {
+      "type": "string",
+      "description": "Property target rent units.",
+      "enum": [
+        "DOLLAR_PER_SQ_FT_MONTH",
+        "DOLLAR_PER_SQ_FT_YEAR",
+        "DOLLAR_PER_SQ_M_MONTH",
+        "DOLLAR_PER_SQ_M_YEAR",
+        "DOLLAR_PER_MONTH",
+        "DOLLAR_PER_WEEK",
+        "DOLLAR_PER_NIGHT"
+      ]
+    },
+    "totalArea": {
+      "type": "number",
+      "format": "double",
+      "description": "Property total area."
+    },
+    "type": {
+      "type": "string",
+      "description": "Property type."
+    },
+    "website": {
+      "type": "string",
+      "description": "Property website URL."
+    },
+    "yearBuilt": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Property built year."
+    }
+  }
+}

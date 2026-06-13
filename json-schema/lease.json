@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Lease",
+  "description": "Lease",
+  "type": "object",
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if lease is Active."
+    },
+    "addendums": {
+      "type": "array",
+      "description": "Lease addendum(s).",
+      "items": {
+        "$ref": "#/components/schemas/LeaseClause"
+      }
+    },
+    "arBalance": {
+      "type": "number",
+      "format": "double",
+      "description": "Lease Accounts Receivable Balance"
+    },
+    "baseRent": {
+      "type": "number",
+      "format": "double",
+      "description": "Property base rent."
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this lease."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Description of the lease."
+    },
+    "contacts": {
+      "type": "array",
+      "description": "List of the current tenants on the lease.",
+      "items": {
+        "$ref": "#/components/schemas/LeaseContact"
+      }
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "customFields": {
+      "type": "array",
+      "description": "Custom fields.",
+      "items": {
+        "$ref": "#/components/schemas/CustomField"
+      }
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date of the lease term."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "idNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Lease identification number."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "lateFeeRule": {
+      "type": "string",
+      "description": "Textual description of the late fee rule applied to delinquent or unpaid lease charges."
+    },
+    "leaseBalance": {
+      "type": "number",
+      "format": "double",
+      "description": "Lease Balance."
+    },
+    "leaseName": {
+      "type": "string",
+      "description": "Lease Name."
+    },
+    "location": {
+      "type": "string",
+      "description": "Building and/or units the lease is currently attached to."
+    },
+    "moveInDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Day that the tenant(s) moved into the property."
+    },
+    "moveOutDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Day that the tenant(s) vacated the property."
+    },
+    "noticeGivenDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Day that the tenant(s) turned in a notice to vacate."
+    },
+    "paymentRestriction": {
+      "type": "string",
+      "description": "Indicates if the lease has any payment types that they are prevented from using. For example, a lease with several bounced checks may be restricted from paying with checks for future payments."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this lease."
+    },
+    "publicAssistanceProgram": {
+      "type": "string",
+      "description": "Indicates if the tenant(s) of the lease receive any aid from a Public Assistance Program."
+    },
+    "reasonForLeaving": {
+      "type": "string",
+      "description": "Reason for vacating the property."
+    },
+    "scheduleMoveOutDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Day that the tenant(s) are expected to vacate the property."
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "Search tag."
+    },
+    "signedDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Lease signed date."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of the lease term."
+    },
+    "status": {
+      "type": "string",
+      "description": "Lease's current status."
+    },
+    "tenantsOptsIntoAssetProtectionPlan": {
+      "type": "string",
+      "description": "Indicates if the tenants opted into Asset Protection Plan."
+    },
+    "terminatedDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Lease Terminated Date."
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the unit associated with this lease."
+    }
+  }
+}

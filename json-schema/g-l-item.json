@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GLItem",
+  "description": "General Ledger Transaction",
+  "type": "object",
+  "properties": {
+    "comment": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "glentries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Entry"
+      }
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the lease associated with this transaction."
+    },
+    "ownerID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the owner associated with this transaction."
+    },
+    "transactionType": {
+      "type": "string",
+      "description": "Transaction type."
+    },
+    "txDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Transaction date."
+    },
+    "vendorID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the vendor associated with this transaction."
+    }
+  }
+}

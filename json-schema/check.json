@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Check",
+  "description": "Vendor Check",
+  "type": "object",
+  "required": [
+    "amount",
+    "date"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "checkSplits": {
+      "type": "array",
+      "description": "List of check splits.",
+      "items": {
+        "$ref": "#/components/schemas/CheckSplit"
+      }
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Post date."
+    },
+    "destinationAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "ID of the bank general ledger account where the payment will be made from."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "payeePayer": {
+      "type": "string",
+      "description": "Name of the payee or payer."
+    },
+    "paymentType": {
+      "type": "string",
+      "description": "Type of payment."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this transaction."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference number."
+    },
+    "toBePrinted": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the check is to be printed."
+    },
+    "vendorID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the vendor associated with this check."
+    }
+  }
+}

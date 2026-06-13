@@ -1,0 +1,17 @@
+{
+  "comments": "example_comments",
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "credit": "example_credit",
+  "debit": "example_debit",
+  "endDate": "2024-01-01",
+  "frequency": "WEEKLY",
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "lastPostDate": "2024-01-01",
+  "name": "example_name",
+  "nextPostDate": "2024-01-01",
+  "payDay": "example_payDay",
+  "startDate": "2024-01-01"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RESTAPIBulkErrorResponse",
+  "description": "JSON Schema for RESTAPIBulkErrorResponse",
+  "type": "object",
+  "properties": {
+    "error": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RESTAPIError"
+      }
+    },
+    "index": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "success": {
+      "type": "boolean"
+    }
+  }
+}

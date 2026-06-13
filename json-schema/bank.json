@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bank",
+  "description": "Bank for Request",
+  "type": "object",
+  "properties": {
+    "bankAccountHolder": {
+      "type": "string",
+      "description": "Account holder."
+    },
+    "bankAccountHolderSSNMasked": {
+      "type": "string",
+      "description": "Account holder SSN."
+    },
+    "bankAccountNumberDecrypted": {
+      "type": "string",
+      "description": "Bank account number."
+    },
+    "bankAccountType": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Bank account type - 1: Checking, 2: Savings"
+    },
+    "bankAddress": {
+      "type": "string",
+      "description": "Bank address line 1."
+    },
+    "bankAddress2": {
+      "type": "string",
+      "description": "Bank address line 2."
+    },
+    "bankCity": {
+      "type": "string",
+      "description": "City."
+    },
+    "bankInstitution": {
+      "type": "string",
+      "description": "Bank name."
+    },
+    "bankRoutingNumberDecrypted": {
+      "type": "string",
+      "description": "Bank routing number."
+    },
+    "bankState": {
+      "type": "string",
+      "description": "State."
+    },
+    "bankTransitFraction": {
+      "type": "string",
+      "description": "Bank transit fraction."
+    },
+    "bankZip": {
+      "type": "string",
+      "description": "Zip."
+    },
+    "depositTicketType": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Deposit ticket type."
+    },
+    "nachaCompanyID": {
+      "type": "string",
+      "description": "Nacha company ID."
+    },
+    "nachaEnabled": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if Nacha payment type is enabled."
+    },
+    "nachaImmediateDestinationNumber": {
+      "type": "string",
+      "description": "Nacha destination number."
+    },
+    "nachaImmediateOriginNumber": {
+      "type": "string",
+      "description": "Nacha immediate origin number."
+    },
+    "nachaOriginatingDFINumber": {
+      "type": "string",
+      "description": "Nacha originating DFI number."
+    }
+  }
+}

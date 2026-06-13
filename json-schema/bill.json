@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bill",
+  "description": "Bill",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "billDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Entry date."
+    },
+    "billNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number."
+    },
+    "billSplits": {
+      "type": "array",
+      "description": "List of bill splits.",
+      "items": {
+        "$ref": "#/components/schemas/BillSplit"
+      }
+    },
+    "comments": {
+      "type": "string",
+      "description": "Description."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "credit": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the bill is a vendor credit."
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Due date."
+    },
+    "expenseRecoveries": {
+      "type": "array",
+      "description": "List of expense recoveries",
+      "items": {
+        "$ref": "#/components/schemas/ExpenseRecoveryCharge"
+      }
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "markupGLAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The ID of the markup/discount general ledger account associated with the bill."
+    },
+    "markupPercentage": {
+      "type": "number",
+      "format": "double",
+      "description": "The markup percentage."
+    },
+    "paymentDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the bill was paid."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference number."
+    },
+    "terms": {
+      "type": "string",
+      "description": "Bill terms."
+    },
+    "vendorID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The ID of the vendor related to the bill."
+    },
+    "workOrderID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The ID of the work order associated with the bill."
+    }
+  }
+}

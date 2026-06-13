@@ -1,0 +1,15 @@
+{
+  "amount": 1.0,
+  "comments": "example_comments",
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "date": "2024-01-01",
+  "glAccountID": 1,
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "leaseID": 1,
+  "parentTxID": 1,
+  "portfolioID": 1,
+  "refNo": "example_refNo"
+}

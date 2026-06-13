@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PaymentCharge",
+  "description": "Tenant Payment",
+  "type": "object",
+  "required": [
+    "amount",
+    "chargeAmountPaid",
+    "date",
+    "settledDate"
+  ],
+  "properties": {
+    "accountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the bank account where the payment was deposited."
+    },
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Total payment Amount."
+    },
+    "chargeAmountPaid": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount paid for this charge"
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Payment applied date."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Payment ID"
+    },
+    "payeePayer": {
+      "type": "string",
+      "description": "Payer name."
+    },
+    "paymentType": {
+      "type": "string",
+      "description": "Payment type. Electronic payments are only for book keeping.",
+      "enum": [
+        "CHECK",
+        "CHECK21",
+        "CASHIERS_CHECK",
+        "CREDIT_CARD",
+        "CASH",
+        "MONEY_ORDER",
+        "OTHER",
+        "CLICKPAY",
+        "SECTION8",
+        "EPAY",
+        "ECHECK",
+        "NACHA",
+        "RENTMONEY",
+        "PUBLIC_ASSISTANCE",
+        "PAYMENT_TYPE_NA"
+      ]
+    },
+    "receiptNumber": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Payment receipt number."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Payment reference number."
+    },
+    "settledDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Payment settlement date."
+    },
+    "status": {
+      "type": "string",
+      "description": "Charge payment status."
+    }
+  }
+}

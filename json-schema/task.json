@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Task",
+  "description": "Task",
+  "type": "object",
+  "properties": {
+    "completed": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the task has been completed."
+    },
+    "completedTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Time at which the task was completed."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "delegates": {
+      "type": "string",
+      "description": "Comma separated IDs of users to whom the task has been delegated."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the task."
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the task is due."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "privateTask": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the task is private."
+    },
+    "starred": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the task has been marked with a star."
+    },
+    "tags": {
+      "type": "string",
+      "description": "List of tags associated with the task."
+    }
+  }
+}

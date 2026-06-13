@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BillPaid",
+  "description": "JSON Schema for BillPaid",
+  "type": "object",
+  "properties": {
+    "billDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Bill date."
+    },
+    "billNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Bill number."
+    },
+    "billSplits": {
+      "type": "array",
+      "description": "List of bill splits.",
+      "items": {
+        "$ref": "#/components/schemas/SplitPaid"
+      }
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveAutoCharge",
+  "description": "Auto charge request",
+  "type": "object",
+  "required": [
+    "amount",
+    "dueDay",
+    "frequency",
+    "glAccountID",
+    "startDate"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Auto charge amount."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the auto charge."
+    },
+    "dueDay": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Charge due day. Allowed values : For frequency \"Weekly\" (1 to 7) , for other frequency (1 to 31)"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Auto charge end date."
+    },
+    "frequency": {
+      "type": "string",
+      "description": "Charge frequency.",
+      "enum": [
+        "WEEKLY",
+        "MONTHLY",
+        "QUARTERLY",
+        "SEMIANUUAL",
+        "ANUUAL",
+        "ANUUAL_ACCRUAL"
+      ]
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "GL Account ID."
+    },
+    "referenceNumber": {
+      "type": "string",
+      "description": "Reference number.",
+      "minLength": 0,
+      "maxLength": 35
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Auto charge start date."
+    }
+  }
+}

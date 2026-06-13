@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveOwner",
+  "description": "Save Owner Contact",
+  "type": "object",
+  "required": [
+    "firstName",
+    "lastName"
+  ],
+  "properties": {
+    "address": {
+      "$ref": "#/components/schemas/SaveAddress"
+    },
+    "email": {
+      "type": "string",
+      "description": "Owner EMail."
+    },
+    "firstName": {
+      "type": "string",
+      "description": "Owner First Name."
+    },
+    "homePhone": {
+      "type": "string",
+      "description": "Owner Home Phone."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Owner Last Name."
+    },
+    "mobilePhone": {
+      "type": "string",
+      "description": "Owner Mobile Phone."
+    },
+    "otherPhone": {
+      "type": "string",
+      "description": "Owner Other Phone."
+    },
+    "percentageOwnership": {
+      "type": "number",
+      "format": "double",
+      "description": "Ownership percentage."
+    },
+    "workPhone": {
+      "type": "string",
+      "description": "Owner Work Phone."
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveAdjustment",
+  "description": "Adjustment for Request",
+  "type": "object",
+  "required": [
+    "amount",
+    "leaseID"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount, should be negative."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Lease Adjustment date."
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the lease associated with the Adjustment."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference number."
+    }
+  }
+}

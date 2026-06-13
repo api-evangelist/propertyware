@@ -1,0 +1,6 @@
+{
+  "description": "example_description",
+  "fileName": "example_fileName",
+  "publishToOwnerPortal": true,
+  "publishToTenantPortal": true
+}

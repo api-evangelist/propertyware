@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ChargeTx",
+  "description": "Charge Transaction",
+  "type": "object",
+  "required": [
+    "amount",
+    "date"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "amountDue": {
+      "type": "number",
+      "format": "double",
+      "description": "The amount due for the charge."
+    },
+    "amountPaid": {
+      "type": "number",
+      "format": "double",
+      "description": "The amount paid for the charge."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Post date."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the general ledger account associated with this charge."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the lease associated with this charge."
+    },
+    "parentTxID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Parent Charge ID. If parent charge date and recharge date are same consider it as a hidden recharge and do not include it in ledger balance calculation."
+    },
+    "payments": {
+      "type": "array",
+      "description": "List of payment charge history.",
+      "items": {
+        "$ref": "#/components/schemas/PaymentCharge"
+      }
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this charge."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference number."
+    }
+  }
+}

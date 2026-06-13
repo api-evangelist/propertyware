@@ -1,0 +1,16 @@
+{
+  "abbreviation": "example_abbreviation",
+  "cashAccrual": "COMPANY_DEFAULT",
+  "closingDate": "2024-01-01",
+  "defaultBankAccountID": 1,
+  "defaultSecdepAccountID": 1,
+  "doNotPayOwnerDraw": true,
+  "maintenanceSpendingLimit": 1.0,
+  "maintenanceSpendingLimitTime": "NO_LIMIT",
+  "name": "example_name",
+  "ownerIds": [],
+  "ownerStatementReportID": 1,
+  "owners": [],
+  "stickyNote": "example_stickyNote",
+  "targetOperatingReserve": 1.0
+}

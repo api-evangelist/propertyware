@@ -1,0 +1,9 @@
+{
+  "discountAccount": true,
+  "escrowAccount": true,
+  "excludeFrom1099": true,
+  "excludeFromPayInFull": true,
+  "excludeLateFee": true,
+  "rentAccount": true,
+  "taxAccount": true
+}

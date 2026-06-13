@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RESTAPIBulkSuccessResponse",
+  "description": "JSON Schema for RESTAPIBulkSuccessResponse",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    }
+  }
+}

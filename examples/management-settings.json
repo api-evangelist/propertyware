@@ -1,0 +1,8 @@
+{
+  "managementContractEndDate": "2024-01-01",
+  "managementContractStartDate": "2024-01-01",
+  "managementFeeType": "example_managementFeeType",
+  "managementFees": [],
+  "managementFeesType": "MANAGE_FEE_NONE",
+  "managementFlatFee": 1.0
+}

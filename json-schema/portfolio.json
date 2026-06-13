@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Portfolio",
+  "description": "Portfolio",
+  "type": "object",
+  "properties": {
+    "abbreviation": {
+      "type": "string",
+      "description": "Abbreviated name assigned to the portfolio."
+    },
+    "active": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if portfolio is active or inactive."
+    },
+    "cashAccrual": {
+      "type": "string",
+      "description": "Cash or accrual accounting basis.",
+      "enum": [
+        "COMPANY_DEFAULT",
+        "CASH",
+        "ACCRUAL"
+      ]
+    },
+    "closingDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when the accounting period for the portfolio will close."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "customFields": {
+      "type": "array",
+      "description": "Custom fields.",
+      "items": {
+        "$ref": "#/components/schemas/CustomField"
+      }
+    },
+    "defaultBankAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio's default bank account."
+    },
+    "defaultBankAccountNumberAndDescription": {
+      "type": "string",
+      "description": "Portfolio default bank account number and description"
+    },
+    "defaultSecurityDepositBankAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Portfolio default security deposit bank account ID"
+    },
+    "defaultSecurityDepositBankAccountNumberAndDescription": {
+      "type": "string",
+      "description": "Portfolio default security deposit bank account number and description"
+    },
+    "doNotPayOwnerDraw": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the owner should not be paid owner draws."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "maintenanceSpendingLimit": {
+      "type": "number",
+      "format": "double",
+      "description": "Monthly or yearly maintenance spending limit set for the portfolio for maintenance bills created by work orders."
+    },
+    "maintenanceSpendingLimitTime": {
+      "type": "string",
+      "description": "Monthly or yearly maintenance spending limit time set for the portfolio for maintenance bills created by work orders.",
+      "enum": [
+        "NO_LIMIT",
+        "DOLLAR_PER_MONTH",
+        "DOLLAR_PER_YEAR"
+      ]
+    },
+    "modifiedBy": {
+      "type": "string",
+      "description": "Id of the user who last modified the portfolio information."
+    },
+    "name": {
+      "type": "string",
+      "description": "Portfolio name."
+    },
+    "ownerStatementReportID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Portfolio Owner Statement Report ID"
+    },
+    "owners": {
+      "type": "array",
+      "description": "List of portfolio owners.",
+      "items": {
+        "$ref": "#/components/schemas/Owner"
+      }
+    },
+    "stickyNote": {
+      "type": "string",
+      "description": "Sticky notes."
+    },
+    "targetOperatingReserve": {
+      "type": "number",
+      "format": "double",
+      "description": "Minimum balance to be maintained within the portfolio at all times."
+    }
+  }
+}

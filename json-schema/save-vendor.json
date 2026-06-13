@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveVendor",
+  "description": "Vendor for Request",
+  "type": "object",
+  "required": [
+    "companyName",
+    "name",
+    "nameOnCheck",
+    "vendorType"
+  ],
+  "properties": {
+    "accountNumber": {
+      "type": "string",
+      "description": "Account Number"
+    },
+    "address": {
+      "type": "string",
+      "description": "Address"
+    },
+    "address2": {
+      "type": "string",
+      "description": "Address2"
+    },
+    "alertEmail": {
+      "type": "string",
+      "description": "Alert Email"
+    },
+    "city": {
+      "type": "string",
+      "description": "City"
+    },
+    "companyName": {
+      "type": "string",
+      "description": "Vendor Company Name"
+    },
+    "country": {
+      "type": "string",
+      "description": "Country"
+    },
+    "creditLimit": {
+      "type": "number",
+      "format": "double",
+      "description": "Credit Limit"
+    },
+    "daysToPay": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Payment Terms days to pay.",
+      "enum": [
+        0,
+        5,
+        10,
+        15,
+        30,
+        45,
+        60,
+        90
+      ]
+    },
+    "defaultBillSplitAccountId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Default bill split id"
+    },
+    "defaultMarkupDiscountPercentage": {
+      "type": "number",
+      "format": "double",
+      "description": "Default markup discount"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description"
+    },
+    "eligible1099": {
+      "type": "boolean",
+      "example": false,
+      "description": "Eligible For 1099"
+    },
+    "email": {
+      "type": "string",
+      "description": "EMail"
+    },
+    "fax": {
+      "type": "string",
+      "description": "Fax"
+    },
+    "includeCompanyNameOn1099": {
+      "type": "boolean",
+      "example": false,
+      "description": "Include company name on 1099"
+    },
+    "markupAccountId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Markup account id"
+    },
+    "name": {
+      "type": "string",
+      "description": "Vendor Name"
+    },
+    "nameOnCheck": {
+      "type": "string",
+      "description": "Vendor Name On Check"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone"
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "Search Tag"
+    },
+    "state": {
+      "type": "string",
+      "description": "State"
+    },
+    "syncToVMM": {
+      "type": "boolean",
+      "example": false,
+      "description": "Sync to maintenance"
+    },
+    "taxID": {
+      "type": "string",
+      "description": "Tax ID"
+    },
+    "taxPayerName": {
+      "type": "string",
+      "description": "Tax Payer Name"
+    },
+    "terms": {
+      "type": "string",
+      "description": "Payment Terms Description, default value('NET 30')"
+    },
+    "timeTracking": {
+      "type": "boolean",
+      "example": false,
+      "description": "Time Tracking, is enabled or disabled"
+    },
+    "vendorType": {
+      "type": "string",
+      "description": "Vendor type. This is a user configurable list with the following initial default values <Banking - General>,\n <Banking - Mortgage>, <Banking - Investment>, <Contractors - Carpentry>, <Contractors - Dry Wall>, <Contractors - Electrical>, <Contractors - Fencing>, <Contractors - Flooring>, <Contractors - General>, <Contractors - HVAC>, <Contractors - Landscaping>, <Contractors - Masonry>, <Contractors - Miscellaneous>, <Contractors - Painting>, <Contractors - Paving>, <Contractors - Plumbing>, <Contractors - Roofing>, <Contractors - Sheet Metal>, <Contractors - Windows>, <Owners>, <Management Company>, <Suppliers - Carpets>, <Suppliers - Electrical>, <Suppliers - General>, <Suppliers - Lighting>, <Suppliers - Lumber>, <Suppliers - Plumbing>, <Suppliers - Security>, <Suppliers - Stone>, <Suppliers - Tiling>, <Suppliers - Windows>, <Utilities - Communications>, <Utilities - Gas & Electric>, <Utilities - Waste Management>, <Utilities - Water>"
+    },
+    "website": {
+      "type": "string",
+      "description": "Website"
+    },
+    "zip": {
+      "type": "string",
+      "description": "Zip"
+    }
+  }
+}

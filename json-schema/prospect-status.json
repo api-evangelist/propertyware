@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProspectStatus",
+  "description": "Prospect Status",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "readonly": {
+      "type": "boolean",
+      "example": false,
+      "description": "Read Only"
+    },
+    "status": {
+      "type": "string",
+      "description": "Status"
+    },
+    "visibleOnPortal": {
+      "type": "boolean",
+      "example": false,
+      "description": "Status visible On Portal"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Payment",
+  "description": "Tenant Payment",
+  "type": "object",
+  "required": [
+    "amount",
+    "date"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "contactID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the contact associated with this payment."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Post date."
+    },
+    "depositDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the payment was deposited."
+    },
+    "destinationAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the bank account where the payment was deposited."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "General Ledger Account ID."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "isDeposited": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the payment has been deposited."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the lease associated with this payment."
+    },
+    "lines": {
+      "type": "array",
+      "description": "A collection of payment line items.",
+      "items": {
+        "$ref": "#/components/schemas/LineItem"
+      }
+    },
+    "paymentType": {
+      "type": "string",
+      "description": "Payment type.",
+      "enum": [
+        "CHECK",
+        "CHECK21",
+        "CASHIERS_CHECK",
+        "CREDIT_CARD",
+        "CASH",
+        "MONEY_ORDER",
+        "OTHER",
+        "CLICKPAY",
+        "SECTION8",
+        "EPAY",
+        "ECHECK",
+        "NACHA",
+        "RENTMONEY",
+        "PUBLIC_ASSISTANCE",
+        "PAYMENT_TYPE_NA"
+      ]
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this transaction."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference number."
+    },
+    "status": {
+      "type": "string",
+      "description": "Lease status."
+    }
+  }
+}

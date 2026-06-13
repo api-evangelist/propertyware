@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UpdateDocument",
+  "description": "Update Document ",
+  "type": "object",
+  "required": [
+    "fileName"
+  ],
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "Description of the document."
+    },
+    "fileName": {
+      "type": "string",
+      "description": "Name of the document."
+    },
+    "publishToOwnerPortal": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the document is published to the owner portal."
+    },
+    "publishToTenantPortal": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the document is published to the tenant portal."
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveCheck",
+  "description": "VendorCheck",
+  "type": "object",
+  "required": [
+    "checkDate",
+    "destinationAccountID"
+  ],
+  "properties": {
+    "checkDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Check Date."
+    },
+    "checkSplits": {
+      "type": "array",
+      "description": "Check Split list.",
+      "items": {
+        "$ref": "#/components/schemas/SaveCheckSplit"
+      }
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "destinationAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "ID of the bank general ledger account where the payment will be made from."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Check Ref No."
+    },
+    "toBePrinted": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if Check is to be printed."
+    },
+    "vendorID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the vendor associated with this check."
+    }
+  }
+}

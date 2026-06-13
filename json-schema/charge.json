@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Charge",
+  "description": "JSON Schema for Charge",
+  "type": "object",
+  "required": [
+    "frequency",
+    "startDate"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Auto charge amount."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the auto charge."
+    },
+    "dueDay": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Description of the day when the auto charge is due."
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date of auto charge."
+    },
+    "frequency": {
+      "type": "string",
+      "description": "Frequency of the auto charge.",
+      "enum": [
+        "WEEKLY",
+        "MONTHLY",
+        "QUARTERLY",
+        "SEMIANUUAL",
+        "ANUUAL",
+        "ANUUAL_ACCRUAL"
+      ]
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "ID of the General Ledger Account associated to this auto charge."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "lastPostDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Last post date."
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "ID of the lease associated to auto charge"
+    },
+    "referenceNumber": {
+      "type": "string",
+      "description": "Reference number."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of auto charge."
+    }
+  }
+}

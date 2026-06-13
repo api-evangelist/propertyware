@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BasicVendor",
+  "description": "JSON Schema for BasicVendor",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string",
+      "description": "Address."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "customFields": {
+      "type": "array",
+      "description": "Custom fields.",
+      "items": {
+        "$ref": "#/components/schemas/CustomField"
+      }
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address."
+    },
+    "fax": {
+      "type": "string",
+      "description": "Fax number."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name."
+    },
+    "otherPhone": {
+      "type": "string",
+      "description": "Other phone number."
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number."
+    }
+  }
+}

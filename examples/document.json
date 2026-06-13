@@ -1,0 +1,14 @@
+{
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "description": "example_description",
+  "entityId": 1,
+  "entityType": "APPOINTMENT",
+  "fileName": "example_fileName",
+  "fileType": "example_fileType",
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "publishToOwnerPortal": true,
+  "publishToTenantPortal": true
+}

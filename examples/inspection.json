@@ -1,0 +1,21 @@
+{
+  "buildingID": 1,
+  "closedDateAndTime": "2024-01-01T00:00:00Z",
+  "comment": "example_comment",
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "id": 1,
+  "inspectedDateAndTime": "2024-01-01T00:00:00Z",
+  "inspectionAreas": [],
+  "inspectorID": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "leaseID": 1,
+  "notesToInspector": "example_notesToInspector",
+  "number": 1,
+  "portfolioID": 1,
+  "scheduledDateAndTime": "2024-01-01T00:00:00Z",
+  "status": "example_status",
+  "templateName": "example_templateName",
+  "type": "example_type"
+}

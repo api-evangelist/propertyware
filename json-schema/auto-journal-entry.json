@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AutoJournalEntry",
+  "description": "JSON Schema for AutoJournalEntry",
+  "type": "object",
+  "properties": {
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "credit": {
+      "type": "string",
+      "description": "Credit amount."
+    },
+    "debit": {
+      "type": "string",
+      "description": "Debit amount."
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date."
+    },
+    "frequency": {
+      "type": "string",
+      "description": "Frequency.",
+      "enum": [
+        "WEEKLY",
+        "MONTHLY",
+        "YEARLY",
+        "MANUALLY"
+      ]
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "lastPostDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Last post date."
+    },
+    "name": {
+      "type": "string",
+      "description": "Auto journal entry name."
+    },
+    "nextPostDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Next post date."
+    },
+    "payDay": {
+      "type": "string",
+      "description": "Pay day."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date."
+    }
+  }
+}

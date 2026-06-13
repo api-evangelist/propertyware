@@ -1,0 +1,7 @@
+{
+  "callTrackingGroupID": "example_callTrackingGroupID",
+  "default": true,
+  "id": 1,
+  "name": "example_name",
+  "referrerDomain": "example_referrerDomain"
+}

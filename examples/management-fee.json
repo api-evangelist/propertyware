@@ -1,0 +1,9 @@
+{
+  "accountCode": "example_accountCode",
+  "accountNumber": "example_accountNumber",
+  "id": 1,
+  "manager": "example_manager",
+  "managersCommissionPercentage": 1.0,
+  "passThrough": true,
+  "percentage": 1.0
+}

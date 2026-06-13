@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveContact",
+  "description": "Contact for Request",
+  "type": "object",
+  "required": [
+    "firstName",
+    "lastName"
+  ],
+  "properties": {
+    "address": {
+      "$ref": "#/components/schemas/SaveAddress"
+    },
+    "allowESignature": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicate if the contact can receive eSignature request e-mail messages sent through Propertyware."
+    },
+    "altEmail": {
+      "type": "string",
+      "description": "Alternate Email Address."
+    },
+    "birthDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of Birth."
+    },
+    "category": {
+      "type": "string",
+      "description": "Indicate contact category. Send empty \"\" value if contact is Uncategorized. Applicable only for CREATE Contact."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Description."
+    },
+    "company": {
+      "type": "string",
+      "description": "Company where the contact is employed.",
+      "minLength": 1,
+      "maxLength": 75
+    },
+    "email": {
+      "type": "string",
+      "description": "E-mail Address."
+    },
+    "fax": {
+      "type": "string",
+      "description": "Fax."
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First Name.",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "gender": {
+      "type": "string",
+      "description": "Gender.",
+      "enum": [
+        "UNKNOWN",
+        "MALE",
+        "FEMALE",
+        "DECLINE_TO_STATE"
+      ]
+    },
+    "homePhone": {
+      "type": "string",
+      "description": "Home Phone.",
+      "minLength": 1,
+      "maxLength": 22
+    },
+    "jobTitle": {
+      "type": "string",
+      "description": "Professional title or position for the contact.",
+      "minLength": 1,
+      "maxLength": 75
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last Name.",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "middleName": {
+      "type": "string",
+      "description": "Middle Name.",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "mobilePhone": {
+      "type": "string",
+      "description": "Mobile Phone.",
+      "minLength": 1,
+      "maxLength": 22
+    },
+    "nameOnCheck": {
+      "type": "string",
+      "description": "Name On Check.",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "namedOnLease": {
+      "type": "boolean",
+      "example": false,
+      "description": "Is Named On Lease."
+    },
+    "otherPhone": {
+      "type": "string",
+      "description": "Other Phone.",
+      "minLength": 1,
+      "maxLength": 22
+    },
+    "salutation": {
+      "type": "string",
+      "description": "Salutation. Allowed values are : '', 'Mr.', 'Mrs.', 'Ms.', 'Dr.', 'Prof.'"
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "SearchTag."
+    },
+    "suffix": {
+      "type": "string",
+      "description": "Suffix. Allowed values are : '', 'Jr.', 'Sr.', 'I', 'II', 'III', 'IV'"
+    },
+    "workPhone": {
+      "type": "string",
+      "description": "Work Phone.",
+      "minLength": 1,
+      "maxLength": 22
+    }
+  }
+}

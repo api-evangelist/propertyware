@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Document",
+  "description": "JSON Schema for Document",
+  "type": "object",
+  "properties": {
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of a document."
+    },
+    "entityId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier of an entity document is attached to."
+    },
+    "entityType": {
+      "type": "string",
+      "description": "Type of an entity document is attached to.",
+      "enum": [
+        "APPOINTMENT",
+        "ASSET",
+        "BILL",
+        "BANK_DEPOSIT",
+        "BILL_PAYMENT",
+        "BUILDING",
+        "CONTACT",
+        "FLOOR_PLAN",
+        "DESKTOP",
+        "EMAIL_TEMPLATE",
+        "INSPECTION",
+        "LEASE",
+        "OTHER",
+        "PORTFOLIO",
+        "PROSPECT",
+        "RECONCILIATION",
+        "TASK",
+        "TRANSACTION",
+        "UNIT",
+        "VENDOR",
+        "WORK_ORDER"
+      ]
+    },
+    "fileName": {
+      "type": "string",
+      "description": "File name."
+    },
+    "fileType": {
+      "type": "string",
+      "description": "File type."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "publishToOwnerPortal": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the document is published to the owner portal."
+    },
+    "publishToTenantPortal": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the document is published to the tenant portal."
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ManagementSettings",
+  "description": "Property management information",
+  "type": "object",
+  "properties": {
+    "managementContractEndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date of the property contract."
+    },
+    "managementContractStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of the property contract."
+    },
+    "managementFeeType": {
+      "type": "string",
+      "description": "Indicates the type of management fee. This field is deprecated and should not be used. Instead, use the new field 'managementFeesType'. "
+    },
+    "managementFees": {
+      "type": "array",
+      "description": "List of property management fee rules.",
+      "items": {
+        "$ref": "#/components/schemas/ManagementFee"
+      }
+    },
+    "managementFeesType": {
+      "type": "string",
+      "description": "Indicates the type of management fee.",
+      "enum": [
+        "MANAGE_FEE_NONE",
+        "MANAGE_FEE_GREATER_OF_FLAT_OR_PERCENTAGE",
+        "MANAGE_FEE_FLAT_PLUS_PERCENTAGE"
+      ]
+    },
+    "managementFlatFee": {
+      "type": "number",
+      "format": "double",
+      "description": "Flat management fee amount."
+    }
+  }
+}

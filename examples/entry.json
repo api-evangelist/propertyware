@@ -1,0 +1,11 @@
+{
+  "buildingID": 1,
+  "comment": "example_comment",
+  "credit": 1.0,
+  "debit": 1.0,
+  "glaccountCode": "example_glaccountCode",
+  "glaccountID": 1,
+  "id": 1,
+  "portfolioID": 1,
+  "unitID": 1
+}

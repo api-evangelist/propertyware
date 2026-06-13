@@ -1,0 +1,20 @@
+{
+  "bankAccountHolder": "example_bankAccountHolder",
+  "bankAccountHolderSSNMasked": "example_bankAccountHolderSSNMasked",
+  "bankAccountNumberDecrypted": "example_bankAccountNumberDecrypted",
+  "bankAccountType": 1,
+  "bankAddress": "example_bankAddress",
+  "bankAddress2": "example_bankAddress2",
+  "bankCity": "example_bankCity",
+  "bankInstitution": "example_bankInstitution",
+  "bankRoutingNumberDecrypted": "example_bankRoutingNumberDecrypted",
+  "bankState": "example_bankState",
+  "bankTransitFraction": "example_bankTransitFraction",
+  "bankZip": "example_bankZip",
+  "depositTicketType": 1,
+  "nachaCompanyID": "example_nachaCompanyID",
+  "nachaEnabled": true,
+  "nachaImmediateDestinationNumber": "example_nachaImmediateDestinationNumber",
+  "nachaImmediateOriginNumber": "example_nachaImmediateOriginNumber",
+  "nachaOriginatingDFINumber": "example_nachaOriginatingDFINumber"
+}

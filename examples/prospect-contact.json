@@ -1,0 +1,10 @@
+{
+  "email": "example_email",
+  "firstName": "example_firstName",
+  "homePhone": "example_homePhone",
+  "id": 1,
+  "lastName": "example_lastName",
+  "mobilePhone": "example_mobilePhone",
+  "role": "example_role",
+  "workPhone": "example_workPhone"
+}

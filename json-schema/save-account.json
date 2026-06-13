@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveAccount",
+  "description": "Create GL Account Request",
+  "type": "object",
+  "required": [
+    "accountNumber",
+    "accountType",
+    "code",
+    "description"
+  ],
+  "properties": {
+    "accountNumber": {
+      "type": "string",
+      "description": "Account number."
+    },
+    "accountType": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Valid account types - 1:Bank, 2:Credit Card, 5:Current Asset, 12:Non-Current Asset, 6:Current Liability, 13:Non-Current Liability, 7:Equity, 8:Income, 9:Expense, 10:Non-Operating Income, 11:Non-Operating Expense."
+    },
+    "autoApplyPrepayment": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if prepayments should be auto applied."
+    },
+    "bank": {
+      "$ref": "#/components/schemas/Bank"
+    },
+    "code": {
+      "type": "string",
+      "description": "Account code."
+    },
+    "creditCard": {
+      "$ref": "#/components/schemas/CreditCardAccount"
+    },
+    "currentAsset": {
+      "$ref": "#/components/schemas/CurrentAsset"
+    },
+    "currentLiability": {
+      "$ref": "#/components/schemas/CurrentLiability"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description."
+    },
+    "equity": {
+      "$ref": "#/components/schemas/Equity"
+    },
+    "expense": {
+      "$ref": "#/components/schemas/Expense"
+    },
+    "income": {
+      "$ref": "#/components/schemas/Income"
+    },
+    "nonCurrentAsset": {
+      "$ref": "#/components/schemas/NonCurrentAsset"
+    },
+    "nonCurrentLiability": {
+      "$ref": "#/components/schemas/NonCurrentLiability"
+    },
+    "nonOperatingExpense": {
+      "$ref": "#/components/schemas/NonOperatingExpense"
+    },
+    "nonOperatingIncome": {
+      "$ref": "#/components/schemas/NonOperatingInome"
+    },
+    "parentGLAccountId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Parent account ID."
+    },
+    "taxable": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is taxable."
+    }
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Building",
+  "description": "Building",
+  "type": "object",
+  "properties": {
+    "abbreviation": {
+      "type": "string",
+      "description": "Property abbreviation."
+    },
+    "active": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the property is active or inactive."
+    },
+    "address": {
+      "$ref": "#/components/schemas/Address"
+    },
+    "amenities": {
+      "type": "array",
+      "description": "Property amenities list.",
+      "items": {
+        "$ref": "#/components/schemas/Amenity"
+      }
+    },
+    "applicationFeeRule": {
+      "type": "string",
+      "description": "Application fee rule"
+    },
+    "areaUnits": {
+      "type": "string",
+      "description": "Property total area units.",
+      "enum": [
+        "Sq Ft",
+        "Sq M"
+      ],
+      "default": "Sq Ft"
+    },
+    "baseYear": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Base Year."
+    },
+    "baseYearOperatingExpenses": {
+      "type": "string",
+      "description": "Base Year Operating Expenses."
+    },
+    "baseYearPropertyInsurance": {
+      "type": "string",
+      "description": "Base Year Property Insurance."
+    },
+    "baseYearPropertyTaxes": {
+      "type": "string",
+      "description": "Base Year Property Taxes."
+    },
+    "category": {
+      "type": "string",
+      "description": "Property category.",
+      "enum": [
+        "RESIDENTIAL",
+        "COMMERCIAL"
+      ]
+    },
+    "countUnit": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of units in the building."
+    },
+    "county": {
+      "type": "string",
+      "description": "Property region of a state."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "customFields": {
+      "type": "array",
+      "description": "Custom fields.",
+      "items": {
+        "$ref": "#/components/schemas/CustomField"
+      }
+    },
+    "featuredForRent": {
+      "type": "boolean",
+      "example": false,
+      "description": "Featured Rental"
+    },
+    "floorNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Floor number."
+    },
+    "ftbDeductable": {
+      "type": "number",
+      "format": "double",
+      "description": "FTB deductible amount"
+    },
+    "ftbWithholdingPercentage": {
+      "type": "number",
+      "format": "double",
+      "description": "FTB withholding percentage"
+    },
+    "ftbWithholdingType": {
+      "type": "string",
+      "description": "FTB withholding type"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "idNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Unique identifier for Global Search."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Related lease ID."
+    },
+    "maintenanceLaborSurchargeAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Maintenance labor surcharge amount"
+    },
+    "maintenanceLaborSurchargeType": {
+      "type": "string",
+      "description": "Maintenance labor surcharge type"
+    },
+    "maintenanceNotice": {
+      "type": "string",
+      "description": "Property maintenance description."
+    },
+    "maintenanceSpendingLimitAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Maintenance spending limit amount"
+    },
+    "maintenanceSpendingLimitTime": {
+      "type": "string",
+      "description": "Property maintenance spending limit.",
+      "enum": [
+        "NO_LIMIT",
+        "MONTHLY_LIMIT",
+        "YEARLY_LIMIT"
+      ]
+    },
+    "management": {
+      "$ref": "#/components/schemas/ManagementSettings"
+    },
+    "marketing": {
+      "$ref": "#/components/schemas/Marketing"
+    },
+    "moveInDays": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Move in Window must be with in these days given here 1 to 30 and 45,60,75,90"
+    },
+    "multiUnit": {
+      "type": "string",
+      "description": "Indicates if the building is multi family or single family."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the property."
+    },
+    "neighborhood": {
+      "type": "string",
+      "description": "Property neighborhood."
+    },
+    "numberFloors": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number floors"
+    },
+    "numberOfBathrooms": {
+      "type": "number",
+      "format": "double",
+      "description": "Number of bathrooms in the property."
+    },
+    "numberOfBedrooms": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of bedrooms in the property."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "ID of the portfolio associated with this property."
+    },
+    "propertyManagerList": {
+      "type": "array",
+      "description": "Property manager details.",
+      "items": {
+        "$ref": "#/components/schemas/PropertyManager"
+      }
+    },
+    "propertyType": {
+      "type": "string",
+      "description": "Type of property.",
+      "enum": [
+        "NONE",
+        "APARTMENT",
+        "CONDO",
+        "COMMERCIAL",
+        "DU_FOUR_PLEX",
+        "HOUSE",
+        "SECTION_8_AFFORDABLE",
+        "SENIOR",
+        "SHORT_TERM_VACATION",
+        "STUDENT",
+        "TOWNHOUSE",
+        "OTHER"
+      ]
+    },
+    "ready": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the property is ready to lease."
+    },
+    "reasonForPropertyLost": {
+      "type": "string",
+      "description": "Reason for property lost"
+    },
+    "rentable": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the property is available for rent."
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "Property search tag."
+    },
+    "status": {
+      "type": "string",
+      "description": "Property status (occupied/vacant)."
+    },
+    "syndicate": {
+      "type": "boolean",
+      "example": false,
+      "description": "Syndicate"
+    },
+    "targetDeposit": {
+      "type": "string",
+      "description": "Target deposit."
+    },
+    "targetRent": {
+      "type": "number",
+      "format": "double",
+      "description": "Property target rent."
+    },
+    "targetRentUnits": {
+      "type": "string",
+      "description": "Property target rent units.",
+      "enum": [
+        "DOLLAR_PER_SQ_FT_MONTH",
+        "DOLLAR_PER_SQ_FT_YEAR",
+        "DOLLAR_PER_SQ_M_MONTH",
+        "DOLLAR_PER_SQ_M_YEAR",
+        "DOLLAR_PER_MONTH",
+        "DOLLAR_PER_WEEK",
+        "DOLLAR_PER_NIGHT"
+      ]
+    },
+    "totalArea": {
+      "type": "number",
+      "format": "double",
+      "description": "Property total area."
+    },
+    "type": {
+      "type": "string",
+      "description": "Property type."
+    },
+    "website": {
+      "type": "string",
+      "description": "Property website URL."
+    },
+    "yearBuilt": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Property built year."
+    }
+  }
+}

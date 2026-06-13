@@ -1,0 +1,276 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UpdateBuilding",
+  "description": "UpdateBuilding",
+  "type": "object",
+  "required": [
+    "abbreviation",
+    "countUnit",
+    "name",
+    "propertyType",
+    "rentable",
+    "type"
+  ],
+  "properties": {
+    "abbreviation": {
+      "type": "string",
+      "description": "Abbreviation of Building.",
+      "minLength": 1,
+      "maxLength": 12
+    },
+    "address": {
+      "$ref": "#/components/schemas/SaveAddress"
+    },
+    "allocationMethod": {
+      "type": "string",
+      "description": "Allocation method.",
+      "enum": [
+        "By Square Foot",
+        "By Percent"
+      ]
+    },
+    "availableDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the building is available for leasing."
+    },
+    "baseYear": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Base Year."
+    },
+    "baseYearOperatingExpenses": {
+      "type": "string",
+      "description": "Base Year Operating Expenses."
+    },
+    "baseYearPropertyInsurance": {
+      "type": "string",
+      "description": "Base Year Property Insurance."
+    },
+    "baseYearPropertyTaxes": {
+      "type": "string",
+      "description": "Base Year Property Taxes."
+    },
+    "countUnit": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Indicates number of units in the building. Applicable for multi unit building creation and updating a single family building to multi unit building"
+    },
+    "customNaming": {
+      "type": "string",
+      "description": "if we selected naming as \"Custom\" then enter the customer naming value "
+    },
+    "description": {
+      "type": "string",
+      "description": "Marketing description."
+    },
+    "featuredForRent": {
+      "type": "boolean",
+      "example": false,
+      "description": "Featured Rental"
+    },
+    "floorNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Floor number."
+    },
+    "managementContractEndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date of the property contract."
+    },
+    "managementContractStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of the property contract."
+    },
+    "managementFeeType": {
+      "type": "string",
+      "description": "Indicates management fee type of a building. This field is deprecated and should not be used. Instead, use the new field 'managementFeesType'.  "
+    },
+    "managementFeesType": {
+      "type": "string",
+      "description": "Indicates management fee type of a building.",
+      "enum": [
+        "MANAGE_FEE_NONE",
+        "MANAGE_FEE_GREATER_OF_FLAT_OR_PERCENTAGE",
+        "MANAGE_FEE_FLAT_PLUS_PERCENTAGE"
+      ]
+    },
+    "managementFlatFee": {
+      "type": "number",
+      "format": "double",
+      "description": "Indicates management flat fee."
+    },
+    "marketingName": {
+      "type": "string",
+      "description": "Marketing name."
+    },
+    "moveInDays": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Move in Window must be with in these days given here 1 to 30 and 45,60,75,90"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the building.",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "naming": {
+      "type": "string",
+      "description": "Unit naming",
+      "enum": [
+        "UNIT",
+        "SUITE",
+        "SPACE",
+        "CUSTOM"
+      ]
+    },
+    "neighborhood": {
+      "type": "string",
+      "description": "Neighborhood.",
+      "minLength": 0,
+      "maxLength": 30
+    },
+    "numberBathrooms": {
+      "type": "number",
+      "format": "double",
+      "description": "Number of Bath rooms in the Building. Applicable for single family buildings",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "numberBedrooms": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of bedrooms in the building. Applicable for single family buildings",
+      "minimum": 0,
+      "maximum": 20
+    },
+    "numberFloors": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of floors."
+    },
+    "numbered": {
+      "type": "string",
+      "description": "Unit creation format.",
+      "enum": [
+        "Alpha",
+        "Numeric"
+      ]
+    },
+    "otherTenantCharges": {
+      "type": "string",
+      "description": "Other tenant charges."
+    },
+    "parcelNumber": {
+      "type": "string",
+      "description": "Parcel number."
+    },
+    "petsAllowed": {
+      "type": "boolean",
+      "example": false,
+      "description": "Pets allowed."
+    },
+    "postingTitle": {
+      "type": "string",
+      "description": "Marketing posting title."
+    },
+    "propertyType": {
+      "type": "string",
+      "description": "Property type.",
+      "enum": [
+        "NONE",
+        "APARTMENT",
+        "CONDO",
+        "COMMERCIAL",
+        "DU_FOUR_PLEX",
+        "HOUSE",
+        "SECTION_8_AFFORDABLE",
+        "SENIOR",
+        "SHORT_TERM_VACATION",
+        "STUDENT",
+        "TOWNHOUSE",
+        "OTHER"
+      ]
+    },
+    "publishedForRent": {
+      "type": "string",
+      "description": "Published for rent.",
+      "enum": [
+        "Yes",
+        "No"
+      ]
+    },
+    "ready": {
+      "type": "boolean",
+      "example": false,
+      "description": "Ready to Lease"
+    },
+    "rentable": {
+      "type": "boolean",
+      "example": false,
+      "description": "This is required field. False value indicates Multifamily building, True value indicates single family building."
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "Search tag name.",
+      "minLength": 0,
+      "maxLength": 25
+    },
+    "shortDescription": {
+      "type": "string",
+      "description": "Marketing short description."
+    },
+    "syndicate": {
+      "type": "boolean",
+      "example": false,
+      "description": "Syndicate"
+    },
+    "targetDeposit": {
+      "type": "string",
+      "description": "Target deposit amount. Applicable for single family buildings",
+      "enum": [
+        "$1.2",
+        "1.2"
+      ]
+    },
+    "targetRent": {
+      "type": "number",
+      "format": "double",
+      "description": "Market rent for the building. Applicable for single family buildings"
+    },
+    "targetRentUnits": {
+      "type": "string",
+      "description": "Property target rent units. Applicable for single family buildings",
+      "enum": [
+        "DOLLAR_PER_SQ_FT_MONTH",
+        "DOLLAR_PER_SQ_FT_YEAR",
+        "DOLLAR_PER_SQ_M_MONTH",
+        "DOLLAR_PER_SQ_M_YEAR",
+        "DOLLAR_PER_MONTH",
+        "DOLLAR_PER_WEEK",
+        "DOLLAR_PER_NIGHT"
+      ]
+    },
+    "totalArea": {
+      "type": "number",
+      "format": "double",
+      "description": "Building area."
+    },
+    "type": {
+      "type": "string",
+      "description": "Indicates Building type like Office, Industrial, Retail, Healthcare, Government, Airport, Garage/Parking, Apartment Building, Duplex / Triplex, Mobile Home / RV Community etc."
+    },
+    "unitType": {
+      "type": "string",
+      "description": "Indicates Unit type like Condo,Lower Unit,Side By Side Duplex,Upper Unit,Townhome,Land,Commercial etc."
+    },
+    "yearBuilt": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Building built year."
+    }
+  }
+}

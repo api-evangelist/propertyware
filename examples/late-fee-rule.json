@@ -1,0 +1,7 @@
+{
+  "dueDay": 1,
+  "feeType": "example_feeType",
+  "id": 1,
+  "minimumDue": 1.0,
+  "summary": "example_summary"
+}

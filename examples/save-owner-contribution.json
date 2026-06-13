@@ -1,0 +1,11 @@
+{
+  "amount": 1.0,
+  "comments": "example_comments",
+  "contactID": 1,
+  "date": "2024-01-01",
+  "destinationAccountID": 1,
+  "glAccountID": 1,
+  "paymentType": "CHECK",
+  "portfolioID": 1,
+  "refNo": "example_refNo"
+}

@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Account",
+  "description": "General Ledger Account",
+  "type": "object",
+  "properties": {
+    "accountCode": {
+      "type": "string",
+      "description": "Account code."
+    },
+    "accountNumber": {
+      "type": "string",
+      "description": "Account number."
+    },
+    "accountType": {
+      "type": "string",
+      "description": "Account type."
+    },
+    "active": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is active."
+    },
+    "autoApplyPrepayment": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if prepayments should be auto applied."
+    },
+    "bankAccountHolder": {
+      "type": "string",
+      "description": "Bank account holder name."
+    },
+    "bankAccountNumber": {
+      "type": "string",
+      "description": "Bank account number."
+    },
+    "bankAddress": {
+      "type": "string",
+      "description": "Bank address."
+    },
+    "bankAddress2": {
+      "type": "string",
+      "description": "Bank address 2."
+    },
+    "bankCity": {
+      "type": "string",
+      "description": "Bank city."
+    },
+    "bankInstitution": {
+      "type": "string",
+      "description": "Bank institution name."
+    },
+    "bankRoutingNumber": {
+      "type": "string",
+      "description": "Bank account routing number."
+    },
+    "bankState": {
+      "type": "string",
+      "description": "Bank state."
+    },
+    "bankZip": {
+      "type": "string",
+      "description": "Bank zip code."
+    },
+    "camRecoveryAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a CAM recovery account."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the account."
+    },
+    "discountAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a discount account."
+    },
+    "escrowAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a escrow account."
+    },
+    "excludeFrom1099": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is excluded from Form1099."
+    },
+    "excludeFromPayInFull": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is excluded from paying in full."
+    },
+    "excludeLateFee": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if excluding from late fees."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "lateFeeApplicable": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if a late fee is applicable."
+    },
+    "name": {
+      "type": "string",
+      "description": "Account name."
+    },
+    "parentGLAccountId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Parent account ID."
+    },
+    "parentRef": {
+      "type": "string",
+      "description": "Parent account reference."
+    },
+    "paymentPriority": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Account payment priority."
+    },
+    "rentAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a rent account."
+    },
+    "section8": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a section8 account."
+    },
+    "securityDepositAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account is security deposit account"
+    },
+    "taxAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a tax account."
+    },
+    "transferBalanceToRetainedEarnings": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the account balance should be transferred to retained earnings."
+    }
+  }
+}

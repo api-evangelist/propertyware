@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CheckSplit",
+  "description": "VendorCheckSplit",
+  "type": "object",
+  "required": [
+    "portfolioID"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this check split."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the general ledger account associated with this check split."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this check split."
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the unit associated with this check split."
+    }
+  }
+}

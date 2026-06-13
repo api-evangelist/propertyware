@@ -1,0 +1,8 @@
+{
+  "address": "example_address",
+  "addressCont": "example_addressCont",
+  "city": "example_city",
+  "country": "example_country",
+  "postalCode": "example_postalCode",
+  "stateRegion": "example_stateRegion"
+}

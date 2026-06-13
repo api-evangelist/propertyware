@@ -1,0 +1,18 @@
+{
+  "amount": 1.0,
+  "checkSplits": [],
+  "comments": "example_comments",
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "date": "2024-01-01",
+  "destinationAccountID": 1,
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "payeePayer": "example_payeePayer",
+  "paymentType": "example_paymentType",
+  "portfolioID": 1,
+  "refNo": "example_refNo",
+  "toBePrinted": true,
+  "vendorID": 1
+}

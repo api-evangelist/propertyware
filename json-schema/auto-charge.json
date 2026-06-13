@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AutoCharge",
+  "description": "Auto charge request",
+  "type": "object",
+  "required": [
+    "charges",
+    "leaseID"
+  ],
+  "properties": {
+    "charges": {
+      "type": "array",
+      "description": "List of Auto charges.",
+      "items": {
+        "$ref": "#/components/schemas/SaveAutoCharge"
+      }
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Lease ID."
+    }
+  }
+}

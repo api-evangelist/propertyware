@@ -1,0 +1,16 @@
+{
+  "account": "example_account",
+  "amount": 1.0,
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "description": "example_description",
+  "endDate": "2024-01-01",
+  "feeAmount": 1.0,
+  "frequency": "WEEKLY",
+  "glAccountID": 1,
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "lastPostDate": "2024-01-01",
+  "startDate": "2024-01-01"
+}

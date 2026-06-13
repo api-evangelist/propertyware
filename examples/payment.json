@@ -1,0 +1,21 @@
+{
+  "amount": 1.0,
+  "comments": "example_comments",
+  "contactID": 1,
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "date": "2024-01-01",
+  "depositDate": "2024-01-01",
+  "destinationAccountID": 1,
+  "glAccountID": 1,
+  "id": 1,
+  "isDeposited": true,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "leaseID": 1,
+  "lines": [],
+  "paymentType": "CHECK",
+  "portfolioID": 1,
+  "refNo": "example_refNo",
+  "status": "example_status"
+}

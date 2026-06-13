@@ -1,0 +1,11 @@
+{
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "dateOpened": "example_dateOpened",
+  "description": "example_description",
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "name": "example_name",
+  "status": "example_status"
+}

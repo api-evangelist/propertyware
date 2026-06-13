@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LateFeeRule",
+  "description": "JSON Schema for LateFeeRule",
+  "type": "object",
+  "properties": {
+    "dueDay": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Fee due day."
+    },
+    "feeType": {
+      "type": "string",
+      "description": "Late fee type."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "minimumDue": {
+      "type": "number",
+      "format": "double",
+      "description": "Minimum amount due to trigger the late fee process."
+    },
+    "summary": {
+      "type": "string",
+      "description": "Textual description of the late fee calculation."
+    }
+  }
+}

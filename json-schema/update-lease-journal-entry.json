@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UpdateLeaseJournalEntry",
+  "description": "Update Lease Journal Entry",
+  "type": "object",
+  "required": [
+    "comments",
+    "date",
+    "leaseID"
+  ],
+  "properties": {
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Journal entry date."
+    },
+    "journalEntrySplit": {
+      "type": "array",
+      "description": "Journal Entry Splits.",
+      "items": {
+        "$ref": "#/components/schemas/JournalEntrySplit"
+      }
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Lease id to apply journal entry."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Journal entry reference number."
+    }
+  }
+}

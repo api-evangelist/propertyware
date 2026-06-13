@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveWorkOrderTask",
+  "description": "Work Order for Request",
+  "type": "object",
+  "required": [
+    "description"
+  ],
+  "properties": {
+    "completed": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the task is completed."
+    },
+    "delegates": {
+      "type": "string",
+      "description": "Comma separated list of user ids to delegate the task to."
+    },
+    "description": {
+      "type": "string",
+      "description": "Task description."
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Task due date."
+    },
+    "isPrivate": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the task is private."
+    },
+    "starred": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the task is starred."
+    },
+    "tags": {
+      "type": "string",
+      "description": "Comma separated task tags."
+    }
+  }
+}

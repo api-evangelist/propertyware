@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LineItem",
+  "description": "Payment line items",
+  "type": "object",
+  "properties": {
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this entry."
+    },
+    "credit": {
+      "type": "number",
+      "format": "double",
+      "description": "Credit amount."
+    },
+    "debit": {
+      "type": "number",
+      "format": "double",
+      "description": "Debit amount."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the general ledger account associated with this entry."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this entry."
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the unit associated with this entry."
+    }
+  }
+}

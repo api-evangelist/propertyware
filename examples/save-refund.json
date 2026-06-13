@@ -1,0 +1,11 @@
+{
+  "amount": 1.0,
+  "comments": "example_comments",
+  "date": "2024-01-01",
+  "destinationAccountID": 1,
+  "glAccountID": 1,
+  "leaseID": 1,
+  "refNo": "example_refNo",
+  "toBePrinted": true,
+  "toPrimaryTenant": true
+}

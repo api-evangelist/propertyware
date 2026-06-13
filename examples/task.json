@@ -1,0 +1,15 @@
+{
+  "completed": true,
+  "completedTime": "2024-01-01T00:00:00Z",
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "delegates": "example_delegates",
+  "description": "example_description",
+  "dueDate": "2024-01-01",
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "privateTask": true,
+  "starred": true,
+  "tags": "example_tags"
+}

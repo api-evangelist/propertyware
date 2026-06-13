@@ -1,0 +1,240 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Prospect",
+  "description": "Prospect",
+  "type": "object",
+  "properties": {
+    "applicationFeePaid": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the application fee has been paid by the prospect."
+    },
+    "assigneFullName": {
+      "type": "string",
+      "description": "Name of the assigned prospect."
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with the prospect."
+    },
+    "cityDesired": {
+      "type": "string",
+      "description": "Desired city."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Indicates if the prospect has any comments."
+    },
+    "contacts": {
+      "type": "array",
+      "description": "Contacts of the prospect",
+      "items": {
+        "$ref": "#/components/schemas/ProspectContact"
+      }
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "currentHomeType": {
+      "type": "string",
+      "description": "Current home type."
+    },
+    "currentRentMortgage": {
+      "type": "number",
+      "format": "double",
+      "description": "Current home mortgage."
+    },
+    "customFields": {
+      "type": "array",
+      "description": "Custom fields.",
+      "items": {
+        "$ref": "#/components/schemas/CustomField"
+      }
+    },
+    "hasPets": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the prospect has pets."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "leaseEndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Confirmed lease end date."
+    },
+    "leaseStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Confirmed lease start date."
+    },
+    "moveInDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Desired move-in date."
+    },
+    "neighborhoodDesired": {
+      "type": "string",
+      "description": "Desired neighborhood."
+    },
+    "numberBathrooms": {
+      "type": "number",
+      "format": "double",
+      "description": "Number of bathrooms desired by the prospect."
+    },
+    "numberBedrooms": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of bedrooms desired by the prospect."
+    },
+    "numberOfPets": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of pets."
+    },
+    "petType": {
+      "type": "string",
+      "description": "Pet type."
+    },
+    "petWeights": {
+      "type": "string",
+      "description": "Pet weights."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with the prospect."
+    },
+    "preferredContactMethod": {
+      "type": "string",
+      "description": "Preferred contact method."
+    },
+    "propertyAddress": {
+      "type": "string",
+      "description": "Address of the property."
+    },
+    "propertyAddress2": {
+      "type": "string",
+      "description": "Additional address information of the property."
+    },
+    "propertyArea": {
+      "type": "number",
+      "format": "double",
+      "description": "Area of the property."
+    },
+    "propertyAreaUnits": {
+      "type": "string",
+      "description": "Unit of measurement for the area of the property."
+    },
+    "propertyCity": {
+      "type": "string",
+      "description": "City of the property."
+    },
+    "propertyCountry": {
+      "type": "string",
+      "description": "Country of the property."
+    },
+    "propertyNumberBathrooms": {
+      "type": "number",
+      "format": "double",
+      "description": "Number of bathrooms."
+    },
+    "propertyNumberBedrooms": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of bedrooms."
+    },
+    "propertyState": {
+      "type": "string",
+      "description": "State of the property."
+    },
+    "propertyZip": {
+      "type": "string",
+      "description": "Zip code of the property."
+    },
+    "reasonForMoving": {
+      "type": "string",
+      "description": "Reason for moving."
+    },
+    "rent": {
+      "type": "number",
+      "format": "double",
+      "description": "Confirmed lease rent."
+    },
+    "rentMax": {
+      "type": "number",
+      "format": "double",
+      "description": "Maximum desired rent."
+    },
+    "rentMin": {
+      "type": "number",
+      "format": "double",
+      "description": "Minimum desired rent."
+    },
+    "securityDeposit": {
+      "type": "number",
+      "format": "double",
+      "description": "Confirmed lease security deposit."
+    },
+    "source": {
+      "type": "string",
+      "description": "Prospect source."
+    },
+    "stateDesired": {
+      "type": "string",
+      "description": "Desired state."
+    },
+    "status": {
+      "type": "string",
+      "description": "Status."
+    },
+    "timeAtCurrentResidence": {
+      "type": "string",
+      "description": "Time the prospect is living at the current residence."
+    },
+    "type": {
+      "type": "string",
+      "description": "Prospect type."
+    },
+    "typeOfInquiry": {
+      "type": "string",
+      "description": "Type of inquiry made by the prospect."
+    },
+    "unitDesired": {
+      "type": "string",
+      "description": "Desired unit."
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the unit associated with the prospect."
+    },
+    "unitTypeDesired": {
+      "type": "string",
+      "description": "Desired unit type."
+    },
+    "zipDesired": {
+      "type": "string",
+      "description": "Desired zip code."
+    }
+  }
+}

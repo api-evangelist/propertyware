@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Entry",
+  "description": "General Ledger Entry",
+  "type": "object",
+  "properties": {
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this entry."
+    },
+    "comment": {
+      "type": "string",
+      "description": "Transaction comment."
+    },
+    "credit": {
+      "type": "number",
+      "format": "double",
+      "description": "Credit amount."
+    },
+    "debit": {
+      "type": "number",
+      "format": "double",
+      "description": "Debit amount."
+    },
+    "glaccountCode": {
+      "type": "string"
+    },
+    "glaccountID": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this entry."
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the unit associated with this entry."
+    }
+  }
+}

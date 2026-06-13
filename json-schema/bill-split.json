@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BillSplit",
+  "description": "BillSplit",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "amountPaid": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount paid."
+    },
+    "buildingAbbr": {
+      "type": "string",
+      "description": "Abbreviation of the building associated with this bill split."
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this bill split."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments regarding the bill split."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the general ledger account associated with this bill split."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "markupDiscountSplit": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the bill split is tied to a markup discount."
+    },
+    "paid": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the bill split has been paid."
+    },
+    "portfolioAbbr": {
+      "type": "string",
+      "description": "Abbreviation of the portfolio associated with this bill split."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this bill split."
+    },
+    "unitAbbr": {
+      "type": "string",
+      "description": "Abbreviation of the unit associated with this bill split."
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the unit associated with this bill split."
+    }
+  }
+}

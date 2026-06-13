@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Amenity",
+  "description": "Amenity",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "Amenity code."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "name": {
+      "type": "string",
+      "description": "Amenity name."
+    },
+    "type": {
+      "type": "string",
+      "description": "Amenity type."
+    }
+  }
+}

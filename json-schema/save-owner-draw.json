@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveOwnerDraw",
+  "description": "Owner Draw for Request",
+  "type": "object",
+  "required": [
+    "amount",
+    "contactID",
+    "date",
+    "destinationAccountID",
+    "glAccountID",
+    "portfolioID",
+    "toBePrinted"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "contactID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the contact associated with this owner draw."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Post Date."
+    },
+    "destinationAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the bank account where the payment will be made from."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the general ledger account associated with this owner draw."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this owner draw."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Check no required when payment method is Hand written check (i.e toBePrinted = false)."
+    },
+    "toBePrinted": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if Check is to be printed."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ManagementFee",
+  "description": "Management Fee",
+  "type": "object",
+  "properties": {
+    "accountCode": {
+      "type": "string",
+      "description": "Management fee account code."
+    },
+    "accountNumber": {
+      "type": "string",
+      "description": "Management fee account number."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "manager": {
+      "type": "string",
+      "description": "Property manager name."
+    },
+    "managersCommissionPercentage": {
+      "type": "number",
+      "format": "double",
+      "description": "Property manager commission percentage."
+    },
+    "passThrough": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the commission account is of the passthrough type."
+    },
+    "percentage": {
+      "type": "number",
+      "format": "double",
+      "description": "Management fee percentage."
+    }
+  }
+}

@@ -1,0 +1,515 @@
+{
+  "@context": {
+    "@vocab": "https://app.propertyware.com/pw/api/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "propertyware": "https://app.propertyware.com/pw/api/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "Lease": {
+      "@id": "propertyware:Lease",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A rental lease agreement in Propertyware"
+    },
+    "Unit": {
+      "@id": "propertyware:Unit",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A rental unit within a building"
+    },
+    "Building": {
+      "@id": "propertyware:Building",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A building or property containing rental units"
+    },
+    "Contact": {
+      "@id": "propertyware:Contact",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A person or entity contact record"
+    },
+    "Tenant": {
+      "@id": "propertyware:Tenant",
+      "rdfs:subClassOf": "propertyware:Contact",
+      "rdfs:comment": "A tenant on a lease"
+    },
+    "Vendor": {
+      "@id": "propertyware:Vendor",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A service vendor or contractor"
+    },
+    "WorkOrder": {
+      "@id": "propertyware:WorkOrder",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A maintenance work order"
+    },
+    "Portfolio": {
+      "@id": "propertyware:Portfolio",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A portfolio grouping of properties"
+    },
+    "Bill": {
+      "@id": "propertyware:Bill",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A financial bill or invoice"
+    },
+    "Prospect": {
+      "@id": "propertyware:Prospect",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A prospective tenant or rental applicant"
+    },
+    "Marketing": {
+      "@id": "propertyware:Marketing",
+      "@type": "rdfs:Class"
+    },
+    "LeaseContact": {
+      "@id": "propertyware:LeaseContact",
+      "@type": "rdfs:Class"
+    },
+    "GLItem": {
+      "@id": "propertyware:GLItem",
+      "@type": "rdfs:Class"
+    },
+    "LeaseClause": {
+      "@id": "propertyware:LeaseClause",
+      "@type": "rdfs:Class"
+    },
+    "CampaignSource": {
+      "@id": "propertyware:CampaignSource",
+      "@type": "rdfs:Class"
+    },
+    "BankDeposit": {
+      "@id": "propertyware:BankDeposit",
+      "@type": "rdfs:Class"
+    },
+    "SaveConversation": {
+      "@id": "propertyware:SaveConversation",
+      "@type": "rdfs:Class"
+    },
+    "CustomFieldDefinition": {
+      "@id": "propertyware:CustomFieldDefinition",
+      "@type": "rdfs:Class"
+    },
+    "Campaign": {
+      "@id": "propertyware:Campaign",
+      "@type": "rdfs:Class"
+    },
+    "UpdateDocument": {
+      "@id": "propertyware:UpdateDocument",
+      "@type": "rdfs:Class"
+    },
+    "SaveAutoCharge": {
+      "@id": "propertyware:SaveAutoCharge",
+      "@type": "rdfs:Class"
+    },
+    "SaveDiscount": {
+      "@id": "propertyware:SaveDiscount",
+      "@type": "rdfs:Class"
+    },
+    "SaveBillSplit": {
+      "@id": "propertyware:SaveBillSplit",
+      "@type": "rdfs:Class"
+    },
+    "SaveUnit": {
+      "@id": "propertyware:SaveUnit",
+      "@type": "rdfs:Class"
+    },
+    "Entry": {
+      "@id": "propertyware:Entry",
+      "@type": "rdfs:Class"
+    },
+    "SavePortfolio": {
+      "@id": "propertyware:SavePortfolio",
+      "@type": "rdfs:Class"
+    },
+    "ProspectContact": {
+      "@id": "propertyware:ProspectContact",
+      "@type": "rdfs:Class"
+    },
+    "BillPaid": {
+      "@id": "propertyware:BillPaid",
+      "@type": "rdfs:Class"
+    },
+    "BillPay": {
+      "@id": "propertyware:BillPay",
+      "@type": "rdfs:Class"
+    },
+    "ExpenseRecoveryCharge": {
+      "@id": "propertyware:ExpenseRecoveryCharge",
+      "@type": "rdfs:Class"
+    },
+    "SaveLease": {
+      "@id": "propertyware:SaveLease",
+      "@type": "rdfs:Class"
+    },
+    "SplitPaid": {
+      "@id": "propertyware:SplitPaid",
+      "@type": "rdfs:Class"
+    },
+    "NonCurrentLiability": {
+      "@id": "propertyware:NonCurrentLiability",
+      "@type": "rdfs:Class"
+    },
+    "SaveBuilding": {
+      "@id": "propertyware:SaveBuilding",
+      "@type": "rdfs:Class"
+    },
+    "Document": {
+      "@id": "propertyware:Document",
+      "@type": "rdfs:Class"
+    },
+    "InspectionItem": {
+      "@id": "propertyware:InspectionItem",
+      "@type": "rdfs:Class"
+    },
+    "JournalEntrySplitResponse": {
+      "@id": "propertyware:JournalEntrySplitResponse",
+      "@type": "rdfs:Class"
+    },
+    "SaveCheckSplit": {
+      "@id": "propertyware:SaveCheckSplit",
+      "@type": "rdfs:Class"
+    },
+    "Adjustment": {
+      "@id": "propertyware:Adjustment",
+      "@type": "rdfs:Class"
+    },
+    "Refund": {
+      "@id": "propertyware:Refund",
+      "@type": "rdfs:Class"
+    },
+    "Comment": {
+      "@id": "propertyware:Comment",
+      "@type": "rdfs:Class"
+    },
+    "RESTAPIBulkErrorResponse": {
+      "@id": "propertyware:RESTAPIBulkErrorResponse",
+      "@type": "rdfs:Class"
+    },
+    "Note": {
+      "@id": "propertyware:Note",
+      "@type": "rdfs:Class"
+    },
+    "SplitPay": {
+      "@id": "propertyware:SplitPay",
+      "@type": "rdfs:Class"
+    },
+    "AutoJournalEntry": {
+      "@id": "propertyware:AutoJournalEntry",
+      "@type": "rdfs:Class"
+    },
+    "NonOperatingInome": {
+      "@id": "propertyware:NonOperatingInome",
+      "@type": "rdfs:Class"
+    },
+    "SaveCustomField": {
+      "@id": "propertyware:SaveCustomField",
+      "@type": "rdfs:Class"
+    },
+    "SaveCharge": {
+      "@id": "propertyware:SaveCharge",
+      "@type": "rdfs:Class"
+    },
+    "CloseWorkOrder": {
+      "@id": "propertyware:CloseWorkOrder",
+      "@type": "rdfs:Class"
+    },
+    "CurrentLiability": {
+      "@id": "propertyware:CurrentLiability",
+      "@type": "rdfs:Class"
+    },
+    "Charge": {
+      "@id": "propertyware:Charge",
+      "@type": "rdfs:Class"
+    },
+    "TimeCardEntry": {
+      "@id": "propertyware:TimeCardEntry",
+      "@type": "rdfs:Class"
+    },
+    "Equity": {
+      "@id": "propertyware:Equity",
+      "@type": "rdfs:Class"
+    },
+    "Task": {
+      "@id": "propertyware:Task",
+      "@type": "rdfs:Class"
+    },
+    "CreditCardAccount": {
+      "@id": "propertyware:CreditCardAccount",
+      "@type": "rdfs:Class"
+    },
+    "SaveComment": {
+      "@id": "propertyware:SaveComment",
+      "@type": "rdfs:Class"
+    },
+    "ErrorResponse": {
+      "@id": "propertyware:ErrorResponse",
+      "@type": "rdfs:Class"
+    },
+    "ResponseEntity": {
+      "@id": "propertyware:ResponseEntity",
+      "@type": "rdfs:Class"
+    },
+    "SaveAccount": {
+      "@id": "propertyware:SaveAccount",
+      "@type": "rdfs:Class"
+    },
+    "ContactExtension": {
+      "@id": "propertyware:ContactExtension",
+      "@type": "rdfs:Class"
+    },
+    "Account": {
+      "@id": "propertyware:Account",
+      "@type": "rdfs:Class"
+    },
+    "SaveWorkOrder": {
+      "@id": "propertyware:SaveWorkOrder",
+      "@type": "rdfs:Class"
+    },
+    "BasicVendor": {
+      "@id": "propertyware:BasicVendor",
+      "@type": "rdfs:Class"
+    },
+    "RESTAPIError": {
+      "@id": "propertyware:RESTAPIError",
+      "@type": "rdfs:Class"
+    },
+    "LineItem": {
+      "@id": "propertyware:LineItem",
+      "@type": "rdfs:Class"
+    },
+    "SaveOwnerDraw": {
+      "@id": "propertyware:SaveOwnerDraw",
+      "@type": "rdfs:Class"
+    },
+    "AutoCharge": {
+      "@id": "propertyware:AutoCharge",
+      "@type": "rdfs:Class"
+    },
+    "OwnerContribution": {
+      "@id": "propertyware:OwnerContribution",
+      "@type": "rdfs:Class"
+    },
+    "ManagementFee": {
+      "@id": "propertyware:ManagementFee",
+      "@type": "rdfs:Class"
+    },
+    "JournalEntrySplit": {
+      "@id": "propertyware:JournalEntrySplit",
+      "@type": "rdfs:Class"
+    },
+    "NonCurrentAsset": {
+      "@id": "propertyware:NonCurrentAsset",
+      "@type": "rdfs:Class"
+    },
+    "UpdateLeaseJournalEntry": {
+      "@id": "propertyware:UpdateLeaseJournalEntry",
+      "@type": "rdfs:Class"
+    },
+    "RESTAPIBulkSuccessResponse": {
+      "@id": "propertyware:RESTAPIBulkSuccessResponse",
+      "@type": "rdfs:Class"
+    },
+    "SaveBillPayment": {
+      "@id": "propertyware:SaveBillPayment",
+      "@type": "rdfs:Class"
+    },
+    "Check": {
+      "@id": "propertyware:Check",
+      "@type": "rdfs:Class"
+    },
+    "SaveAddress": {
+      "@id": "propertyware:SaveAddress",
+      "@type": "rdfs:Class"
+    },
+    "SaveProspectContact": {
+      "@id": "propertyware:SaveProspectContact",
+      "@type": "rdfs:Class"
+    },
+    "Address": {
+      "@id": "propertyware:Address",
+      "@type": "rdfs:Class"
+    },
+    "SaveLeaseJournalEntry": {
+      "@id": "propertyware:SaveLeaseJournalEntry",
+      "@type": "rdfs:Class"
+    },
+    "Conversation": {
+      "@id": "propertyware:Conversation",
+      "@type": "rdfs:Class"
+    },
+    "Income": {
+      "@id": "propertyware:Income",
+      "@type": "rdfs:Class"
+    },
+    "PropertyManager": {
+      "@id": "propertyware:PropertyManager",
+      "@type": "rdfs:Class"
+    },
+    "SaveProspect": {
+      "@id": "propertyware:SaveProspect",
+      "@type": "rdfs:Class"
+    },
+    "Owner": {
+      "@id": "propertyware:Owner",
+      "@type": "rdfs:Class"
+    },
+    "SaveRefund": {
+      "@id": "propertyware:SaveRefund",
+      "@type": "rdfs:Class"
+    },
+    "ProspectStatus": {
+      "@id": "propertyware:ProspectStatus",
+      "@type": "rdfs:Class"
+    },
+    "PaymentCharge": {
+      "@id": "propertyware:PaymentCharge",
+      "@type": "rdfs:Class"
+    },
+    "UpdateBuilding": {
+      "@id": "propertyware:UpdateBuilding",
+      "@type": "rdfs:Class"
+    },
+    "SaveVendor": {
+      "@id": "propertyware:SaveVendor",
+      "@type": "rdfs:Class"
+    },
+    "SaveJournalEntrySplit": {
+      "@id": "propertyware:SaveJournalEntrySplit",
+      "@type": "rdfs:Class"
+    },
+    "Bank": {
+      "@id": "propertyware:Bank",
+      "@type": "rdfs:Class"
+    },
+    "ManagementSettings": {
+      "@id": "propertyware:ManagementSettings",
+      "@type": "rdfs:Class"
+    },
+    "CustomFieldSet": {
+      "@id": "propertyware:CustomFieldSet",
+      "@type": "rdfs:Class"
+    },
+    "SaveAdjustment": {
+      "@id": "propertyware:SaveAdjustment",
+      "@type": "rdfs:Class"
+    },
+    "BillPayment": {
+      "@id": "propertyware:BillPayment",
+      "@type": "rdfs:Class"
+    },
+    "SaveContact": {
+      "@id": "propertyware:SaveContact",
+      "@type": "rdfs:Class"
+    },
+    "Discount": {
+      "@id": "propertyware:Discount",
+      "@type": "rdfs:Class"
+    },
+    "Amenity": {
+      "@id": "propertyware:Amenity",
+      "@type": "rdfs:Class"
+    },
+    "BillSplit": {
+      "@id": "propertyware:BillSplit",
+      "@type": "rdfs:Class"
+    },
+    "ContactCategory": {
+      "@id": "propertyware:ContactCategory",
+      "@type": "rdfs:Class"
+    },
+    "CheckSplit": {
+      "@id": "propertyware:CheckSplit",
+      "@type": "rdfs:Class"
+    },
+    "Inspection": {
+      "@id": "propertyware:Inspection",
+      "@type": "rdfs:Class"
+    },
+    "OwnerDraw": {
+      "@id": "propertyware:OwnerDraw",
+      "@type": "rdfs:Class"
+    },
+    "CreditMemo": {
+      "@id": "propertyware:CreditMemo",
+      "@type": "rdfs:Class"
+    },
+    "SaveCredit": {
+      "@id": "propertyware:SaveCredit",
+      "@type": "rdfs:Class"
+    },
+    "InspectionArea": {
+      "@id": "propertyware:InspectionArea",
+      "@type": "rdfs:Class"
+    },
+    "JournalEntry": {
+      "@id": "propertyware:JournalEntry",
+      "@type": "rdfs:Class"
+    },
+    "SaveOwnerContribution": {
+      "@id": "propertyware:SaveOwnerContribution",
+      "@type": "rdfs:Class"
+    },
+    "SaveWorkOrderTask": {
+      "@id": "propertyware:SaveWorkOrderTask",
+      "@type": "rdfs:Class"
+    },
+    "NonOperatingExpense": {
+      "@id": "propertyware:NonOperatingExpense",
+      "@type": "rdfs:Class"
+    },
+    "AutoPayment": {
+      "@id": "propertyware:AutoPayment",
+      "@type": "rdfs:Class"
+    },
+    "CustomField": {
+      "@id": "propertyware:CustomField",
+      "@type": "rdfs:Class"
+    },
+    "SavePayment": {
+      "@id": "propertyware:SavePayment",
+      "@type": "rdfs:Class"
+    },
+    "LeaseStatus": {
+      "@id": "propertyware:LeaseStatus",
+      "@type": "rdfs:Class"
+    },
+    "LateFeeRule": {
+      "@id": "propertyware:LateFeeRule",
+      "@type": "rdfs:Class"
+    },
+    "CurrentAsset": {
+      "@id": "propertyware:CurrentAsset",
+      "@type": "rdfs:Class"
+    },
+    "Payment": {
+      "@id": "propertyware:Payment",
+      "@type": "rdfs:Class"
+    },
+    "ChargeTx": {
+      "@id": "propertyware:ChargeTx",
+      "@type": "rdfs:Class"
+    },
+    "SaveBankDeposit": {
+      "@id": "propertyware:SaveBankDeposit",
+      "@type": "rdfs:Class"
+    },
+    "Expense": {
+      "@id": "propertyware:Expense",
+      "@type": "rdfs:Class"
+    },
+    "SaveCheck": {
+      "@id": "propertyware:SaveCheck",
+      "@type": "rdfs:Class"
+    },
+    "SaveBill": {
+      "@id": "propertyware:SaveBill",
+      "@type": "rdfs:Class"
+    },
+    "SaveOwner": {
+      "@id": "propertyware:SaveOwner",
+      "@type": "rdfs:Class"
+    },
+    "Collection_long_": {
+      "@id": "propertyware:Collection_long_",
+      "@type": "rdfs:Class"
+    }
+  }
+}

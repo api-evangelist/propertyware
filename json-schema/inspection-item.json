@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InspectionItem",
+  "description": "InspectionItem",
+  "type": "object",
+  "properties": {
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the inspection item."
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of the inspection."
+    }
+  }
+}

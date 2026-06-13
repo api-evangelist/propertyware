@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveWorkOrder",
+  "description": "Work Order for Request",
+  "type": "object",
+  "required": [
+    "buildingID"
+  ],
+  "properties": {
+    "authorizeEnter": {
+      "type": "string",
+      "description": "This field indicates if the tenant has granted the maintenance staff permission to enter the unit.",
+      "enum": [
+        "NO",
+        "ANYTIME",
+        "SPECIFIEDTIME"
+      ]
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this work order."
+    },
+    "category": {
+      "type": "string",
+      "description": "Category of the work order."
+    },
+    "costEstimate": {
+      "type": "number",
+      "format": "double",
+      "description": "Enter an estimate of the cost for performing the work outlined in the work order."
+    },
+    "dateToEnter": {
+      "type": "string",
+      "format": "date",
+      "description": "Authorized date to enter unit."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the work order."
+    },
+    "hourEstimate": {
+      "type": "number",
+      "format": "double",
+      "description": "Estimated number of hours to complete the work order."
+    },
+    "hourToEnter": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Hour to enter. Allowed Value : 0 , 1, 2 ... 23"
+    },
+    "minuteToEnter": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Minute to enter. Allowed Value : 0, 10, 20, 30, 40, 50"
+    },
+    "priority": {
+      "type": "string",
+      "description": "Priority of the work order.",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "publishToOwnerPortal": {
+      "type": "boolean",
+      "example": false,
+      "description": "Publish To Owner Portal. Default=false"
+    },
+    "publishToTenantPortal": {
+      "type": "boolean",
+      "example": false,
+      "description": "Publish To Tenant Portal. Default=false"
+    },
+    "requestedBy": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the person that reported the problem, typically the tenant or owner associated with the buildings or units."
+    },
+    "requiredMaterials": {
+      "type": "string",
+      "description": "Required Materials"
+    },
+    "scheduledEndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the work is scheduled to be completed."
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "Enter a key term to allow you to quickly locate the work order."
+    },
+    "source": {
+      "type": "string",
+      "description": "Source of the work order. This is a user configurable list with the following initial default values : None, Telephone, In Person, Email, Website, Internal, Tenant Portal, Inspection"
+    },
+    "specificLocation": {
+      "type": "string",
+      "description": "Specific Location"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the work was started."
+    },
+    "type": {
+      "type": "string",
+      "description": "This classifies the work order into one of the following types: General, Service Request, Turnover, Inspection, Estimate etc."
+    },
+    "unitIDs": {
+      "type": "array",
+      "description": "List of unit Ids that are attached to the building.",
+      "items": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  }
+}

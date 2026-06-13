@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Conversation",
+  "description": "Conversation",
+  "type": "object",
+  "properties": {
+    "comments": {
+      "type": "array",
+      "description": "List of comments in the conversation.",
+      "items": {
+        "$ref": "#/components/schemas/Comment"
+      }
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "entityID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the entity related to this conversation."
+    },
+    "entityType": {
+      "type": "string",
+      "description": "Type of the entity related to this conversation."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Conversation subject."
+    },
+    "type": {
+      "type": "string",
+      "description": "Conversation type.",
+      "enum": [
+        "MANAGEMENT_TEAM",
+        "OWNER",
+        "TENANT"
+      ]
+    }
+  }
+}

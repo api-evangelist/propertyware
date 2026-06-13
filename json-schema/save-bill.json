@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveBill",
+  "description": "Bill",
+  "type": "object",
+  "required": [
+    "billDate",
+    "billSplits",
+    "dueDate",
+    "vendorID"
+  ],
+  "properties": {
+    "billDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Bill date."
+    },
+    "billNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Bill number."
+    },
+    "billSplits": {
+      "type": "array",
+      "description": "Splits list.",
+      "items": {
+        "$ref": "#/components/schemas/SaveBillSplit"
+      }
+    },
+    "comments": {
+      "type": "string",
+      "description": "Description."
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Bill Due date."
+    },
+    "markupAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Markup general ledger account ID."
+    },
+    "markupPercentage": {
+      "type": "number",
+      "format": "double",
+      "description": "Markup percentage."
+    },
+    "paymentDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Payment Date."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference number."
+    },
+    "terms": {
+      "type": "string",
+      "description": "Bill terms."
+    },
+    "vendorID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Related vendor ID."
+    },
+    "workOrderID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "WorkOrder ID associated to this Bill."
+    }
+  }
+}

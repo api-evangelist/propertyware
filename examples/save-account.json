@@ -1,0 +1,20 @@
+{
+  "accountNumber": "example_accountNumber",
+  "accountType": 1,
+  "autoApplyPrepayment": true,
+  "bank": "example_bank",
+  "code": "example_code",
+  "creditCard": "example_creditCard",
+  "currentAsset": "example_currentAsset",
+  "currentLiability": "example_currentLiability",
+  "description": "example_description",
+  "equity": "example_equity",
+  "expense": "example_expense",
+  "income": "example_income",
+  "nonCurrentAsset": "example_nonCurrentAsset",
+  "nonCurrentLiability": "example_nonCurrentLiability",
+  "nonOperatingExpense": "example_nonOperatingExpense",
+  "nonOperatingIncome": "example_nonOperatingIncome",
+  "parentGLAccountId": 1,
+  "taxable": true
+}

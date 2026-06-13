@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CustomFieldSet",
+  "description": "Custom field set for Request",
+  "type": "object",
+  "required": [
+    "name",
+    "value"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Custom Field name"
+    },
+    "value": {
+      "type": "string",
+      "description": "Custom Field value"
+    }
+  }
+}

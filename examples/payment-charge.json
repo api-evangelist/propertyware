@@ -1,0 +1,14 @@
+{
+  "accountID": 1,
+  "amount": 1.0,
+  "chargeAmountPaid": 1.0,
+  "comments": "example_comments",
+  "date": "2024-01-01",
+  "id": 1,
+  "payeePayer": "example_payeePayer",
+  "paymentType": "CHECK",
+  "receiptNumber": 1,
+  "refNo": "example_refNo",
+  "settledDate": "2024-01-01",
+  "status": "example_status"
+}

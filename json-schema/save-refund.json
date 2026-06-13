@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveRefund",
+  "description": "Refund for Request",
+  "type": "object",
+  "required": [
+    "amount",
+    "date",
+    "destinationAccountID",
+    "glAccountID",
+    "leaseID"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Post Date."
+    },
+    "destinationAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the bank account to send the refund from."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the general ledger account associated with the refund."
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the lease associated with the refund."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference number."
+    },
+    "toBePrinted": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the check is to be printed."
+    },
+    "toPrimaryTenant": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if refund is for primary contact only"
+    }
+  }
+}

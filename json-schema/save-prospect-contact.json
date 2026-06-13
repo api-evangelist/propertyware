@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveProspectContact",
+  "description": "Save Prospect Contact",
+  "type": "object",
+  "required": [
+    "firstName",
+    "lastName"
+  ],
+  "properties": {
+    "address": {
+      "$ref": "#/components/schemas/SaveAddress"
+    },
+    "email": {
+      "type": "string",
+      "description": " EMail."
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First Name."
+    },
+    "homePhone": {
+      "type": "string",
+      "description": " Home Phone."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastName": {
+      "type": "string",
+      "description": " Last Name."
+    },
+    "mobilePhone": {
+      "type": "string",
+      "description": " Mobile Phone."
+    },
+    "otherPhone": {
+      "type": "string",
+      "description": " Other Phone."
+    },
+    "percentageship": {
+      "type": "number",
+      "format": "double",
+      "description": "ship percentage."
+    },
+    "workPhone": {
+      "type": "string",
+      "description": " Work Phone."
+    }
+  }
+}

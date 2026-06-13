@@ -1,0 +1,14 @@
+{
+  "billDate": "2024-01-01",
+  "billNumber": 1,
+  "billSplits": [],
+  "comments": "example_comments",
+  "dueDate": "2024-01-01",
+  "markupAccountID": 1,
+  "markupPercentage": 1.0,
+  "paymentDate": "2024-01-01",
+  "refNo": "example_refNo",
+  "terms": "example_terms",
+  "vendorID": 1,
+  "workOrderID": 1
+}

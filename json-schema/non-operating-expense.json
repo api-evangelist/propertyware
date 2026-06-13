@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NonOperatingExpense",
+  "description": "Non Operating Expense for Request",
+  "type": "object",
+  "properties": {
+    "camRecoveryAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a CAM recovery account."
+    },
+    "discountAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a discount account."
+    },
+    "escrowAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a escrow account."
+    },
+    "excludeFrom1099": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is excluded from Form1099."
+    },
+    "excludeFromPayInFull": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is excluded from paying in full."
+    },
+    "excludeLateFee": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if excluding from late fees."
+    },
+    "rentAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a rent account."
+    },
+    "taxAccount": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if account is a tax account."
+    }
+  }
+}

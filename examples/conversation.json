@@ -1,0 +1,12 @@
+{
+  "comments": [],
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "entityID": 1,
+  "entityType": "example_entityType",
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "subject": "example_subject",
+  "type": "MANAGEMENT_TEAM"
+}

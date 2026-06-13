@@ -1,0 +1,12 @@
+{
+  "amount": 1.0,
+  "amountPaid": 1.0,
+  "buildingID": 1,
+  "comments": "example_comments",
+  "glAccountID": 1,
+  "id": 1,
+  "markupDiscountSplit": true,
+  "paid": true,
+  "portfolioID": 1,
+  "unitID": 1
+}

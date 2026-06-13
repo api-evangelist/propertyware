@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Vendor",
+  "description": "Vendor",
+  "type": "object",
+  "properties": {
+    "accountNumber": {
+      "type": "string",
+      "description": "Account number."
+    },
+    "active": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the vendor is active."
+    },
+    "address": {
+      "type": "string",
+      "description": "Address."
+    },
+    "address2": {
+      "type": "string",
+      "description": "Address line 2."
+    },
+    "alertEmail": {
+      "type": "string",
+      "description": "Alert Email"
+    },
+    "city": {
+      "type": "string",
+      "description": "City."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "companyName": {
+      "type": "string",
+      "description": "Name of the vendor's company."
+    },
+    "country": {
+      "type": "string",
+      "description": "Country."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "creditLimit": {
+      "type": "number",
+      "format": "double",
+      "description": "Credit limit."
+    },
+    "customFields": {
+      "type": "array",
+      "description": "Custom fields.",
+      "items": {
+        "$ref": "#/components/schemas/CustomField"
+      }
+    },
+    "defaultBillSplitAccountId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Default bill split id"
+    },
+    "defaultMarkupDiscountPercentage": {
+      "type": "number",
+      "format": "double",
+      "description": "Default markup discount"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description."
+    },
+    "eligible1099": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the vendor is eligible for a 1099 form."
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address."
+    },
+    "fax": {
+      "type": "string",
+      "description": "Fax number."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "includeCompanyNameOn1099": {
+      "type": "boolean",
+      "example": false,
+      "description": "Include company name on 1099"
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "markupAccountId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Markup account id"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name."
+    },
+    "nameOnCheck": {
+      "type": "string",
+      "description": "Name to be used on checks."
+    },
+    "otherPhone": {
+      "type": "string",
+      "description": "Other phone number."
+    },
+    "paymentTermDaysToPay": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The number of days within payments are due."
+    },
+    "paymentTerms": {
+      "type": "string",
+      "description": "Payment terms."
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number."
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "Search Tag"
+    },
+    "state": {
+      "type": "string",
+      "description": "State."
+    },
+    "syncToVMM": {
+      "type": "boolean",
+      "example": false,
+      "description": "Vendor Sync To Maintenance."
+    },
+    "taxId": {
+      "type": "string",
+      "description": "Tax identification number."
+    },
+    "taxPayerName": {
+      "type": "string",
+      "description": "Tax Payer Name"
+    },
+    "timeTracking": {
+      "type": "string",
+      "description": "Time Tracking, is enabled or disabled"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of vendor."
+    },
+    "website": {
+      "type": "string",
+      "description": "Website URL."
+    },
+    "zip": {
+      "type": "string",
+      "description": "ZIP or postal code."
+    }
+  }
+}

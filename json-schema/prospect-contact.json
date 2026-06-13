@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProspectContact",
+  "description": "Contact of the prospect",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "E-mail address."
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First name."
+    },
+    "homePhone": {
+      "type": "string",
+      "description": "Home phone."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last name."
+    },
+    "mobilePhone": {
+      "type": "string",
+      "description": "Mobile phone."
+    },
+    "role": {
+      "type": "string",
+      "description": "Role."
+    },
+    "workPhone": {
+      "type": "string",
+      "description": "Work phone."
+    }
+  }
+}

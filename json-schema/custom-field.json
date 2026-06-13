@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CustomField",
+  "description": "Custom field.",
+  "type": "object",
+  "properties": {
+    "dataType": {
+      "type": "string",
+      "description": "Data type of the custom field."
+    },
+    "definitionID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the custom field definition."
+    },
+    "fieldName": {
+      "type": "string",
+      "description": "Name of the custom field."
+    },
+    "value": {
+      "type": "string",
+      "description": "Value of the custom field."
+    }
+  }
+}

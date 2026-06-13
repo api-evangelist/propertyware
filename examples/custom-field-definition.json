@@ -1,0 +1,7 @@
+{
+  "dataType": "example_dataType",
+  "defaultValue": "example_defaultValue",
+  "fieldName": "example_fieldName",
+  "groupName": "example_groupName",
+  "requiredField": "example_requiredField"
+}

@@ -1,0 +1,9 @@
+{
+  "bills": [],
+  "checkNumber": "example_checkNumber",
+  "memo": "example_memo",
+  "paymentAccountID": 1,
+  "paymentDate": "2024-01-01",
+  "paymentMethod": "Check",
+  "vendorID": 1
+}

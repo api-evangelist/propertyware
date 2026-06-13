@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AutoPayment",
+  "description": "JSON Schema for AutoPayment",
+  "type": "object",
+  "properties": {
+    "account": {
+      "type": "string",
+      "description": "Payment general ledger account."
+    },
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Payment amount."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description."
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date."
+    },
+    "feeAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Fee amount."
+    },
+    "frequency": {
+      "type": "string",
+      "description": "Payment frequency.",
+      "enum": [
+        "WEEKLY",
+        "MONTHLY",
+        "QUARTERLY",
+        "SEMIANNUAL",
+        "YEARLY"
+      ]
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Payment general ledger account ID."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "lastPostDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Last post date."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date."
+    }
+  }
+}

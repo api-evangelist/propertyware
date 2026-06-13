@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Inspection",
+  "description": "Inspection",
+  "type": "object",
+  "properties": {
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this inspection."
+    },
+    "closedDateAndTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the inspection closed (customer time zone)."
+    },
+    "comment": {
+      "type": "string",
+      "description": "Inspection comments."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "inspectedDateAndTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the inspection occurred (customer time zone)."
+    },
+    "inspectionAreas": {
+      "type": "array",
+      "description": "List of inspection areas.",
+      "items": {
+        "$ref": "#/components/schemas/InspectionArea"
+      }
+    },
+    "inspectorID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Inspector ID"
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the lease associated with this inspection."
+    },
+    "notesToInspector": {
+      "type": "string",
+      "description": "Notes to Inspector"
+    },
+    "number": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Inspection number."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this inspection."
+    },
+    "scheduledDateAndTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the inspection is/was scheduled to occur (customer time zone)."
+    },
+    "status": {
+      "type": "string",
+      "description": "Inspection status."
+    },
+    "templateName": {
+      "type": "string",
+      "description": "Inspection template name."
+    },
+    "type": {
+      "type": "string",
+      "description": "Inspection type."
+    }
+  }
+}

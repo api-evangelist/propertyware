@@ -1,0 +1,14 @@
+{
+  "address": "example_address",
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "customFields": [],
+  "email": "example_email",
+  "fax": "example_fax",
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "name": "example_name",
+  "otherPhone": "example_otherPhone",
+  "phone": "example_phone"
+}

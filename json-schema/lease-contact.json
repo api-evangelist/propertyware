@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LeaseContact",
+  "description": "Contact of the lease",
+  "type": "object",
+  "properties": {
+    "company": {
+      "type": "string",
+      "description": "Company where the contact is employed."
+    },
+    "email": {
+      "type": "string",
+      "description": "E-mail address."
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First name."
+    },
+    "homePhone": {
+      "type": "string",
+      "description": "Home phone."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last name."
+    },
+    "mobilePhone": {
+      "type": "string",
+      "description": "Mobile phone."
+    },
+    "namedOnLease": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if contact is named on lease."
+    },
+    "primary": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if contact is primary contact of the lease."
+    },
+    "role": {
+      "type": "string",
+      "description": "Role."
+    },
+    "workPhone": {
+      "type": "string",
+      "description": "Work phone."
+    }
+  }
+}

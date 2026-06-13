@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreditCardAccount",
+  "description": "Credit Card Account for Request",
+  "type": "object",
+  "properties": {
+    "creditCardNumber": {
+      "type": "string",
+      "description": "Credit card number."
+    }
+  }
+}

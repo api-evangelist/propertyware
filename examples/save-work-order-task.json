@@ -1,0 +1,9 @@
+{
+  "completed": true,
+  "delegates": "example_delegates",
+  "description": "example_description",
+  "dueDate": "2024-01-01",
+  "isPrivate": true,
+  "starred": true,
+  "tags": "example_tags"
+}

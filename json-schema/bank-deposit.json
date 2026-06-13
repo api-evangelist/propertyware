@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BankDeposit",
+  "description": "Bank Deposit",
+  "type": "object",
+  "properties": {
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "dateOpened": {
+      "type": "string",
+      "description": "Date opened."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Bank deposit name."
+    },
+    "status": {
+      "type": "string",
+      "description": "Status."
+    }
+  }
+}

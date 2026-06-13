@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Owner",
+  "description": "Owner Contact",
+  "type": "object",
+  "properties": {
+    "address": {
+      "$ref": "#/components/schemas/Address"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address."
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First name."
+    },
+    "homePhone": {
+      "type": "string",
+      "description": "Home phone."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last name."
+    },
+    "mobilePhone": {
+      "type": "string",
+      "description": "Mobile phone."
+    },
+    "name": {
+      "type": "string",
+      "description": "Full name."
+    },
+    "otherPhone": {
+      "type": "string",
+      "description": "Other phone."
+    },
+    "percentageOwnership": {
+      "type": "number",
+      "format": "double",
+      "description": "Percentage ownership."
+    },
+    "workPhone": {
+      "type": "string",
+      "description": "Work phone."
+    }
+  }
+}

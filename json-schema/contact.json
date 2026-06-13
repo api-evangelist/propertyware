@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Contact",
+  "description": "Contact Response",
+  "type": "object",
+  "properties": {
+    "address": {
+      "$ref": "#/components/schemas/Address"
+    },
+    "allowESignature": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the contact can receive eSignature request e-mail messages sent through Propertyware."
+    },
+    "altEmail": {
+      "type": "string",
+      "description": "Alternate e-mail address."
+    },
+    "birthDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of birth."
+    },
+    "category": {
+      "type": "string",
+      "description": "Contact category."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "company": {
+      "type": "string",
+      "description": "Company where the contact is employed."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "customFields": {
+      "type": "array",
+      "description": "Custom fields.",
+      "items": {
+        "$ref": "#/components/schemas/CustomField"
+      }
+    },
+    "email": {
+      "type": "string",
+      "description": "E-mail address."
+    },
+    "fax": {
+      "type": "string",
+      "description": "Fax."
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First name."
+    },
+    "gender": {
+      "type": "string",
+      "description": "Gender.",
+      "enum": [
+        "UNKNOWN",
+        "MALE",
+        "FEMALE",
+        "DECLINE_TO_STATE"
+      ]
+    },
+    "homePhone": {
+      "type": "string",
+      "description": "Home phone."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "jobTitle": {
+      "type": "string",
+      "description": "Professional title or position for the contact."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last name."
+    },
+    "middleName": {
+      "type": "string",
+      "description": "Middle name."
+    },
+    "mobilePhone": {
+      "type": "string",
+      "description": "Mobile phone."
+    },
+    "nameOnCheck": {
+      "type": "string",
+      "description": "Name on check."
+    },
+    "namedOnLease": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if contact is named on lease."
+    },
+    "otherPhone": {
+      "type": "string",
+      "description": "Other phone."
+    },
+    "salutation": {
+      "type": "string",
+      "description": "Salutation."
+    },
+    "suffix": {
+      "type": "string",
+      "description": "Suffix."
+    },
+    "type": {
+      "type": "string",
+      "description": "Contact type.",
+      "enum": [
+        "TENANT",
+        "PROSPECT",
+        "OWNER",
+        "VENDOR",
+        "OTHER"
+      ]
+    },
+    "workPhone": {
+      "type": "string",
+      "description": "Work phone."
+    }
+  }
+}

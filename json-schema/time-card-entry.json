@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TimeCardEntry",
+  "description": "TimeCardEntry",
+  "type": "object",
+  "required": [
+    "vendorID"
+  ],
+  "properties": {
+    "billID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Bill ID."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Time card Entry Comments."
+    },
+    "hourlyRate": {
+      "type": "number",
+      "format": "double",
+      "description": "Hourly Rate."
+    },
+    "hourlySurcharge": {
+      "type": "number",
+      "format": "double",
+      "description": "Hourly Surcharge."
+    },
+    "hours": {
+      "type": "number",
+      "format": "double",
+      "description": "Hours."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "vendorID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "This is required field. Specifies the Vendor for a time card entry."
+    },
+    "workDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Work Date."
+    }
+  }
+}

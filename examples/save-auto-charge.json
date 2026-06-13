@@ -1,0 +1,10 @@
+{
+  "amount": 1.0,
+  "description": "example_description",
+  "dueDay": 1,
+  "endDate": "2024-01-01",
+  "frequency": "WEEKLY",
+  "glAccountID": 1,
+  "referenceNumber": "example_referenceNumber",
+  "startDate": "2024-01-01"
+}

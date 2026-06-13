@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Campaign",
+  "description": "Campaign",
+  "type": "object",
+  "properties": {
+    "acceptedCallTrackingTerms": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the call tracking terms have been accepted."
+    },
+    "callTrackingCampaignID": {
+      "type": "string",
+      "description": "Campaign ID used for call tracking."
+    },
+    "callTrackingEnabled": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if call tracking is enabled for the campaign."
+    },
+    "callTrackingForwar": {
+      "type": "string",
+      "description": "Number to which call tracking calls are forwarded."
+    },
+    "callTrackingForwarAfterHours": {
+      "type": "string",
+      "description": "Number to which call tracking calls are forwarded after hours."
+    },
+    "callTrackingPhoneNumber": {
+      "type": "string",
+      "description": "Phone number used for call tracking."
+    },
+    "callTrackingReferrer": {
+      "type": "string",
+      "description": "Referrer for call tracking."
+    },
+    "callTrackingSearchPhrase": {
+      "type": "string",
+      "description": "Search phrase for call tracking."
+    },
+    "campaignSource": {
+      "$ref": "#/components/schemas/CampaignSource"
+    },
+    "code": {
+      "type": "string",
+      "description": "Code of the campaign."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "customFields": {
+      "type": "array",
+      "description": "Custom fields.",
+      "items": {
+        "$ref": "#/components/schemas/CustomField"
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the campaign."
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date of the campaign."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the campaign."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of the campaign."
+    },
+    "targetProspectType": {
+      "type": "string",
+      "description": "Type of the targeted prospect."
+    },
+    "timezone": {
+      "type": "string",
+      "description": "Time zone of the campaign."
+    }
+  }
+}

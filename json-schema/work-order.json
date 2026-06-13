@@ -1,0 +1,197 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkOrder",
+  "description": "Work Order",
+  "type": "object",
+  "properties": {
+    "age": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Number of days that have passed since the work order was created."
+    },
+    "approved": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if work order is approved."
+    },
+    "approvedDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Work order approved Date."
+    },
+    "assignedVendors": {
+      "type": "array",
+      "description": "List of vendors attached to the work order.",
+      "items": {
+        "$ref": "#/components/schemas/BasicVendor"
+      }
+    },
+    "authorizeEnter": {
+      "type": "string",
+      "description": "Indicates if the tenant has granted your management staff access to enter his or her buildings and/or units.",
+      "enum": [
+        "NO",
+        "ANYTIME",
+        "SPECIFIEDTIME"
+      ]
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this work order."
+    },
+    "category": {
+      "type": "string",
+      "description": "This classifies the work order into a category."
+    },
+    "completedDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the work was completed."
+    },
+    "contractNumber": {
+      "type": "string",
+      "description": "Contract number."
+    },
+    "costEstimate": {
+      "type": "number",
+      "format": "double",
+      "description": "This indicates the estimated cost as entered by a person, the actual cost as determined by the work order bills, and the invoiced amount is the amount the owner will see on his or her statement based on the bill and markup/discount amount."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "customFields": {
+      "type": "array",
+      "description": "Custom fields.",
+      "items": {
+        "$ref": "#/components/schemas/CustomField"
+      }
+    },
+    "dateToEnter": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Authorized date to enter unit."
+    },
+    "description": {
+      "type": "string",
+      "description": "This is a detailed description of the problem."
+    },
+    "hourEstimate": {
+      "type": "number",
+      "format": "double",
+      "description": "Expected number of hours to complete the work order."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "lease": {
+      "type": "string",
+      "description": "If the work order is attached to an occupied building or unit, this is the lease name of that lease."
+    },
+    "location": {
+      "type": "string",
+      "description": "Buildings and/or units associated with this work order."
+    },
+    "maintenanceNotice": {
+      "type": "string",
+      "description": "Maintenance notice defined for the building that the work order is attached to."
+    },
+    "managedBy": {
+      "type": "string",
+      "description": "Name of the person who is responsible for managing the work order."
+    },
+    "number": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number assigned to this work order."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this work order."
+    },
+    "priority": {
+      "type": "string",
+      "description": "This identifies the priority of the work order as low, medium, or high.",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "publishToOwnerPortal": {
+      "type": "boolean",
+      "example": false,
+      "description": "Publish To Owner Portal."
+    },
+    "publishToTenantPortal": {
+      "type": "boolean",
+      "example": false,
+      "description": "Publish To Tenant Portal."
+    },
+    "requestedBy": {
+      "type": "string",
+      "description": "This identifies the person that reported the problem, typically the tenant or owner associated with the buildings or units."
+    },
+    "requiredMaterials": {
+      "type": "string",
+      "description": "List of materials required to complete the work order."
+    },
+    "scheduledEndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the work is scheduled to be completed."
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "Search tag name."
+    },
+    "source": {
+      "type": "string",
+      "description": "This identifies how the problem was reported, such as telephone, in person, email, etc."
+    },
+    "specificLocation": {
+      "type": "string",
+      "description": "This describes the location in the buildings or units where the work is needed."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the work was started."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status of the work order."
+    },
+    "type": {
+      "type": "string",
+      "description": "This classifies the work order into one of the following types: general, service request, turnover, inspection, estimate etc."
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the unit associated with this work order."
+    },
+    "unitIDs": {
+      "$ref": "#/components/schemas/Collection_long_"
+    }
+  }
+}

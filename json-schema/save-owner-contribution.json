@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveOwnerContribution",
+  "description": "Charge for request",
+  "type": "object",
+  "required": [
+    "amount",
+    "contactID",
+    "date",
+    "destinationAccountID",
+    "glAccountID",
+    "paymentType",
+    "portfolioID",
+    "refNo"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "contactID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the contact associated with this owner contribution."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Post Date."
+    },
+    "destinationAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the bank account where the payment will be deposited."
+    },
+    "glAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the general ledger account associated with this owner contribution."
+    },
+    "paymentType": {
+      "type": "string",
+      "description": "Payment Type.",
+      "enum": [
+        "CHECK",
+        "CHECK21",
+        "CASHIERS_CHECK",
+        "CREDIT_CARD",
+        "CASH",
+        "MONEY_ORDER",
+        "OTHER",
+        "CLICKPAY",
+        "SECTION8",
+        "EPAY",
+        "ECHECK",
+        "NACHA",
+        "RENTMONEY",
+        "PUBLIC_ASSISTANCE",
+        "PAYMENT_TYPE_NA"
+      ]
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio to apply the payment to."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference No."
+    }
+  }
+}

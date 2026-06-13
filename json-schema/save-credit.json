@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveCredit",
+  "description": "SaveCredit",
+  "type": "object",
+  "required": [
+    "billDate",
+    "billSplits",
+    "vendorID"
+  ],
+  "properties": {
+    "billDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Credit Date."
+    },
+    "billSplits": {
+      "type": "array",
+      "description": "Splits list.",
+      "items": {
+        "$ref": "#/components/schemas/SaveBillSplit"
+      }
+    },
+    "comments": {
+      "type": "string",
+      "description": "Description."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Reference number."
+    },
+    "vendorID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Related vendor ID."
+    },
+    "workOrderID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Related workorder ID."
+    }
+  }
+}

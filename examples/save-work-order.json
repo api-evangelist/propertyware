@@ -1,0 +1,23 @@
+{
+  "authorizeEnter": "NO",
+  "buildingID": 1,
+  "category": "example_category",
+  "costEstimate": 1.0,
+  "dateToEnter": "2024-01-01",
+  "description": "example_description",
+  "hourEstimate": 1.0,
+  "hourToEnter": 1,
+  "minuteToEnter": 1,
+  "priority": "HIGH",
+  "publishToOwnerPortal": true,
+  "publishToTenantPortal": true,
+  "requestedBy": 1,
+  "requiredMaterials": "example_requiredMaterials",
+  "scheduledEndDate": "2024-01-01",
+  "searchTag": "example_searchTag",
+  "source": "example_source",
+  "specificLocation": "example_specificLocation",
+  "startDate": "2024-01-01",
+  "type": "example_type",
+  "unitIDs": []
+}

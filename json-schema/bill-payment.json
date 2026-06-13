@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BillPayment",
+  "description": "BillPayment",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Payment amount."
+    },
+    "bills": {
+      "type": "array",
+      "description": "List of bills that were paid.",
+      "items": {
+        "$ref": "#/components/schemas/BillPaid"
+      }
+    },
+    "checkNumber": {
+      "type": "string",
+      "description": "Payment check number."
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the record."
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was created. (Timezone: UTC)"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "lastModifiedBy": {
+      "type": "string",
+      "description": "User who last modified the record."
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the record was last modified. (Timezone: UTC)"
+    },
+    "lines": {
+      "type": "array",
+      "description": "A collection of payment line items.",
+      "items": {
+        "$ref": "#/components/schemas/LineItem"
+      }
+    },
+    "memo": {
+      "type": "string",
+      "description": "Memo."
+    },
+    "nameOnCheck": {
+      "type": "string",
+      "description": "Name on check."
+    },
+    "paymentAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the payment general ledger account."
+    },
+    "paymentDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Payment date."
+    },
+    "paymentMethod": {
+      "type": "string",
+      "description": "Payment method.",
+      "enum": [
+        "PAYMENT_METHOD_CHECK",
+        "PAYMENT_METHOD_CASH",
+        "PAYMENT_METHOD_BANK_BILL_PAY",
+        "PAYMENT_METHOD_ONLINE_BANK_TRANSFER"
+      ]
+    },
+    "toBePrinted": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if the check should be printed."
+    },
+    "vendorID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the vendor associated with this payment."
+    }
+  }
+}

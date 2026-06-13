@@ -1,0 +1,17 @@
+{
+  "amount": 1.0,
+  "createdBy": "example_createdBy",
+  "createdDateTime": "2024-01-01T00:00:00Z",
+  "description": "example_description",
+  "dueDay": 1,
+  "endDate": "2024-01-01",
+  "frequency": "WEEKLY",
+  "glAccountID": 1,
+  "id": 1,
+  "lastModifiedBy": "example_lastModifiedBy",
+  "lastModifiedDateTime": "2024-01-01T00:00:00Z",
+  "lastPostDate": "2024-01-01",
+  "leaseID": 1,
+  "referenceNumber": "example_referenceNumber",
+  "startDate": "2024-01-01"
+}

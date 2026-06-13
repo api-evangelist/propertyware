@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LeaseStatus",
+  "description": "Lease Status",
+  "type": "object",
+  "properties": {
+    "defineActive": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "orderIndex": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "portalLoginEnabled": {
+      "type": "boolean"
+    },
+    "readonly": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

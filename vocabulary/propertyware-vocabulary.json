@@ -1,0 +1,3681 @@
+{
+  "name": "Propertyware API Vocabulary",
+  "description": "Terms, schemas, properties, and operations from the Propertyware API",
+  "terms": [
+    {
+      "term": "Marketing",
+      "description": "Marketing Information",
+      "type": "schema"
+    },
+    {
+      "term": "availableDate",
+      "description": "Available date to lease for a unit/building.",
+      "type": "property"
+    },
+    {
+      "term": "comments",
+      "description": "Marketing description.",
+      "type": "property"
+    },
+    {
+      "term": "featured",
+      "description": "Indicates if property is featured for rent or sale.",
+      "type": "property"
+    },
+    {
+      "term": "featuredForRent",
+      "description": "Indicates if the unit/building is featured for rent.",
+      "type": "property"
+    },
+    {
+      "term": "featuredForSale",
+      "description": "Indicates if unit/building is featured for sale.",
+      "type": "property"
+    },
+    {
+      "term": "forSale",
+      "description": "Indicates if this building/unit is for sale.",
+      "type": "property"
+    },
+    {
+      "term": "latitude",
+      "description": "Latitude for geolocation of this building/unit.",
+      "type": "property"
+    },
+    {
+      "term": "leaseTerms",
+      "description": "Lease terms of a unit/building.",
+      "type": "property"
+    },
+    {
+      "term": "leaseTermsUnits",
+      "description": "Unit/building lease terms units.",
+      "type": "property"
+    },
+    {
+      "term": "longitude",
+      "description": "Longitude for geolocation of this building/unit.",
+      "type": "property"
+    },
+    {
+      "term": "marketingName",
+      "description": "Marketing name.",
+      "type": "property"
+    },
+    {
+      "term": "mlsLeaseNumber",
+      "description": "MLS lease number of this building/unit.",
+      "type": "property"
+    },
+    {
+      "term": "mlsNumber",
+      "description": "MLS number of this building/unit.",
+      "type": "property"
+    },
+    {
+      "term": "otherTenantCharges",
+      "description": "Other tenant charges.",
+      "type": "property"
+    },
+    {
+      "term": "parcelNumber",
+      "description": "Parcel number of this building/unit.",
+      "type": "property"
+    },
+    {
+      "term": "petsAllowed",
+      "description": "Indicates if pets are allowed in a unit/building.",
+      "type": "property"
+    },
+    {
+      "term": "postingTitle",
+      "description": "Posting title name for marketing this building/unit.",
+      "type": "property"
+    },
+    {
+      "term": "publishedForRent",
+      "description": "Published For Rent",
+      "type": "property"
+    },
+    {
+      "term": "publishedForSale",
+      "description": "Indicates if the unit/building is published for sale.",
+      "type": "property"
+    },
+    {
+      "term": "salePrice",
+      "description": "Sale price of this building/unit.",
+      "type": "property"
+    },
+    {
+      "term": "saleTerms",
+      "description": "Sale terms of this building/unit.",
+      "type": "property"
+    },
+    {
+      "term": "shortDescription",
+      "description": "Marketing short description.",
+      "type": "property"
+    },
+    {
+      "term": "smokingAllowed",
+      "description": "Indicates if smoking is allowed in this unit/building.",
+      "type": "property"
+    },
+    {
+      "term": "specials",
+      "description": "Specials of this building/unit.",
+      "type": "property"
+    },
+    {
+      "term": "LeaseContact",
+      "description": "Contact of the lease",
+      "type": "schema"
+    },
+    {
+      "term": "company",
+      "description": "Company where the contact is employed.",
+      "type": "property"
+    },
+    {
+      "term": "email",
+      "description": "E-mail address.",
+      "type": "property"
+    },
+    {
+      "term": "firstName",
+      "description": "First name.",
+      "type": "property"
+    },
+    {
+      "term": "homePhone",
+      "description": "Home phone.",
+      "type": "property"
+    },
+    {
+      "term": "id",
+      "description": "Unique identifier.",
+      "type": "property"
+    },
+    {
+      "term": "lastName",
+      "description": "Last name.",
+      "type": "property"
+    },
+    {
+      "term": "mobilePhone",
+      "description": "Mobile phone.",
+      "type": "property"
+    },
+    {
+      "term": "namedOnLease",
+      "description": "Indicates if contact is named on lease.",
+      "type": "property"
+    },
+    {
+      "term": "primary",
+      "description": "Indicates if contact is primary contact of the lease.",
+      "type": "property"
+    },
+    {
+      "term": "role",
+      "description": "Role.",
+      "type": "property"
+    },
+    {
+      "term": "workPhone",
+      "description": "Work phone.",
+      "type": "property"
+    },
+    {
+      "term": "GLItem",
+      "description": "General Ledger Transaction",
+      "type": "schema"
+    },
+    {
+      "term": "comment",
+      "description": "Comments.",
+      "type": "property"
+    },
+    {
+      "term": "createdBy",
+      "description": "User who created the record.",
+      "type": "property"
+    },
+    {
+      "term": "createdDateTime",
+      "description": "Date and time the record was created. (Timezone: UTC)",
+      "type": "property"
+    },
+    {
+      "term": "glentries",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "lastModifiedBy",
+      "description": "User who last modified the record.",
+      "type": "property"
+    },
+    {
+      "term": "lastModifiedDateTime",
+      "description": "Date and time the record was last modified. (Timezone: UTC)",
+      "type": "property"
+    },
+    {
+      "term": "leaseID",
+      "description": "Id of the lease associated with this transaction.",
+      "type": "property"
+    },
+    {
+      "term": "ownerID",
+      "description": "Id of the owner associated with this transaction.",
+      "type": "property"
+    },
+    {
+      "term": "transactionType",
+      "description": "Transaction type.",
+      "type": "property"
+    },
+    {
+      "term": "txDate",
+      "description": "Transaction date.",
+      "type": "property"
+    },
+    {
+      "term": "vendorID",
+      "description": "Id of the vendor associated with this transaction.",
+      "type": "property"
+    },
+    {
+      "term": "LeaseClause",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "description",
+      "description": "Description of the clause.",
+      "type": "property"
+    },
+    {
+      "term": "name",
+      "description": "Name of the clause.",
+      "type": "property"
+    },
+    {
+      "term": "CampaignSource",
+      "description": "CampaignSource",
+      "type": "schema"
+    },
+    {
+      "term": "callTrackingGroupID",
+      "description": "Call tracking group id.",
+      "type": "property"
+    },
+    {
+      "term": "default",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "referrerDomain",
+      "description": "Referrer domain.",
+      "type": "property"
+    },
+    {
+      "term": "BankDeposit",
+      "description": "Bank Deposit",
+      "type": "schema"
+    },
+    {
+      "term": "dateOpened",
+      "description": "Date opened.",
+      "type": "property"
+    },
+    {
+      "term": "status",
+      "description": "Status.",
+      "type": "property"
+    },
+    {
+      "term": "SaveConversation",
+      "description": "Conversation for Request",
+      "type": "schema"
+    },
+    {
+      "term": "text",
+      "description": "Comment text.",
+      "type": "property"
+    },
+    {
+      "term": "type",
+      "description": "Conversation type.",
+      "type": "property"
+    },
+    {
+      "term": "CustomFieldDefinition",
+      "description": "Custom field definition.",
+      "type": "schema"
+    },
+    {
+      "term": "dataType",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "defaultValue",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "fieldName",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "groupName",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "requiredField",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "Campaign",
+      "description": "Campaign",
+      "type": "schema"
+    },
+    {
+      "term": "acceptedCallTrackingTerms",
+      "description": "Indicates if the call tracking terms have been accepted.",
+      "type": "property"
+    },
+    {
+      "term": "callTrackingCampaignID",
+      "description": "Campaign ID used for call tracking.",
+      "type": "property"
+    },
+    {
+      "term": "callTrackingEnabled",
+      "description": "Indicates if call tracking is enabled for the campaign.",
+      "type": "property"
+    },
+    {
+      "term": "callTrackingForwar",
+      "description": "Number to which call tracking calls are forwarded.",
+      "type": "property"
+    },
+    {
+      "term": "callTrackingForwarAfterHours",
+      "description": "Number to which call tracking calls are forwarded after hours.",
+      "type": "property"
+    },
+    {
+      "term": "callTrackingPhoneNumber",
+      "description": "Phone number used for call tracking.",
+      "type": "property"
+    },
+    {
+      "term": "callTrackingReferrer",
+      "description": "Referrer for call tracking.",
+      "type": "property"
+    },
+    {
+      "term": "callTrackingSearchPhrase",
+      "description": "Search phrase for call tracking.",
+      "type": "property"
+    },
+    {
+      "term": "campaignSource",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "code",
+      "description": "Code of the campaign.",
+      "type": "property"
+    },
+    {
+      "term": "customFields",
+      "description": "Custom fields.",
+      "type": "property"
+    },
+    {
+      "term": "endDate",
+      "description": "End date of the campaign.",
+      "type": "property"
+    },
+    {
+      "term": "startDate",
+      "description": "Start date of the campaign.",
+      "type": "property"
+    },
+    {
+      "term": "targetProspectType",
+      "description": "Type of the targeted prospect.",
+      "type": "property"
+    },
+    {
+      "term": "timezone",
+      "description": "Time zone of the campaign.",
+      "type": "property"
+    },
+    {
+      "term": "UpdateDocument",
+      "description": "Update Document ",
+      "type": "schema"
+    },
+    {
+      "term": "fileName",
+      "description": "Name of the document.",
+      "type": "property"
+    },
+    {
+      "term": "publishToOwnerPortal",
+      "description": "Indicates if the document is published to the owner portal.",
+      "type": "property"
+    },
+    {
+      "term": "publishToTenantPortal",
+      "description": "Indicates if the document is published to the tenant portal.",
+      "type": "property"
+    },
+    {
+      "term": "SaveAutoCharge",
+      "description": "Auto charge request",
+      "type": "schema"
+    },
+    {
+      "term": "amount",
+      "description": "Auto charge amount.",
+      "type": "property"
+    },
+    {
+      "term": "dueDay",
+      "description": "Charge due day. Allowed values : For frequency \"Weekly\" (1 to 7) , for other frequency (1 to 31)",
+      "type": "property"
+    },
+    {
+      "term": "frequency",
+      "description": "Charge frequency.",
+      "type": "property"
+    },
+    {
+      "term": "glAccountID",
+      "description": "GL Account ID.",
+      "type": "property"
+    },
+    {
+      "term": "referenceNumber",
+      "description": "Reference number.",
+      "type": "property"
+    },
+    {
+      "term": "SaveDiscount",
+      "description": "Discount for Request",
+      "type": "schema"
+    },
+    {
+      "term": "date",
+      "description": "Date.",
+      "type": "property"
+    },
+    {
+      "term": "discountAccountID",
+      "description": "Discount GL Account ID.",
+      "type": "property"
+    },
+    {
+      "term": "refNo",
+      "description": "Ref No.",
+      "type": "property"
+    },
+    {
+      "term": "SaveBillSplit",
+      "description": "Split",
+      "type": "schema"
+    },
+    {
+      "term": "amountPaid",
+      "description": "Split amount paid.",
+      "type": "property"
+    },
+    {
+      "term": "buildingID",
+      "description": "Building ID associated to split.",
+      "type": "property"
+    },
+    {
+      "term": "markupDiscountSplit",
+      "description": "Indicates if markup discount split.",
+      "type": "property"
+    },
+    {
+      "term": "paid",
+      "description": "Indicates if Bill Split is paid.",
+      "type": "property"
+    },
+    {
+      "term": "portfolioID",
+      "description": "Portfolio ID associated to split.",
+      "type": "property"
+    },
+    {
+      "term": "unitID",
+      "description": "Unit ID associated to split.",
+      "type": "property"
+    },
+    {
+      "term": "SaveUnit",
+      "description": "SaveUnit",
+      "type": "schema"
+    },
+    {
+      "term": "abbreviation",
+      "description": "Abbreviation of Unit.",
+      "type": "property"
+    },
+    {
+      "term": "address",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "category",
+      "description": "Unit Category.",
+      "type": "property"
+    },
+    {
+      "term": "county",
+      "description": "Unit region of a state.",
+      "type": "property"
+    },
+    {
+      "term": "floorNumber",
+      "description": "Floor number.",
+      "type": "property"
+    },
+    {
+      "term": "neighborhood",
+      "description": "Neighborhood.",
+      "type": "property"
+    },
+    {
+      "term": "numberBathrooms",
+      "description": "Number of bathrooms in the unit.",
+      "type": "property"
+    },
+    {
+      "term": "numberBedrooms",
+      "description": "Number of bedrooms in the unit.",
+      "type": "property"
+    },
+    {
+      "term": "ready",
+      "description": "Indicates if property is ready to be leased.",
+      "type": "property"
+    },
+    {
+      "term": "reasonForPropertyLost",
+      "description": "Reason for property lost.",
+      "type": "property"
+    },
+    {
+      "term": "residential",
+      "description": "Is Unit is Residential or Commercial.",
+      "type": "property"
+    },
+    {
+      "term": "searchTag",
+      "description": "Search tag.",
+      "type": "property"
+    },
+    {
+      "term": "targetDeposit",
+      "description": "Target deposit amount.",
+      "type": "property"
+    },
+    {
+      "term": "targetRent",
+      "description": "Market rent for the unit.",
+      "type": "property"
+    },
+    {
+      "term": "targetRentUnits",
+      "description": "Property target rent units.",
+      "type": "property"
+    },
+    {
+      "term": "totalArea",
+      "description": "Unit Area.",
+      "type": "property"
+    },
+    {
+      "term": "Entry",
+      "description": "General Ledger Entry",
+      "type": "schema"
+    },
+    {
+      "term": "credit",
+      "description": "Credit amount.",
+      "type": "property"
+    },
+    {
+      "term": "debit",
+      "description": "Debit amount.",
+      "type": "property"
+    },
+    {
+      "term": "glaccountCode",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "glaccountID",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "SavePortfolio",
+      "description": "Save Portfolio ",
+      "type": "schema"
+    },
+    {
+      "term": "cashAccrual",
+      "description": "Cash or accrual accounting basis.",
+      "type": "property"
+    },
+    {
+      "term": "closingDate",
+      "description": "Date when the accounting period for the portfolio will close.",
+      "type": "property"
+    },
+    {
+      "term": "defaultBankAccountID",
+      "description": "Portfolio Default Bank Account ID",
+      "type": "property"
+    },
+    {
+      "term": "defaultSecdepAccountID",
+      "description": "Portfolio Default Security Deposit Bank Account ID",
+      "type": "property"
+    },
+    {
+      "term": "doNotPayOwnerDraw",
+      "description": "Indicates that the owner should not be paid owner draws.",
+      "type": "property"
+    },
+    {
+      "term": "maintenanceSpendingLimit",
+      "description": "Monthly or yearly Maintenance Spending Limit set for the portfolio for maintenance bills created by work orders.",
+      "type": "property"
+    },
+    {
+      "term": "maintenanceSpendingLimitTime",
+      "description": "Monthly or Yearly Maintenance Spending Limit Time set for the portfolio for maintenance bills created by work orders.",
+      "type": "property"
+    },
+    {
+      "term": "ownerIds",
+      "description": "Portfolio owner Ids",
+      "type": "property"
+    },
+    {
+      "term": "ownerStatementReportID",
+      "description": "Portfolio Owner Statement Report ID",
+      "type": "property"
+    },
+    {
+      "term": "owners",
+      "description": "Portfolio owners.",
+      "type": "property"
+    },
+    {
+      "term": "stickyNote",
+      "description": "Sticky notes. Maximum 500 characters.",
+      "type": "property"
+    },
+    {
+      "term": "targetOperatingReserve",
+      "description": "Minimum balance to be maintained within the portfolio at all times.",
+      "type": "property"
+    },
+    {
+      "term": "Prospect",
+      "description": "Prospect",
+      "type": "schema"
+    },
+    {
+      "term": "applicationFeePaid",
+      "description": "Indicates if the application fee has been paid by the prospect.",
+      "type": "property"
+    },
+    {
+      "term": "assigneFullName",
+      "description": "Name of the assigned prospect.",
+      "type": "property"
+    },
+    {
+      "term": "cityDesired",
+      "description": "Desired city.",
+      "type": "property"
+    },
+    {
+      "term": "contacts",
+      "description": "Contacts of the prospect",
+      "type": "property"
+    },
+    {
+      "term": "currentHomeType",
+      "description": "Current home type.",
+      "type": "property"
+    },
+    {
+      "term": "currentRentMortgage",
+      "description": "Current home mortgage.",
+      "type": "property"
+    },
+    {
+      "term": "hasPets",
+      "description": "Indicates if the prospect has pets.",
+      "type": "property"
+    },
+    {
+      "term": "leaseEndDate",
+      "description": "Confirmed lease end date.",
+      "type": "property"
+    },
+    {
+      "term": "leaseStartDate",
+      "description": "Confirmed lease start date.",
+      "type": "property"
+    },
+    {
+      "term": "moveInDate",
+      "description": "Desired move-in date.",
+      "type": "property"
+    },
+    {
+      "term": "neighborhoodDesired",
+      "description": "Desired neighborhood.",
+      "type": "property"
+    },
+    {
+      "term": "numberOfPets",
+      "description": "Number of pets.",
+      "type": "property"
+    },
+    {
+      "term": "petType",
+      "description": "Pet type.",
+      "type": "property"
+    },
+    {
+      "term": "petWeights",
+      "description": "Pet weights.",
+      "type": "property"
+    },
+    {
+      "term": "preferredContactMethod",
+      "description": "Preferred contact method.",
+      "type": "property"
+    },
+    {
+      "term": "propertyAddress",
+      "description": "Address of the property.",
+      "type": "property"
+    },
+    {
+      "term": "propertyAddress2",
+      "description": "Additional address information of the property.",
+      "type": "property"
+    },
+    {
+      "term": "propertyArea",
+      "description": "Area of the property.",
+      "type": "property"
+    },
+    {
+      "term": "propertyAreaUnits",
+      "description": "Unit of measurement for the area of the property.",
+      "type": "property"
+    },
+    {
+      "term": "propertyCity",
+      "description": "City of the property.",
+      "type": "property"
+    },
+    {
+      "term": "propertyCountry",
+      "description": "Country of the property.",
+      "type": "property"
+    },
+    {
+      "term": "propertyNumberBathrooms",
+      "description": "Number of bathrooms.",
+      "type": "property"
+    },
+    {
+      "term": "propertyNumberBedrooms",
+      "description": "Number of bedrooms.",
+      "type": "property"
+    },
+    {
+      "term": "propertyState",
+      "description": "State of the property.",
+      "type": "property"
+    },
+    {
+      "term": "propertyZip",
+      "description": "Zip code of the property.",
+      "type": "property"
+    },
+    {
+      "term": "reasonForMoving",
+      "description": "Reason for moving.",
+      "type": "property"
+    },
+    {
+      "term": "rent",
+      "description": "Confirmed lease rent.",
+      "type": "property"
+    },
+    {
+      "term": "rentMax",
+      "description": "Maximum desired rent.",
+      "type": "property"
+    },
+    {
+      "term": "rentMin",
+      "description": "Minimum desired rent.",
+      "type": "property"
+    },
+    {
+      "term": "securityDeposit",
+      "description": "Confirmed lease security deposit.",
+      "type": "property"
+    },
+    {
+      "term": "source",
+      "description": "Prospect source.",
+      "type": "property"
+    },
+    {
+      "term": "stateDesired",
+      "description": "Desired state.",
+      "type": "property"
+    },
+    {
+      "term": "timeAtCurrentResidence",
+      "description": "Time the prospect is living at the current residence.",
+      "type": "property"
+    },
+    {
+      "term": "typeOfInquiry",
+      "description": "Type of inquiry made by the prospect.",
+      "type": "property"
+    },
+    {
+      "term": "unitDesired",
+      "description": "Desired unit.",
+      "type": "property"
+    },
+    {
+      "term": "unitTypeDesired",
+      "description": "Desired unit type.",
+      "type": "property"
+    },
+    {
+      "term": "zipDesired",
+      "description": "Desired zip code.",
+      "type": "property"
+    },
+    {
+      "term": "ProspectContact",
+      "description": "Contact of the prospect",
+      "type": "schema"
+    },
+    {
+      "term": "BillPaid",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "billDate",
+      "description": "Bill date.",
+      "type": "property"
+    },
+    {
+      "term": "billNumber",
+      "description": "Bill number.",
+      "type": "property"
+    },
+    {
+      "term": "billSplits",
+      "description": "List of bill splits.",
+      "type": "property"
+    },
+    {
+      "term": "BillPay",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "ExpenseRecoveryCharge",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "SaveLease",
+      "description": "Lease for Request",
+      "type": "schema"
+    },
+    {
+      "term": "baseRent",
+      "description": "Property base rent.",
+      "type": "property"
+    },
+    {
+      "term": "leasingFeeAmount",
+      "description": "Move in leasing fee amount.",
+      "type": "property"
+    },
+    {
+      "term": "leasingFeeDate",
+      "description": "Move in leasing fee post date.",
+      "type": "property"
+    },
+    {
+      "term": "leasingFeeRefNo",
+      "description": "Move in leasing fee reference number.",
+      "type": "property"
+    },
+    {
+      "term": "moveOutDate",
+      "description": "Move Out Date.",
+      "type": "property"
+    },
+    {
+      "term": "noticeGivenDate",
+      "description": "Day that the tenant(s) turned in a notice to vacate. Used only for Updating a Lease.",
+      "type": "property"
+    },
+    {
+      "term": "paymentRestriction",
+      "description": "Indicates if the lease has any payment types that they are prevented from using. For example, a lease with several bounced checks may be restricted from paying with checks for future payments.</br>Allowed values are <br/>(1) None<br/>(2) No Payment Allowed<br/>(3) One or more values separated by comma - Check/Credit Card/Cash/Cashiers Check/Money Order/Section 8/Public Assistance/EPay/RentMoneyOther",
+      "type": "property"
+    },
+    {
+      "term": "postFirstCharge",
+      "description": "Indicates how to post first rent charge while move in.",
+      "type": "property"
+    },
+    {
+      "term": "primaryContactID",
+      "description": "Primary contact ID, Should be one of tenant IDs.",
+      "type": "property"
+    },
+    {
+      "term": "prorateMonth",
+      "description": "Indicates how to post first rent charge while move in.",
+      "type": "property"
+    },
+    {
+      "term": "publicAssistanceProgram",
+      "description": "Public assistance program. Allowed values are 'None', 'Section 8', 'SCRIE', 'Rent Control', 'EDEN INC. - Shelter Care Plus', 'CLC', 'DHAP', 'FEMA', 'Harris County' etc. ",
+      "type": "property"
+    },
+    {
+      "term": "reasonForLeaving",
+      "description": "Reason for vacating the property. Used only for Updating a Lease.<Br> Allowed values: BOUGHT HOUSE, DECEASED, EVICTION, HEALTH, MOVE CITY, PERSONAL, TOO EXPENSIVE, TRANSFER UNIT, UNKNOWN etc.",
+      "type": "property"
+    },
+    {
+      "term": "rentAutoCharge",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "scheduleMoveOutDate",
+      "description": "Scheduled move out date.",
+      "type": "property"
+    },
+    {
+      "term": "secDepAmount",
+      "description": "Move in security deposit amount.",
+      "type": "property"
+    },
+    {
+      "term": "secDepChargeDate",
+      "description": "Move in security deposit charge date.",
+      "type": "property"
+    },
+    {
+      "term": "signedDate",
+      "description": "Lease signed date.",
+      "type": "property"
+    },
+    {
+      "term": "tenantIDs",
+      "description": "List of tenant IDs.",
+      "type": "property"
+    },
+    {
+      "term": "SplitPaid",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "amountPaidByBillPayment",
+      "description": "Amount that was paid in this payment.",
+      "type": "property"
+    },
+    {
+      "term": "NonCurrentLiability",
+      "description": "Non Current Liability for Request",
+      "type": "schema"
+    },
+    {
+      "term": "discountAccount",
+      "description": "Indicates if account is a discount account.",
+      "type": "property"
+    },
+    {
+      "term": "escrowAccount",
+      "description": "Indicates if account is a escrow account.",
+      "type": "property"
+    },
+    {
+      "term": "excludeFrom1099",
+      "description": "Indicates if account is excluded from Form1099.",
+      "type": "property"
+    },
+    {
+      "term": "excludeFromPayInFull",
+      "description": "Indicates if account is excluded from paying in full.",
+      "type": "property"
+    },
+    {
+      "term": "excludeLateFee",
+      "description": "Indicates if excluding from late fees.",
+      "type": "property"
+    },
+    {
+      "term": "rentAccount",
+      "description": "Indicates if account is a rent account.",
+      "type": "property"
+    },
+    {
+      "term": "securityDepositAccount",
+      "description": "Indicates if the account is security deposit account",
+      "type": "property"
+    },
+    {
+      "term": "taxAccount",
+      "description": "Indicates if account is a tax account.",
+      "type": "property"
+    },
+    {
+      "term": "SaveBuilding",
+      "description": "SaveBuilding",
+      "type": "schema"
+    },
+    {
+      "term": "allocationMethod",
+      "description": "Allocation method.",
+      "type": "property"
+    },
+    {
+      "term": "baseYear",
+      "description": "Base Year.",
+      "type": "property"
+    },
+    {
+      "term": "baseYearOperatingExpenses",
+      "description": "Base Year Operating Expenses.",
+      "type": "property"
+    },
+    {
+      "term": "baseYearPropertyInsurance",
+      "description": "Base Year Property Insurance.",
+      "type": "property"
+    },
+    {
+      "term": "baseYearPropertyTaxes",
+      "description": "Base Year Property Taxes.",
+      "type": "property"
+    },
+    {
+      "term": "countUnit",
+      "description": "Indicates number of units in the building. Applicable for multi unit building creation and updating a single family building to multi unit building",
+      "type": "property"
+    },
+    {
+      "term": "customNaming",
+      "description": "if we selected naming as \"Custom\" then enter the customer naming value ",
+      "type": "property"
+    },
+    {
+      "term": "managementContractEndDate",
+      "description": "End date of the property contract.",
+      "type": "property"
+    },
+    {
+      "term": "managementContractStartDate",
+      "description": "Start date of the property contract.",
+      "type": "property"
+    },
+    {
+      "term": "managementFeeType",
+      "description": "Indicates management fee type of a building. This field is deprecated and should not be used. Instead, use the new field 'managementFeesType'.  ",
+      "type": "property"
+    },
+    {
+      "term": "managementFeesType",
+      "description": "Indicates management fee type of a building.",
+      "type": "property"
+    },
+    {
+      "term": "managementFlatFee",
+      "description": "Indicates management flat fee.",
+      "type": "property"
+    },
+    {
+      "term": "moveInDays",
+      "description": "Move in Window must be with in these days given here 1 to 30 and 45,60,75,90",
+      "type": "property"
+    },
+    {
+      "term": "naming",
+      "description": "Unit naming",
+      "type": "property"
+    },
+    {
+      "term": "numberFloors",
+      "description": "Number of floors.",
+      "type": "property"
+    },
+    {
+      "term": "numbered",
+      "description": "Unit creation format.",
+      "type": "property"
+    },
+    {
+      "term": "propertyType",
+      "description": "Property type.",
+      "type": "property"
+    },
+    {
+      "term": "rentable",
+      "description": "This is required field. False value indicates Multifamily building, True value indicates single family building.",
+      "type": "property"
+    },
+    {
+      "term": "syndicate",
+      "description": "Syndicate",
+      "type": "property"
+    },
+    {
+      "term": "unitType",
+      "description": "Indicates Unit type like Condo,Lower Unit,Side By Side Duplex,Upper Unit,Townhome,Land,Commercial etc.",
+      "type": "property"
+    },
+    {
+      "term": "yearBuilt",
+      "description": "Building built year.",
+      "type": "property"
+    },
+    {
+      "term": "Document",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "entityId",
+      "description": "Unique identifier of an entity document is attached to.",
+      "type": "property"
+    },
+    {
+      "term": "entityType",
+      "description": "Type of an entity document is attached to.",
+      "type": "property"
+    },
+    {
+      "term": "fileType",
+      "description": "File type.",
+      "type": "property"
+    },
+    {
+      "term": "InspectionItem",
+      "description": "InspectionItem",
+      "type": "schema"
+    },
+    {
+      "term": "JournalEntrySplitResponse",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "creditAmount",
+      "description": "Credit amount.",
+      "type": "property"
+    },
+    {
+      "term": "debitAmount",
+      "description": "Debit amount.",
+      "type": "property"
+    },
+    {
+      "term": "SaveCheckSplit",
+      "description": "SaveCheckfor Request",
+      "type": "schema"
+    },
+    {
+      "term": "WorkOrder",
+      "description": "Work Order",
+      "type": "schema"
+    },
+    {
+      "term": "age",
+      "description": "Number of days that have passed since the work order was created.",
+      "type": "property"
+    },
+    {
+      "term": "approved",
+      "description": "Indicates if work order is approved.",
+      "type": "property"
+    },
+    {
+      "term": "approvedDate",
+      "description": "Work order approved Date.",
+      "type": "property"
+    },
+    {
+      "term": "assignedVendors",
+      "description": "List of vendors attached to the work order.",
+      "type": "property"
+    },
+    {
+      "term": "authorizeEnter",
+      "description": "Indicates if the tenant has granted your management staff access to enter his or her buildings and/or units.",
+      "type": "property"
+    },
+    {
+      "term": "completedDate",
+      "description": "Date on which the work was completed.",
+      "type": "property"
+    },
+    {
+      "term": "contractNumber",
+      "description": "Contract number.",
+      "type": "property"
+    },
+    {
+      "term": "costEstimate",
+      "description": "This indicates the estimated cost as entered by a person, the actual cost as determined by the work order bills, and the invoiced amount is the amount the owner will see on his or her statement based on the bill and markup/discount amount.",
+      "type": "property"
+    },
+    {
+      "term": "dateToEnter",
+      "description": "Authorized date to enter unit.",
+      "type": "property"
+    },
+    {
+      "term": "hourEstimate",
+      "description": "Expected number of hours to complete the work order.",
+      "type": "property"
+    },
+    {
+      "term": "lease",
+      "description": "If the work order is attached to an occupied building or unit, this is the lease name of that lease.",
+      "type": "property"
+    },
+    {
+      "term": "location",
+      "description": "Buildings and/or units associated with this work order.",
+      "type": "property"
+    },
+    {
+      "term": "maintenanceNotice",
+      "description": "Maintenance notice defined for the building that the work order is attached to.",
+      "type": "property"
+    },
+    {
+      "term": "managedBy",
+      "description": "Name of the person who is responsible for managing the work order.",
+      "type": "property"
+    },
+    {
+      "term": "number",
+      "description": "Number assigned to this work order.",
+      "type": "property"
+    },
+    {
+      "term": "priority",
+      "description": "This identifies the priority of the work order as low, medium, or high.",
+      "type": "property"
+    },
+    {
+      "term": "requestedBy",
+      "description": "This identifies the person that reported the problem, typically the tenant or owner associated with the buildings or units.",
+      "type": "property"
+    },
+    {
+      "term": "requiredMaterials",
+      "description": "List of materials required to complete the work order.",
+      "type": "property"
+    },
+    {
+      "term": "scheduledEndDate",
+      "description": "Date on which the work is scheduled to be completed.",
+      "type": "property"
+    },
+    {
+      "term": "specificLocation",
+      "description": "This describes the location in the buildings or units where the work is needed.",
+      "type": "property"
+    },
+    {
+      "term": "unitIDs",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "Adjustment",
+      "description": "Adjustment",
+      "type": "schema"
+    },
+    {
+      "term": "Refund",
+      "description": "Tenant Refund",
+      "type": "schema"
+    },
+    {
+      "term": "destinationAccountID",
+      "description": "Id of the bank account to send the refund from.",
+      "type": "property"
+    },
+    {
+      "term": "payeePayer",
+      "description": "Name of the payee.",
+      "type": "property"
+    },
+    {
+      "term": "toBePrinted",
+      "description": "Indicates if the check is to be printed.",
+      "type": "property"
+    },
+    {
+      "term": "Comment",
+      "description": "Comment",
+      "type": "schema"
+    },
+    {
+      "term": "RESTAPIBulkErrorResponse",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "error",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "index",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "success",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "Note",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "body",
+      "description": "Content of the note.",
+      "type": "property"
+    },
+    {
+      "term": "private",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "subject",
+      "description": "Subject.",
+      "type": "property"
+    },
+    {
+      "term": "SplitPay",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "amountToPay",
+      "description": "Amount to pay.",
+      "type": "property"
+    },
+    {
+      "term": "AutoJournalEntry",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "lastPostDate",
+      "description": "Last post date.",
+      "type": "property"
+    },
+    {
+      "term": "nextPostDate",
+      "description": "Next post date.",
+      "type": "property"
+    },
+    {
+      "term": "payDay",
+      "description": "Pay day.",
+      "type": "property"
+    },
+    {
+      "term": "NonOperatingInome",
+      "description": "Non Operating Income for Request",
+      "type": "schema"
+    },
+    {
+      "term": "camRecoveryAccount",
+      "description": "Indicates if account is a CAM recovery account.",
+      "type": "property"
+    },
+    {
+      "term": "SaveCustomField",
+      "description": "Custom field for Request",
+      "type": "schema"
+    },
+    {
+      "term": "fieldSet",
+      "description": "List of Custom fields to update",
+      "type": "property"
+    },
+    {
+      "term": "SaveCharge",
+      "description": "Charge for Request",
+      "type": "schema"
+    },
+    {
+      "term": "CloseWorkOrder",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "timeCardEntry",
+      "description": "List of TimeCard Entries to update",
+      "type": "property"
+    },
+    {
+      "term": "CurrentLiability",
+      "description": "Current Liability for Request",
+      "type": "schema"
+    },
+    {
+      "term": "Charge",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "TimeCardEntry",
+      "description": "TimeCardEntry",
+      "type": "schema"
+    },
+    {
+      "term": "billID",
+      "description": "Bill ID.",
+      "type": "property"
+    },
+    {
+      "term": "hourlyRate",
+      "description": "Hourly Rate.",
+      "type": "property"
+    },
+    {
+      "term": "hourlySurcharge",
+      "description": "Hourly Surcharge.",
+      "type": "property"
+    },
+    {
+      "term": "hours",
+      "description": "Hours.",
+      "type": "property"
+    },
+    {
+      "term": "workDate",
+      "description": "Work Date.",
+      "type": "property"
+    },
+    {
+      "term": "Equity",
+      "description": "Equity for Request",
+      "type": "schema"
+    },
+    {
+      "term": "transferBalanceToRetainedEarnings",
+      "description": "Indicates if Transfer balance at year end to Retained earnings.",
+      "type": "property"
+    },
+    {
+      "term": "Task",
+      "description": "Task",
+      "type": "schema"
+    },
+    {
+      "term": "completed",
+      "description": "Indicates if the task has been completed.",
+      "type": "property"
+    },
+    {
+      "term": "completedTime",
+      "description": "Time at which the task was completed.",
+      "type": "property"
+    },
+    {
+      "term": "delegates",
+      "description": "Comma separated IDs of users to whom the task has been delegated.",
+      "type": "property"
+    },
+    {
+      "term": "dueDate",
+      "description": "Date the task is due.",
+      "type": "property"
+    },
+    {
+      "term": "privateTask",
+      "description": "Indicates if the task is private.",
+      "type": "property"
+    },
+    {
+      "term": "starred",
+      "description": "Indicates if the task has been marked with a star.",
+      "type": "property"
+    },
+    {
+      "term": "tags",
+      "description": "List of tags associated with the task.",
+      "type": "property"
+    },
+    {
+      "term": "CreditCardAccount",
+      "description": "Credit Card Account for Request",
+      "type": "schema"
+    },
+    {
+      "term": "creditCardNumber",
+      "description": "Credit card number.",
+      "type": "property"
+    },
+    {
+      "term": "SaveComment",
+      "description": "Comment for Request",
+      "type": "schema"
+    },
+    {
+      "term": "ErrorResponse",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "errorCode",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "errors",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "userMessage",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "ResponseEntity",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "statusCode",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "SaveAccount",
+      "description": "Create GL Account Request",
+      "type": "schema"
+    },
+    {
+      "term": "accountNumber",
+      "description": "Account number.",
+      "type": "property"
+    },
+    {
+      "term": "accountType",
+      "description": "Valid account types - 1:Bank, 2:Credit Card, 5:Current Asset, 12:Non-Current Asset, 6:Current Liability, 13:Non-Current Liability, 7:Equity, 8:Income, 9:Expense, 10:Non-Operating Income, 11:Non-Operating Expense.",
+      "type": "property"
+    },
+    {
+      "term": "autoApplyPrepayment",
+      "description": "Indicates if prepayments should be auto applied.",
+      "type": "property"
+    },
+    {
+      "term": "bank",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "creditCard",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "currentAsset",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "currentLiability",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "equity",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "expense",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "income",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "nonCurrentAsset",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "nonCurrentLiability",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "nonOperatingExpense",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "nonOperatingIncome",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "parentGLAccountId",
+      "description": "Parent account ID.",
+      "type": "property"
+    },
+    {
+      "term": "taxable",
+      "description": "Indicates if the account is taxable.",
+      "type": "property"
+    },
+    {
+      "term": "ContactExtension",
+      "description": "Contact Response",
+      "type": "schema"
+    },
+    {
+      "term": "allowESignature",
+      "description": "Indicates if the contact can receive eSignature request e-mail messages sent through Propertyware.",
+      "type": "property"
+    },
+    {
+      "term": "altEmail",
+      "description": "Alternate e-mail address.",
+      "type": "property"
+    },
+    {
+      "term": "birthDate",
+      "description": "Date of birth.",
+      "type": "property"
+    },
+    {
+      "term": "fax",
+      "description": "Fax.",
+      "type": "property"
+    },
+    {
+      "term": "gender",
+      "description": "Gender.",
+      "type": "property"
+    },
+    {
+      "term": "jobTitle",
+      "description": "Professional title or position for the contact.",
+      "type": "property"
+    },
+    {
+      "term": "middleName",
+      "description": "Middle name.",
+      "type": "property"
+    },
+    {
+      "term": "nameOnCheck",
+      "description": "Name on check.",
+      "type": "property"
+    },
+    {
+      "term": "otherPhone",
+      "description": "Other phone.",
+      "type": "property"
+    },
+    {
+      "term": "salutation",
+      "description": "Salutation.",
+      "type": "property"
+    },
+    {
+      "term": "suffix",
+      "description": "Suffix.",
+      "type": "property"
+    },
+    {
+      "term": "Account",
+      "description": "General Ledger Account",
+      "type": "schema"
+    },
+    {
+      "term": "accountCode",
+      "description": "Account code.",
+      "type": "property"
+    },
+    {
+      "term": "active",
+      "description": "Indicates if the account is active.",
+      "type": "property"
+    },
+    {
+      "term": "bankAccountHolder",
+      "description": "Bank account holder name.",
+      "type": "property"
+    },
+    {
+      "term": "bankAccountNumber",
+      "description": "Bank account number.",
+      "type": "property"
+    },
+    {
+      "term": "bankAddress",
+      "description": "Bank address.",
+      "type": "property"
+    },
+    {
+      "term": "bankAddress2",
+      "description": "Bank address 2.",
+      "type": "property"
+    },
+    {
+      "term": "bankCity",
+      "description": "Bank city.",
+      "type": "property"
+    },
+    {
+      "term": "bankInstitution",
+      "description": "Bank institution name.",
+      "type": "property"
+    },
+    {
+      "term": "bankRoutingNumber",
+      "description": "Bank account routing number.",
+      "type": "property"
+    },
+    {
+      "term": "bankState",
+      "description": "Bank state.",
+      "type": "property"
+    },
+    {
+      "term": "bankZip",
+      "description": "Bank zip code.",
+      "type": "property"
+    },
+    {
+      "term": "lateFeeApplicable",
+      "description": "Indicates if a late fee is applicable.",
+      "type": "property"
+    },
+    {
+      "term": "parentRef",
+      "description": "Parent account reference.",
+      "type": "property"
+    },
+    {
+      "term": "paymentPriority",
+      "description": "Account payment priority.",
+      "type": "property"
+    },
+    {
+      "term": "section8",
+      "description": "Indicates if account is a section8 account.",
+      "type": "property"
+    },
+    {
+      "term": "SaveWorkOrder",
+      "description": "Work Order for Request",
+      "type": "schema"
+    },
+    {
+      "term": "hourToEnter",
+      "description": "Hour to enter. Allowed Value : 0 , 1, 2 ... 23",
+      "type": "property"
+    },
+    {
+      "term": "minuteToEnter",
+      "description": "Minute to enter. Allowed Value : 0, 10, 20, 30, 40, 50",
+      "type": "property"
+    },
+    {
+      "term": "BasicVendor",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "phone",
+      "description": "Phone number.",
+      "type": "property"
+    },
+    {
+      "term": "RESTAPIError",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "key",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "message",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "LineItem",
+      "description": "Payment line items",
+      "type": "schema"
+    },
+    {
+      "term": "SaveOwnerDraw",
+      "description": "Owner Draw for Request",
+      "type": "schema"
+    },
+    {
+      "term": "contactID",
+      "description": "Id of the contact associated with this owner draw.",
+      "type": "property"
+    },
+    {
+      "term": "AutoCharge",
+      "description": "Auto charge request",
+      "type": "schema"
+    },
+    {
+      "term": "charges",
+      "description": "List of Auto charges.",
+      "type": "property"
+    },
+    {
+      "term": "OwnerContribution",
+      "description": "Owner Contribution",
+      "type": "schema"
+    },
+    {
+      "term": "lines",
+      "description": "A collection of payment line items.",
+      "type": "property"
+    },
+    {
+      "term": "paymentType",
+      "description": "Payment type.",
+      "type": "property"
+    },
+    {
+      "term": "ManagementFee",
+      "description": "Management Fee",
+      "type": "schema"
+    },
+    {
+      "term": "manager",
+      "description": "Property manager name.",
+      "type": "property"
+    },
+    {
+      "term": "managersCommissionPercentage",
+      "description": "Property manager commission percentage.",
+      "type": "property"
+    },
+    {
+      "term": "passThrough",
+      "description": "Indicates if the commission account is of the passthrough type.",
+      "type": "property"
+    },
+    {
+      "term": "percentage",
+      "description": "Management fee percentage.",
+      "type": "property"
+    },
+    {
+      "term": "JournalEntrySplit",
+      "description": "Journal Entry Split",
+      "type": "schema"
+    },
+    {
+      "term": "Bill",
+      "description": "Bill",
+      "type": "schema"
+    },
+    {
+      "term": "expenseRecoveries",
+      "description": "List of expense recoveries",
+      "type": "property"
+    },
+    {
+      "term": "markupGLAccountID",
+      "description": "The ID of the markup/discount general ledger account associated with the bill.",
+      "type": "property"
+    },
+    {
+      "term": "markupPercentage",
+      "description": "The markup percentage.",
+      "type": "property"
+    },
+    {
+      "term": "paymentDate",
+      "description": "Date the bill was paid.",
+      "type": "property"
+    },
+    {
+      "term": "terms",
+      "description": "Bill terms.",
+      "type": "property"
+    },
+    {
+      "term": "workOrderID",
+      "description": "The ID of the work order associated with the bill.",
+      "type": "property"
+    },
+    {
+      "term": "NonCurrentAsset",
+      "description": "Non Current Asset for Request",
+      "type": "schema"
+    },
+    {
+      "term": "UpdateLeaseJournalEntry",
+      "description": "Update Lease Journal Entry",
+      "type": "schema"
+    },
+    {
+      "term": "journalEntrySplit",
+      "description": "Journal Entry Splits.",
+      "type": "property"
+    },
+    {
+      "term": "Contact",
+      "description": "Contact Response",
+      "type": "schema"
+    },
+    {
+      "term": "Building",
+      "description": "Building",
+      "type": "schema"
+    },
+    {
+      "term": "amenities",
+      "description": "Property amenities list.",
+      "type": "property"
+    },
+    {
+      "term": "applicationFeeRule",
+      "description": "Application fee rule",
+      "type": "property"
+    },
+    {
+      "term": "areaUnits",
+      "description": "Property total area units.",
+      "type": "property"
+    },
+    {
+      "term": "ftbDeductable",
+      "description": "FTB deductible amount",
+      "type": "property"
+    },
+    {
+      "term": "ftbWithholdingPercentage",
+      "description": "FTB withholding percentage",
+      "type": "property"
+    },
+    {
+      "term": "ftbWithholdingType",
+      "description": "FTB withholding type",
+      "type": "property"
+    },
+    {
+      "term": "idNumber",
+      "description": "Unique identifier for Global Search.",
+      "type": "property"
+    },
+    {
+      "term": "maintenanceLaborSurchargeAmount",
+      "description": "Maintenance labor surcharge amount",
+      "type": "property"
+    },
+    {
+      "term": "maintenanceLaborSurchargeType",
+      "description": "Maintenance labor surcharge type",
+      "type": "property"
+    },
+    {
+      "term": "maintenanceSpendingLimitAmount",
+      "description": "Maintenance spending limit amount",
+      "type": "property"
+    },
+    {
+      "term": "management",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "marketing",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "multiUnit",
+      "description": "Indicates if the building is multi family or single family.",
+      "type": "property"
+    },
+    {
+      "term": "numberOfBathrooms",
+      "description": "Number of bathrooms in the property.",
+      "type": "property"
+    },
+    {
+      "term": "numberOfBedrooms",
+      "description": "Number of bedrooms in the property.",
+      "type": "property"
+    },
+    {
+      "term": "propertyManagerList",
+      "description": "Property manager details.",
+      "type": "property"
+    },
+    {
+      "term": "website",
+      "description": "Property website URL.",
+      "type": "property"
+    },
+    {
+      "term": "RESTAPIBulkSuccessResponse",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "SaveBillPayment",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "bills",
+      "description": "Bills to pay.",
+      "type": "property"
+    },
+    {
+      "term": "checkNumber",
+      "description": "Payment check number.",
+      "type": "property"
+    },
+    {
+      "term": "memo",
+      "description": "Memo.",
+      "type": "property"
+    },
+    {
+      "term": "paymentAccountID",
+      "description": "Bank Account to pay from.",
+      "type": "property"
+    },
+    {
+      "term": "paymentMethod",
+      "description": "Payment method.",
+      "type": "property"
+    },
+    {
+      "term": "Check",
+      "description": "Vendor Check",
+      "type": "schema"
+    },
+    {
+      "term": "checkSplits",
+      "description": "List of check splits.",
+      "type": "property"
+    },
+    {
+      "term": "SaveAddress",
+      "description": "Address.",
+      "type": "schema"
+    },
+    {
+      "term": "addressCont",
+      "description": "Address continuation.",
+      "type": "property"
+    },
+    {
+      "term": "city",
+      "description": "City. Required only if Country is United States / Canada.",
+      "type": "property"
+    },
+    {
+      "term": "country",
+      "description": "Country. For US addresses, this value should be \"United States\". For other countries, this should be the full country name (Canada, United Kingdom, ...)",
+      "type": "property"
+    },
+    {
+      "term": "postalCode",
+      "description": "Zip. Required only if Country is United States / Canada.",
+      "type": "property"
+    },
+    {
+      "term": "stateRegion",
+      "description": "State. Required only if Country is United States / Canada.",
+      "type": "property"
+    },
+    {
+      "term": "Portfolio",
+      "description": "Portfolio",
+      "type": "schema"
+    },
+    {
+      "term": "defaultBankAccountNumberAndDescription",
+      "description": "Portfolio default bank account number and description",
+      "type": "property"
+    },
+    {
+      "term": "defaultSecurityDepositBankAccountID",
+      "description": "Portfolio default security deposit bank account ID",
+      "type": "property"
+    },
+    {
+      "term": "defaultSecurityDepositBankAccountNumberAndDescription",
+      "description": "Portfolio default security deposit bank account number and description",
+      "type": "property"
+    },
+    {
+      "term": "modifiedBy",
+      "description": "Id of the user who last modified the portfolio information.",
+      "type": "property"
+    },
+    {
+      "term": "SaveProspectContact",
+      "description": "Save Prospect Contact",
+      "type": "schema"
+    },
+    {
+      "term": "percentageship",
+      "description": "ship percentage.",
+      "type": "property"
+    },
+    {
+      "term": "Address",
+      "description": "Address",
+      "type": "schema"
+    },
+    {
+      "term": "SaveLeaseJournalEntry",
+      "description": "Lease Journal Entry for Request",
+      "type": "schema"
+    },
+    {
+      "term": "Conversation",
+      "description": "Conversation",
+      "type": "schema"
+    },
+    {
+      "term": "entityID",
+      "description": "Id of the entity related to this conversation.",
+      "type": "property"
+    },
+    {
+      "term": "Income",
+      "description": "Income for Request",
+      "type": "schema"
+    },
+    {
+      "term": "PropertyManager",
+      "description": "PropertyManager",
+      "type": "schema"
+    },
+    {
+      "term": "roleAsString",
+      "description": "Role name.",
+      "type": "property"
+    },
+    {
+      "term": "userID",
+      "description": "User id.",
+      "type": "property"
+    },
+    {
+      "term": "SaveProspect",
+      "description": "Save Prospect ",
+      "type": "schema"
+    },
+    {
+      "term": "Owner",
+      "description": "Owner Contact",
+      "type": "schema"
+    },
+    {
+      "term": "percentageOwnership",
+      "description": "Percentage ownership.",
+      "type": "property"
+    },
+    {
+      "term": "SaveRefund",
+      "description": "Refund for Request",
+      "type": "schema"
+    },
+    {
+      "term": "toPrimaryTenant",
+      "description": "Indicates if refund is for primary contact only",
+      "type": "property"
+    },
+    {
+      "term": "ProspectStatus",
+      "description": "Prospect Status",
+      "type": "schema"
+    },
+    {
+      "term": "readonly",
+      "description": "Read Only",
+      "type": "property"
+    },
+    {
+      "term": "visibleOnPortal",
+      "description": "Status visible On Portal",
+      "type": "property"
+    },
+    {
+      "term": "PaymentCharge",
+      "description": "Tenant Payment",
+      "type": "schema"
+    },
+    {
+      "term": "accountID",
+      "description": "Id of the bank account where the payment was deposited.",
+      "type": "property"
+    },
+    {
+      "term": "chargeAmountPaid",
+      "description": "Amount paid for this charge",
+      "type": "property"
+    },
+    {
+      "term": "receiptNumber",
+      "description": "Payment receipt number.",
+      "type": "property"
+    },
+    {
+      "term": "settledDate",
+      "description": "Payment settlement date.",
+      "type": "property"
+    },
+    {
+      "term": "UpdateBuilding",
+      "description": "UpdateBuilding",
+      "type": "schema"
+    },
+    {
+      "term": "Unit",
+      "description": "Unit",
+      "type": "schema"
+    },
+    {
+      "term": "SaveVendor",
+      "description": "Vendor for Request",
+      "type": "schema"
+    },
+    {
+      "term": "address2",
+      "description": "Address2",
+      "type": "property"
+    },
+    {
+      "term": "alertEmail",
+      "description": "Alert Email",
+      "type": "property"
+    },
+    {
+      "term": "companyName",
+      "description": "Vendor Company Name",
+      "type": "property"
+    },
+    {
+      "term": "creditLimit",
+      "description": "Credit Limit",
+      "type": "property"
+    },
+    {
+      "term": "daysToPay",
+      "description": "Payment Terms days to pay.",
+      "type": "property"
+    },
+    {
+      "term": "defaultBillSplitAccountId",
+      "description": "Default bill split id",
+      "type": "property"
+    },
+    {
+      "term": "defaultMarkupDiscountPercentage",
+      "description": "Default markup discount",
+      "type": "property"
+    },
+    {
+      "term": "eligible1099",
+      "description": "Eligible For 1099",
+      "type": "property"
+    },
+    {
+      "term": "includeCompanyNameOn1099",
+      "description": "Include company name on 1099",
+      "type": "property"
+    },
+    {
+      "term": "markupAccountId",
+      "description": "Markup account id",
+      "type": "property"
+    },
+    {
+      "term": "state",
+      "description": "State",
+      "type": "property"
+    },
+    {
+      "term": "syncToVMM",
+      "description": "Sync to maintenance",
+      "type": "property"
+    },
+    {
+      "term": "taxID",
+      "description": "Tax ID",
+      "type": "property"
+    },
+    {
+      "term": "taxPayerName",
+      "description": "Tax Payer Name",
+      "type": "property"
+    },
+    {
+      "term": "timeTracking",
+      "description": "Time Tracking, is enabled or disabled",
+      "type": "property"
+    },
+    {
+      "term": "vendorType",
+      "description": "Vendor type. This is a user configurable list with the following initial default values <Banking - General>,\n <Banking - Mortgage>, <Banking - Investment>, <Contractors - Carpentry>, <Contractors - Dry Wall>, <Contractors - Electrical>, <Contractors - Fencing>, <Contractors - Flooring>, <Contractors - General>, <Contractors - HVAC>, <Contractors - Landscaping>, <Contractors - Masonry>, <Contractors - Miscellaneous>, <Contractors - Painting>, <Contractors - Paving>, <Contractors - Plumbing>, <Contractors - Roofing>, <Contractors - Sheet Metal>, <Contractors - Windows>, <Owners>, <Management Company>, <Suppliers - Carpets>, <Suppliers - Electrical>, <Suppliers - General>, <Suppliers - Lighting>, <Suppliers - Lumber>, <Suppliers - Plumbing>, <Suppliers - Security>, <Suppliers - Stone>, <Suppliers - Tiling>, <Suppliers - Windows>, <Utilities - Communications>, <Utilities - Gas & Electric>, <Utilities - Waste Management>, <Utilities - Water>",
+      "type": "property"
+    },
+    {
+      "term": "zip",
+      "description": "Zip",
+      "type": "property"
+    },
+    {
+      "term": "SaveJournalEntrySplit",
+      "description": "Journal Entry Split for Request",
+      "type": "schema"
+    },
+    {
+      "term": "Bank",
+      "description": "Bank for Request",
+      "type": "schema"
+    },
+    {
+      "term": "bankAccountHolderSSNMasked",
+      "description": "Account holder SSN.",
+      "type": "property"
+    },
+    {
+      "term": "bankAccountNumberDecrypted",
+      "description": "Bank account number.",
+      "type": "property"
+    },
+    {
+      "term": "bankAccountType",
+      "description": "Bank account type - 1: Checking, 2: Savings",
+      "type": "property"
+    },
+    {
+      "term": "bankRoutingNumberDecrypted",
+      "description": "Bank routing number.",
+      "type": "property"
+    },
+    {
+      "term": "bankTransitFraction",
+      "description": "Bank transit fraction.",
+      "type": "property"
+    },
+    {
+      "term": "depositTicketType",
+      "description": "Deposit ticket type.",
+      "type": "property"
+    },
+    {
+      "term": "nachaCompanyID",
+      "description": "Nacha company ID.",
+      "type": "property"
+    },
+    {
+      "term": "nachaEnabled",
+      "description": "Indicates if Nacha payment type is enabled.",
+      "type": "property"
+    },
+    {
+      "term": "nachaImmediateDestinationNumber",
+      "description": "Nacha destination number.",
+      "type": "property"
+    },
+    {
+      "term": "nachaImmediateOriginNumber",
+      "description": "Nacha immediate origin number.",
+      "type": "property"
+    },
+    {
+      "term": "nachaOriginatingDFINumber",
+      "description": "Nacha originating DFI number.",
+      "type": "property"
+    },
+    {
+      "term": "ManagementSettings",
+      "description": "Property management information",
+      "type": "schema"
+    },
+    {
+      "term": "managementFees",
+      "description": "List of property management fee rules.",
+      "type": "property"
+    },
+    {
+      "term": "CustomFieldSet",
+      "description": "Custom field set for Request",
+      "type": "schema"
+    },
+    {
+      "term": "value",
+      "description": "Custom Field value",
+      "type": "property"
+    },
+    {
+      "term": "SaveAdjustment",
+      "description": "Adjustment for Request",
+      "type": "schema"
+    },
+    {
+      "term": "BillPayment",
+      "description": "BillPayment",
+      "type": "schema"
+    },
+    {
+      "term": "SaveContact",
+      "description": "Contact for Request",
+      "type": "schema"
+    },
+    {
+      "term": "Discount",
+      "description": "Discount",
+      "type": "schema"
+    },
+    {
+      "term": "Amenity",
+      "description": "Amenity",
+      "type": "schema"
+    },
+    {
+      "term": "BillSplit",
+      "description": "BillSplit",
+      "type": "schema"
+    },
+    {
+      "term": "buildingAbbr",
+      "description": "Abbreviation of the building associated with this bill split.",
+      "type": "property"
+    },
+    {
+      "term": "portfolioAbbr",
+      "description": "Abbreviation of the portfolio associated with this bill split.",
+      "type": "property"
+    },
+    {
+      "term": "unitAbbr",
+      "description": "Abbreviation of the unit associated with this bill split.",
+      "type": "property"
+    },
+    {
+      "term": "ContactCategory",
+      "description": "ContactCategory",
+      "type": "schema"
+    },
+    {
+      "term": "categoryName",
+      "description": "Category name.",
+      "type": "property"
+    },
+    {
+      "term": "CheckSplit",
+      "description": "VendorCheckSplit",
+      "type": "schema"
+    },
+    {
+      "term": "Inspection",
+      "description": "Inspection",
+      "type": "schema"
+    },
+    {
+      "term": "closedDateAndTime",
+      "description": "Date and time the inspection closed (customer time zone).",
+      "type": "property"
+    },
+    {
+      "term": "inspectedDateAndTime",
+      "description": "Date and time the inspection occurred (customer time zone).",
+      "type": "property"
+    },
+    {
+      "term": "inspectionAreas",
+      "description": "List of inspection areas.",
+      "type": "property"
+    },
+    {
+      "term": "inspectorID",
+      "description": "Inspector ID",
+      "type": "property"
+    },
+    {
+      "term": "notesToInspector",
+      "description": "Notes to Inspector",
+      "type": "property"
+    },
+    {
+      "term": "scheduledDateAndTime",
+      "description": "Date and time the inspection is/was scheduled to occur (customer time zone).",
+      "type": "property"
+    },
+    {
+      "term": "templateName",
+      "description": "Inspection template name.",
+      "type": "property"
+    },
+    {
+      "term": "OwnerDraw",
+      "description": "Owner Draw",
+      "type": "schema"
+    },
+    {
+      "term": "destinationAccountId",
+      "description": "Id of the bank account where the payment will be made from.",
+      "type": "property"
+    },
+    {
+      "term": "CreditMemo",
+      "description": "Transaction",
+      "type": "schema"
+    },
+    {
+      "term": "parentTxID",
+      "description": "Id of the payment causing this prepay application.",
+      "type": "property"
+    },
+    {
+      "term": "SaveCredit",
+      "description": "SaveCredit",
+      "type": "schema"
+    },
+    {
+      "term": "InspectionArea",
+      "description": "Inspection Area",
+      "type": "schema"
+    },
+    {
+      "term": "items",
+      "description": "List of items in the inspection.",
+      "type": "property"
+    },
+    {
+      "term": "JournalEntry",
+      "description": "Journal Entry",
+      "type": "schema"
+    },
+    {
+      "term": "Vendor",
+      "description": "Vendor",
+      "type": "schema"
+    },
+    {
+      "term": "paymentTermDaysToPay",
+      "description": "The number of days within payments are due.",
+      "type": "property"
+    },
+    {
+      "term": "paymentTerms",
+      "description": "Payment terms.",
+      "type": "property"
+    },
+    {
+      "term": "taxId",
+      "description": "Tax identification number.",
+      "type": "property"
+    },
+    {
+      "term": "SaveOwnerContribution",
+      "description": "Charge for request",
+      "type": "schema"
+    },
+    {
+      "term": "SaveWorkOrderTask",
+      "description": "Work Order for Request",
+      "type": "schema"
+    },
+    {
+      "term": "isPrivate",
+      "description": "Indicates if the task is private.",
+      "type": "property"
+    },
+    {
+      "term": "NonOperatingExpense",
+      "description": "Non Operating Expense for Request",
+      "type": "schema"
+    },
+    {
+      "term": "AutoPayment",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "account",
+      "description": "Payment general ledger account.",
+      "type": "property"
+    },
+    {
+      "term": "feeAmount",
+      "description": "Fee amount.",
+      "type": "property"
+    },
+    {
+      "term": "CustomField",
+      "description": "Custom field.",
+      "type": "schema"
+    },
+    {
+      "term": "definitionID",
+      "description": "Id of the custom field definition.",
+      "type": "property"
+    },
+    {
+      "term": "SavePayment",
+      "description": "Tenant Payment for Request",
+      "type": "schema"
+    },
+    {
+      "term": "depositDate",
+      "description": "Payment deposit date.",
+      "type": "property"
+    },
+    {
+      "term": "LeaseStatus",
+      "description": "Lease Status",
+      "type": "schema"
+    },
+    {
+      "term": "defineActive",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "orderIndex",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "portalLoginEnabled",
+      "description": "",
+      "type": "property"
+    },
+    {
+      "term": "LateFeeRule",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "feeType",
+      "description": "Late fee type.",
+      "type": "property"
+    },
+    {
+      "term": "minimumDue",
+      "description": "Minimum amount due to trigger the late fee process.",
+      "type": "property"
+    },
+    {
+      "term": "summary",
+      "description": "Textual description of the late fee calculation.",
+      "type": "property"
+    },
+    {
+      "term": "CurrentAsset",
+      "description": "Current Asset for Request",
+      "type": "schema"
+    },
+    {
+      "term": "Payment",
+      "description": "Tenant Payment",
+      "type": "schema"
+    },
+    {
+      "term": "isDeposited",
+      "description": "Indicates if the payment has been deposited.",
+      "type": "property"
+    },
+    {
+      "term": "ChargeTx",
+      "description": "Charge Transaction",
+      "type": "schema"
+    },
+    {
+      "term": "amountDue",
+      "description": "The amount due for the charge.",
+      "type": "property"
+    },
+    {
+      "term": "payments",
+      "description": "List of payment charge history.",
+      "type": "property"
+    },
+    {
+      "term": "SaveBankDeposit",
+      "description": "Bank Deposit for Request",
+      "type": "schema"
+    },
+    {
+      "term": "bankGLAccountID",
+      "description": "Bank general ledger account ID.",
+      "type": "property"
+    },
+    {
+      "term": "listOfTxIDs",
+      "description": "Comma separated list of Transaction IDs.",
+      "type": "property"
+    },
+    {
+      "term": "Expense",
+      "description": "Expense for Request",
+      "type": "schema"
+    },
+    {
+      "term": "SaveCheck",
+      "description": "VendorCheck",
+      "type": "schema"
+    },
+    {
+      "term": "checkDate",
+      "description": "Check Date.",
+      "type": "property"
+    },
+    {
+      "term": "SaveBill",
+      "description": "Bill",
+      "type": "schema"
+    },
+    {
+      "term": "markupAccountID",
+      "description": "Markup general ledger account ID.",
+      "type": "property"
+    },
+    {
+      "term": "SaveOwner",
+      "description": "Save Owner Contact",
+      "type": "schema"
+    },
+    {
+      "term": "Lease",
+      "description": "Lease",
+      "type": "schema"
+    },
+    {
+      "term": "addendums",
+      "description": "Lease addendum(s).",
+      "type": "property"
+    },
+    {
+      "term": "arBalance",
+      "description": "Lease Accounts Receivable Balance",
+      "type": "property"
+    },
+    {
+      "term": "lateFeeRule",
+      "description": "Textual description of the late fee rule applied to delinquent or unpaid lease charges.",
+      "type": "property"
+    },
+    {
+      "term": "leaseBalance",
+      "description": "Lease Balance.",
+      "type": "property"
+    },
+    {
+      "term": "leaseName",
+      "description": "Lease Name.",
+      "type": "property"
+    },
+    {
+      "term": "tenantsOptsIntoAssetProtectionPlan",
+      "description": "Indicates if the tenants opted into Asset Protection Plan.",
+      "type": "property"
+    },
+    {
+      "term": "terminatedDate",
+      "description": "Lease Terminated Date.",
+      "type": "property"
+    },
+    {
+      "term": "Collection_long_",
+      "description": "",
+      "type": "schema"
+    },
+    {
+      "term": "createBankDeposit",
+      "description": "Create a bank deposit",
+      "type": "operation"
+    },
+    {
+      "term": "deleteBankDeposit",
+      "description": "Delete a Bank Deposit (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getGeneralLedgerTransactions",
+      "description": "Retrieve all general ledger transactions (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getAccounts",
+      "description": "Retrieve all the general ledger accounts",
+      "type": "operation"
+    },
+    {
+      "term": "createGLAccount",
+      "description": "Create a general ledger account (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "createBillPayments",
+      "description": "Create general ledger accounts in bulk (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getAccount",
+      "description": "Retrieve a general ledger account",
+      "type": "operation"
+    },
+    {
+      "term": "updateGLAccount",
+      "description": "Update a general ledger account (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "deleteGLAccount",
+      "description": "Delete a general ledger account (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getOwnerContributions",
+      "description": "Retrieve all the owner contributions",
+      "type": "operation"
+    },
+    {
+      "term": "createOwnerContribution",
+      "description": "Create an owner contribution",
+      "type": "operation"
+    },
+    {
+      "term": "deleteOwnerContribution",
+      "description": "Delete Owner Contribution (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getOwnerDraws",
+      "description": "Retrieve all the owner draws",
+      "type": "operation"
+    },
+    {
+      "term": "createOwnerDraw",
+      "description": "Create an owner draw",
+      "type": "operation"
+    },
+    {
+      "term": "updateOwnerDraw",
+      "description": "Update an owner draw",
+      "type": "operation"
+    },
+    {
+      "term": "getBills",
+      "description": "Retrieve all bills",
+      "type": "operation"
+    },
+    {
+      "term": "createBill",
+      "description": "Create a bill",
+      "type": "operation"
+    },
+    {
+      "term": "createBills",
+      "description": "Create bills in bulk",
+      "type": "operation"
+    },
+    {
+      "term": "createCredit",
+      "description": "Create a credit",
+      "type": "operation"
+    },
+    {
+      "term": "updateCredit",
+      "description": "Update a Credit",
+      "type": "operation"
+    },
+    {
+      "term": "createBillPayment",
+      "description": "Create a Bill Payment (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "updateBillPayment",
+      "description": "Update a Bill Payment (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getBillPayments",
+      "description": "Retrieve all bill payments",
+      "type": "operation"
+    },
+    {
+      "term": "createBillPaymentsUsingPOST_1",
+      "description": "Create bill payments in bulk (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getBillPayment",
+      "description": "Retrieve a bill payment",
+      "type": "operation"
+    },
+    {
+      "term": "getVendorChecks",
+      "description": "Retrieve all Vendor checks (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "createVendorCheck",
+      "description": "Create a Vendor check (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "updateVendorCheck",
+      "description": "Update a Vendor check (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getBill",
+      "description": "Retrieve a bill",
+      "type": "operation"
+    },
+    {
+      "term": "deleteBill",
+      "description": "Delete a Bill (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "updateBill",
+      "description": "Update a Bill",
+      "type": "operation"
+    },
+    {
+      "term": "getBuildings",
+      "description": "Retrieve all buildings",
+      "type": "operation"
+    },
+    {
+      "term": "createBuilding",
+      "description": "Create a building",
+      "type": "operation"
+    },
+    {
+      "term": "createContacts",
+      "description": "Create buildings in bulk",
+      "type": "operation"
+    },
+    {
+      "term": "updateBuilding",
+      "description": "Update a building custom fields (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getBuilding",
+      "description": "Retrieve a building",
+      "type": "operation"
+    },
+    {
+      "term": "updateBuildingUsingPUT_1",
+      "description": "Update a building",
+      "type": "operation"
+    },
+    {
+      "term": "deleteBuilding",
+      "description": "Delete a building (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getBuildingConversations",
+      "description": "Retrieve all building conversations",
+      "type": "operation"
+    },
+    {
+      "term": "getBuildingConversation",
+      "description": "Retrieve a building conversation",
+      "type": "operation"
+    },
+    {
+      "term": "deleteBuildingConversation",
+      "description": "Delete a building conversation (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getBuildingManagementFee",
+      "description": "Retrieves all the management fee rules of a building. (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getBuildingManagers",
+      "description": "Retrieves all the property managers of a building",
+      "type": "operation"
+    },
+    {
+      "term": "getBuildingNotes",
+      "description": "Retrieves all the notes of a building.",
+      "type": "operation"
+    },
+    {
+      "term": "getContacts",
+      "description": "Retrieve all contacts",
+      "type": "operation"
+    },
+    {
+      "term": "createContact",
+      "description": "Create a contact",
+      "type": "operation"
+    },
+    {
+      "term": "createContactsUsingPOST_1",
+      "description": "Create contacts in bulk",
+      "type": "operation"
+    },
+    {
+      "term": "getContactCategories",
+      "description": "Retrieve all contact categories",
+      "type": "operation"
+    },
+    {
+      "term": "updateContact",
+      "description": "Update a contact custom fields (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getContact",
+      "description": "Retrieve a contact",
+      "type": "operation"
+    },
+    {
+      "term": "updateContactUsingPUT_1",
+      "description": "Update a contact",
+      "type": "operation"
+    },
+    {
+      "term": "deleteContact",
+      "description": "Delete a contact (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getContactConversations",
+      "description": "Retrieve all contact conversations",
+      "type": "operation"
+    },
+    {
+      "term": "getContactConversation",
+      "description": "Retrieve a contact conversation",
+      "type": "operation"
+    },
+    {
+      "term": "deleteContactConversation",
+      "description": "Delete a contact conversation (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "retrieveCustomFieldDefinitions",
+      "description": "Retrieve list of custom field definitions.",
+      "type": "operation"
+    },
+    {
+      "term": "retrieveAllDocuments",
+      "description": "Retrieve all documents",
+      "type": "operation"
+    },
+    {
+      "term": "uploadDocument",
+      "description": "Upload a document",
+      "type": "operation"
+    },
+    {
+      "term": "retrieveDocument",
+      "description": "Retrieve a document",
+      "type": "operation"
+    },
+    {
+      "term": "updateDocument",
+      "description": "Update a document",
+      "type": "operation"
+    },
+    {
+      "term": "deleteDocument",
+      "description": "Delete a document (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "downloadDocument",
+      "description": "Download a document",
+      "type": "operation"
+    },
+    {
+      "term": "health",
+      "description": "Health check",
+      "type": "operation"
+    },
+    {
+      "term": "getInspections",
+      "description": "Retrieve all inspections",
+      "type": "operation"
+    },
+    {
+      "term": "getInspection",
+      "description": "Retrieve a inspection",
+      "type": "operation"
+    },
+    {
+      "term": "getLeases",
+      "description": "Retrieve all leases",
+      "type": "operation"
+    },
+    {
+      "term": "createLease",
+      "description": "Create a lease",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseAdjustments",
+      "description": "Retrieve all the adjustments",
+      "type": "operation"
+    },
+    {
+      "term": "createLeaseAdjustment",
+      "description": "Create a lease adjustment (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "updateLeaseAdjustment",
+      "description": "Update a lease adjustment (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseAutoCharges",
+      "description": "Retrieve all lease auto charges (New)",
+      "type": "operation"
+    },
+    {
+      "term": "createLeaseAutoCharges",
+      "description": "Create lease auto charges (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseCharges",
+      "description": "Retrieve all the lease charges",
+      "type": "operation"
+    },
+    {
+      "term": "createLeaseCharge",
+      "description": "Create a lease charge (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "createLeaseCharges",
+      "description": "Create lease charges in bulk (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "updateLeaseCharge",
+      "description": "Update a lease charge (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "deleteLeaseCharge",
+      "description": "Delete a lease charge (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseCreditMemos",
+      "description": "Retrieve all the credit memos",
+      "type": "operation"
+    },
+    {
+      "term": "updateLease",
+      "description": "Update a lease custom fields (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseDiscounts",
+      "description": "Retrieve all the lease discounts",
+      "type": "operation"
+    },
+    {
+      "term": "createLeaseDiscount",
+      "description": "Create a lease discount (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "updateLeaseDiscount",
+      "description": "Updates a lease Discount (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseJournalEntryUsingGET_1",
+      "description": "Retrieve all lease journal entries (New)",
+      "type": "operation"
+    },
+    {
+      "term": "createJournalEntry",
+      "description": "Create a lease journal entry (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "updateLeaseJournalEntry",
+      "description": "Update a lease journal entry (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseJournalEntry",
+      "description": "Retrieve all lease journal entries ",
+      "type": "operation"
+    },
+    {
+      "term": "getLeasePayments",
+      "description": "Retrieve all the lease payments",
+      "type": "operation"
+    },
+    {
+      "term": "createLeasePayment",
+      "description": "Create a lease payment (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "updateLeasePayment",
+      "description": "Update a lease payment (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseRefunds",
+      "description": "Retrieve all the tenant refunds",
+      "type": "operation"
+    },
+    {
+      "term": "createLeaseRefund",
+      "description": "Create a lease refund (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "updateLeaseRefund",
+      "description": "Update a lease refund (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getAllLeaseStatuses",
+      "description": "Retrieve all lease statuses (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "deleteLease",
+      "description": "Delete a lease (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseConversations",
+      "description": "Retrieve all lease conversations",
+      "type": "operation"
+    },
+    {
+      "term": "createLeaseConversation",
+      "description": "Create a lease conversation",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseConversation",
+      "description": "Retrieve a lease conversation",
+      "type": "operation"
+    },
+    {
+      "term": "deleteLeaseConversation",
+      "description": "Delete a lease conversation (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "addCommentToLeaseConversation",
+      "description": "Add comment to a lease conversation",
+      "type": "operation"
+    },
+    {
+      "term": "getLease",
+      "description": "Retrieve a lease",
+      "type": "operation"
+    },
+    {
+      "term": "updateLeaseUsingPUT_1",
+      "description": "Update a lease",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseAutoChargesUsingGET_1",
+      "description": "Retrieve all lease auto charges",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseAutoEPayments",
+      "description": "Retrieve all lease auto ePayments (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseAutoJournalEntries",
+      "description": "Retrieve all lease auto journal entries (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseContacts",
+      "description": "Retrieve all lease contacts",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseCustomFields",
+      "description": "Retrieve all lease custom fields",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseDocuments",
+      "description": "Retrieve all lease documents",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseLateFee",
+      "description": "Retrieve the lease late fee rule",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseNotes",
+      "description": "Retrieve all lease notes",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseWorkOrders",
+      "description": "Retrieve all lease work orders",
+      "type": "operation"
+    },
+    {
+      "term": "getPortfolios",
+      "description": "Retrieve all portfolios",
+      "type": "operation"
+    },
+    {
+      "term": "createPortfolio",
+      "description": "Create a portfolio",
+      "type": "operation"
+    },
+    {
+      "term": "createPortfolios",
+      "description": "Create Portfolios in bulk",
+      "type": "operation"
+    },
+    {
+      "term": "updatePortfolio",
+      "description": "Update a portfolio custom fields (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getPortfolio",
+      "description": "Retrieve a portfolio",
+      "type": "operation"
+    },
+    {
+      "term": "updatePortfolioUsingPUT_1",
+      "description": "Update a portfolio",
+      "type": "operation"
+    },
+    {
+      "term": "getPortfolioConversations",
+      "description": "Retrieve all portfolio conversations",
+      "type": "operation"
+    },
+    {
+      "term": "getPortfolioConversation",
+      "description": "Retrieve a portfolio conversation",
+      "type": "operation"
+    },
+    {
+      "term": "deletePortfolioConversation",
+      "description": "Delete a portfolio conversation (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getProspects",
+      "description": "Retrieve all prospects",
+      "type": "operation"
+    },
+    {
+      "term": "createProspect",
+      "description": "Create a prospect",
+      "type": "operation"
+    },
+    {
+      "term": "createContactsUsingPOST_2",
+      "description": "Create prospects in bulk",
+      "type": "operation"
+    },
+    {
+      "term": "updateLeaseUsingPUT_2",
+      "description": "Update a prospect custom fields (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getProspectStatuses",
+      "description": "Retrieve all prospect statuses",
+      "type": "operation"
+    },
+    {
+      "term": "getProspect",
+      "description": "Retrieve a prospect",
+      "type": "operation"
+    },
+    {
+      "term": "getProspectCampaign",
+      "description": "Retrieve prospect campaign",
+      "type": "operation"
+    },
+    {
+      "term": "getProspectConversations",
+      "description": "Retrieve all prospect conversations",
+      "type": "operation"
+    },
+    {
+      "term": "createProspectConversation",
+      "description": "Create a prospect conversation",
+      "type": "operation"
+    },
+    {
+      "term": "getProspectConversation",
+      "description": "Retrieve a prospect conversation",
+      "type": "operation"
+    },
+    {
+      "term": "deleteProspectConversation",
+      "description": "Delete a prospect conversation (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getUnits",
+      "description": "Retrieve all units",
+      "type": "operation"
+    },
+    {
+      "term": "createUnit",
+      "description": "Create a unit",
+      "type": "operation"
+    },
+    {
+      "term": "createUnits",
+      "description": "Create units in bulk",
+      "type": "operation"
+    },
+    {
+      "term": "updateUnit",
+      "description": "Update a unit custom fields (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getUnit",
+      "description": "Retrieve a unit",
+      "type": "operation"
+    },
+    {
+      "term": "updateUnitUsingPUT_1",
+      "description": "Update a unit",
+      "type": "operation"
+    },
+    {
+      "term": "deleteUnit",
+      "description": "Delete a unit (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getUnitConversations",
+      "description": "Retrieve all unit conversations",
+      "type": "operation"
+    },
+    {
+      "term": "getUnitConversation",
+      "description": "Retrieve a unit conversation",
+      "type": "operation"
+    },
+    {
+      "term": "deleteUnitConversation",
+      "description": "Delete a unit conversation (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getLeaseCustomFieldsUsingGET_1",
+      "description": "Retrieve all unit custom fields",
+      "type": "operation"
+    },
+    {
+      "term": "getVendors",
+      "description": "Retrieve all vendors",
+      "type": "operation"
+    },
+    {
+      "term": "createVendor",
+      "description": "Create a vendor",
+      "type": "operation"
+    },
+    {
+      "term": "createVendors",
+      "description": "Create Vendors in bulk",
+      "type": "operation"
+    },
+    {
+      "term": "updateVendor",
+      "description": "Update a vendor custom fields (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getVendor",
+      "description": "Retrieve a vendor",
+      "type": "operation"
+    },
+    {
+      "term": "getVendorAccount",
+      "description": "Retrieve vendor GL account",
+      "type": "operation"
+    },
+    {
+      "term": "getVendorConversations",
+      "description": "Retrieve all vendor conversations",
+      "type": "operation"
+    },
+    {
+      "term": "getVendorConversation",
+      "description": "Retrieve a vendor conversation",
+      "type": "operation"
+    },
+    {
+      "term": "getWorkOrders",
+      "description": "Retrieve all work orders",
+      "type": "operation"
+    },
+    {
+      "term": "createWorkOrder",
+      "description": "Create a work order",
+      "type": "operation"
+    },
+    {
+      "term": "createWorkOrders",
+      "description": "Create work orders in bulk",
+      "type": "operation"
+    },
+    {
+      "term": "closeWorkOrder",
+      "description": "Close a Workorder  (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "updateWorkOrder",
+      "description": "Update a workorder custom fields (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "deleteWorkOrder",
+      "description": "Delete a Work Order (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getWorkOrderTask",
+      "description": "Retrieve a work order task",
+      "type": "operation"
+    },
+    {
+      "term": "deleteWorkOrderTask",
+      "description": "Delete a work order task (BETA)",
+      "type": "operation"
+    },
+    {
+      "term": "getWorkOrder",
+      "description": "Retrieve a work order",
+      "type": "operation"
+    },
+    {
+      "term": "getWorkOrderTasks",
+      "description": "Retrieve all work order tasks",
+      "type": "operation"
+    },
+    {
+      "term": "createWorkOrderTask",
+      "description": "Create a task to workOrder",
+      "type": "operation"
+    },
+    {
+      "term": "updateWorkOrderTask",
+      "description": "Update a task in workOrder",
+      "type": "operation"
+    },
+    {
+      "term": "addWorkOrderTaskComments",
+      "description": "Add Comments to task for a workOrder",
+      "type": "operation"
+    }
+  ]
+}

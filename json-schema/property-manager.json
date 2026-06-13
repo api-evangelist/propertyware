@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PropertyManager",
+  "description": "PropertyManager",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "Email address."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name."
+    },
+    "roleAsString": {
+      "type": "string",
+      "description": "Role name."
+    },
+    "userID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "User id."
+    }
+  }
+}

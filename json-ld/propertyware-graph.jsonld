@@ -1,0 +1,103 @@
+{
+  "@context": "https://raw.githubusercontent.com/api-evangelist/propertyware/refs/heads/main/json-ld/propertyware-context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://app.propertyware.com/pw/api/",
+      "@type": "schema:WebAPI",
+      "schema:name": "Open API, powered by Propertyware",
+      "schema:description": "REST API for Propertyware property management platform",
+      "schema:version": "1.0",
+      "schema:url": "https://app.propertyware.com/pw/api/",
+      "schema:documentation": "https://app.propertyware.com/apidocs/index.html",
+      "schema:provider": {
+        "@type": "schema:Organization",
+        "schema:name": "Propertyware",
+        "schema:url": "https://www.propertyware.com/"
+      }
+    },
+    {
+      "@id": "propertyware:category/accounting",
+      "@type": "schema:APIReference",
+      "schema:name": "Accounting",
+      "schema:numberOfItems": 15
+    },
+    {
+      "@id": "propertyware:category/bills",
+      "@type": "schema:APIReference",
+      "schema:name": "Bills",
+      "schema:numberOfItems": 16
+    },
+    {
+      "@id": "propertyware:category/buildings",
+      "@type": "schema:APIReference",
+      "schema:name": "Buildings",
+      "schema:numberOfItems": 13
+    },
+    {
+      "@id": "propertyware:category/contacts",
+      "@type": "schema:APIReference",
+      "schema:name": "Contacts",
+      "schema:numberOfItems": 11
+    },
+    {
+      "@id": "propertyware:category/custom-field-definitions",
+      "@type": "schema:APIReference",
+      "schema:name": "Custom field definitions",
+      "schema:numberOfItems": 1
+    },
+    {
+      "@id": "propertyware:category/documents",
+      "@type": "schema:APIReference",
+      "schema:name": "Documents",
+      "schema:numberOfItems": 6
+    },
+    {
+      "@id": "propertyware:category/health-check",
+      "@type": "schema:APIReference",
+      "schema:name": "Health check",
+      "schema:numberOfItems": 1
+    },
+    {
+      "@id": "propertyware:category/inspections",
+      "@type": "schema:APIReference",
+      "schema:name": "Inspections",
+      "schema:numberOfItems": 2
+    },
+    {
+      "@id": "propertyware:category/leases",
+      "@type": "schema:APIReference",
+      "schema:name": "Leases",
+      "schema:numberOfItems": 45
+    },
+    {
+      "@id": "propertyware:category/portfolios",
+      "@type": "schema:APIReference",
+      "schema:name": "Portfolios",
+      "schema:numberOfItems": 9
+    },
+    {
+      "@id": "propertyware:category/prospects",
+      "@type": "schema:APIReference",
+      "schema:name": "Prospects",
+      "schema:numberOfItems": 11
+    },
+    {
+      "@id": "propertyware:category/units",
+      "@type": "schema:APIReference",
+      "schema:name": "Units",
+      "schema:numberOfItems": 11
+    },
+    {
+      "@id": "propertyware:category/vendors",
+      "@type": "schema:APIReference",
+      "schema:name": "Vendors",
+      "schema:numberOfItems": 8
+    },
+    {
+      "@id": "propertyware:category/work-orders",
+      "@type": "schema:APIReference",
+      "schema:name": "Work orders",
+      "schema:numberOfItems": 13
+    }
+  ]
+}

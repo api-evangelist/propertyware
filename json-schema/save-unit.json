@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveUnit",
+  "description": "SaveUnit",
+  "type": "object",
+  "required": [
+    "abbreviation",
+    "buildingID",
+    "category",
+    "name",
+    "portfolioID",
+    "type"
+  ],
+  "properties": {
+    "abbreviation": {
+      "type": "string",
+      "description": "Abbreviation of Unit.",
+      "minLength": 1,
+      "maxLength": 12
+    },
+    "address": {
+      "$ref": "#/components/schemas/SaveAddress"
+    },
+    "availableDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Unit Available date to lease."
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this unit."
+    },
+    "category": {
+      "type": "string",
+      "description": "Unit Category.",
+      "enum": [
+        "RESIDENTIAL",
+        "COMMERCIAL"
+      ]
+    },
+    "county": {
+      "type": "string",
+      "description": "Unit region of a state."
+    },
+    "description": {
+      "type": "string",
+      "description": "Marketing Description.",
+      "minLength": 0,
+      "maxLength": 65535
+    },
+    "floorNumber": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Floor number.",
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the unit."
+    },
+    "neighborhood": {
+      "type": "string",
+      "description": "Neighborhood.",
+      "minLength": 0,
+      "maxLength": 30
+    },
+    "numberBathrooms": {
+      "type": "number",
+      "format": "double",
+      "description": "Number of bathrooms in the unit.",
+      "enum": [
+        0,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5,
+        6,
+        6.5,
+        7,
+        7.5,
+        8,
+        8.5,
+        9,
+        9.5,
+        10
+      ]
+    },
+    "numberBedrooms": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of bedrooms in the unit.",
+      "minimum": 0,
+      "maximum": 20
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this unit."
+    },
+    "ready": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if property is ready to be leased."
+    },
+    "reasonForPropertyLost": {
+      "type": "string",
+      "description": "Reason for property lost.",
+      "enum": [
+        "EMPTY",
+        "ABANDONED",
+        "FORECLOSURE",
+        "MGR_RETURNED_TO_OWNER",
+        "OTB_AS_FRBO",
+        "OWNER_MOVED_BACK",
+        "REFERRED_TO_SALES",
+        "REFERRED_TO_SALES_OR_SOLD"
+      ]
+    },
+    "residential": {
+      "type": "boolean",
+      "example": false,
+      "description": "Is Unit is Residential or Commercial."
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "Search tag.",
+      "minLength": 0,
+      "maxLength": 25
+    },
+    "targetDeposit": {
+      "type": "number",
+      "format": "double",
+      "description": "Target deposit amount."
+    },
+    "targetRent": {
+      "type": "number",
+      "format": "double",
+      "description": "Market rent for the unit."
+    },
+    "targetRentUnits": {
+      "type": "string",
+      "description": "Property target rent units.",
+      "enum": [
+        "DOLLAR_PER_SQ_FT_MONTH",
+        "DOLLAR_PER_SQ_FT_YEAR",
+        "DOLLAR_PER_SQ_M_MONTH",
+        "DOLLAR_PER_SQ_M_YEAR",
+        "DOLLAR_PER_MONTH",
+        "DOLLAR_PER_WEEK",
+        "DOLLAR_PER_NIGHT"
+      ]
+    },
+    "totalArea": {
+      "type": "number",
+      "format": "double",
+      "description": "Unit Area."
+    },
+    "type": {
+      "type": "string",
+      "description": "Indicates Unit type like Business Office,Medical Office,Showroom,R  and  D,Assigned Parking (Indoor),Assigned Parking (Outdoor),Warehouse,Restaurant,Shopping Mall Retail,Street Retail,Manufacturing,House,Town House,Apartment,Flat,Studio,Loft,Assigned Parking (Indoor),Assigned Parking (Outdoor) etc."
+    }
+  }
+}

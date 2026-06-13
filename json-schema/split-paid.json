@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SplitPaid",
+  "description": "JSON Schema for SplitPaid",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount."
+    },
+    "amountPaid": {
+      "type": "number",
+      "format": "double",
+      "description": "Total amount paid for this line item."
+    },
+    "amountPaidByBillPayment": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount that was paid in this payment."
+    },
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the building associated with this line item."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier."
+    },
+    "paid": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates if this line item is paid."
+    },
+    "portfolioID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the portfolio associated with this line item."
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the unit associated with this line item."
+    }
+  }
+}

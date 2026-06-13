@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveLease",
+  "description": "Lease for Request",
+  "type": "object",
+  "required": [
+    "endDate",
+    "moveInDate",
+    "primaryContactID",
+    "startDate",
+    "tenantIDs",
+    "unitID"
+  ],
+  "properties": {
+    "baseRent": {
+      "type": "number",
+      "format": "double",
+      "description": "Property base rent."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date of the lease term."
+    },
+    "leasingFeeAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Move in leasing fee amount."
+    },
+    "leasingFeeDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Move in leasing fee post date."
+    },
+    "leasingFeeRefNo": {
+      "type": "string",
+      "description": "Move in leasing fee reference number."
+    },
+    "moveInDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Move In Date."
+    },
+    "moveOutDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Move Out Date."
+    },
+    "noticeGivenDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Day that the tenant(s) turned in a notice to vacate. Used only for Updating a Lease."
+    },
+    "paymentRestriction": {
+      "type": "string",
+      "description": "Indicates if the lease has any payment types that they are prevented from using. For example, a lease with several bounced checks may be restricted from paying with checks for future payments.</br>Allowed values are <br/>(1) None<br/>(2) No Payment Allowed<br/>(3) One or more values separated by comma - Check/Credit Card/Cash/Cashiers Check/Money Order/Section 8/Public Assistance/EPay/RentMoneyOther"
+    },
+    "postFirstCharge": {
+      "type": "boolean",
+      "example": false,
+      "description": "Indicates how to post first rent charge while move in."
+    },
+    "primaryContactID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Primary contact ID, Should be one of tenant IDs."
+    },
+    "prorateMonth": {
+      "type": "string",
+      "description": "Indicates how to post first rent charge while move in.",
+      "enum": [
+        "DO_NOT_PRORATE",
+        "FIRST_MONTH_PRORATE",
+        "SECOND_MONTH_PRORATE"
+      ]
+    },
+    "publicAssistanceProgram": {
+      "type": "string",
+      "description": "Public assistance program. Allowed values are 'None', 'Section 8', 'SCRIE', 'Rent Control', 'EDEN INC. - Shelter Care Plus', 'CLC', 'DHAP', 'FEMA', 'Harris County' etc. "
+    },
+    "reasonForLeaving": {
+      "type": "string",
+      "description": "Reason for vacating the property. Used only for Updating a Lease.<Br> Allowed values: BOUGHT HOUSE, DECEASED, EVICTION, HEALTH, MOVE CITY, PERSONAL, TOO EXPENSIVE, TRANSFER UNIT, UNKNOWN etc."
+    },
+    "rentAutoCharge": {
+      "$ref": "#/components/schemas/SaveAutoCharge"
+    },
+    "scheduleMoveOutDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Scheduled move out date."
+    },
+    "searchTag": {
+      "type": "string",
+      "description": "Search tag."
+    },
+    "secDepAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Move in security deposit amount."
+    },
+    "secDepChargeDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Move in security deposit charge date."
+    },
+    "signedDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Lease signed date."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of the lease term."
+    },
+    "status": {
+      "type": "string",
+      "description": "Indicates lease status. Allowed values are 'Active', 'Active - Notice Given', 'Draft', 'Eviction', 'Terminated' etc. "
+    },
+    "tenantIDs": {
+      "type": "array",
+      "description": "List of tenant IDs.",
+      "items": {
+        "type": "integer",
+        "format": "int64"
+      }
+    },
+    "unitID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unit/Building ID associated with this lease."
+    }
+  }
+}

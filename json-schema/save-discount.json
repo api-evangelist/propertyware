@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveDiscount",
+  "description": "Discount for Request",
+  "type": "object",
+  "required": [
+    "amount",
+    "date",
+    "discountAccountID",
+    "leaseID"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount, should be negative."
+    },
+    "comments": {
+      "type": "string",
+      "description": "Comments."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date."
+    },
+    "discountAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Discount GL Account ID."
+    },
+    "leaseID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Id of the lease associated with this discount."
+    },
+    "refNo": {
+      "type": "string",
+      "description": "Ref No."
+    }
+  }
+}

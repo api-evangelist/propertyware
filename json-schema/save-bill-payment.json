@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveBillPayment",
+  "description": "JSON Schema for SaveBillPayment",
+  "type": "object",
+  "properties": {
+    "bills": {
+      "type": "array",
+      "description": "Bills to pay.",
+      "items": {
+        "$ref": "#/components/schemas/BillPay"
+      }
+    },
+    "checkNumber": {
+      "type": "string",
+      "description": "Payment check number."
+    },
+    "memo": {
+      "type": "string",
+      "description": "Memo."
+    },
+    "paymentAccountID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Bank Account to pay from."
+    },
+    "paymentDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Payment Date."
+    },
+    "paymentMethod": {
+      "type": "string",
+      "description": "Payment method.",
+      "enum": [
+        "Check",
+        "Cash",
+        "Bank Bill Pay",
+        "Online Bank Transfer"
+      ]
+    },
+    "vendorID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Vendor ID to Pay."
+    }
+  }
+}

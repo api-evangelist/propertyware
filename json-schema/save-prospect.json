@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveProspect",
+  "description": "Save Prospect ",
+  "type": "object",
+  "properties": {
+    "buildingID": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier of the building associated with the prospect."
+    },
+    "comments": {
+      "type": "string",
+      "description": "This is a description of the Prospect."
+    },
+    "contacts": {
+      "type": "array",
+      "description": "Prospect contacts.",
+      "items": {
+        "$ref": "#/components/schemas/SaveProspectContact"
+      }
+    },
+    "currentHomeType": {
+      "type": "string",
+      "description": "Prospect Current Home Type."
+    },
+    "currentRentMortgage": {
+      "type": "number",
+      "format": "double",
+      "description": "Prospect Current Home Mortgage."
+    },
+    "hasPets": {
+      "type": "boolean",
+      "example": false,
+      "description": "Prospect Has Pets."
+    },
+    "moveInDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Prospect Move In Date."
+    },
+    "neighborhoodDesired": {
+      "type": "string",
+      "description": "Prospect Neighborhood Desired."
+    },
+    "numberBathrooms": {
+      "type": "number",
+      "format": "double",
+      "description": "Prospect Number Of Bathrooms."
+    },
+    "numberBedrooms": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Prospect Number Of Bedrooms."
+    },
+    "numberOfPets": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Prospect Number Of Pets."
+    },
+    "petType": {
+      "type": "string",
+      "description": "Prospect Pet Type."
+    },
+    "petWeights": {
+      "type": "string",
+      "description": "Prospect Pet Weights."
+    },
+    "preferredContactMethod": {
+      "type": "string",
+      "description": "Prospect Preferred Contact Method."
+    },
+    "propertyAddress": {
+      "type": "string",
+      "description": "Property Address."
+    },
+    "propertyAddress2": {
+      "type": "string",
+      "description": "Property Address Continued."
+    },
+    "propertyCity": {
+      "type": "string",
+      "description": "Property City."
+    },
+    "propertyCountry": {
+      "type": "string",
+      "description": "Property Country."
+    },
+    "propertyNumberBathrooms": {
+      "type": "number",
+      "format": "double",
+      "description": "Property Number Of Bath rooms."
+    },
+    "propertyNumberBedrooms": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Property Number Of Bedrooms."
+    },
+    "propertyState": {
+      "type": "string",
+      "description": "Property State."
+    },
+    "propertyZip": {
+      "type": "string",
+      "description": "Property Zip."
+    },
+    "reasonForMoving": {
+      "type": "string",
+      "description": "Prospect Reason For Moving."
+    },
+    "rentMax": {
+      "type": "number",
+      "format": "double",
+      "description": "Prospect Rent Maximum."
+    },
+    "rentMin": {
+      "type": "number",
+      "format": "double",
+      "description": "Prospect Rent Minimum."
+    },
+    "source": {
+      "type": "string",
+      "description": "Prospect Source."
+    },
+    "status": {
+      "type": "string",
+      "description": "Prospect Status."
+    },
+    "timeAtCurrentResidence": {
+      "type": "string",
+      "description": "Prospect Time At Current Residence."
+    },
+    "type": {
+      "type": "string",
+      "description": "Prospect Type."
+    },
+    "typeOfInquiry": {
+      "type": "string",
+      "description": "Prospect Type Of Inquiry."
+    }
+  }
+}
