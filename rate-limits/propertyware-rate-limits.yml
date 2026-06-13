@@ -1,0 +1,14 @@
+name: Propertyware API Rate Limits
+description: Propertyware does not publicly document specific API rate limits. Rate limit details are available through the official API documentation portal (requires customer credentials) or by contacting Propertyware support.
+url: https://app.propertyware.com/apidocs/index.html
+notes:
+  - Propertyware's open API supports two-way data exchange (read and write).
+  - The API documentation is hosted at app.propertyware.com/apidocs/index.html.
+  - Specific rate limit thresholds (requests per minute, daily limits, etc.) are not publicly disclosed.
+  - Integrators should contact Propertyware or their mutual client for rate limit details.
+  - API access is gated by customer-generated credentials; no developer sign-up or approval process exists independently.
+contacts:
+  - type: Support
+    url: https://support.propertyware.com/
+  - type: Sales
+    url: https://www.propertyware.com/sales/

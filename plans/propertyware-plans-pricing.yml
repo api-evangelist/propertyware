@@ -1,0 +1,82 @@
+name: Propertyware Plans and Pricing
+description: Propertyware offers three core property management software plans plus an optional API add-on. All plans require a minimum monthly spend and are priced per unit per month.
+url: https://www.propertyware.com/pricing/
+plans:
+  - name: Basic
+    description: Entry-level plan for single-family and low-density rental property management.
+    pricePerUnit: 1.00
+    priceUnit: unit/month
+    monthlyMinimum: 250.00
+    implementationFee: 2x monthly subscription
+    features:
+      - Global Customization and Reports
+      - Marketing
+      - Property Management
+      - Owner Portals
+      - Tenant Portals
+      - Maintenance
+      - Accounting
+      - Screening
+      - Payments
+      - Unlimited Support
+      - Unlimited Storage
+      - Unlimited Online Training
+      - Two-Way Text Messaging
+      - eSignature
+      - Inspections
+      - Maintenance Projects
+      - Vendor Portals
+
+  - name: Plus
+    description: Mid-tier plan with expanded features for growing property management operations.
+    pricePerUnit: 1.50
+    priceUnit: unit/month
+    monthlyMinimum: 350.00
+    implementationFee: 2x monthly subscription
+    popular: true
+    features:
+      - All Basic features
+      - Additional advanced capabilities
+
+  - name: Premium
+    description: Full-featured plan for established property management companies.
+    pricePerUnit: 2.00
+    priceUnit: unit/month
+    monthlyMinimum: 450.00
+    implementationFee: 2x monthly subscription
+    features:
+      - All Plus features
+      - Premium support and capabilities
+
+addons:
+  - name: API Access
+    description: Open API access enabling two-way data exchange with third-party systems. Added to any core plan. No integration fees charged to developers — only the customer pays.
+    pricePerUnit: 1.00
+    priceUnit: unit/month
+    notes: >
+      API access requires the customer to generate credentials for the integrating developer.
+      There is no approval process or paperwork required. Developers can integrate for free;
+      only the Propertyware customer incurs the additional $1/unit/month charge.
+
+  - name: Maintenance Contact Center
+    description: Outsourced maintenance coordination service.
+    pricePerUnit: 110.00
+    priceUnit: unit/month
+    setupFee: 300.00
+
+  - name: Leasing Contact Center
+    description: Outsourced leasing coordination service.
+    pricePerUnit: 285.00
+    priceUnit: unit/month
+    setupFee: 300.00
+
+  - name: Professional Websites
+    description: Managed professional website service for property managers.
+    price: 9900.00
+    priceUnit: month
+    setupFeeFrom: 500.00
+
+notes:
+  - Units adjust in 50-unit increments.
+  - Additional transaction fees apply for screening and payment processing.
+  - Propertyware is a RealPage Company.

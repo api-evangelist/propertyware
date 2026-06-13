@@ -1,0 +1,55 @@
+name: Propertyware FinOps
+description: Financial operations guidance for teams consuming the Propertyware API. Costs are driven by the number of managed units and the selected software plan tier plus the API add-on.
+url: https://www.propertyware.com/pricing/
+costDrivers:
+  - name: Units Under Management
+    description: All Propertyware pricing is calculated per unit per month. Costs scale linearly with the number of units managed on the platform.
+    notes:
+      - Units are billed in 50-unit increments.
+      - Monthly minimums apply regardless of actual unit count.
+
+  - name: Plan Tier
+    description: Core plan selection determines the base per-unit rate.
+    tiers:
+      - plan: Basic
+        ratePerUnit: 1.00
+        minimumMonthly: 250.00
+      - plan: Plus
+        ratePerUnit: 1.50
+        minimumMonthly: 350.00
+      - plan: Premium
+        ratePerUnit: 2.00
+        minimumMonthly: 450.00
+
+  - name: API Add-On
+    description: API access incurs an additional $1.00 per unit per month on top of the base plan rate. This cost is borne by the Propertyware customer, not the integrating developer.
+    additionalRatePerUnit: 1.00
+    notes:
+      - Developer integration is free (no integration fees charged to developers).
+      - The customer activates and pays for API access.
+
+  - name: Implementation Fee
+    description: One-time implementation fee equivalent to 2x the first monthly subscription cost applies to all new customers.
+    type: one-time
+
+  - name: Transaction Fees
+    description: Additional per-transaction fees apply to screening and payment processing services.
+    type: variable
+
+budgetingGuidelines:
+  - Calculate baseline cost as (units × plan rate) + (units × $1.00 API add-on), subject to monthly minimums.
+  - Add implementation fee (2x monthly) as a one-time upfront cost.
+  - Budget for unit growth in 50-unit increments to avoid mid-period adjustments.
+  - Monitor screening and payment volumes for variable transaction cost forecasting.
+
+exampleCosts:
+  - scenario: 250 units on Basic plan with API access
+    monthlyUnitCost: 250.00
+    monthlyAPIAddon: 250.00
+    totalMonthly: 500.00
+    notes: Meets Basic minimum; API add-on doubles the base cost at minimum tier.
+
+  - scenario: 500 units on Plus plan with API access
+    monthlyUnitCost: 750.00
+    monthlyAPIAddon: 500.00
+    totalMonthly: 1250.00
