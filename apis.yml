@@ -1,7 +1,7 @@
 aid: propertyware
 name: Propertyware
 description: Propertyware is a cloud-based property management software platform offering a REST API for managing properties, units, leases, tenants, work orders, maintenance requests, financial transactions, and owner reports. The open API enables two-way data exchange with third-party systems and supports custom integrations for single-family and low-density rental portfolios.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/propertyware/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -22,7 +22,7 @@ apis:
   - aid: propertyware:propertyware-api
     name: Propertyware API
     description: REST API providing two-way data exchange for property management operations including properties, units, leases, tenants, work orders, maintenance requests, financial transactions, and owner reports.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.propertyware.com/open-api/
     baseURL: https://app.propertyware.com/pw/api/
     tags:
