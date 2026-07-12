@@ -1,0 +1,27 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/propertyware-openapi.json
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: clientId
+  type: apiKey
+  in: header
+  parameter: x-propertyware-client-id
+  sources:
+  - openapi/propertyware-openapi.json
+- name: clientSecret
+  type: apiKey
+  in: header
+  parameter: x-propertyware-client-secret
+  sources:
+  - openapi/propertyware-openapi.json
+- name: organizationId
+  type: apiKey
+  in: header
+  parameter: x-propertyware-system-id
+  sources:
+  - openapi/propertyware-openapi.json
