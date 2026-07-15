@@ -37,6 +37,8 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/propertyware/refs/heads/main/openapi/propertyware-openapi.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/propertyware-agentic-access.yml
   - type: DomainSecurity
     url: security/propertyware-domain-security.yml
   - type: Authentication
