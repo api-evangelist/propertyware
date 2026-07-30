@@ -1,7 +1,20 @@
 aid: propertyware
 name: Propertyware
 description: Propertyware is a cloud-based property management software platform offering a REST API for managing properties, units, leases, tenants, work orders, maintenance requests, financial transactions, and owner reports. The open API enables two-way data exchange with third-party systems and supports custom integrations for single-family and low-density rental portfolios.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/propertyware.png
 url: https://raw.githubusercontent.com/api-evangelist/propertyware/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -19,23 +32,175 @@ tags:
   - Financial Transactions
   - Owner Reports
 apis:
-  - aid: propertyware:propertyware-api
-    name: Propertyware API
-    description: REST API providing two-way data exchange for property management operations including properties, units, leases, tenants, work orders, maintenance requests, financial transactions, and owner reports.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.propertyware.com/open-api/
-    baseURL: https://app.propertyware.com/pw/api/
-    tags:
-      - Property Management
-      - Leases
-      - Tenants
-      - Maintenance
-      - Financials
-    properties:
-      - type: Documentation
-        url: https://app.propertyware.com/apidocs/index.html
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/propertyware/refs/heads/main/openapi/propertyware-openapi.json
+- aid: propertyware:propertyware-accounting-api
+  name: Propertyware Accounting API
+  description: >-
+    Resources providing access to accounting data such as general ledger accounts and financial transactions.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Accounting
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-accounting-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-bills-api
+  name: Propertyware Bills API
+  description: Resources providing access to bills and bill payments.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Bills
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-bills-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-buildings-api
+  name: Propertyware Buildings API
+  description: Resources providing access to buildings.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Buildings
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-buildings-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-contacts-api
+  name: Propertyware Contacts API
+  description: Resources providing access to contacts.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-custom-field-definitions-api
+  name: Propertyware Custom field definitions API
+  description: Resources providing access to custom fields definitions.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Custom field definitions
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-custom-field-definitions-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-documents-api
+  name: Propertyware Documents API
+  description: Resources providing access to documents.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-documents-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-health-check-api
+  name: Propertyware Health check API
+  description: API health check resources.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Health check
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-health-check-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-inspections-api
+  name: Propertyware Inspections API
+  description: Resources providing access to inspections.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Inspections
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-inspections-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-leases-api
+  name: Propertyware Leases API
+  description: Resources providing access to rental property leases.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Leases
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-leases-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-portfolios-api
+  name: Propertyware Portfolios API
+  description: Resources providing access to portfolios.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Portfolios
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-portfolios-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-prospects-api
+  name: Propertyware Prospects API
+  description: Resources providing access to prospects.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Prospects
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-prospects-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-units-api
+  name: Propertyware Units API
+  description: Resources providing access to units.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Units
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-units-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-vendors-api
+  name: Propertyware Vendors API
+  description: Resources providing access to vendors.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Vendors
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-vendors-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
+- aid: propertyware:propertyware-work-orders-api
+  name: Propertyware Work orders API
+  description: Resources providing access to work orders.
+  humanURL: https://www.propertyware.com/open-api/
+  baseURL: https://app.propertyware.com/pw/api/
+  tags:
+  - Work orders
+  properties:
+  - type: OpenAPI
+    url: openapi/propertyware-work-orders-api-openapi.yml
+  - type: Documentation
+    url: https://app.propertyware.com/apidocs/index.html
 common:
   - type: AgenticAccess
     url: agentic-access/propertyware-agentic-access.yml
