@@ -1,0 +1,40 @@
+{
+  "provider": "propertyware",
+  "sources": [
+    "propertyware-accounting-api-openapi.yml",
+    "propertyware-bills-api-openapi.yml",
+    "propertyware-buildings-api-openapi.yml",
+    "propertyware-contacts-api-openapi.yml",
+    "propertyware-custom-field-definitions-api-openapi.yml",
+    "propertyware-documents-api-openapi.yml",
+    "propertyware-health-check-api-openapi.yml",
+    "propertyware-inspections-api-openapi.yml",
+    "propertyware-leases-api-openapi.yml",
+    "propertyware-portfolios-api-openapi.yml",
+    "propertyware-prospects-api-openapi.yml",
+    "propertyware-units-api-openapi.yml",
+    "propertyware-vendors-api-openapi.yml",
+    "propertyware-work-orders-api-openapi.yml"
+  ],
+  "outputs": [
+    "propertyware-accounting-api-openapi.yml",
+    "propertyware-bills-api-openapi.yml",
+    "propertyware-buildings-api-openapi.yml",
+    "propertyware-contacts-api-openapi.yml",
+    "propertyware-custom-field-definitions-api-openapi.yml",
+    "propertyware-documents-api-openapi.yml",
+    "propertyware-health-check-api-openapi.yml",
+    "propertyware-inspections-api-openapi.yml",
+    "propertyware-leases-api-openapi.yml",
+    "propertyware-portfolios-api-openapi.yml",
+    "propertyware-prospects-api-openapi.yml",
+    "propertyware-units-api-openapi.yml",
+    "propertyware-vendors-api-openapi.yml",
+    "propertyware-work-orders-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
