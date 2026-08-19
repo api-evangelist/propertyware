@@ -1,0 +1,491 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open API, powered by Propertyware Accounting API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-propertyware-client-id",
+      "value": "{{x-propertyware-client-id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounting",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a bank deposit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/bankdeposits",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a bank deposit.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">GENERAL LEDGER</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Delete a Bank Deposit (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/bankdeposits/:bankDepositID",
+            "params": [
+              {
+                "name": "bankDepositID",
+                "value": "",
+                "type": "path",
+                "description": "Bank Deposit ID"
+              }
+            ]
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nDelete a Bank Deposit.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">GENERAL LEDGER</span> - <code>Delete</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve all general ledger transactions (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/generalledger",
+            "params": [
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+              },
+              {
+                "name": "lastModifiedDateTimeStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or after the date time specified. "
+              },
+              {
+                "name": "lastModifiedDateTimeEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or prior to the date time specified. "
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query",
+                "description": "Indicates the field(s) and direction to sort the results in the response."
+              },
+              {
+                "name": "leaseID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to transactions associated with a specific lease."
+              },
+              {
+                "name": "ownerID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to transactions associated with a specific owner."
+              },
+              {
+                "name": "vendorID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to transactions associated with a specific vendor."
+              },
+              {
+                "name": "portfolioID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to transactions associated with a specific Portfolio."
+              },
+              {
+                "name": "postDateStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any transaction with post date on or after to the date specified."
+              },
+              {
+                "name": "postDateEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any transaction with post date on or prior to the date specified."
+              }
+            ]
+          },
+          "docs": "<p class=\"betaWarning\"><b>Note: </b>This operation is still in beta and might be subject to breaking changes. Production integrations should be avoided at this stage.</p>\nRetrieves a list of general ledger transactions.<br /><br />At least of the following date ranges must be passed as a filter: \n * `lastModifiedDateStart`-`lastModifiedDateEnd` \n * `createdDateStart`-`createdDateEnd`<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">GENERAL LEDGER</span> - <code>Read</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve all the general ledger accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/glaccounts",
+            "params": [
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+              },
+              {
+                "name": "lastModifiedDateTimeStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or after the date time specified. "
+              },
+              {
+                "name": "lastModifiedDateTimeEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or prior to the date time specified. "
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query",
+                "description": "Indicates the field(s) and direction to sort the results in the response."
+              },
+              {
+                "name": "accountNumber",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to accounts with a specific number."
+              },
+              {
+                "name": "includeDeactivated",
+                "value": "",
+                "type": "query",
+                "description": "Include deactivated results if a `true` value is passed. If no value is specified, only active accounts will be returned."
+              },
+              {
+                "name": "accountCode",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to accounts with a specific code."
+              },
+              {
+                "name": "parentGLAccountId",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to accounts that are a children of a specific parent account."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of general ledger accounts.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">GL ACCOUNTS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>accountcode</code>, <code>id</code>, <code>accountnumber</code>"
+        },
+        {
+          "info": {
+            "name": "Create a general ledger account (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/glaccounts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nCreate a general ledger account.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">GL ACCOUNTS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Create general ledger accounts in bulk (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/glaccounts/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nCreates general ledger accounts in bulk.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">GL ACCOUNTS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve a general ledger account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/glaccounts/:glAccountID",
+            "params": [
+              {
+                "name": "glAccountID",
+                "value": "",
+                "type": "path",
+                "description": "GL Account ID"
+              }
+            ]
+          },
+          "docs": "Retrieves a general ledger account.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">GL ACCOUNTS</span> - <code>Read</code>\n"
+        },
+        {
+          "info": {
+            "name": "Update a general ledger account (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/glaccounts/:glAccountID",
+            "params": [
+              {
+                "name": "glAccountID",
+                "value": "",
+                "type": "path",
+                "description": "GL Account ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nUpdates a general ledger account.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">GL ACCOUNTS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Delete a general ledger account (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/glaccounts/:glAccount",
+            "params": [
+              {
+                "name": "glAccount",
+                "value": "",
+                "type": "path",
+                "description": "GL Account ID"
+              }
+            ]
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nDelete a general ledger account.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">GL ACCOUNTS</span> - <code>Delete</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve all the owner contributions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/ownercontributions",
+            "params": [
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+              },
+              {
+                "name": "lastModifiedDateTimeStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or after the date time specified. "
+              },
+              {
+                "name": "lastModifiedDateTimeEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or prior to the date time specified. "
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query",
+                "description": "Indicates the field(s) and direction to sort the results in the response."
+              },
+              {
+                "name": "postDateStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any transaction with a start date on or after the date specified."
+              },
+              {
+                "name": "postDateEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any transaction with a start date on or prior to the date specified."
+              },
+              {
+                "name": "portfolioID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to with portfolioID."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of owner contributions.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">PORTFOLIOS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>postdate</code>, <code>createddate</code>, <code>lastmodifieddatetime</code>, <code>id</code>"
+        },
+        {
+          "info": {
+            "name": "Create an owner contribution",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/ownercontributions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an owner contribution for a specified owner contact.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">PORTFOLIOS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Delete Owner Contribution (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/ownercontributions/:ownerContributionID",
+            "params": [
+              {
+                "name": "ownerContributionID",
+                "value": "",
+                "type": "path",
+                "description": "Owner Contribution ID"
+              }
+            ]
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nDelete Owner Contribution.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">PORTFOLIOS</span> - <code>Delete</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve all the owner draws",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/ownerdraws",
+            "params": [
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+              },
+              {
+                "name": "lastModifiedDateTimeStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or after the date time specified. "
+              },
+              {
+                "name": "lastModifiedDateTimeEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or prior to the date time specified. "
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query",
+                "description": "Indicates the field(s) and direction to sort the results in the response."
+              },
+              {
+                "name": "postDateStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any transaction with a start date on or after the date specified."
+              },
+              {
+                "name": "postDateEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any transaction with a start date on or prior to the date specified."
+              },
+              {
+                "name": "portfolioID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to with portfolioID."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of owner draws.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">PORTFOLIOS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>postdate</code>, <code>createddate</code>, <code>lastmodifieddatetime</code>, <code>portfolioid</code>, <code>id</code>"
+        },
+        {
+          "info": {
+            "name": "Create an owner draw",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/ownerdraws",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an owner draw for a specified owner contact.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">PORTFOLIOS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Update an owner draw",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/accounting/ownerdraws/:drawID",
+            "params": [
+              {
+                "name": "drawID",
+                "value": "",
+                "type": "path",
+                "description": "Owner Draw ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an owner draw for a specified owner contact.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">PORTFOLIOS</span> - <code>Write</code>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,2683 @@
+{
+  "item": [
+    {
+      "id": "f3091b32-2b5d-46ed-a147-583d1e3227ff",
+      "name": "Vendors",
+      "description": {
+        "content": "Resources providing access to vendors.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "80383c36-7ea3-4dca-a7c9-315aa1ff29fb",
+          "name": "Retrieve all vendors",
+          "request": {
+            "name": "Retrieve all vendors",
+            "description": {
+              "content": "Retrieves a list of vendors.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>createddate</code>, <code>vendortype</code>, <code>lastmodifieddatetime</code>, <code>id</code>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModifiedDateTimeStart",
+                  "value": "<dateTime>",
+                  "description": "Filters results to any item modified on or after the date time specified. "
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModifiedDateTimeEnd",
+                  "value": "<dateTime>",
+                  "description": "Filters results to any item modified on or prior to the date time specified. "
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "<string>",
+                  "description": "Indicates the field(s) and direction to sort the results in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "active",
+                  "value": "<boolean>",
+                  "description": "Filters results by the vendor's status. If no value is specified, vendors with any status will be returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Filters results to units with a specific type."
+                },
+                {
+                  "disabled": false,
+                  "key": "includeCustomFields",
+                  "value": "false",
+                  "description": "includeCustomFields"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "58e81127-a44e-4838-ab4e-368ba46dbfbb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeCustomFields",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The total resultset count",
+                  "key": "X-Total-Count",
+                  "value": "6205"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"accountNumber\": \"string\",\n    \"active\": false,\n    \"address\": \"string\",\n    \"address2\": \"string\",\n    \"alertEmail\": \"string\",\n    \"city\": \"string\",\n    \"comments\": \"string\",\n    \"companyName\": \"string\",\n    \"country\": \"string\",\n    \"createdBy\": \"string\",\n    \"createdDateTime\": \"1998-05-20T19:52:00.738Z\",\n    \"creditLimit\": 5864.411708309584,\n    \"customFields\": [\n      {\n        \"dataType\": \"string\",\n        \"definitionID\": 4870,\n        \"fieldName\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"dataType\": \"string\",\n        \"definitionID\": 3850,\n        \"fieldName\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"defaultBillSplitAccountId\": 4516,\n    \"defaultMarkupDiscountPercentage\": 6967.34386864456,\n    \"description\": \"string\",\n    \"eligible1099\": false,\n    \"email\": \"string\",\n    \"fax\": \"string\",\n    \"id\": 658,\n    \"includeCompanyNameOn1099\": false,\n    \"lastModifiedBy\": \"string\",\n    \"lastModifiedDateTime\": \"1997-07-02T08:43:11.832Z\",\n    \"markupAccountId\": 180,\n    \"name\": \"string\",\n    \"nameOnCheck\": \"string\",\n    \"otherPhone\": \"string\",\n    \"paymentTermDaysToPay\": 5734,\n    \"paymentTerms\": \"string\",\n    \"phone\": \"string\",\n    \"searchTag\": \"string\",\n    \"state\": \"string\",\n    \"syncToVMM\": false,\n    \"taxId\": \"string\",\n    \"taxPayerName\": \"string\",\n    \"timeTracking\": \"string\",\n    \"type\": \"string\",\n    \"website\": \"string\",\n    \"zip\": \"string\"\n  },\n  {\n    \"accountNumber\": \"string\",\n    \"active\": false,\n    \"address\": \"string\",\n    \"address2\": \"string\",\n    \"alertEmail\": \"string\",\n    \"city\": \"string\",\n    \"comments\": \"string\",\n    \"companyName\": \"string\",\n    \"country\": \"string\",\n    \"createdBy\": \"string\",\n    \"createdDateTime\": \"1948-05-06T09:39:12.027Z\",\n    \"creditLimit\": 8888.788012857067,\n    \"customFields\": [\n      {\n        \"dataType\": \"string\",\n        \"definitionID\": 2055,\n        \"fieldName\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"dataType\": \"string\",\n        \"definitionID\": 3161,\n        \"fieldName\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"defaultBillSplitAccountId\": 3047,\n    \"defaultMarkupDiscountPercentage\": 3751.5612677980216,\n    \"description\": \"string\",\n    \"eligible1099\": false,\n    \"email\": \"string\",\n    \"fax\": \"string\",\n    \"id\": 5676,\n    \"includeCompanyNameOn1099\": false,\n    \"lastModifiedBy\": \"string\",\n    \"lastModifiedDateTime\": \"1973-04-18T17:46:15.992Z\",\n    \"markupAccountId\": 4181,\n    \"name\": \"string\",\n    \"nameOnCheck\": \"string\",\n    \"otherPhone\": \"string\",\n    \"paymentTermDaysToPay\": 9917,\n    \"paymentTerms\": \"string\",\n    \"phone\": \"string\",\n    \"searchTag\": \"string\",\n    \"state\": \"string\",\n    \"syncToVMM\": false,\n    \"taxId\": \"string\",\n    \"taxPayerName\": \"string\",\n    \"timeTracking\": \"string\",\n    \"type\": \"string\",\n    \"website\": \"string\",\n    \"zip\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0e6b3abb-d3c1-4c0a-953f-65c8a688b550",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeCustomFields",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "291603f6-9d79-4f85-986a-781cd0e40f68",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeCustomFields",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1e88225-7576-4201-a247-d814444a19e6",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeCustomFields",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a605d561-cf4e-40b3-a9d0-d58353d957c1",
+          "name": "Create a vendor",
+          "request": {
+            "name": "Create a vendor",
+            "description": {
+              "content": "Creates a vendor.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Write</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyName\": \"<string>\",\n  \"name\": \"<string>\",\n  \"nameOnCheck\": \"<string>\",\n  \"vendorType\": \"<string>\",\n  \"accountNumber\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address2\": \"<string>\",\n  \"alertEmail\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"creditLimit\": \"<double>\",\n  \"daysToPay\": \"<integer>\",\n  \"defaultBillSplitAccountId\": \"<long>\",\n  \"defaultMarkupDiscountPercentage\": \"<double>\",\n  \"description\": \"<string>\",\n  \"eligible1099\": \"<boolean>\",\n  \"email\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"includeCompanyNameOn1099\": \"<boolean>\",\n  \"markupAccountId\": \"<long>\",\n  \"phone\": \"<string>\",\n  \"searchTag\": \"<string>\",\n  \"state\": \"<string>\",\n  \"syncToVMM\": \"<boolean>\",\n  \"taxID\": \"<string>\",\n  \"taxPayerName\": \"<string>\",\n  \"terms\": \"<string>\",\n  \"timeTracking\": \"<boolean>\",\n  \"website\": \"<string>\",\n  \"zip\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "460be5f8-0861-4d47-b18e-28369c66fcf3",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyName\": \"<string>\",\n  \"name\": \"<string>\",\n  \"nameOnCheck\": \"<string>\",\n  \"vendorType\": \"<string>\",\n  \"accountNumber\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address2\": \"<string>\",\n  \"alertEmail\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"creditLimit\": \"<double>\",\n  \"daysToPay\": \"<integer>\",\n  \"defaultBillSplitAccountId\": \"<long>\",\n  \"defaultMarkupDiscountPercentage\": \"<double>\",\n  \"description\": \"<string>\",\n  \"eligible1099\": false,\n  \"email\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"includeCompanyNameOn1099\": false,\n  \"markupAccountId\": \"<long>\",\n  \"phone\": \"<string>\",\n  \"searchTag\": \"<string>\",\n  \"state\": \"<string>\",\n  \"syncToVMM\": false,\n  \"taxID\": \"<string>\",\n  \"taxPayerName\": \"<string>\",\n  \"terms\": \"<string>\",\n  \"timeTracking\": false,\n  \"website\": \"<string>\",\n  \"zip\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountNumber\": \"string\",\n  \"active\": false,\n  \"address\": \"string\",\n  \"address2\": \"string\",\n  \"alertEmail\": \"string\",\n  \"city\": \"string\",\n  \"comments\": \"string\",\n  \"companyName\": \"string\",\n  \"country\": \"string\",\n  \"createdBy\": \"string\",\n  \"createdDateTime\": \"1962-06-10T10:20:01.391Z\",\n  \"creditLimit\": 8878.51767161428,\n  \"customFields\": [\n    {\n      \"dataType\": \"string\",\n      \"definitionID\": 9590,\n      \"fieldName\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"dataType\": \"string\",\n      \"definitionID\": 3490,\n      \"fieldName\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"defaultBillSplitAccountId\": 756,\n  \"defaultMarkupDiscountPercentage\": 551.4329337054158,\n  \"description\": \"string\",\n  \"eligible1099\": false,\n  \"email\": \"string\",\n  \"fax\": \"string\",\n  \"id\": 6778,\n  \"includeCompanyNameOn1099\": false,\n  \"lastModifiedBy\": \"string\",\n  \"lastModifiedDateTime\": \"1984-01-15T00:26:55.212Z\",\n  \"markupAccountId\": 2470,\n  \"name\": \"string\",\n  \"nameOnCheck\": \"string\",\n  \"otherPhone\": \"string\",\n  \"paymentTermDaysToPay\": 1932,\n  \"paymentTerms\": \"string\",\n  \"phone\": \"string\",\n  \"searchTag\": \"string\",\n  \"state\": \"string\",\n  \"syncToVMM\": false,\n  \"taxId\": \"string\",\n  \"taxPayerName\": \"string\",\n  \"timeTracking\": \"string\",\n  \"type\": \"string\",\n  \"website\": \"string\",\n  \"zip\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff54fe85-65e1-4cef-829e-d28d0e53dbe9",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyName\": \"<string>\",\n  \"name\": \"<string>\",\n  \"nameOnCheck\": \"<string>\",\n  \"vendorType\": \"<string>\",\n  \"accountNumber\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address2\": \"<string>\",\n  \"alertEmail\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"creditLimit\": \"<double>\",\n  \"daysToPay\": \"<integer>\",\n  \"defaultBillSplitAccountId\": \"<long>\",\n  \"defaultMarkupDiscountPercentage\": \"<double>\",\n  \"description\": \"<string>\",\n  \"eligible1099\": false,\n  \"email\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"includeCompanyNameOn1099\": false,\n  \"markupAccountId\": \"<long>\",\n  \"phone\": \"<string>\",\n  \"searchTag\": \"<string>\",\n  \"state\": \"<string>\",\n  \"syncToVMM\": false,\n  \"taxID\": \"<string>\",\n  \"taxPayerName\": \"<string>\",\n  \"terms\": \"<string>\",\n  \"timeTracking\": false,\n  \"website\": \"<string>\",\n  \"zip\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d4fd6301-e079-4db0-b77e-53d7b5bc0cda",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyName\": \"<string>\",\n  \"name\": \"<string>\",\n  \"nameOnCheck\": \"<string>\",\n  \"vendorType\": \"<string>\",\n  \"accountNumber\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address2\": \"<string>\",\n  \"alertEmail\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"creditLimit\": \"<double>\",\n  \"daysToPay\": \"<integer>\",\n  \"defaultBillSplitAccountId\": \"<long>\",\n  \"defaultMarkupDiscountPercentage\": \"<double>\",\n  \"description\": \"<string>\",\n  \"eligible1099\": false,\n  \"email\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"includeCompanyNameOn1099\": false,\n  \"markupAccountId\": \"<long>\",\n  \"phone\": \"<string>\",\n  \"searchTag\": \"<string>\",\n  \"state\": \"<string>\",\n  \"syncToVMM\": false,\n  \"taxID\": \"<string>\",\n  \"taxPayerName\": \"<string>\",\n  \"terms\": \"<string>\",\n  \"timeTracking\": false,\n  \"website\": \"<string>\",\n  \"zip\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d3d414b9-0bc2-40ce-942e-f0a5df5612f9",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyName\": \"<string>\",\n  \"name\": \"<string>\",\n  \"nameOnCheck\": \"<string>\",\n  \"vendorType\": \"<string>\",\n  \"accountNumber\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address2\": \"<string>\",\n  \"alertEmail\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"creditLimit\": \"<double>\",\n  \"daysToPay\": \"<integer>\",\n  \"defaultBillSplitAccountId\": \"<long>\",\n  \"defaultMarkupDiscountPercentage\": \"<double>\",\n  \"description\": \"<string>\",\n  \"eligible1099\": false,\n  \"email\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"includeCompanyNameOn1099\": false,\n  \"markupAccountId\": \"<long>\",\n  \"phone\": \"<string>\",\n  \"searchTag\": \"<string>\",\n  \"state\": \"<string>\",\n  \"syncToVMM\": false,\n  \"taxID\": \"<string>\",\n  \"taxPayerName\": \"<string>\",\n  \"terms\": \"<string>\",\n  \"timeTracking\": false,\n  \"website\": \"<string>\",\n  \"zip\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7873e911-f396-4bf8-9935-edfaf03cbccf",
+          "name": "Create Vendors in bulk",
+          "request": {
+            "name": "Create Vendors in bulk",
+            "description": {
+              "content": "Creates Vendors in bulk.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Write</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendors",
+                "bulk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"companyName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"vendorType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"address\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"alertEmail\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"creditLimit\": \"<double>\",\n    \"daysToPay\": \"<integer>\",\n    \"defaultBillSplitAccountId\": \"<long>\",\n    \"defaultMarkupDiscountPercentage\": \"<double>\",\n    \"description\": \"<string>\",\n    \"eligible1099\": \"<boolean>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"includeCompanyNameOn1099\": \"<boolean>\",\n    \"markupAccountId\": \"<long>\",\n    \"phone\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"state\": \"<string>\",\n    \"syncToVMM\": \"<boolean>\",\n    \"taxID\": \"<string>\",\n    \"taxPayerName\": \"<string>\",\n    \"terms\": \"<string>\",\n    \"timeTracking\": \"<boolean>\",\n    \"website\": \"<string>\",\n    \"zip\": \"<string>\"\n  },\n  {\n    \"companyName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"vendorType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"address\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"alertEmail\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"creditLimit\": \"<double>\",\n    \"daysToPay\": \"<integer>\",\n    \"defaultBillSplitAccountId\": \"<long>\",\n    \"defaultMarkupDiscountPercentage\": \"<double>\",\n    \"description\": \"<string>\",\n    \"eligible1099\": \"<boolean>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"includeCompanyNameOn1099\": \"<boolean>\",\n    \"markupAccountId\": \"<long>\",\n    \"phone\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"state\": \"<string>\",\n    \"syncToVMM\": \"<boolean>\",\n    \"taxID\": \"<string>\",\n    \"taxPayerName\": \"<string>\",\n    \"terms\": \"<string>\",\n    \"timeTracking\": \"<boolean>\",\n    \"website\": \"<string>\",\n    \"zip\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6a610be6-81b3-4f03-808a-c41a75709307",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"companyName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"vendorType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"address\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"alertEmail\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"creditLimit\": \"<double>\",\n    \"daysToPay\": \"<integer>\",\n    \"defaultBillSplitAccountId\": \"<long>\",\n    \"defaultMarkupDiscountPercentage\": \"<double>\",\n    \"description\": \"<string>\",\n    \"eligible1099\": false,\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"includeCompanyNameOn1099\": false,\n    \"markupAccountId\": \"<long>\",\n    \"phone\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"state\": \"<string>\",\n    \"syncToVMM\": false,\n    \"taxID\": \"<string>\",\n    \"taxPayerName\": \"<string>\",\n    \"terms\": \"<string>\",\n    \"timeTracking\": false,\n    \"website\": \"<string>\",\n    \"zip\": \"<string>\"\n  },\n  {\n    \"companyName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"vendorType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"address\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"alertEmail\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"creditLimit\": \"<double>\",\n    \"daysToPay\": \"<integer>\",\n    \"defaultBillSplitAccountId\": \"<long>\",\n    \"defaultMarkupDiscountPercentage\": \"<double>\",\n    \"description\": \"<string>\",\n    \"eligible1099\": false,\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"includeCompanyNameOn1099\": false,\n    \"markupAccountId\": \"<long>\",\n    \"phone\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"state\": \"<string>\",\n    \"syncToVMM\": false,\n    \"taxID\": \"<string>\",\n    \"taxPayerName\": \"<string>\",\n    \"terms\": \"<string>\",\n    \"timeTracking\": false,\n    \"website\": \"<string>\",\n    \"zip\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 5897\n  },\n  {\n    \"id\": 8645\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc3b95ee-acab-4fcd-8153-ae7bce88a980",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"companyName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"vendorType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"address\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"alertEmail\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"creditLimit\": \"<double>\",\n    \"daysToPay\": \"<integer>\",\n    \"defaultBillSplitAccountId\": \"<long>\",\n    \"defaultMarkupDiscountPercentage\": \"<double>\",\n    \"description\": \"<string>\",\n    \"eligible1099\": false,\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"includeCompanyNameOn1099\": false,\n    \"markupAccountId\": \"<long>\",\n    \"phone\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"state\": \"<string>\",\n    \"syncToVMM\": false,\n    \"taxID\": \"<string>\",\n    \"taxPayerName\": \"<string>\",\n    \"terms\": \"<string>\",\n    \"timeTracking\": false,\n    \"website\": \"<string>\",\n    \"zip\": \"<string>\"\n  },\n  {\n    \"companyName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"vendorType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"address\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"alertEmail\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"creditLimit\": \"<double>\",\n    \"daysToPay\": \"<integer>\",\n    \"defaultBillSplitAccountId\": \"<long>\",\n    \"defaultMarkupDiscountPercentage\": \"<double>\",\n    \"description\": \"<string>\",\n    \"eligible1099\": false,\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"includeCompanyNameOn1099\": false,\n    \"markupAccountId\": \"<long>\",\n    \"phone\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"state\": \"<string>\",\n    \"syncToVMM\": false,\n    \"taxID\": \"<string>\",\n    \"taxPayerName\": \"<string>\",\n    \"terms\": \"<string>\",\n    \"timeTracking\": false,\n    \"website\": \"<string>\",\n    \"zip\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"error\": [\n      {\n        \"key\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"key\": \"string\",\n        \"message\": \"string\"\n      }\n    ],\n    \"index\": 7102,\n    \"success\": true\n  },\n  {\n    \"error\": [\n      {\n        \"key\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"key\": \"string\",\n        \"message\": \"string\"\n      }\n    ],\n    \"index\": 8307,\n    \"success\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a2a4f8f5-15d1-46cf-8974-36bde761f67e",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"companyName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"vendorType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"address\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"alertEmail\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"creditLimit\": \"<double>\",\n    \"daysToPay\": \"<integer>\",\n    \"defaultBillSplitAccountId\": \"<long>\",\n    \"defaultMarkupDiscountPercentage\": \"<double>\",\n    \"description\": \"<string>\",\n    \"eligible1099\": false,\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"includeCompanyNameOn1099\": false,\n    \"markupAccountId\": \"<long>\",\n    \"phone\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"state\": \"<string>\",\n    \"syncToVMM\": false,\n    \"taxID\": \"<string>\",\n    \"taxPayerName\": \"<string>\",\n    \"terms\": \"<string>\",\n    \"timeTracking\": false,\n    \"website\": \"<string>\",\n    \"zip\": \"<string>\"\n  },\n  {\n    \"companyName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"vendorType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"address\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"alertEmail\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"creditLimit\": \"<double>\",\n    \"daysToPay\": \"<integer>\",\n    \"defaultBillSplitAccountId\": \"<long>\",\n    \"defaultMarkupDiscountPercentage\": \"<double>\",\n    \"description\": \"<string>\",\n    \"eligible1099\": false,\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"includeCompanyNameOn1099\": false,\n    \"markupAccountId\": \"<long>\",\n    \"phone\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"state\": \"<string>\",\n    \"syncToVMM\": false,\n    \"taxID\": \"<string>\",\n    \"taxPayerName\": \"<string>\",\n    \"terms\": \"<string>\",\n    \"timeTracking\": false,\n    \"website\": \"<string>\",\n    \"zip\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "700e680a-d36e-45aa-aa7b-6e7e91a45b05",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"companyName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"vendorType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"address\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"alertEmail\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"creditLimit\": \"<double>\",\n    \"daysToPay\": \"<integer>\",\n    \"defaultBillSplitAccountId\": \"<long>\",\n    \"defaultMarkupDiscountPercentage\": \"<double>\",\n    \"description\": \"<string>\",\n    \"eligible1099\": false,\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"includeCompanyNameOn1099\": false,\n    \"markupAccountId\": \"<long>\",\n    \"phone\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"state\": \"<string>\",\n    \"syncToVMM\": false,\n    \"taxID\": \"<string>\",\n    \"taxPayerName\": \"<string>\",\n    \"terms\": \"<string>\",\n    \"timeTracking\": false,\n    \"website\": \"<string>\",\n    \"zip\": \"<string>\"\n  },\n  {\n    \"companyName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"vendorType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"address\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"alertEmail\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"creditLimit\": \"<double>\",\n    \"daysToPay\": \"<integer>\",\n    \"defaultBillSplitAccountId\": \"<long>\",\n    \"defaultMarkupDiscountPercentage\": \"<double>\",\n    \"description\": \"<string>\",\n    \"eligible1099\": false,\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"includeCompanyNameOn1099\": false,\n    \"markupAccountId\": \"<long>\",\n    \"phone\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"state\": \"<string>\",\n    \"syncToVMM\": false,\n    \"taxID\": \"<string>\",\n    \"taxPayerName\": \"<string>\",\n    \"terms\": \"<string>\",\n    \"timeTracking\": false,\n    \"website\": \"<string>\",\n    \"zip\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "537c46ee-84bb-400d-9d83-c0559a22a8ba",
+          "name": "Update a vendor custom fields (BETA)",
+          "request": {
+            "name": "Update a vendor custom fields (BETA)",
+            "description": {
+              "content": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nUpdates an existing vendor custom fields<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Write</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendors",
+                "customfields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entityId\": \"<long>\",\n  \"fieldSet\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b8e6a584-eb32-4616-8883-715613be5c02",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    "customfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"body\": {},\n  \"statusCode\": \"503\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "28d6fef4-6af2-4ff1-b790-0c67e6d72e8b",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    "customfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c2f3248f-0a75-4044-ae97-8a28b5c148d4",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    "customfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6bcceb7c-ac98-4642-84bc-01aad0db717e",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    "customfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c058897-5c0b-4781-ab6e-82ff2a65ca7a",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    "customfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "232607dc-e98e-4667-afac-77edc4188fe1",
+          "name": "Retrieve a vendor",
+          "request": {
+            "name": "Retrieve a vendor",
+            "description": {
+              "content": "Retrieves a specific vendor.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Read</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendors",
+                ":vendorID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeCustomFields",
+                  "value": "true",
+                  "description": "includeCustomFields"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "vendorID",
+                  "description": "(Required) Vendor ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ac8bd182-8d52-42d6-a478-8e0c49efd186",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeCustomFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountNumber\": \"string\",\n  \"active\": false,\n  \"address\": \"string\",\n  \"address2\": \"string\",\n  \"alertEmail\": \"string\",\n  \"city\": \"string\",\n  \"comments\": \"string\",\n  \"companyName\": \"string\",\n  \"country\": \"string\",\n  \"createdBy\": \"string\",\n  \"createdDateTime\": \"1962-06-10T10:20:01.391Z\",\n  \"creditLimit\": 8878.51767161428,\n  \"customFields\": [\n    {\n      \"dataType\": \"string\",\n      \"definitionID\": 9590,\n      \"fieldName\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"dataType\": \"string\",\n      \"definitionID\": 3490,\n      \"fieldName\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"defaultBillSplitAccountId\": 756,\n  \"defaultMarkupDiscountPercentage\": 551.4329337054158,\n  \"description\": \"string\",\n  \"eligible1099\": false,\n  \"email\": \"string\",\n  \"fax\": \"string\",\n  \"id\": 6778,\n  \"includeCompanyNameOn1099\": false,\n  \"lastModifiedBy\": \"string\",\n  \"lastModifiedDateTime\": \"1984-01-15T00:26:55.212Z\",\n  \"markupAccountId\": 2470,\n  \"name\": \"string\",\n  \"nameOnCheck\": \"string\",\n  \"otherPhone\": \"string\",\n  \"paymentTermDaysToPay\": 1932,\n  \"paymentTerms\": \"string\",\n  \"phone\": \"string\",\n  \"searchTag\": \"string\",\n  \"state\": \"string\",\n  \"syncToVMM\": false,\n  \"taxId\": \"string\",\n  \"taxPayerName\": \"string\",\n  \"timeTracking\": \"string\",\n  \"type\": \"string\",\n  \"website\": \"string\",\n  \"zip\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1eeb9348-8e51-4949-a98e-d1e0dc48074f",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeCustomFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "849b1734-2c84-4485-b464-0728ca856c3c",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeCustomFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fccfc46c-adbe-4512-8e4f-1cfe9bb0c218",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeCustomFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ffa0c083-a915-4431-8334-2eac16c2fcf5",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeCustomFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60cb6578-0855-4892-81c0-00b1c618720c",
+          "name": "Retrieve vendor GL account",
+          "request": {
+            "name": "Retrieve vendor GL account",
+            "description": {
+              "content": "Retrieves the default general ledger account of a vendor.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Read</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendors",
+                ":vendorID",
+                "account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "vendorID",
+                  "description": "(Required) Vendor ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "052a09d4-fb4d-4da5-9b8e-c826442ad02f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountCode\": \"string\",\n  \"accountNumber\": \"string\",\n  \"accountType\": \"string\",\n  \"active\": false,\n  \"autoApplyPrepayment\": false,\n  \"bankAccountHolder\": \"string\",\n  \"bankAccountNumber\": \"string\",\n  \"bankAddress\": \"string\",\n  \"bankAddress2\": \"string\",\n  \"bankCity\": \"string\",\n  \"bankInstitution\": \"string\",\n  \"bankRoutingNumber\": \"string\",\n  \"bankState\": \"string\",\n  \"bankZip\": \"string\",\n  \"camRecoveryAccount\": false,\n  \"createdBy\": \"string\",\n  \"createdDateTime\": \"1984-08-21T00:56:26.055Z\",\n  \"description\": \"string\",\n  \"discountAccount\": false,\n  \"escrowAccount\": false,\n  \"excludeFrom1099\": false,\n  \"excludeFromPayInFull\": false,\n  \"excludeLateFee\": false,\n  \"id\": 2039,\n  \"lastModifiedBy\": \"string\",\n  \"lastModifiedDateTime\": \"1949-07-02T03:14:24.260Z\",\n  \"lateFeeApplicable\": false,\n  \"name\": \"string\",\n  \"parentGLAccountId\": 8952,\n  \"parentRef\": \"string\",\n  \"paymentPriority\": 4896,\n  \"rentAccount\": false,\n  \"section8\": false,\n  \"securityDepositAccount\": false,\n  \"taxAccount\": false,\n  \"transferBalanceToRetainedEarnings\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3cbf438b-2378-4be3-aadd-a1830b33510c",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c648c7ec-d3c6-44a7-a6f1-1d5cc2088642",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "acedc203-385b-477e-bb3e-771f35640781",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb790072-e3bb-41aa-82d6-c978626f9def",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15c04558-5e2c-4e2d-bdb5-e8f4cd8e8aba",
+          "name": "Retrieve all vendor conversations",
+          "request": {
+            "name": "Retrieve all vendor conversations",
+            "description": {
+              "content": "Retrieves all the conversations of a vendor.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>createddate</code>, <code>lastmodifieddatetime</code>, <code>id</code>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendors",
+                ":vendorID",
+                "conversations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModifiedDateTimeStart",
+                  "value": "<dateTime>",
+                  "description": "Filters results to any item modified on or after the date time specified. "
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModifiedDateTimeEnd",
+                  "value": "<dateTime>",
+                  "description": "Filters results to any item modified on or prior to the date time specified. "
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "<string>",
+                  "description": "Indicates the field(s) and direction to sort the results in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Filters results by the conversation type."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "vendorID",
+                  "description": "(Required) Vendor ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aa22a29f-302f-4d4f-b39d-bcc045bbc278",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The total resultset count",
+                  "key": "X-Total-Count",
+                  "value": "6205"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"comments\": [\n      {\n        \"createdBy\": \"string\",\n        \"createdDateTime\": \"1970-07-22T19:31:34.851Z\",\n        \"id\": 8982,\n        \"lastModifiedBy\": \"string\",\n        \"lastModifiedDateTime\": \"1975-03-04T05:54:50.647Z\",\n        \"text\": \"string\"\n      },\n      {\n        \"createdBy\": \"string\",\n        \"createdDateTime\": \"2022-06-11T12:34:29.472Z\",\n        \"id\": 3068,\n        \"lastModifiedBy\": \"string\",\n        \"lastModifiedDateTime\": \"2013-03-04T14:17:31.065Z\",\n        \"text\": \"string\"\n      }\n    ],\n    \"createdBy\": \"string\",\n    \"createdDateTime\": \"2010-04-12T00:37:26.850Z\",\n    \"entityID\": 8034,\n    \"entityType\": \"string\",\n    \"id\": 489,\n    \"lastModifiedBy\": \"string\",\n    \"lastModifiedDateTime\": \"2006-04-14T19:44:49.783Z\",\n    \"subject\": \"string\",\n    \"type\": \"TENANT\"\n  },\n  {\n    \"comments\": [\n      {\n        \"createdBy\": \"string\",\n        \"createdDateTime\": \"2010-06-14T04:39:18.406Z\",\n        \"id\": 1720,\n        \"lastModifiedBy\": \"string\",\n        \"lastModifiedDateTime\": \"1956-03-13T06:19:42.332Z\",\n        \"text\": \"string\"\n      },\n      {\n        \"createdBy\": \"string\",\n        \"createdDateTime\": \"2025-05-01T12:39:51.624Z\",\n        \"id\": 5288,\n        \"lastModifiedBy\": \"string\",\n        \"lastModifiedDateTime\": \"1997-01-14T09:57:36.622Z\",\n        \"text\": \"string\"\n      }\n    ],\n    \"createdBy\": \"string\",\n    \"createdDateTime\": \"1952-12-23T08:03:57.604Z\",\n    \"entityID\": 2294,\n    \"entityType\": \"string\",\n    \"id\": 5963,\n    \"lastModifiedBy\": \"string\",\n    \"lastModifiedDateTime\": \"1962-10-26T20:46:58.238Z\",\n    \"subject\": \"string\",\n    \"type\": \"OWNER\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ade1f0c6-9d75-468f-bd61-726c6fcd48a6",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74195dc4-2aaa-4036-bc37-ee4c0644fabc",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8fc746b-9b15-4d4f-906b-dceedf772d23",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10d77201-d182-44a3-872a-ad84b1309dcc",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d7ecd393-e625-48ee-8159-338be130259e",
+          "name": "Retrieve a vendor conversation",
+          "request": {
+            "name": "Retrieve a vendor conversation",
+            "description": {
+              "content": "Retrieves a specific vendor conversation.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Read</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendors",
+                ":vendorID",
+                "conversations",
+                ":conversationID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "vendorID",
+                  "description": "(Required) Vendor ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "conversationID",
+                  "description": "(Required) Conversation ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6f13af3-ee1e-4c31-9cc4-6c87869da3d5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"comments\": [\n    {\n      \"createdBy\": \"string\",\n      \"createdDateTime\": \"1980-09-29T15:29:05.100Z\",\n      \"id\": 2996,\n      \"lastModifiedBy\": \"string\",\n      \"lastModifiedDateTime\": \"1958-01-13T22:49:43.322Z\",\n      \"text\": \"string\"\n    },\n    {\n      \"createdBy\": \"string\",\n      \"createdDateTime\": \"1977-08-25T02:18:35.800Z\",\n      \"id\": 6897,\n      \"lastModifiedBy\": \"string\",\n      \"lastModifiedDateTime\": \"1989-03-02T06:44:35.380Z\",\n      \"text\": \"string\"\n    }\n  ],\n  \"createdBy\": \"string\",\n  \"createdDateTime\": \"1962-11-22T08:37:28.112Z\",\n  \"entityID\": 9555,\n  \"entityType\": \"string\",\n  \"id\": 6592,\n  \"lastModifiedBy\": \"string\",\n  \"lastModifiedDateTime\": \"1997-02-28T20:14:56.024Z\",\n  \"subject\": \"string\",\n  \"type\": \"OWNER\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2eac90f5-2dbe-4bfa-abdd-9712bb585044",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3a4a2420-54cf-48b0-a9d7-84ae78857a3c",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af1cdb70-8443-4c27-bb70-0690fd3d0e38",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9f6b3806-1cb4-4f2b-9f2c-0dab1b3333c7",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors",
+                    ":vendorID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "vendorID",
+                      "description": "(Required) Vendor ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.propertyware.com/pw/api/rest/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-propertyware-client-id"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9add2414-cca7-43ba-8d32-9827e2a5bf39",
+    "name": "Open API, powered by Propertyware Accounting Vendors API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "﻿\r\n\r\n# Introduction\r\n\r\nWelcome to Propertyware’s API—a powerful, RESTful programming interface that lets you leverage valuable Propertyware data.\r\n\r\n## Account Configuration\r\nBefore you can use Propertyware’s API, you’ll need to make some tweaks to your account settings. \r\n\r\n<br />\r\n\r\n### Enabling the API \r\nIn order to start creating your keys and making requests, you’ll need to enable the API.\r\n\r\n>  **Tip:** You’ll need an administrator user role with access to ***Administration Setup > API Keys*** to set things up properly. \r\n\r\n**Let's Begin!** \r\n\r\n1. Sign in to your [Propertyware](https://app.propertyware.com/pw/login.jsp) account from your browser. \r\n\r\n2. Open the ***Setup*** page\r\n\r\n3. On the left navigation bar, expand ***Administration Setup*** and then click ***API Keys***. \r\n\r\nIf you are having issues accessing the API keys page within your account you can submit a [Support](#section/API-Overview/Support) request for assistance.\r\n\r\n## API Keys\r\nAccount-level API keys authenticate every request and keep things secure. \r\n\r\nAPI keys have two components: a “client ID” and a “secret”.\r\n\r\n* **Client IDs** are similar to usernames. They’re used to identify your Propertyware API key and are safe to share.\r\n* **Secrets** are similar to passwords. They must be kept confidential. \r\n\r\nWhenever you make a request, you’ll need the API key’s client ID and secret. If you forget it, make a mistake, or try to use information that’s linked to a deleted key, the API will return a `401` response code.\r\n\r\n>  **Tip:** We compiled a list of best practices that detail how securely store API keys. [Give it a read](#section/Getting-Started/Keeping-API-Keys-Safe)!\r\n\r\n## Creating API Keys \r\n\r\nNow that the Open API is enabled, you’ll be able to create API keys. You’re almost there!\r\n\r\n**How to create an API key** \r\n\r\n1. On the API Keys page, click ***Create API Key***. A modal will appear.\r\n\r\n<p>\r\n    <img src=\"APIKey_Page.JPG\"/>\r\n</p>\r\n\r\n<p>\r\n    <img src=\"APIKey_New.JPG\"/>\r\n</p>\r\n\r\n2. Enter a clear, memorable name and description for your API key. It’ll make it easier to locate the right key when you make a request.\r\n\r\n3. Now, choose which pieces of Propertyware data you want this API key to have access to by selecting the corresponding radio buttons. Once finished, click **GENERATE KEY**.\r\n\r\n4. You have successfully created an API key! The client id and secret associated to this key will be presented. \r\n\r\n<p>\r\n    <img src=\"APIKey_Generate.JPG\"/>\r\n</p>\r\n\r\n> **Important:** This is your only chance to record the secret. Make sure it’s stored somewhere secure! If it’s forgotten, you’ll need to delete this key and start from scratch.\r\n\r\n\r\nYou have now successfully created an API key and have everything you need to  send requests to the Propertyware API! \r\n\r\nBefore moving on to [making your first request](#section/Getting-Started/How-to-Make-a-Request) please review [Keeping API Keys Safe](#section/Getting-Started/Keeping-API-Keys-Safe) for an overview on securely storing your API keys.  \r\n<br />\r\nIf you are having issues creating API keys you can submit a [Support](#section/API-Overview/Support) request for assistance.\r\n\r\n## Keeping API Keys Safe\r\n\r\nBased on their permissions, API keys could have full access to your account’s Propertyware data. It’s important that you only grant access to trusted applications, securely record secrets, and consider a password manager to stay organized.\r\n\r\n### Recommended Practices\r\n\r\n- Avoid hard-coding client IDs and secrets inside source files.\r\n- Avoid storing client IDs and secrets in any files that may be committed to source control, particularly cloud-based source control platforms.\r\n- Apply restrictions to client IDs and secrets shared with your staff. You can restrict a key to particular Propertyware entities or to read-only access (GET resources only).\r\n- Avoid sharing client IDs and secrets across public, insecure platforms.\r\n- Establish a process to regularly recreate your client IDs and secrets from your Propertyware account.\r\n<br />\r\n<br />\r\n\r\n## How to Make a Request \r\n\r\nYou’ve done a great job setting up your account, Now, we’ll walk you through how to access your data. It’s very straightforward and should only take a few minutes!\r\n\r\n> **Tip:** Looking for the right HTTP client? If you’re just getting started, we recommend Postman. \r\n\r\n### Let's Get Started!\r\n\r\n#### Step 1: Get Your API Key\r\n\r\nIf you haven't yet done so, obtain your API key client ID and secret from your Propertyware account. Your API key is how the Propertyware API authenticates requests and ensures only you can access your data.\r\n\r\n#### Step 2: Install a HTTP client\r\n\r\nThe Propertyware API supports any standard HTTP client. If you're looking for a user-friendly HTTP client application, we recommend [Postman](https://www.postman.com/product/api-client) – it allows you to access the Propertyware API without writing code. We’ll use Postman for our example below to demonstrate sending an API request.\r\n\r\n#### Step 3: Make a Sample Request\r\n\r\nLet's dive in and make a simple request to get all the [Buildings](#operation/getBuildingsUsingGET) in your account. This will confirm your connectivity to our platform and validate the keys you created on our website. Simply follow the instructions below.\r\n\r\n1. Open the Postman application. \r\n2. Open the *verb* menu and select **GET**.\r\n3. Enter the request endpoint in the field next to GET. \r\n   - Here’s the endpoint to get all buildings: https://api.propertyware.com/pw/api/rest/v1/buildings.\r\n4. To authenticate the request, enter your `client ID`, your `secret` and your `organization iD` respectively in these request headers: \r\n   - `x-propertyware-client-id`\r\n   - `x-propertyware-client-secret`\r\n   - `x-propertyware-system-id` _(organization id)_\r\n\r\nThe organization id uniquely identifies your Propertyware account and is an additional measure to enforce proper access to the correct data. ___Your client id and secret pair will only work with the organization it belongs to___.\r\n\r\nYour full request should look similar to the image below.\r\n<kbd><img src=\"request_example.png\" /></kbd>\r\n\r\n5. Review the parameters of your request on last time. Once finished, click **Send**.\r\n\r\n6. If successful, you should see a JSON response and a `200` HTTP status code. Congratulations! You've connected to the Propertyware API.\r\n\r\nYou now have the knowledge required to make requests for any of our resources.\r\n\r\nIf you've received an error response please review the JSON response message for a description of how to resolve the issue. You can also see more information about HTTP status codes in the [Response Codes](#section/API-Overview/Response-Codes) section. If you are still having trouble making a request after reviewing these sections please submit a [Support](#section/API-Overview/Support) request.\r\n\r\n# API Overview\r\nThe Propertyware API is built upon standard REST conventions. It's designed to use consistent resource-oriented URLs, accept and return JSON-encoded messages, and use standard HTTP status codes and verbs.\r\n\r\n## Base URL\r\nThe base URL for production environment API requests is: `https://api.propertyware.com/pw/api/v1/rest`\r\n\r\nIn order to ensure all requests and responses are secure between the API consumer and Propertyware servers, requests must be made using the `https` protocol. Any requests not made with the `https` protocol will be refused by the Propertyware API platform. \r\n\r\n> **Note:** URL paths are case-sensitive to stay consistent with common REST standards. If your request doesn’t align with the documented URL path, you’ll receive a `404` response code reminding you of this constraint.\r\n\r\n## API Versioning\r\nThe Propertyware API is version controlled. Versioning ensures backwards-incompatible changes to the API don’t impact any existing integrations.\r\n\r\nPropertyware uses only a major version nomenclature to manage changes. The current version of the Propertyware API is version 1. By specifying a version in the resource request URL, you'll get expected responses regardless of future changes to the API. Here's an example of calling version 1 of the retrieve all leases resource:\r\n\r\n`https://api.propertyware.com/pw/api/rest/v1/leases`\r\n\r\nAny request submitted without the version in the URL path will result in a `404` error response code. \r\n\r\n### Releasing Changes to the API\r\nThe Propertyware API will continue to evolve to ensure it meets the needs of our customers. Changes will be defined as either backwards-compatible or backwards-incompatible. \r\n\r\nWe’ll provide advance notice for all API releases–regardless of the type of modifications being made. \r\n\r\n#### Backward-compatible Changes\r\nBackward-compatible changes are modifications to the API that shouldn't impact existing integrations. They'll apply to the current version of the API. Simply put: you won’t need to change the version to consume new changes like these. \r\n\r\nIt's important as you develop against the Propertyware API that you ensure  these types of changes don't impact your integration. Here's are examples of backward-compatible modifications. \r\n\r\n* Adding new API resources and/or endpoints.\r\n* Adding new optional request parameters to existing API methods.\r\n* Adding new properties to existing API responses and non-required properties for request messages.\r\n* Changing property order in existing API responses.\r\n\r\nAll backward-compatible changes to the API will be documented in the [Changelog](#section/Changelog).\r\n\r\n#### Backwards-incompatible Changes\r\n\r\nWhen backwards-incompatible changes to the API occur, a new version of the API will be released. You’ll need to update the URL path  to consume resources under the new API version. \r\n\r\nBackwards-incompatible changes include:\r\n\r\n* Removing a property from a request and/or response message.\r\n* Changing the name of a property in a message.\r\n* Adding a required parameter to a request message.\r\n* Changing existing enumeration values.\r\n\r\nNew versions of the API will have full reference documentation and an upgrade guide. \r\n\r\n## Authentication\r\n\r\nThe Propertyware API uses API key’s client IDs and secrets to authenticate requests. \r\n\r\nAn organization ID, an API key client ID and secret must be passed in every request header using the following parameters: \r\n\r\n- `x-propertyware-client-id`\r\n- `x-propertyware-client-secret`\r\n- `x-propertyware-system-id`\r\n\r\nFailing to provide both of them in the request header will cause the API to return a `401` HTTP status code.\r\n<!--\r\n## Rate Limiting (FUTURE)\r\nRate limits help us ensure consistent and reliable performance for all users, even during peak loads. That’s why we limit clients to **10 concurrent requests per second**.\r\n\r\nIf your request rate violates that limit, a response code of `429` is returned. Simply retry the request after a short interval (~200ms).\r\n-->\r\n\r\n## Bulk Request Options\r\nAll top-level API resources support bulk fetches. For instance, you can retrieve all [Portfolios](#operation/getPortfoliosUsingGET). These resources also allow for filtering criteria. Each resource has descriptions of the filter criteria available.\r\n\r\nIn addition to filtering, our API gives you the ability to control the returned data’s pagination and the sort order. \r\n\r\n### Pagination\r\nEndpoints that return result sets allow for pagination using `limit` and `offset` request parameters to reduce the amount of data returned.\r\n\r\nThe `limit` request parameter will cap the number of results that come back in the response. If you don't specify a `limit` value, a **default of 100 results** are returned. The maximum `limit` value is 500. If a `limit` value is specified greater than 500, it will be overridden to the default to 500. \r\n\r\nThe `offset` request parameter indicates the record position within the resultset to start at when returning the results. The `offset` is zero-based and is inclusive. If no `offset` value is submitted it will default to 0. \r\n\r\n\r\nThe total resultset count is returned in the HTTP Header `X-Total-Count`\r\n\r\n\r\n#### Pagination Example\r\n\r\nAs an example, let's say we make a request to retrieve all rental properties with no paging parameters. Our response indicates in the `X-Total-Count` header that there are 150 total rental properties. We want to get only the last 50 results so we would submit a request with the `offset` set to 100 and the `limit` set to 50.\r\n\r\n> **Note:** The `limit` and `offset` parameter names are case-sensitive. If they aren't formatted correctly, the API will return a `404` HTTP status code.\r\n\r\n### Sorting Results\r\n\r\nYou can specify the sort order of returned data by assigning properties from the returned object to the `orderby` parameter in the querystring. For example:\r\n```\r\norderby=name\r\n```\r\nBy default, the sort is performed in ascending order. To specify sort order, use \"asc\" for ascending or \"desc\" for descending. For example:\r\n```\r\norderby=name desc\r\n```\r\nAdditionally, you can sort by multiple properties by comma separating the properties. For example:\r\n```\r\norderby=abbreviation asc,name desc\r\n```\r\n\r\n> **Note:** While the `orderby` parameter is case-sensitive, the properties specified in the `orderby` value aren't. \r\n\r\n## Response Codes\r\nThe Propertyware API supports standard HTTP status codes.\r\n\r\n|Response Code          |Description  |\r\n|--|--|\r\n|200 OK | Everything worked as expected. |\r\n|400 Bad Request | The request was unacceptable, often due to missing a required parameter.|\r\n|401 Unauthorized|The API client ID and secret weren’t provided or they’re no longer valid. Be sure that the client ID and secret combination are correct and they are still active.|\r\n|403 Forbidden|The API key doesn't have permission to perform the request. This could be due to authorization for the given endpoint or an inability to access given entities within the platform (e.g. properties).\r\n|404 Not Found|The requested resource doesn't exist.|\r\n|415 Unsupported Media Type |Ensure you have the appropriate content-type header value set on your request. Each resource is documented with media type(s) that are accepted.|\r\n|429 Too Many Requests |Too many requests against the API too quickly. We recommend an exponential backoff of your requests.|\r\n|500 and above - Server Errors|Something went wrong on Propertyware's end. Review the JSON response message for more details about the error.|\r\n\r\n## API Date Format\r\n* For all request and response date fields allowing ISO date format: YYYY-MM-DD (e.g.2019-08-24).\r\n* For all request and response dateAndTime fields format is allowing: YYYY-MM-dd'T'HH:mm:ssXXX (e.g.2022-06-28T08:47:13Z).\r\n\r\n## Support\r\nIf you are unable to resolve your issue after reviewing the API documentation our support team can assist you.\r\n\r\n# Changelog\r\n\r\n### 2024-12-11\r\n\r\n* New API introduced to add comments to existing task in workorder.<br/>\r\n  URL : /workorders//{workOrderId}/tasks/{taskId}/comments (POST) <br/>\r\n  Access Permissions : WorkOrder - Write\r\n*  New fields \"baseYear\",\"baseYearOperatingExpenses\",\"baseYearPropertyInsurance\",\"baseYearPropertyTaxes\" are added to  Building request/response for Below End Points<br/>\r\n    *  Get Building (Get - /buildings/{buildingID})\r\n    *  Create Building (Post - /buildings)\r\n    *  Update Building (Put - /buildings/{buildingID})\r\n    *  Get All Buildings (Get - /buildings)\r\n*  New fields \"syndicate\" ,\"moveInDays\", \"featuredForRent\" are added to Building request/response for Below End Points<br/>\r\n    *  Create Building (Post - /buildings)\r\n    *  moveInDays field must be with in these days given here \"1 to 30,45,60,75,90\" added validation.\r\n\r\n\r\n\r\n\r\n### 2024-11-13\r\n* New fields \"reasonForLeaving\",\"noticeGivenDate\",\"paymentRestriction\"  is added to response of<br/>\r\n  (1) Create a Lease - POST /leases<br/>\r\n  (2) Update a Lease - GET /leases/{leaseID}\r\n* New field \"chargeAmountPaid\" is added to lease charges payments entity. indicates the amount paid for current charge.<br/>\r\n  (1) Get a Lease - GET /leases/charges (charge.payments.chargeAmountPaid)<br/>\r\n\r\n### 2024-09-25\r\n* New API introduced to close existing workorder.<br/>\r\n    URL : /workorders/closeworkorder/{workorderID} (PUT) <br/>\r\n    Access Permissions : WorkOrder - Write\r\n* A new fields \"managementContractStartDate\" and \"managementContractEndDate\" are added to update Building request/response for below end points\r\n   * Update Building ( PUT - buildings/{buildingID} ) \r\n    \r\n### 2024-09-11\r\n* A new field \"unitIDs\"(Unit ID list associated to a Work Order) is added to response of<br/>\r\n  (1) Retrieve a Work Order - GET /workorders/{workorderID}<br/>\r\n  (2) Retrieve All Work Orders - GET /workorders\r\n\r\n### 2024-06-09\r\n* A new field \"unitID\" is added to response of<br/>\r\n  (1) Retrieve a Work Order - GET /workorders/{workorderID}<br/>\r\n  (2) Retrieve All Work Orders - GET /workorders\r\n* Building and Unit targetDeposit data type changed from double to String and the impacted end points are all POST/GET/PUT. \r\n\r\n### 2024-05-22\r\n* API documentation is corrected to show 'file' field in request body for 'Upload a Document' API.\r\n\r\n### 2024-05-12\r\n* A new filed \"arBalance\" is added to Lease response for below end points\r\n  * Retrieve a lease ( GET - /leases/{leaseID} - set query parameter \"includeOtherBalances = true\" to include lease arBalance)\r\n  * Retrieve all leases ( GET - /leases )\r\n  * Create a lease (POST - /leases)\r\n  * Update a lease (PUT - /leases/{leaseID})\r\n\r\n### 2024-04-23\r\n* Beta has been removed to facilitate Update an owner draw ( PUT - /accounting/ownerdraws/{drawID} )\r\n\r\n### 2024-04-10\r\n\r\n* Beta has been removed to facilitate Update a Credit ( PUT - /bills/credit/{creditID} )\r\n* Beta has been removed to facilitate Update a Bill ( PUT - /bills/{billId} )\r\n* Beta has been removed to facilitate Create word orders in bulk. ( POST - /workorders/bulk )\r\n* A new field \"amount\" is added to Bill response for below end points\r\n  * Retrieve a bill ( GET - /bills/{billID} )\r\n  * Retrieve all bills ( GET - /bills/ )\r\n  * Create a Bill ( POST - /bills/ )\r\n  * Update Bill ( PUT - /bills/{billId} )\r\n  * Create a Credit ( POST - /bills/credit )\r\n  * Update a Credit ( PUT - /bills/credit/{creditID} )\r\n* Update a Contact ( PUT - /contacts/{contactID} ) is allowed to update any Contact Type\r\n* A new field \"managementFeesType\" is added to CREATE building(POST), UPDATE building(PUT), GET buildings(GET) end points. Existing \"managementFeeType\" is deprecated and should not be used.\r\n* Few fields from CREATE building are not updating with a POST request. Resolved the issue and impacted fields are targetDeposit, targetRentUnits.\r\n* Few fields from UPDATE building are not updating with a PUT request. Resolved the issue and impacted fields are numberOfBathrooms, numberOfBedRooms, targetRent, targetDeposit, targetRentUnits, marketingName, managementFlatFee, managementFeeType, petsAllowed, postingTitle, shortDescription, yearBuilt.\r\n* The 'account' field has been removed, and the data type for the 'dueDay' field has been changed \r\nfrom String to Integer in the response for the ( POST - /leases/autocharges ) endpoint.\r\n* Fixed the issue - date field value getting saved as today date for Create Lease Charge, Update Lease Charge, Create Bulk Charges, Create a Lease Payment, Update a Lease Payment, Create a Lease Refund APs.\r\n* Work order id validation is implemented for Create Bill, Update Bill, Create Credit, Update Credit APIs.\r\n\r\n### 2024-03-24\r\n\r\n* New API introduced to update existing workorder custom fields.<br/>\r\n  URL : /workorders/customfields (PUT) <br/>\r\n  Access Permissions : WorkOrder - Write\r\n* A new field \"role\" is added to GET lease contacts end point (/leases/{leaseID}/contacts) \r\n* A new field \"role\" is added to \"contact\" in GET lease end point (/leases/{leaseID})\r\n* A new field \"role\" is added to \"contact\" in GET All leases end point (/leases)\r\n\r\n### 2024-03-11\r\n\r\n* New API introduced to update existing contact custom fields.<br/>\r\n  URL : /contacts/customfields (PUT) <br/>\r\n  Access Permissions : Contacts - Write\r\n* Beta has been removed to facilitate create a bank deposit, create an owner contribution, create an owner draw requests.\r\n* New API introduced to update existing portfolio custom fields.<br/>\r\n  URL : /portfolios/customfields (PUT) <br/>\r\n  Access Permissions : Portfolio - Write\r\n* New API introduced to update existing vendor custom fields.<br/>\r\n  URL : /vendors/customfields (PUT) <br/>\r\n  Access Permissions : Vendor - Write\r\n* Beta has been removed to facilitate 'Create a bill', 'Create bills in bulk', 'Create a credit' Rest API's.\r\n\r\n### 2024-02-25\r\n* Beta has been removed to facilitate 'Retrieve all bills','Retrieve all bill payments','Retrieve a bill payment','Retrieve all vendor checks' and 'Retrieve a bill'.\r\n* Create/update/Retrieve VendorCheck endpoint change from bills/vendorChecks to bills/vendorChecks.\r\n* A new API has been introduced to enable adding multiple automatic charges to leases.\r\n  </br>URL : /leases/autocharges (POST)\r\n* General ledger GET end point('/accounting/generalledger') is updated to filter only 7 days duration of transactions earlier it is 30 days.\r\n* New field added \"referenceNumber\" in \"rentAutoCharge\" of create lease request.\r\n* New API introduced to update unit custom fields\r\n  </br>URL : /units/customfields (PUT)\r\n  </br>Access Permissions : Unit - Write\r\n\r\n* New API introduced to update building custom fields\r\n  </br>URL : /buildings/customfields (PUT)\r\n  </br>Access Permissions : Building - Write\r\n\r\n### 2024-02-11\r\n\r\n* Beta has been removed to facilitate Retrieves a list of owner draws,Retrieves a list of owner contributions,Retrieves a list of general ledger accounts  and Retrieves a general ledger account.\r\n* New filed \"description\" is added in General ledger account(accounting/glaccounts - GET & accounting/glaccounts/{glAccountID} - GET) endpoint response.\r\n* New field \"specificLocation\" is added in Workorder create/update request.\r\n* New field \"requiredMaterials\" is added in Workorder create/update request.\r\n* New field \"publishToTenantPortal\" is added in Workorder create/update request.\r\n* New field \"publishToOwnerPortal\" is added in Workorder create/update request.\r\n* New field \"publishToTenantPortal\" is added in Workorder GET response.\r\n* New field \"publishToOwnerPortal\" is added in Workorder GET response.\r\n* New API introduced to update lease custom fields \r\n  </br>URL : /leases/customfields (PUT)\r\n  </br>Access Permissions : Lease - Write (An additional permission is required \"Custom Field - write\" will be introduced with 2024-02-25 release)\r\n* New API introduced to update prospect custom fields\r\n  </br>URL : /prospects/customfields (PUT)\r\n  </br>Access Permissions : prospect - Write (An additional permission is required \"Custom Field - write\" will be introduced with 2024-02-25 release)\r\n\r\n### 2024-01-24\r\n\r\n* Beta has been removed to facilitate WorkOrder task update.\r\n* Beta has been removed to facilitate retrieve vendor general ledger account.\r\n* New field \"source\" is added in Workorder create/update request.\r\n* Beta has been removed to facilitate Unit update.\r\n\r\n### 2024-01-09\r\n\r\n* An additional property , 'ready' (indicating ready to lease), has been added to create the building API. However, the 'unitCount' property value is incorrect when using the create building API.\r\n\r\n* Beta has been removed to facilitate building updates and creation in bulk for Building APi.\r\n  \r\n* \"Retrieve all lease journal entries\". this is an extension for existing endpoint. leaseID will be part of the request params in new endpoint.\r\n<br/>existing url: https://api.propertyware.com/pw/api/rest/v1/leases/journalentries/{leaseID} (Will be discontinued in future once new URL is being used)\r\n<br/>New url: https://api.propertyware.com/pw/api/rest/v1/leases/journalentries\r\n  (leaseID can be sent as a request parameters)\r\n\r\n* \"Retrieve all lease auto charges\". this is an extension for existing endpoint. leaseID will be part of the request params in new endpoint.\r\n  <br/>existing url: https://api.propertyware.com/pw/api/rest/v1/{leaseID}/autocharges (Will be discontinued in future once new URL is being used)\r\n  <br/>New url: https://api.propertyware.com/pw/api/rest/v1/leases/autocharges\r\n  (leaseID can be sent as a request parameters)\r\n  \r\n* New field \"publishedForRent\" is added in Building and Unit responses.\r\n* New field \"role\" is added in prospect contact response.\r\n* Beta has been removed to facilitate Contact update.\r\n* Allowed GET Lease charges/payments/refunds/creditmemos/adjustments, filtered by \"glAccountId\"\r\n\r\n### 2023-10-24\r\n* Retrieve a General Ledger Account\r\n\r\n### 2023-08-28\r\n* Update a document\r\n\r\n### 2023-07-11\r\n* Delete a document\r\n\r\n### 2023-07-11\r\n* Retrieve all documents\r\n* Retrieve a document\r\n* Download a document\r\n\r\n### 2023-06-10\r\n* Lease contacts are included in Retrieve all leases API response\r\n* Lease contacts are included in Retrieve a lease API response\r\n\r\n### 2023-04-24\r\n* Bulk Insertion: Prospects\r\n* Bulk Insertion: Bill Payments\r\n\r\n### 2023-04-11\r\n\r\n* Bulk Insertion: Portfolios\r\n* Bulk Insertion: Buildings\r\n* Bulk Insertion: Units\r\n\r\n### 2023-03-19\r\n\r\n* Bulk insertion: contacts\r\n\r\n### 2023-03-08\r\n\r\n* Bulk insertion: bills\r\n\r\n### 2023-01-24\r\n\r\n* Custom fields in \"Get all\" endpoints\r\n* Prospect creation\r\n* Bill removals \r\n \r\n### 2022-10-25\r\n\r\n* API Read operations for non-financial data\r\n\r\n### 2022-09-21\r\n\r\n* API Read operations available\n\nContact Support:\n Name: Propertyware\n Email: support@propertyware.com",
+      "type": "text/plain"
+    }
+  }
+}

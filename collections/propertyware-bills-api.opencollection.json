@@ -1,0 +1,496 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open API, powered by Propertyware Accounting Bills API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-propertyware-client-id",
+      "value": "{{x-propertyware-client-id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bills",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all bills",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills",
+            "params": [
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+              },
+              {
+                "name": "lastModifiedDateTimeStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or after the date time specified. "
+              },
+              {
+                "name": "lastModifiedDateTimeEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or prior to the date time specified. "
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query",
+                "description": "Indicates the field(s) and direction to sort the results in the response."
+              },
+              {
+                "name": "portfolioID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to bills associated with a specific portfolio."
+              },
+              {
+                "name": "vendorID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to bills associated with a specific vendor."
+              },
+              {
+                "name": "workOrderID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to bills associated with a specific work order."
+              },
+              {
+                "name": "markupGLAccountID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to bills associated with a specific markup general ledger account."
+              },
+              {
+                "name": "paid",
+                "value": "",
+                "type": "query",
+                "description": "Filters results by the bill's paid status. If no status is specified, bills with any status will be returned."
+              },
+              {
+                "name": "billDateStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any bill with a billing date on or after to the date specified."
+              },
+              {
+                "name": "billDateEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any bill with a billing date on or prior to the date specified."
+              },
+              {
+                "name": "dueDateStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any bill with a due date on or after to the date specified."
+              },
+              {
+                "name": "dueDateEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any bill with a due date on or prior to the date specified."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of bills.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">BILLS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>createddate</code>, <code>billdate</code>, <code>billnumber</code>, <code>lastmodifieddatetime</code>, <code>duedate</code>, <code>id</code>"
+        },
+        {
+          "info": {
+            "name": "Create a bill",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a bill.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">BILLS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Create bills in bulk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates bills in bulk.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">BILLS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Create a credit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/credit",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a credit.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">BILLS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Update a Credit",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/credit/:creditID",
+            "params": [
+              {
+                "name": "creditID",
+                "value": "",
+                "type": "path",
+                "description": "Credit ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Credit.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">BILLS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Create a Bill Payment (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/payment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nCreate a Bill Payment<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Update a Bill Payment (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/payment/:billPaymentID",
+            "params": [
+              {
+                "name": "billPaymentID",
+                "value": "",
+                "type": "path",
+                "description": "Bill Payment ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nUpdate a Bill Payment<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve all bill payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/payments",
+            "params": [
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+              },
+              {
+                "name": "lastModifiedDateTimeStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or after the date time specified. "
+              },
+              {
+                "name": "lastModifiedDateTimeEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or prior to the date time specified. "
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query",
+                "description": "Indicates the field(s) and direction to sort the results in the response."
+              },
+              {
+                "name": "vendorID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to bills associated with a specific vendor."
+              },
+              {
+                "name": "paymentGLAccountID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to bills associated with a specific payment general ledger account."
+              },
+              {
+                "name": "paymentDateStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any payment with a date on or after to the date specified."
+              },
+              {
+                "name": "paymentDateEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any payment with a date on or prior to the date specified."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of bill payments.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">BILLS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>createddate</code>, <code>vendorid</code>, <code>lastmodifieddatetime</code>, <code>paymentdate</code>, <code>checknumber</code>, <code>id</code>"
+        },
+        {
+          "info": {
+            "name": "Create bill payments in bulk (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/payments/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nCreates bill payments in bulk.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve a bill payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/payments/:billPaymentID",
+            "params": [
+              {
+                "name": "billPaymentID",
+                "value": "",
+                "type": "path",
+                "description": "Bill Payment ID"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific bill payment.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">BILLS</span> - <code>Read</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve all Vendor checks (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/vendorchecks",
+            "params": [
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+              },
+              {
+                "name": "lastModifiedDateTimeStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or after the date time specified. "
+              },
+              {
+                "name": "lastModifiedDateTimeEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or prior to the date time specified. "
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query",
+                "description": "Indicates the field(s) and direction to sort the results in the response."
+              },
+              {
+                "name": "postDateStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any transaction with a start date on or after the date specified."
+              },
+              {
+                "name": "postDateEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any transaction with a start date on or prior to the date specified."
+              },
+              {
+                "name": "portfolioID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results associated with a specific portfolio."
+              },
+              {
+                "name": "vendorID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to transactions associated with a specific vendor."
+              }
+            ]
+          },
+          "docs": "<p class=\"betaWarning\"><b>Note: </b>This operation is still in beta and might be subject to breaking changes. Production integrations should be avoided at this stage.</p>\nRetrieves a list of Vendor checks.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>postdate</code>, <code>createddate</code>, <code>vendorid</code>, <code>lastmodifieddatetime</code>, <code>id</code>"
+        },
+        {
+          "info": {
+            "name": "Create a Vendor check (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/vendorchecks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nCreates a Vendor check.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Update a Vendor check (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/vendorchecks/:vendorCheckID",
+            "params": [
+              {
+                "name": "vendorCheckID",
+                "value": "",
+                "type": "path",
+                "description": "Vendor Check ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nUpdate an existing Vendor check.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">VENDORS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve a bill",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/:billID",
+            "params": [
+              {
+                "name": "billID",
+                "value": "",
+                "type": "path",
+                "description": "Bill ID"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific bill.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">BILLS</span> - <code>Read</code>\n"
+        },
+        {
+          "info": {
+            "name": "Delete a Bill (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/:billID",
+            "params": [
+              {
+                "name": "billID",
+                "value": "",
+                "type": "path",
+                "description": "Bill ID"
+              }
+            ]
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nDelete a Bill.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">BILLS</span> - <code>Delete</code>\n"
+        },
+        {
+          "info": {
+            "name": "Update a Bill",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/bills/:billId",
+            "params": [
+              {
+                "name": "billId",
+                "value": "",
+                "type": "path",
+                "description": "Bill ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing bill.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">BILLS</span> - <code>Write</code>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

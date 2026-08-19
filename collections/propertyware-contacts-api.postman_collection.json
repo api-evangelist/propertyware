@@ -1,0 +1,3508 @@
+{
+  "item": [
+    {
+      "id": "f1d47520-3314-4a9a-a0f9-1c9ce28eb1fe",
+      "name": "Contacts",
+      "description": {
+        "content": "Resources providing access to contacts.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b7ed8fef-1f0f-4a51-a600-042e7451c2ed",
+          "name": "Retrieve all contacts",
+          "request": {
+            "name": "Retrieve all contacts",
+            "description": {
+              "content": "Retrieves a list of contacts.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>firstname</code>, <code>createddate</code>, <code>lastname</code>, <code>email</code>, <code>type</code>, <code>lastmodifieddatetime</code>, <code>id</code>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModifiedDateTimeStart",
+                  "value": "<dateTime>",
+                  "description": "Filters results to any item modified on or after the date time specified. "
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModifiedDateTimeEnd",
+                  "value": "<dateTime>",
+                  "description": "Filters results to any item modified on or prior to the date time specified. "
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "<string>",
+                  "description": "Indicates the field(s) and direction to sort the results in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Filters results by the contact type."
+                },
+                {
+                  "disabled": false,
+                  "key": "includeCustomFields",
+                  "value": "false",
+                  "description": "includeCustomFields"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ce2c3747-074b-4ee5-8929-9c491d9c107c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeCustomFields",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The total resultset count",
+                  "key": "X-Total-Count",
+                  "value": "8317"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"address\": {\n      \"address\": \"string\",\n      \"addressCont\": \"string\",\n      \"city\": \"string\",\n      \"country\": \"string\",\n      \"postalCode\": \"string\",\n      \"stateRegion\": \"string\"\n    },\n    \"allowESignature\": false,\n    \"altEmail\": \"string\",\n    \"birthDate\": \"1989-12-20\",\n    \"category\": \"string\",\n    \"comments\": \"string\",\n    \"company\": \"string\",\n    \"createdBy\": \"string\",\n    \"createdDateTime\": \"1964-02-09T22:17:02.632Z\",\n    \"customFields\": [\n      {\n        \"dataType\": \"string\",\n        \"definitionID\": 861,\n        \"fieldName\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"dataType\": \"string\",\n        \"definitionID\": 6791,\n        \"fieldName\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"email\": \"string\",\n    \"fax\": \"string\",\n    \"firstName\": \"string\",\n    \"gender\": \"UNKNOWN\",\n    \"homePhone\": \"string\",\n    \"id\": 9451,\n    \"jobTitle\": \"string\",\n    \"lastModifiedBy\": \"string\",\n    \"lastModifiedDateTime\": \"2021-08-12T14:49:19.879Z\",\n    \"lastName\": \"string\",\n    \"middleName\": \"string\",\n    \"mobilePhone\": \"string\",\n    \"nameOnCheck\": \"string\",\n    \"namedOnLease\": false,\n    \"otherPhone\": \"string\",\n    \"salutation\": \"string\",\n    \"suffix\": \"string\",\n    \"type\": \"VENDOR\",\n    \"workPhone\": \"string\"\n  },\n  {\n    \"address\": {\n      \"address\": \"string\",\n      \"addressCont\": \"string\",\n      \"city\": \"string\",\n      \"country\": \"string\",\n      \"postalCode\": \"string\",\n      \"stateRegion\": \"string\"\n    },\n    \"allowESignature\": false,\n    \"altEmail\": \"string\",\n    \"birthDate\": \"2012-12-18\",\n    \"category\": \"string\",\n    \"comments\": \"string\",\n    \"company\": \"string\",\n    \"createdBy\": \"string\",\n    \"createdDateTime\": \"1963-04-25T09:44:24.842Z\",\n    \"customFields\": [\n      {\n        \"dataType\": \"string\",\n        \"definitionID\": 1399,\n        \"fieldName\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"dataType\": \"string\",\n        \"definitionID\": 6852,\n        \"fieldName\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"email\": \"string\",\n    \"fax\": \"string\",\n    \"firstName\": \"string\",\n    \"gender\": \"DECLINE_TO_STATE\",\n    \"homePhone\": \"string\",\n    \"id\": 4342,\n    \"jobTitle\": \"string\",\n    \"lastModifiedBy\": \"string\",\n    \"lastModifiedDateTime\": \"1950-10-06T03:50:16.448Z\",\n    \"lastName\": \"string\",\n    \"middleName\": \"string\",\n    \"mobilePhone\": \"string\",\n    \"nameOnCheck\": \"string\",\n    \"namedOnLease\": false,\n    \"otherPhone\": \"string\",\n    \"salutation\": \"string\",\n    \"suffix\": \"string\",\n    \"type\": \"OTHER\",\n    \"workPhone\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d1d0037-f76a-4274-98f5-cd59e167efc5",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeCustomFields",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "62eda303-64e6-4202-8fa7-b47a98ae0e1d",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeCustomFields",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "adb36f8e-2cb8-4254-a5e6-47cd9fc5fad8",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeCustomFields",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2e09e5a-4313-4976-9836-6fcf51db77dd",
+          "name": "Create a contact",
+          "request": {
+            "name": "Create a contact",
+            "description": {
+              "content": "Creates a contact.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Write</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"address\": {\n    \"country\": \"<string>\",\n    \"address\": \"<string>\",\n    \"addressCont\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postalCode\": \"<string>\",\n    \"stateRegion\": \"<string>\"\n  },\n  \"allowESignature\": \"<boolean>\",\n  \"altEmail\": \"<string>\",\n  \"birthDate\": \"<date>\",\n  \"category\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"company\": \"<string>\",\n  \"email\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"homePhone\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"mobilePhone\": \"<string>\",\n  \"nameOnCheck\": \"<string>\",\n  \"namedOnLease\": \"<boolean>\",\n  \"otherPhone\": \"<string>\",\n  \"salutation\": \"<string>\",\n  \"searchTag\": \"<string>\",\n  \"suffix\": \"<string>\",\n  \"workPhone\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f86f3192-3497-4492-b914-1213bbeda900",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": {\n    \"address\": \"string\",\n    \"addressCont\": \"string\",\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"postalCode\": \"string\",\n    \"stateRegion\": \"string\"\n  },\n  \"allowESignature\": false,\n  \"altEmail\": \"string\",\n  \"birthDate\": \"2005-06-16\",\n  \"category\": \"string\",\n  \"comments\": \"string\",\n  \"company\": \"string\",\n  \"createdBy\": \"string\",\n  \"createdDateTime\": \"1948-11-27T12:41:58.104Z\",\n  \"customFields\": [\n    {\n      \"dataType\": \"string\",\n      \"definitionID\": 1251,\n      \"fieldName\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"dataType\": \"string\",\n      \"definitionID\": 6644,\n      \"fieldName\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"email\": \"string\",\n  \"fax\": \"string\",\n  \"firstName\": \"string\",\n  \"gender\": \"FEMALE\",\n  \"homePhone\": \"string\",\n  \"id\": 7588,\n  \"jobTitle\": \"string\",\n  \"lastModifiedBy\": \"string\",\n  \"lastModifiedDateTime\": \"1948-01-04T08:42:49.285Z\",\n  \"lastName\": \"string\",\n  \"middleName\": \"string\",\n  \"mobilePhone\": \"string\",\n  \"nameOnCheck\": \"string\",\n  \"namedOnLease\": false,\n  \"otherPhone\": \"string\",\n  \"salutation\": \"string\",\n  \"suffix\": \"string\",\n  \"type\": \"PROSPECT\",\n  \"workPhone\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d3bf9e5f-57e5-4c5f-9dd5-d6d346b75947",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e8d4d8fe-880e-4e9e-b864-ed75cd907bbd",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7eae0302-8543-4d9c-8236-f8dde3ac90d2",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8caecdb0-646a-4eec-a7b0-0cdacf402ed1",
+          "name": "Create contacts in bulk",
+          "request": {
+            "name": "Create contacts in bulk",
+            "description": {
+              "content": "Creates contacts in bulk.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Write</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                "bulk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"address\": {\n      \"country\": \"<string>\",\n      \"address\": \"<string>\",\n      \"addressCont\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"stateRegion\": \"<string>\"\n    },\n    \"allowESignature\": \"<boolean>\",\n    \"altEmail\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"category\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"company\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"homePhone\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"mobilePhone\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"namedOnLease\": \"<boolean>\",\n    \"otherPhone\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"suffix\": \"<string>\",\n    \"workPhone\": \"<string>\"\n  },\n  {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"address\": {\n      \"country\": \"<string>\",\n      \"address\": \"<string>\",\n      \"addressCont\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"stateRegion\": \"<string>\"\n    },\n    \"allowESignature\": \"<boolean>\",\n    \"altEmail\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"category\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"company\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"homePhone\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"mobilePhone\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"namedOnLease\": \"<boolean>\",\n    \"otherPhone\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"suffix\": \"<string>\",\n    \"workPhone\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a586f5a0-0e39-467b-be81-30b25553de6f",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"address\": {\n      \"country\": \"<string>\",\n      \"address\": \"<string>\",\n      \"addressCont\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"stateRegion\": \"<string>\"\n    },\n    \"allowESignature\": false,\n    \"altEmail\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"category\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"company\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"homePhone\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"mobilePhone\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"namedOnLease\": false,\n    \"otherPhone\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"suffix\": \"<string>\",\n    \"workPhone\": \"<string>\"\n  },\n  {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"address\": {\n      \"country\": \"<string>\",\n      \"address\": \"<string>\",\n      \"addressCont\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"stateRegion\": \"<string>\"\n    },\n    \"allowESignature\": false,\n    \"altEmail\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"category\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"company\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"homePhone\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"mobilePhone\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"namedOnLease\": false,\n    \"otherPhone\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"suffix\": \"<string>\",\n    \"workPhone\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3659\n  },\n  {\n    \"id\": 8154\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d03b5d5-8ac7-4d37-b856-31cb46468035",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"address\": {\n      \"country\": \"<string>\",\n      \"address\": \"<string>\",\n      \"addressCont\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"stateRegion\": \"<string>\"\n    },\n    \"allowESignature\": false,\n    \"altEmail\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"category\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"company\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"homePhone\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"mobilePhone\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"namedOnLease\": false,\n    \"otherPhone\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"suffix\": \"<string>\",\n    \"workPhone\": \"<string>\"\n  },\n  {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"address\": {\n      \"country\": \"<string>\",\n      \"address\": \"<string>\",\n      \"addressCont\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"stateRegion\": \"<string>\"\n    },\n    \"allowESignature\": false,\n    \"altEmail\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"category\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"company\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"homePhone\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"mobilePhone\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"namedOnLease\": false,\n    \"otherPhone\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"suffix\": \"<string>\",\n    \"workPhone\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"error\": [\n      {\n        \"key\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"key\": \"string\",\n        \"message\": \"string\"\n      }\n    ],\n    \"index\": 7690,\n    \"success\": false\n  },\n  {\n    \"error\": [\n      {\n        \"key\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"key\": \"string\",\n        \"message\": \"string\"\n      }\n    ],\n    \"index\": 4244,\n    \"success\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c94f8bc3-4e19-4736-88f2-46580335cfce",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"address\": {\n      \"country\": \"<string>\",\n      \"address\": \"<string>\",\n      \"addressCont\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"stateRegion\": \"<string>\"\n    },\n    \"allowESignature\": false,\n    \"altEmail\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"category\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"company\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"homePhone\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"mobilePhone\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"namedOnLease\": false,\n    \"otherPhone\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"suffix\": \"<string>\",\n    \"workPhone\": \"<string>\"\n  },\n  {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"address\": {\n      \"country\": \"<string>\",\n      \"address\": \"<string>\",\n      \"addressCont\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"stateRegion\": \"<string>\"\n    },\n    \"allowESignature\": false,\n    \"altEmail\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"category\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"company\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"homePhone\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"mobilePhone\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"namedOnLease\": false,\n    \"otherPhone\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"suffix\": \"<string>\",\n    \"workPhone\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5aa04333-8f57-4a7c-8fd8-2d325d7a36ac",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"address\": {\n      \"country\": \"<string>\",\n      \"address\": \"<string>\",\n      \"addressCont\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"stateRegion\": \"<string>\"\n    },\n    \"allowESignature\": false,\n    \"altEmail\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"category\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"company\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"homePhone\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"mobilePhone\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"namedOnLease\": false,\n    \"otherPhone\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"suffix\": \"<string>\",\n    \"workPhone\": \"<string>\"\n  },\n  {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"address\": {\n      \"country\": \"<string>\",\n      \"address\": \"<string>\",\n      \"addressCont\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"stateRegion\": \"<string>\"\n    },\n    \"allowESignature\": false,\n    \"altEmail\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"category\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"company\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"homePhone\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"mobilePhone\": \"<string>\",\n    \"nameOnCheck\": \"<string>\",\n    \"namedOnLease\": false,\n    \"otherPhone\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"searchTag\": \"<string>\",\n    \"suffix\": \"<string>\",\n    \"workPhone\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "59eaf63d-452b-4377-94b3-d39f02f5bf01",
+          "name": "Retrieve all contact categories",
+          "request": {
+            "name": "Retrieve all contact categories",
+            "description": {
+              "content": "Retrieves a list of contact categories.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Read</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e0ee2a2b-08fc-4cee-ab57-fc4a49f1f01c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The total resultset count",
+                  "key": "X-Total-Count",
+                  "value": "8317"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"categoryName\": \"string\",\n    \"id\": 8117\n  },\n  {\n    \"categoryName\": \"string\",\n    \"id\": 5076\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "28de1738-2ac2-4258-beab-d37718179803",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5bec6709-996a-4251-9778-9b92d147afb5",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "adc2dada-d5dd-439a-9a54-991e971914d2",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1df4f916-6233-48f8-970f-2bc812519686",
+          "name": "Update a contact custom fields (BETA)",
+          "request": {
+            "name": "Update a contact custom fields (BETA)",
+            "description": {
+              "content": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nUpdates an existing contact custom fields<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Write</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                "customfields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entityId\": \"<long>\",\n  \"fieldSet\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "03a24e06-91db-4812-b124-07170711ec5a",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "customfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"body\": {},\n  \"statusCode\": \"409\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ca5ebe8-46b5-4a37-9d80-27a145421f64",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "customfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f994d103-401b-47c0-95ab-da31ba725580",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "customfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1061843c-d1de-44b9-b95e-eb46992cc8fa",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "customfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "61ebf4be-86c1-4c8a-aa9d-bbae41efdf1a",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    "customfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72976c95-9984-4321-998e-a9599b4222ec",
+          "name": "Retrieve a contact",
+          "request": {
+            "name": "Retrieve a contact",
+            "description": {
+              "content": "Retrieves a specific contact.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Read</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                ":contactID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeCustomFields",
+                  "value": "true",
+                  "description": "includeCustomFields"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "contactID",
+                  "description": "(Required) Contact ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fa5bf9cb-d34e-4353-b9eb-45e2e5adcd86",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeCustomFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": {\n    \"address\": \"string\",\n    \"addressCont\": \"string\",\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"postalCode\": \"string\",\n    \"stateRegion\": \"string\"\n  },\n  \"allowESignature\": false,\n  \"altEmail\": \"string\",\n  \"birthDate\": \"2005-06-16\",\n  \"category\": \"string\",\n  \"comments\": \"string\",\n  \"company\": \"string\",\n  \"createdBy\": \"string\",\n  \"createdDateTime\": \"1948-11-27T12:41:58.104Z\",\n  \"customFields\": [\n    {\n      \"dataType\": \"string\",\n      \"definitionID\": 1251,\n      \"fieldName\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"dataType\": \"string\",\n      \"definitionID\": 6644,\n      \"fieldName\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"email\": \"string\",\n  \"fax\": \"string\",\n  \"firstName\": \"string\",\n  \"gender\": \"FEMALE\",\n  \"homePhone\": \"string\",\n  \"id\": 7588,\n  \"jobTitle\": \"string\",\n  \"lastModifiedBy\": \"string\",\n  \"lastModifiedDateTime\": \"1948-01-04T08:42:49.285Z\",\n  \"lastName\": \"string\",\n  \"middleName\": \"string\",\n  \"mobilePhone\": \"string\",\n  \"nameOnCheck\": \"string\",\n  \"namedOnLease\": false,\n  \"otherPhone\": \"string\",\n  \"salutation\": \"string\",\n  \"suffix\": \"string\",\n  \"type\": \"PROSPECT\",\n  \"workPhone\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "49756350-26d5-4260-98e8-cc1ce75ae382",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeCustomFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc85db70-0e2c-4f29-bcd0-77dd20c482f0",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeCustomFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12ee6781-4d84-4683-9d8a-697abca4253b",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeCustomFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0cc41135-0cbb-4745-a017-c91d4a6881c3",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeCustomFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c6b4275a-8e0a-473b-940a-e016b345d4e3",
+          "name": "Update a contact",
+          "request": {
+            "name": "Update a contact",
+            "description": {
+              "content": "Updates a contact.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Write</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                ":contactID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "contactID",
+                  "description": "(Required) Contact ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"address\": {\n    \"country\": \"<string>\",\n    \"address\": \"<string>\",\n    \"addressCont\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postalCode\": \"<string>\",\n    \"stateRegion\": \"<string>\"\n  },\n  \"allowESignature\": \"<boolean>\",\n  \"altEmail\": \"<string>\",\n  \"birthDate\": \"<date>\",\n  \"category\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"company\": \"<string>\",\n  \"email\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"homePhone\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"mobilePhone\": \"<string>\",\n  \"nameOnCheck\": \"<string>\",\n  \"namedOnLease\": \"<boolean>\",\n  \"otherPhone\": \"<string>\",\n  \"salutation\": \"<string>\",\n  \"searchTag\": \"<string>\",\n  \"suffix\": \"<string>\",\n  \"workPhone\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "567efed3-bf4e-4a3d-95e9-27a3c17db923",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": {\n    \"address\": \"string\",\n    \"addressCont\": \"string\",\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"postalCode\": \"string\",\n    \"stateRegion\": \"string\"\n  },\n  \"allowESignature\": false,\n  \"altEmail\": \"string\",\n  \"birthDate\": \"2005-06-16\",\n  \"category\": \"string\",\n  \"comments\": \"string\",\n  \"company\": \"string\",\n  \"createdBy\": \"string\",\n  \"createdDateTime\": \"1948-11-27T12:41:58.104Z\",\n  \"customFields\": [\n    {\n      \"dataType\": \"string\",\n      \"definitionID\": 1251,\n      \"fieldName\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"dataType\": \"string\",\n      \"definitionID\": 6644,\n      \"fieldName\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"email\": \"string\",\n  \"fax\": \"string\",\n  \"firstName\": \"string\",\n  \"gender\": \"FEMALE\",\n  \"homePhone\": \"string\",\n  \"id\": 7588,\n  \"jobTitle\": \"string\",\n  \"lastModifiedBy\": \"string\",\n  \"lastModifiedDateTime\": \"1948-01-04T08:42:49.285Z\",\n  \"lastName\": \"string\",\n  \"middleName\": \"string\",\n  \"mobilePhone\": \"string\",\n  \"nameOnCheck\": \"string\",\n  \"namedOnLease\": false,\n  \"otherPhone\": \"string\",\n  \"salutation\": \"string\",\n  \"suffix\": \"string\",\n  \"type\": \"PROSPECT\",\n  \"workPhone\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f11ffe0f-22cd-4bfa-bef1-f4008fee652c",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6552ea4-c56a-42ed-ba54-8c7321d86c18",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "29895e9e-7c25-4049-b9c1-8f50960f15c8",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "313b2d97-4ed1-45f6-bb00-07ae20785de0",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b5f82cdb-ce99-4a54-88fd-ed7c97100327",
+          "name": "Delete a contact (BETA)",
+          "request": {
+            "name": "Delete a contact (BETA)",
+            "description": {
+              "content": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nDeletes a contact.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Delete</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                ":contactID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "contactID",
+                  "description": "(Required) Contact ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "98b06921-5854-48ba-9584-7c0d2fd36502",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"body\": {},\n  \"statusCode\": \"409\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd200db8-5b19-48b9-89e7-89bb5e4b2997",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2c9a590-4847-42cf-b291-a5d85b20edaa",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "227b3581-6104-4a89-a708-3522e00e6a31",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8fb19950-cb13-4111-9e46-9a43b53483b2",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a30b4a47-ae38-4927-98a0-666509ad7a21",
+          "name": "Retrieve all contact conversations",
+          "request": {
+            "name": "Retrieve all contact conversations",
+            "description": {
+              "content": "Retrieves all the conversations of a contact.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>createddate</code>, <code>lastmodifieddatetime</code>, <code>id</code>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                ":contactID",
+                "conversations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModifiedDateTimeStart",
+                  "value": "<dateTime>",
+                  "description": "Filters results to any item modified on or after the date time specified. "
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModifiedDateTimeEnd",
+                  "value": "<dateTime>",
+                  "description": "Filters results to any item modified on or prior to the date time specified. "
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "<string>",
+                  "description": "Indicates the field(s) and direction to sort the results in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Filters results by the conversation type."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "contactID",
+                  "description": "(Required) Contact ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92823d30-ef2f-4d00-8841-4a830d772342",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The total resultset count",
+                  "key": "X-Total-Count",
+                  "value": "8317"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"comments\": [\n      {\n        \"createdBy\": \"string\",\n        \"createdDateTime\": \"1987-01-03T05:30:14.633Z\",\n        \"id\": 7621,\n        \"lastModifiedBy\": \"string\",\n        \"lastModifiedDateTime\": \"1977-05-08T13:43:31.510Z\",\n        \"text\": \"string\"\n      },\n      {\n        \"createdBy\": \"string\",\n        \"createdDateTime\": \"1973-12-13T04:34:20.982Z\",\n        \"id\": 3633,\n        \"lastModifiedBy\": \"string\",\n        \"lastModifiedDateTime\": \"1962-05-07T01:44:28.887Z\",\n        \"text\": \"string\"\n      }\n    ],\n    \"createdBy\": \"string\",\n    \"createdDateTime\": \"1993-10-30T22:21:29.224Z\",\n    \"entityID\": 9624,\n    \"entityType\": \"string\",\n    \"id\": 1451,\n    \"lastModifiedBy\": \"string\",\n    \"lastModifiedDateTime\": \"2008-04-22T14:31:36.145Z\",\n    \"subject\": \"string\",\n    \"type\": \"OWNER\"\n  },\n  {\n    \"comments\": [\n      {\n        \"createdBy\": \"string\",\n        \"createdDateTime\": \"2007-01-12T01:06:41.403Z\",\n        \"id\": 2173,\n        \"lastModifiedBy\": \"string\",\n        \"lastModifiedDateTime\": \"2019-05-16T17:17:17.497Z\",\n        \"text\": \"string\"\n      },\n      {\n        \"createdBy\": \"string\",\n        \"createdDateTime\": \"1959-08-03T13:42:53.989Z\",\n        \"id\": 8305,\n        \"lastModifiedBy\": \"string\",\n        \"lastModifiedDateTime\": \"1954-11-20T03:47:42.499Z\",\n        \"text\": \"string\"\n      }\n    ],\n    \"createdBy\": \"string\",\n    \"createdDateTime\": \"1961-02-26T12:24:45.545Z\",\n    \"entityID\": 9706,\n    \"entityType\": \"string\",\n    \"id\": 161,\n    \"lastModifiedBy\": \"string\",\n    \"lastModifiedDateTime\": \"1951-07-24T00:27:10.039Z\",\n    \"subject\": \"string\",\n    \"type\": \"OWNER\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a42d4976-6ce5-47ed-9476-be271443b492",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "477de93c-2d8d-4f76-873e-b1e49f09e5dd",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7483b25c-1725-42a8-8f65-16cffae30c7b",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0390e8ca-8c2c-42ce-a9ff-b069a55c364f",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModifiedDateTimeEnd",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6580596-3a0a-4531-b236-479c8748f696",
+          "name": "Retrieve a contact conversation",
+          "request": {
+            "name": "Retrieve a contact conversation",
+            "description": {
+              "content": "Retrieves a specific contact conversation.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Read</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                ":contactID",
+                "conversations",
+                ":conversationID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "contactID",
+                  "description": "(Required) Contact ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "conversationID",
+                  "description": "(Required) Conversation ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88108aa1-d303-41f4-9c3a-2c6eb0609a32",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"comments\": [\n    {\n      \"createdBy\": \"string\",\n      \"createdDateTime\": \"2010-09-22T04:17:42.964Z\",\n      \"id\": 6493,\n      \"lastModifiedBy\": \"string\",\n      \"lastModifiedDateTime\": \"2009-08-08T19:25:27.960Z\",\n      \"text\": \"string\"\n    },\n    {\n      \"createdBy\": \"string\",\n      \"createdDateTime\": \"2025-12-10T03:43:45.295Z\",\n      \"id\": 1151,\n      \"lastModifiedBy\": \"string\",\n      \"lastModifiedDateTime\": \"1998-07-13T18:09:27.072Z\",\n      \"text\": \"string\"\n    }\n  ],\n  \"createdBy\": \"string\",\n  \"createdDateTime\": \"2003-10-07T05:39:40.853Z\",\n  \"entityID\": 903,\n  \"entityType\": \"string\",\n  \"id\": 9591,\n  \"lastModifiedBy\": \"string\",\n  \"lastModifiedDateTime\": \"1988-07-18T19:19:19.798Z\",\n  \"subject\": \"string\",\n  \"type\": \"OWNER\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c63cdaa9-703e-46e1-9e68-fe4f29233634",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f5de985c-690b-4b6c-b0ce-271c9bcf7910",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "35fa3b6e-f37a-451e-83bd-5b86f56681e0",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73d735b3-f6e0-41ca-bea6-44a538e8347a",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "836e8605-2b1c-4732-a8e7-02189777822c",
+          "name": "Delete a contact conversation (BETA)",
+          "request": {
+            "name": "Delete a contact conversation (BETA)",
+            "description": {
+              "content": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nDeletes a specific contact conversation.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CONTACTS</span> - <code>Delete</code>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                ":contactID",
+                "conversations",
+                ":conversationID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "contactID",
+                  "description": "(Required) Contact ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "conversationID",
+                  "description": "(Required) Conversation ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fab428de-48e7-4e26-9d38-adc6762f1736",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"body\": {},\n  \"statusCode\": \"409\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13a7e754-977c-49d3-8940-12f575fb9cf0",
+              "name": "Unable to process the request due to malformed request syntax or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13683bf2-ff07-4e9d-9440-114f7ea78d27",
+              "name": "The API key couldn't be authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "57885a4f-8dcc-4c4d-aed0-10b3218e5e14",
+              "name": "The supplied credentials don't have permissions to access the resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errorCode\": \"string\",\n  \"errors\": [\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"userMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "499b8129-fb5a-4803-8093-209fab69bf48",
+              "name": "Entity not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":contactID",
+                    "conversations",
+                    ":conversationID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "contactID",
+                      "description": "(Required) Contact ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "conversationID",
+                      "description": "(Required) Conversation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-propertyware-client-id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.propertyware.com/pw/api/rest/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-propertyware-client-id"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "680c6f33-069e-4a39-ba77-b45f9ced5981",
+    "name": "Open API, powered by Propertyware Accounting Contacts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "﻿\r\n\r\n# Introduction\r\n\r\nWelcome to Propertyware’s API—a powerful, RESTful programming interface that lets you leverage valuable Propertyware data.\r\n\r\n## Account Configuration\r\nBefore you can use Propertyware’s API, you’ll need to make some tweaks to your account settings. \r\n\r\n<br />\r\n\r\n### Enabling the API \r\nIn order to start creating your keys and making requests, you’ll need to enable the API.\r\n\r\n>  **Tip:** You’ll need an administrator user role with access to ***Administration Setup > API Keys*** to set things up properly. \r\n\r\n**Let's Begin!** \r\n\r\n1. Sign in to your [Propertyware](https://app.propertyware.com/pw/login.jsp) account from your browser. \r\n\r\n2. Open the ***Setup*** page\r\n\r\n3. On the left navigation bar, expand ***Administration Setup*** and then click ***API Keys***. \r\n\r\nIf you are having issues accessing the API keys page within your account you can submit a [Support](#section/API-Overview/Support) request for assistance.\r\n\r\n## API Keys\r\nAccount-level API keys authenticate every request and keep things secure. \r\n\r\nAPI keys have two components: a “client ID” and a “secret”.\r\n\r\n* **Client IDs** are similar to usernames. They’re used to identify your Propertyware API key and are safe to share.\r\n* **Secrets** are similar to passwords. They must be kept confidential. \r\n\r\nWhenever you make a request, you’ll need the API key’s client ID and secret. If you forget it, make a mistake, or try to use information that’s linked to a deleted key, the API will return a `401` response code.\r\n\r\n>  **Tip:** We compiled a list of best practices that detail how securely store API keys. [Give it a read](#section/Getting-Started/Keeping-API-Keys-Safe)!\r\n\r\n## Creating API Keys \r\n\r\nNow that the Open API is enabled, you’ll be able to create API keys. You’re almost there!\r\n\r\n**How to create an API key** \r\n\r\n1. On the API Keys page, click ***Create API Key***. A modal will appear.\r\n\r\n<p>\r\n    <img src=\"APIKey_Page.JPG\"/>\r\n</p>\r\n\r\n<p>\r\n    <img src=\"APIKey_New.JPG\"/>\r\n</p>\r\n\r\n2. Enter a clear, memorable name and description for your API key. It’ll make it easier to locate the right key when you make a request.\r\n\r\n3. Now, choose which pieces of Propertyware data you want this API key to have access to by selecting the corresponding radio buttons. Once finished, click **GENERATE KEY**.\r\n\r\n4. You have successfully created an API key! The client id and secret associated to this key will be presented. \r\n\r\n<p>\r\n    <img src=\"APIKey_Generate.JPG\"/>\r\n</p>\r\n\r\n> **Important:** This is your only chance to record the secret. Make sure it’s stored somewhere secure! If it’s forgotten, you’ll need to delete this key and start from scratch.\r\n\r\n\r\nYou have now successfully created an API key and have everything you need to  send requests to the Propertyware API! \r\n\r\nBefore moving on to [making your first request](#section/Getting-Started/How-to-Make-a-Request) please review [Keeping API Keys Safe](#section/Getting-Started/Keeping-API-Keys-Safe) for an overview on securely storing your API keys.  \r\n<br />\r\nIf you are having issues creating API keys you can submit a [Support](#section/API-Overview/Support) request for assistance.\r\n\r\n## Keeping API Keys Safe\r\n\r\nBased on their permissions, API keys could have full access to your account’s Propertyware data. It’s important that you only grant access to trusted applications, securely record secrets, and consider a password manager to stay organized.\r\n\r\n### Recommended Practices\r\n\r\n- Avoid hard-coding client IDs and secrets inside source files.\r\n- Avoid storing client IDs and secrets in any files that may be committed to source control, particularly cloud-based source control platforms.\r\n- Apply restrictions to client IDs and secrets shared with your staff. You can restrict a key to particular Propertyware entities or to read-only access (GET resources only).\r\n- Avoid sharing client IDs and secrets across public, insecure platforms.\r\n- Establish a process to regularly recreate your client IDs and secrets from your Propertyware account.\r\n<br />\r\n<br />\r\n\r\n## How to Make a Request \r\n\r\nYou’ve done a great job setting up your account, Now, we’ll walk you through how to access your data. It’s very straightforward and should only take a few minutes!\r\n\r\n> **Tip:** Looking for the right HTTP client? If you’re just getting started, we recommend Postman. \r\n\r\n### Let's Get Started!\r\n\r\n#### Step 1: Get Your API Key\r\n\r\nIf you haven't yet done so, obtain your API key client ID and secret from your Propertyware account. Your API key is how the Propertyware API authenticates requests and ensures only you can access your data.\r\n\r\n#### Step 2: Install a HTTP client\r\n\r\nThe Propertyware API supports any standard HTTP client. If you're looking for a user-friendly HTTP client application, we recommend [Postman](https://www.postman.com/product/api-client) – it allows you to access the Propertyware API without writing code. We’ll use Postman for our example below to demonstrate sending an API request.\r\n\r\n#### Step 3: Make a Sample Request\r\n\r\nLet's dive in and make a simple request to get all the [Buildings](#operation/getBuildingsUsingGET) in your account. This will confirm your connectivity to our platform and validate the keys you created on our website. Simply follow the instructions below.\r\n\r\n1. Open the Postman application. \r\n2. Open the *verb* menu and select **GET**.\r\n3. Enter the request endpoint in the field next to GET. \r\n   - Here’s the endpoint to get all buildings: https://api.propertyware.com/pw/api/rest/v1/buildings.\r\n4. To authenticate the request, enter your `client ID`, your `secret` and your `organization iD` respectively in these request headers: \r\n   - `x-propertyware-client-id`\r\n   - `x-propertyware-client-secret`\r\n   - `x-propertyware-system-id` _(organization id)_\r\n\r\nThe organization id uniquely identifies your Propertyware account and is an additional measure to enforce proper access to the correct data. ___Your client id and secret pair will only work with the organization it belongs to___.\r\n\r\nYour full request should look similar to the image below.\r\n<kbd><img src=\"request_example.png\" /></kbd>\r\n\r\n5. Review the parameters of your request on last time. Once finished, click **Send**.\r\n\r\n6. If successful, you should see a JSON response and a `200` HTTP status code. Congratulations! You've connected to the Propertyware API.\r\n\r\nYou now have the knowledge required to make requests for any of our resources.\r\n\r\nIf you've received an error response please review the JSON response message for a description of how to resolve the issue. You can also see more information about HTTP status codes in the [Response Codes](#section/API-Overview/Response-Codes) section. If you are still having trouble making a request after reviewing these sections please submit a [Support](#section/API-Overview/Support) request.\r\n\r\n# API Overview\r\nThe Propertyware API is built upon standard REST conventions. It's designed to use consistent resource-oriented URLs, accept and return JSON-encoded messages, and use standard HTTP status codes and verbs.\r\n\r\n## Base URL\r\nThe base URL for production environment API requests is: `https://api.propertyware.com/pw/api/v1/rest`\r\n\r\nIn order to ensure all requests and responses are secure between the API consumer and Propertyware servers, requests must be made using the `https` protocol. Any requests not made with the `https` protocol will be refused by the Propertyware API platform. \r\n\r\n> **Note:** URL paths are case-sensitive to stay consistent with common REST standards. If your request doesn’t align with the documented URL path, you’ll receive a `404` response code reminding you of this constraint.\r\n\r\n## API Versioning\r\nThe Propertyware API is version controlled. Versioning ensures backwards-incompatible changes to the API don’t impact any existing integrations.\r\n\r\nPropertyware uses only a major version nomenclature to manage changes. The current version of the Propertyware API is version 1. By specifying a version in the resource request URL, you'll get expected responses regardless of future changes to the API. Here's an example of calling version 1 of the retrieve all leases resource:\r\n\r\n`https://api.propertyware.com/pw/api/rest/v1/leases`\r\n\r\nAny request submitted without the version in the URL path will result in a `404` error response code. \r\n\r\n### Releasing Changes to the API\r\nThe Propertyware API will continue to evolve to ensure it meets the needs of our customers. Changes will be defined as either backwards-compatible or backwards-incompatible. \r\n\r\nWe’ll provide advance notice for all API releases–regardless of the type of modifications being made. \r\n\r\n#### Backward-compatible Changes\r\nBackward-compatible changes are modifications to the API that shouldn't impact existing integrations. They'll apply to the current version of the API. Simply put: you won’t need to change the version to consume new changes like these. \r\n\r\nIt's important as you develop against the Propertyware API that you ensure  these types of changes don't impact your integration. Here's are examples of backward-compatible modifications. \r\n\r\n* Adding new API resources and/or endpoints.\r\n* Adding new optional request parameters to existing API methods.\r\n* Adding new properties to existing API responses and non-required properties for request messages.\r\n* Changing property order in existing API responses.\r\n\r\nAll backward-compatible changes to the API will be documented in the [Changelog](#section/Changelog).\r\n\r\n#### Backwards-incompatible Changes\r\n\r\nWhen backwards-incompatible changes to the API occur, a new version of the API will be released. You’ll need to update the URL path  to consume resources under the new API version. \r\n\r\nBackwards-incompatible changes include:\r\n\r\n* Removing a property from a request and/or response message.\r\n* Changing the name of a property in a message.\r\n* Adding a required parameter to a request message.\r\n* Changing existing enumeration values.\r\n\r\nNew versions of the API will have full reference documentation and an upgrade guide. \r\n\r\n## Authentication\r\n\r\nThe Propertyware API uses API key’s client IDs and secrets to authenticate requests. \r\n\r\nAn organization ID, an API key client ID and secret must be passed in every request header using the following parameters: \r\n\r\n- `x-propertyware-client-id`\r\n- `x-propertyware-client-secret`\r\n- `x-propertyware-system-id`\r\n\r\nFailing to provide both of them in the request header will cause the API to return a `401` HTTP status code.\r\n<!--\r\n## Rate Limiting (FUTURE)\r\nRate limits help us ensure consistent and reliable performance for all users, even during peak loads. That’s why we limit clients to **10 concurrent requests per second**.\r\n\r\nIf your request rate violates that limit, a response code of `429` is returned. Simply retry the request after a short interval (~200ms).\r\n-->\r\n\r\n## Bulk Request Options\r\nAll top-level API resources support bulk fetches. For instance, you can retrieve all [Portfolios](#operation/getPortfoliosUsingGET). These resources also allow for filtering criteria. Each resource has descriptions of the filter criteria available.\r\n\r\nIn addition to filtering, our API gives you the ability to control the returned data’s pagination and the sort order. \r\n\r\n### Pagination\r\nEndpoints that return result sets allow for pagination using `limit` and `offset` request parameters to reduce the amount of data returned.\r\n\r\nThe `limit` request parameter will cap the number of results that come back in the response. If you don't specify a `limit` value, a **default of 100 results** are returned. The maximum `limit` value is 500. If a `limit` value is specified greater than 500, it will be overridden to the default to 500. \r\n\r\nThe `offset` request parameter indicates the record position within the resultset to start at when returning the results. The `offset` is zero-based and is inclusive. If no `offset` value is submitted it will default to 0. \r\n\r\n\r\nThe total resultset count is returned in the HTTP Header `X-Total-Count`\r\n\r\n\r\n#### Pagination Example\r\n\r\nAs an example, let's say we make a request to retrieve all rental properties with no paging parameters. Our response indicates in the `X-Total-Count` header that there are 150 total rental properties. We want to get only the last 50 results so we would submit a request with the `offset` set to 100 and the `limit` set to 50.\r\n\r\n> **Note:** The `limit` and `offset` parameter names are case-sensitive. If they aren't formatted correctly, the API will return a `404` HTTP status code.\r\n\r\n### Sorting Results\r\n\r\nYou can specify the sort order of returned data by assigning properties from the returned object to the `orderby` parameter in the querystring. For example:\r\n```\r\norderby=name\r\n```\r\nBy default, the sort is performed in ascending order. To specify sort order, use \"asc\" for ascending or \"desc\" for descending. For example:\r\n```\r\norderby=name desc\r\n```\r\nAdditionally, you can sort by multiple properties by comma separating the properties. For example:\r\n```\r\norderby=abbreviation asc,name desc\r\n```\r\n\r\n> **Note:** While the `orderby` parameter is case-sensitive, the properties specified in the `orderby` value aren't. \r\n\r\n## Response Codes\r\nThe Propertyware API supports standard HTTP status codes.\r\n\r\n|Response Code          |Description  |\r\n|--|--|\r\n|200 OK | Everything worked as expected. |\r\n|400 Bad Request | The request was unacceptable, often due to missing a required parameter.|\r\n|401 Unauthorized|The API client ID and secret weren’t provided or they’re no longer valid. Be sure that the client ID and secret combination are correct and they are still active.|\r\n|403 Forbidden|The API key doesn't have permission to perform the request. This could be due to authorization for the given endpoint or an inability to access given entities within the platform (e.g. properties).\r\n|404 Not Found|The requested resource doesn't exist.|\r\n|415 Unsupported Media Type |Ensure you have the appropriate content-type header value set on your request. Each resource is documented with media type(s) that are accepted.|\r\n|429 Too Many Requests |Too many requests against the API too quickly. We recommend an exponential backoff of your requests.|\r\n|500 and above - Server Errors|Something went wrong on Propertyware's end. Review the JSON response message for more details about the error.|\r\n\r\n## API Date Format\r\n* For all request and response date fields allowing ISO date format: YYYY-MM-DD (e.g.2019-08-24).\r\n* For all request and response dateAndTime fields format is allowing: YYYY-MM-dd'T'HH:mm:ssXXX (e.g.2022-06-28T08:47:13Z).\r\n\r\n## Support\r\nIf you are unable to resolve your issue after reviewing the API documentation our support team can assist you.\r\n\r\n# Changelog\r\n\r\n### 2024-12-11\r\n\r\n* New API introduced to add comments to existing task in workorder.<br/>\r\n  URL : /workorders//{workOrderId}/tasks/{taskId}/comments (POST) <br/>\r\n  Access Permissions : WorkOrder - Write\r\n*  New fields \"baseYear\",\"baseYearOperatingExpenses\",\"baseYearPropertyInsurance\",\"baseYearPropertyTaxes\" are added to  Building request/response for Below End Points<br/>\r\n    *  Get Building (Get - /buildings/{buildingID})\r\n    *  Create Building (Post - /buildings)\r\n    *  Update Building (Put - /buildings/{buildingID})\r\n    *  Get All Buildings (Get - /buildings)\r\n*  New fields \"syndicate\" ,\"moveInDays\", \"featuredForRent\" are added to Building request/response for Below End Points<br/>\r\n    *  Create Building (Post - /buildings)\r\n    *  moveInDays field must be with in these days given here \"1 to 30,45,60,75,90\" added validation.\r\n\r\n\r\n\r\n\r\n### 2024-11-13\r\n* New fields \"reasonForLeaving\",\"noticeGivenDate\",\"paymentRestriction\"  is added to response of<br/>\r\n  (1) Create a Lease - POST /leases<br/>\r\n  (2) Update a Lease - GET /leases/{leaseID}\r\n* New field \"chargeAmountPaid\" is added to lease charges payments entity. indicates the amount paid for current charge.<br/>\r\n  (1) Get a Lease - GET /leases/charges (charge.payments.chargeAmountPaid)<br/>\r\n\r\n### 2024-09-25\r\n* New API introduced to close existing workorder.<br/>\r\n    URL : /workorders/closeworkorder/{workorderID} (PUT) <br/>\r\n    Access Permissions : WorkOrder - Write\r\n* A new fields \"managementContractStartDate\" and \"managementContractEndDate\" are added to update Building request/response for below end points\r\n   * Update Building ( PUT - buildings/{buildingID} ) \r\n    \r\n### 2024-09-11\r\n* A new field \"unitIDs\"(Unit ID list associated to a Work Order) is added to response of<br/>\r\n  (1) Retrieve a Work Order - GET /workorders/{workorderID}<br/>\r\n  (2) Retrieve All Work Orders - GET /workorders\r\n\r\n### 2024-06-09\r\n* A new field \"unitID\" is added to response of<br/>\r\n  (1) Retrieve a Work Order - GET /workorders/{workorderID}<br/>\r\n  (2) Retrieve All Work Orders - GET /workorders\r\n* Building and Unit targetDeposit data type changed from double to String and the impacted end points are all POST/GET/PUT. \r\n\r\n### 2024-05-22\r\n* API documentation is corrected to show 'file' field in request body for 'Upload a Document' API.\r\n\r\n### 2024-05-12\r\n* A new filed \"arBalance\" is added to Lease response for below end points\r\n  * Retrieve a lease ( GET - /leases/{leaseID} - set query parameter \"includeOtherBalances = true\" to include lease arBalance)\r\n  * Retrieve all leases ( GET - /leases )\r\n  * Create a lease (POST - /leases)\r\n  * Update a lease (PUT - /leases/{leaseID})\r\n\r\n### 2024-04-23\r\n* Beta has been removed to facilitate Update an owner draw ( PUT - /accounting/ownerdraws/{drawID} )\r\n\r\n### 2024-04-10\r\n\r\n* Beta has been removed to facilitate Update a Credit ( PUT - /bills/credit/{creditID} )\r\n* Beta has been removed to facilitate Update a Bill ( PUT - /bills/{billId} )\r\n* Beta has been removed to facilitate Create word orders in bulk. ( POST - /workorders/bulk )\r\n* A new field \"amount\" is added to Bill response for below end points\r\n  * Retrieve a bill ( GET - /bills/{billID} )\r\n  * Retrieve all bills ( GET - /bills/ )\r\n  * Create a Bill ( POST - /bills/ )\r\n  * Update Bill ( PUT - /bills/{billId} )\r\n  * Create a Credit ( POST - /bills/credit )\r\n  * Update a Credit ( PUT - /bills/credit/{creditID} )\r\n* Update a Contact ( PUT - /contacts/{contactID} ) is allowed to update any Contact Type\r\n* A new field \"managementFeesType\" is added to CREATE building(POST), UPDATE building(PUT), GET buildings(GET) end points. Existing \"managementFeeType\" is deprecated and should not be used.\r\n* Few fields from CREATE building are not updating with a POST request. Resolved the issue and impacted fields are targetDeposit, targetRentUnits.\r\n* Few fields from UPDATE building are not updating with a PUT request. Resolved the issue and impacted fields are numberOfBathrooms, numberOfBedRooms, targetRent, targetDeposit, targetRentUnits, marketingName, managementFlatFee, managementFeeType, petsAllowed, postingTitle, shortDescription, yearBuilt.\r\n* The 'account' field has been removed, and the data type for the 'dueDay' field has been changed \r\nfrom String to Integer in the response for the ( POST - /leases/autocharges ) endpoint.\r\n* Fixed the issue - date field value getting saved as today date for Create Lease Charge, Update Lease Charge, Create Bulk Charges, Create a Lease Payment, Update a Lease Payment, Create a Lease Refund APs.\r\n* Work order id validation is implemented for Create Bill, Update Bill, Create Credit, Update Credit APIs.\r\n\r\n### 2024-03-24\r\n\r\n* New API introduced to update existing workorder custom fields.<br/>\r\n  URL : /workorders/customfields (PUT) <br/>\r\n  Access Permissions : WorkOrder - Write\r\n* A new field \"role\" is added to GET lease contacts end point (/leases/{leaseID}/contacts) \r\n* A new field \"role\" is added to \"contact\" in GET lease end point (/leases/{leaseID})\r\n* A new field \"role\" is added to \"contact\" in GET All leases end point (/leases)\r\n\r\n### 2024-03-11\r\n\r\n* New API introduced to update existing contact custom fields.<br/>\r\n  URL : /contacts/customfields (PUT) <br/>\r\n  Access Permissions : Contacts - Write\r\n* Beta has been removed to facilitate create a bank deposit, create an owner contribution, create an owner draw requests.\r\n* New API introduced to update existing portfolio custom fields.<br/>\r\n  URL : /portfolios/customfields (PUT) <br/>\r\n  Access Permissions : Portfolio - Write\r\n* New API introduced to update existing vendor custom fields.<br/>\r\n  URL : /vendors/customfields (PUT) <br/>\r\n  Access Permissions : Vendor - Write\r\n* Beta has been removed to facilitate 'Create a bill', 'Create bills in bulk', 'Create a credit' Rest API's.\r\n\r\n### 2024-02-25\r\n* Beta has been removed to facilitate 'Retrieve all bills','Retrieve all bill payments','Retrieve a bill payment','Retrieve all vendor checks' and 'Retrieve a bill'.\r\n* Create/update/Retrieve VendorCheck endpoint change from bills/vendorChecks to bills/vendorChecks.\r\n* A new API has been introduced to enable adding multiple automatic charges to leases.\r\n  </br>URL : /leases/autocharges (POST)\r\n* General ledger GET end point('/accounting/generalledger') is updated to filter only 7 days duration of transactions earlier it is 30 days.\r\n* New field added \"referenceNumber\" in \"rentAutoCharge\" of create lease request.\r\n* New API introduced to update unit custom fields\r\n  </br>URL : /units/customfields (PUT)\r\n  </br>Access Permissions : Unit - Write\r\n\r\n* New API introduced to update building custom fields\r\n  </br>URL : /buildings/customfields (PUT)\r\n  </br>Access Permissions : Building - Write\r\n\r\n### 2024-02-11\r\n\r\n* Beta has been removed to facilitate Retrieves a list of owner draws,Retrieves a list of owner contributions,Retrieves a list of general ledger accounts  and Retrieves a general ledger account.\r\n* New filed \"description\" is added in General ledger account(accounting/glaccounts - GET & accounting/glaccounts/{glAccountID} - GET) endpoint response.\r\n* New field \"specificLocation\" is added in Workorder create/update request.\r\n* New field \"requiredMaterials\" is added in Workorder create/update request.\r\n* New field \"publishToTenantPortal\" is added in Workorder create/update request.\r\n* New field \"publishToOwnerPortal\" is added in Workorder create/update request.\r\n* New field \"publishToTenantPortal\" is added in Workorder GET response.\r\n* New field \"publishToOwnerPortal\" is added in Workorder GET response.\r\n* New API introduced to update lease custom fields \r\n  </br>URL : /leases/customfields (PUT)\r\n  </br>Access Permissions : Lease - Write (An additional permission is required \"Custom Field - write\" will be introduced with 2024-02-25 release)\r\n* New API introduced to update prospect custom fields\r\n  </br>URL : /prospects/customfields (PUT)\r\n  </br>Access Permissions : prospect - Write (An additional permission is required \"Custom Field - write\" will be introduced with 2024-02-25 release)\r\n\r\n### 2024-01-24\r\n\r\n* Beta has been removed to facilitate WorkOrder task update.\r\n* Beta has been removed to facilitate retrieve vendor general ledger account.\r\n* New field \"source\" is added in Workorder create/update request.\r\n* Beta has been removed to facilitate Unit update.\r\n\r\n### 2024-01-09\r\n\r\n* An additional property , 'ready' (indicating ready to lease), has been added to create the building API. However, the 'unitCount' property value is incorrect when using the create building API.\r\n\r\n* Beta has been removed to facilitate building updates and creation in bulk for Building APi.\r\n  \r\n* \"Retrieve all lease journal entries\". this is an extension for existing endpoint. leaseID will be part of the request params in new endpoint.\r\n<br/>existing url: https://api.propertyware.com/pw/api/rest/v1/leases/journalentries/{leaseID} (Will be discontinued in future once new URL is being used)\r\n<br/>New url: https://api.propertyware.com/pw/api/rest/v1/leases/journalentries\r\n  (leaseID can be sent as a request parameters)\r\n\r\n* \"Retrieve all lease auto charges\". this is an extension for existing endpoint. leaseID will be part of the request params in new endpoint.\r\n  <br/>existing url: https://api.propertyware.com/pw/api/rest/v1/{leaseID}/autocharges (Will be discontinued in future once new URL is being used)\r\n  <br/>New url: https://api.propertyware.com/pw/api/rest/v1/leases/autocharges\r\n  (leaseID can be sent as a request parameters)\r\n  \r\n* New field \"publishedForRent\" is added in Building and Unit responses.\r\n* New field \"role\" is added in prospect contact response.\r\n* Beta has been removed to facilitate Contact update.\r\n* Allowed GET Lease charges/payments/refunds/creditmemos/adjustments, filtered by \"glAccountId\"\r\n\r\n### 2023-10-24\r\n* Retrieve a General Ledger Account\r\n\r\n### 2023-08-28\r\n* Update a document\r\n\r\n### 2023-07-11\r\n* Delete a document\r\n\r\n### 2023-07-11\r\n* Retrieve all documents\r\n* Retrieve a document\r\n* Download a document\r\n\r\n### 2023-06-10\r\n* Lease contacts are included in Retrieve all leases API response\r\n* Lease contacts are included in Retrieve a lease API response\r\n\r\n### 2023-04-24\r\n* Bulk Insertion: Prospects\r\n* Bulk Insertion: Bill Payments\r\n\r\n### 2023-04-11\r\n\r\n* Bulk Insertion: Portfolios\r\n* Bulk Insertion: Buildings\r\n* Bulk Insertion: Units\r\n\r\n### 2023-03-19\r\n\r\n* Bulk insertion: contacts\r\n\r\n### 2023-03-08\r\n\r\n* Bulk insertion: bills\r\n\r\n### 2023-01-24\r\n\r\n* Custom fields in \"Get all\" endpoints\r\n* Prospect creation\r\n* Bill removals \r\n \r\n### 2022-10-25\r\n\r\n* API Read operations for non-financial data\r\n\r\n### 2022-09-21\r\n\r\n* API Read operations available\n\nContact Support:\n Name: Propertyware\n Email: support@propertyware.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open API, powered by Propertyware Accounting Custom field definitions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-propertyware-client-id",
+      "value": "{{x-propertyware-client-id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Custom field definitions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve list of custom field definitions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/customfields/:entityType/definitions",
+            "params": [
+              {
+                "name": "entityType",
+                "value": "",
+                "type": "path",
+                "description": "Entity type, allowed entity types (Asset, Building, Contact, Lease, Portfolio, Prospect, Unit, Vendor, WorkOrder, ServiceAgreement)"
+              }
+            ]
+          },
+          "docs": "Retrieve list of custom field definitions.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">CUSTOM FIELD</span> - <code>Read</code>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

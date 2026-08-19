@@ -1,0 +1,421 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open API, powered by Propertyware Accounting Work orders API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-propertyware-client-id",
+      "value": "{{x-propertyware-client-id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Work orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all work orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders",
+            "params": [
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+              },
+              {
+                "name": "lastModifiedDateTimeStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or after the date time specified. "
+              },
+              {
+                "name": "lastModifiedDateTimeEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or prior to the date time specified. "
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query",
+                "description": "Indicates the field(s) and direction to sort the results in the response."
+              },
+              {
+                "name": "portfolioID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to prospects associated with a specific portfolio."
+              },
+              {
+                "name": "buildingID",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to prospects associated with a specific building."
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to work orders with a specific status."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to work orders with a specific type."
+              },
+              {
+                "name": "priority",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to work orders with a specific priority."
+              },
+              {
+                "name": "completedDateStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any payment with a date on or after to the date specified."
+              },
+              {
+                "name": "completedDateEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any payment with a date on or prior to the date specified."
+              },
+              {
+                "name": "includeCustomFields",
+                "value": "",
+                "type": "query",
+                "description": "includeCustomFields"
+              }
+            ]
+          },
+          "docs": "Retrieves a list of work orders.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>createddate</code>, <code>number</code>, <code>type</code>, <code>lastmodifieddatetime</code>, <code>status</code>, <code>id</code>"
+        },
+        {
+          "info": {
+            "name": "Create a work order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a work order.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Create work orders in bulk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates word orders in bulk.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Close a Workorder  (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/closeworkorder/:workOrderID",
+            "params": [
+              {
+                "name": "workOrderID",
+                "value": "",
+                "type": "path",
+                "description": "WorkOrder ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nClose an existing Workorder<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Update a workorder custom fields (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/customfields",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nUpdates an existing workorder custom fields<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Delete a Work Order (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/:workOrderID",
+            "params": [
+              {
+                "name": "workOrderID",
+                "value": "",
+                "type": "path",
+                "description": "Work Order ID"
+              }
+            ]
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nDelete a Work Order.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Delete</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve a work order task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/:workOrderID/tasks/:taskID",
+            "params": [
+              {
+                "name": "workOrderID",
+                "value": "",
+                "type": "path",
+                "description": "Work Order ID"
+              },
+              {
+                "name": "taskID",
+                "value": "",
+                "type": "path",
+                "description": "Task ID"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific work order task.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Read</code>\n"
+        },
+        {
+          "info": {
+            "name": "Delete a work order task (BETA)",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/:workOrderID/tasks/:taskID",
+            "params": [
+              {
+                "name": "workOrderID",
+                "value": "",
+                "type": "path",
+                "description": "Work Order ID"
+              },
+              {
+                "name": "taskID",
+                "value": "",
+                "type": "path",
+                "description": "Task ID"
+              }
+            ]
+          },
+          "docs": "<p class=\"betaError\"><b>Note: </b>Write access is only available to customers who have opted in to our beta program. Please reach out to support if you'd like to be included.</p>\nDeletes a specific work order task.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Delete</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve a work order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/:workOrderId",
+            "params": [
+              {
+                "name": "workOrderId",
+                "value": "",
+                "type": "path",
+                "description": "Work Order ID"
+              },
+              {
+                "name": "includeCustomFields",
+                "value": "",
+                "type": "query",
+                "description": "includeCustomFields"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific work order.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Read</code>\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve all work order tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/:workOrderId/tasks",
+            "params": [
+              {
+                "name": "workOrderId",
+                "value": "",
+                "type": "path",
+                "description": "Work Order ID"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "`offset` indicates the position of the first record to return. The offset is zero-based and the default is 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "`limit` indicates the maximum number of results to be returned in the response. `limit` can range between 1 and 500 and the default is 100."
+              },
+              {
+                "name": "lastModifiedDateTimeStart",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or after the date time specified. "
+              },
+              {
+                "name": "lastModifiedDateTimeEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filters results to any item modified on or prior to the date time specified. "
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query",
+                "description": "Indicates the field(s) and direction to sort the results in the response."
+              },
+              {
+                "name": "dueDate",
+                "value": "",
+                "type": "query",
+                "description": "Filters results by due day."
+              },
+              {
+                "name": "completed",
+                "value": "",
+                "type": "query",
+                "description": "Filters results by task status."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of work order tasks.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Read</code>\n<br/><br/><b>Sortable by:</b> <code>createddate</code>, <code>lastmodifieddatetime</code>, <code>id</code>"
+        },
+        {
+          "info": {
+            "name": "Create a task to workOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/:workOrderId/tasks",
+            "params": [
+              {
+                "name": "workOrderId",
+                "value": "",
+                "type": "path",
+                "description": "Work Order ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a task to an workOrder.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Update a task in workOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/:workOrderId/tasks/:taskId",
+            "params": [
+              {
+                "name": "workOrderId",
+                "value": "",
+                "type": "path",
+                "description": "Work Order ID"
+              },
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "Task ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing workOrder task.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Write</code>\n"
+        },
+        {
+          "info": {
+            "name": "Add Comments to task for a workOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.propertyware.com/pw/api/rest/v1/workorders/:workOrderId/tasks/:taskId/comments",
+            "params": [
+              {
+                "name": "workOrderId",
+                "value": "",
+                "type": "path",
+                "description": "Work Order ID"
+              },
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "Task ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Comments to task for WorkOrder.<br/><br/><b>Required permission:</b><br/><span class=\"permissionBlock\">WORK ORDERS</span> - <code>Write</code>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
