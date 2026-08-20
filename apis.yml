@@ -22,6 +22,17 @@ specificationVersion: '0.23'
 type: Index
 tags:
   - Property Management
+  - Real-Estate
+  - Rental Properties
+  - Single-Family Rentals
+  - Leases
+  - Tenants
+  - Maintenance
+  - Work Orders
+  - Financial Transactions
+  - Owner Reports
+tags_raw:
+  - Property Management
   - Real Estate
   - Rental Properties
   - Single-Family Rentals
@@ -111,6 +122,8 @@ apis:
   humanURL: https://www.propertyware.com/open-api/
   baseURL: https://app.propertyware.com/pw/api/
   tags:
+  - Health Check
+  tags_raw:
   - Health check
   properties:
   - type: OpenAPI
@@ -147,6 +160,8 @@ apis:
   humanURL: https://www.propertyware.com/open-api/
   baseURL: https://app.propertyware.com/pw/api/
   tags:
+  - Portfolio
+  tags_raw:
   - Portfolios
   properties:
   - type: OpenAPI
@@ -195,6 +210,8 @@ apis:
   humanURL: https://www.propertyware.com/open-api/
   baseURL: https://app.propertyware.com/pw/api/
   tags:
+  - Work Orders
+  tags_raw:
   - Work orders
   properties:
   - type: OpenAPI
