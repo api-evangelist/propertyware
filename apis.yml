@@ -1,6 +1,18 @@
 aid: propertyware
 name: Propertyware
 description: Propertyware is a cloud-based property management software platform offering a REST API for managing properties, units, leases, tenants, work orders, maintenance requests, financial transactions, and owner reports. The open API enables two-way data exchange with third-party systems and supports custom integrations for single-family and low-density rental portfolios.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
