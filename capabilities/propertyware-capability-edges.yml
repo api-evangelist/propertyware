@@ -1,0 +1,56 @@
+slug: propertyware
+provider: Propertyware
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Real Estate
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Work orders
+  spec_file: propertyware-work-orders-api-openapi.yml
+  capability_id: BC-4940.20
+  capability_id_l1: BC-4940
+  capability_name: Property Maintenance & Work Order Management
+  confidence: 0.9
+  evidence: POST /workorders  createWorkOrder  Create a work order; PUT /workorders/closeworkorder/{workOrderID}  Close
+    a Workorder; GET /workorders/{workOrderId}/tasks  Retrieve all work order tasks
+  reason: Full work-order lifecycle with tasks, vendor assignment and time cards in a rental property
+    management system — property maintenance and work order management.
+- tag: Leases
+  spec_file: propertyware-leases-api-openapi.yml
+  capability_id: BC-4950.60
+  capability_id_l1: BC-4950
+  capability_name: Lease Administration (Landlord-Side)
+  confidence: 0.8
+  evidence: POST /leases  createLease  Create a lease; GET /leases/charges  Retrieve all the lease charges;
+    GET /leases/autocharges  Retrieve all lease auto charges
+  reason: Landlord-side lease records with adjustments, auto-charges and charge administration — lease
+    administration in a rental property management system.
+- tag: Prospects
+  spec_file: propertyware-prospects-api-openapi.yml
+  capability_id: BC-4950.30
+  capability_id_l1: BC-4950
+  capability_name: Prospect & Inquiry Management
+  confidence: 0.78
+  evidence: GET /prospects  getProspects; GET /prospects/statuses  Retrieve all prospect statuses; GET
+    /prospects/{prospectID}/campaign  Retrieve prospect campaign
+  reason: Rental leasing prospect capture, status pipeline, campaign source and follow-up conversations
+    in a property management platform — landlord-side prospect and inquiry handling.
+- tag: Bills
+  spec_file: propertyware-bills-api-openapi.yml
+  capability_id: BC-200.20
+  capability_id_l1: BC-200
+  capability_name: Accounts Payable Management
+  confidence: 0.72
+  evidence: POST /bills 'Create a bill'; GET /bills/payments 'Retrieve all bill payments'; POST /bills/vendorchecks
+    'Create a Vendor check'; schemas BillPayment, Check, BillSplit
+  reason: Vendor bill capture, bill payments, credits and vendor cheque issuance is plainly invoice processing
+    and vendor payment — Accounts Payable Management. In this vendor these are property/owner-borne payables,
+    which is the only ambiguity.

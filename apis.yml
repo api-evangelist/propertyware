@@ -231,6 +231,9 @@ apis:
   - type: Documentation
     url: https://app.propertyware.com/apidocs/index.html
 common:
+  - type: CapabilityMap
+    url: capabilities/propertyware-capability-edges.yml
+    name: Propertyware Business Capability Map
   - type: AgenticAccess
     url: agentic-access/propertyware-agentic-access.yml
   - type: DomainSecurity
