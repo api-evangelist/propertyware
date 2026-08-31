@@ -110,6 +110,8 @@ apis:
   humanURL: https://www.propertyware.com/open-api/
   baseURL: https://app.propertyware.com/pw/api/
   tags:
+  - Custom Field Definitions
+  tags_raw:
   - Custom field definitions
   properties:
   - type: OpenAPI
@@ -134,7 +136,7 @@ apis:
   humanURL: https://www.propertyware.com/open-api/
   baseURL: https://app.propertyware.com/pw/api/
   tags:
-  - Health Check
+  - Health check
   tags_raw:
   - Health check
   properties:
@@ -222,7 +224,7 @@ apis:
   humanURL: https://www.propertyware.com/open-api/
   baseURL: https://app.propertyware.com/pw/api/
   tags:
-  - Work Orders
+  - Work orders
   tags_raw:
   - Work orders
   properties:
