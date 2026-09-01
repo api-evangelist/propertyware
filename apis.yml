@@ -136,7 +136,7 @@ apis:
   humanURL: https://www.propertyware.com/open-api/
   baseURL: https://app.propertyware.com/pw/api/
   tags:
-  - Health check
+  - Health Check
   tags_raw:
   - Health check
   properties:
@@ -224,7 +224,7 @@ apis:
   humanURL: https://www.propertyware.com/open-api/
   baseURL: https://app.propertyware.com/pw/api/
   tags:
-  - Work orders
+  - Work Orders
   tags_raw:
   - Work orders
   properties:
