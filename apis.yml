@@ -37,7 +37,7 @@ tags:
   - Property Management
   - Real-Estate
   - Rental Properties
-  - Single-Family Rentals
+  - Single-Family Rental
   - Leases
   - Tenants
   - Maintenance
@@ -151,6 +151,8 @@ apis:
   humanURL: https://www.propertyware.com/open-api/
   baseURL: https://app.propertyware.com/pw/api/
   tags:
+  - Inspection
+  tags_raw:
   - Inspections
   properties:
   - type: OpenAPI
