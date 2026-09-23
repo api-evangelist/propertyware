@@ -1,20 +1,7 @@
 {
   "provider": "propertyware",
   "sources": [
-    "propertyware-accounting-api-openapi.yml",
-    "propertyware-bills-api-openapi.yml",
-    "propertyware-buildings-api-openapi.yml",
-    "propertyware-contacts-api-openapi.yml",
-    "propertyware-custom-field-definitions-api-openapi.yml",
-    "propertyware-documents-api-openapi.yml",
-    "propertyware-health-check-api-openapi.yml",
-    "propertyware-inspections-api-openapi.yml",
-    "propertyware-leases-api-openapi.yml",
-    "propertyware-portfolios-api-openapi.yml",
-    "propertyware-prospects-api-openapi.yml",
-    "propertyware-units-api-openapi.yml",
-    "propertyware-vendors-api-openapi.yml",
-    "propertyware-work-orders-api-openapi.yml"
+    "_original/propertyware-openapi.json"
   ],
   "outputs": [
     "propertyware-accounting-api-openapi.yml",
@@ -35,6 +22,25 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "propertyware-openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "propertyware-accounting-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-bills-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-buildings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-custom-field-definitions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-health-check-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-inspections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-leases-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-portfolios-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-prospects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-units-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-vendors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "propertyware-work-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
