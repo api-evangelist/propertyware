@@ -688,160 +688,6 @@ paths:
           description: Entity not found.
 components:
   schemas:
-    SaveCustomField:
-      type: object
-      required:
-      - entityId
-      - fieldSet
-      properties:
-        entityId:
-          type: integer
-          format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
-    SaveProspectContact:
-      type: object
-      required:
-      - firstName
-      - lastName
-      properties:
-        address:
-          $ref: '#/components/schemas/SaveAddress'
-        email:
-          type: string
-          description: ' EMail.'
-        firstName:
-          type: string
-          description: First Name.
-        homePhone:
-          type: string
-          description: ' Home Phone.'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastName:
-          type: string
-          description: ' Last Name.'
-        mobilePhone:
-          type: string
-          description: ' Mobile Phone.'
-        otherPhone:
-          type: string
-          description: ' Other Phone.'
-        percentageship:
-          type: number
-          format: double
-          description: ship percentage.
-        workPhone:
-          type: string
-          description: ' Work Phone.'
-      description: Save Prospect Contact
-    Conversation:
-      type: object
-      properties:
-        comments:
-          type: array
-          description: List of comments in the conversation.
-          items:
-            $ref: '#/components/schemas/Comment'
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        entityID:
-          type: integer
-          format: int64
-          description: Id of the entity related to this conversation.
-        entityType:
-          type: string
-          description: Type of the entity related to this conversation.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        subject:
-          type: string
-          description: Conversation subject.
-        type:
-          type: string
-          description: Conversation type.
-          enum:
-          - MANAGEMENT_TEAM
-          - OWNER
-          - TENANT
-      description: Conversation
-    CampaignSource:
-      type: object
-      properties:
-        callTrackingGroupID:
-          type: string
-          description: Call tracking group id.
-        default:
-          type: boolean
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        name:
-          type: string
-          description: Name of the campaign source.
-        referrerDomain:
-          type: string
-          description: Referrer domain.
-      description: CampaignSource
-    SaveConversation:
-      type: object
-      required:
-      - text
-      - type
-      properties:
-        text:
-          type: string
-          description: Comment text.
-        type:
-          type: string
-          description: Conversation type.
-          enum:
-          - MANAGEMENT_TEAM
-          - OWNER
-          - TENANT
-      description: Conversation for Request
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
     ProspectStatus:
       type: object
       properties:
@@ -861,17 +707,6 @@ components:
           example: false
           description: Status visible On Portal
       description: Prospect Status
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
     ResponseEntity:
       type: object
       properties:
@@ -943,6 +778,146 @@ components:
           - '509'
           - '510'
           - '511'
+    ProspectContact:
+      type: object
+      properties:
+        email:
+          type: string
+          description: E-mail address.
+        firstName:
+          type: string
+          description: First name.
+        homePhone:
+          type: string
+          description: Home phone.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastName:
+          type: string
+          description: Last name.
+        mobilePhone:
+          type: string
+          description: Mobile phone.
+        role:
+          type: string
+          description: Role.
+        workPhone:
+          type: string
+          description: Work phone.
+      description: Contact of the prospect
+    SaveConversation:
+      type: object
+      required:
+      - text
+      - type
+      properties:
+        text:
+          type: string
+          description: Comment text.
+        type:
+          type: string
+          description: Conversation type.
+          enum:
+          - MANAGEMENT_TEAM
+          - OWNER
+          - TENANT
+      description: Conversation for Request
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    RESTAPIBulkErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
+          type: boolean
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    Comment:
+      type: object
+      properties:
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        text:
+          type: string
+          description: Comment text.
+      description: Comment
+    Conversation:
+      type: object
+      properties:
+        comments:
+          type: array
+          description: List of comments in the conversation.
+          items:
+            $ref: '#/components/schemas/Comment'
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        entityID:
+          type: integer
+          format: int64
+          description: Id of the entity related to this conversation.
+        entityType:
+          type: string
+          description: Type of the entity related to this conversation.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        subject:
+          type: string
+          description: Conversation subject.
+        type:
+          type: string
+          description: Conversation type.
+          enum:
+          - MANAGEMENT_TEAM
+          - OWNER
+          - TENANT
+      description: Conversation
     CustomField:
       type: object
       properties:
@@ -960,12 +935,84 @@ components:
           type: string
           description: Value of the custom field.
       description: Custom field.
-    RESTAPIBulkSuccessResponse:
+    Campaign:
       type: object
       properties:
+        acceptedCallTrackingTerms:
+          type: boolean
+          example: false
+          description: Indicates if the call tracking terms have been accepted.
+        callTrackingCampaignID:
+          type: string
+          description: Campaign ID used for call tracking.
+        callTrackingEnabled:
+          type: boolean
+          example: false
+          description: Indicates if call tracking is enabled for the campaign.
+        callTrackingForwar:
+          type: string
+          description: Number to which call tracking calls are forwarded.
+        callTrackingForwarAfterHours:
+          type: string
+          description: Number to which call tracking calls are forwarded after hours.
+        callTrackingPhoneNumber:
+          type: string
+          description: Phone number used for call tracking.
+        callTrackingReferrer:
+          type: string
+          description: Referrer for call tracking.
+        callTrackingSearchPhrase:
+          type: string
+          description: Search phrase for call tracking.
+        campaignSource:
+          $ref: '#/components/schemas/CampaignSource'
+        code:
+          type: string
+          description: Code of the campaign.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        customFields:
+          type: array
+          description: Custom fields.
+          items:
+            $ref: '#/components/schemas/CustomField'
+        description:
+          type: string
+          description: Description of the campaign.
+        endDate:
+          type: string
+          format: date
+          description: End date of the campaign.
         id:
           type: integer
           format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        name:
+          type: string
+          description: Name of the campaign.
+        startDate:
+          type: string
+          format: date
+          description: Start date of the campaign.
+        targetProspectType:
+          type: string
+          description: Type of the targeted prospect.
+        timezone:
+          type: string
+          description: Time zone of the campaign.
+      description: Campaign
     Prospect:
       type: object
       properties:
@@ -1149,108 +1196,17 @@ components:
           type: string
           description: Desired zip code.
       description: Prospect
-    SaveAddress:
-      type: object
-      required:
-      - country
-      properties:
-        address:
-          type: string
-          description: Primary street and/or unit address. Required only if country is USA or Canada.
-          minLength: 0
-          maxLength: 50
-        addressCont:
-          type: string
-          description: Address continuation.
-          minLength: 0
-          maxLength: 20
-        city:
-          type: string
-          description: City. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 30
-        country:
-          type: string
-          description: Country. For US addresses, this value should be "United States". For other countries, this should be the full country name (Canada, United Kingdom, ...)
-          minLength: 0
-          maxLength: 30
-        postalCode:
-          type: string
-          description: Zip. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 20
-        stateRegion:
-          type: string
-          description: State. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 20
-      description: Address.
-    Comment:
+    ErrorResponse:
       type: object
       properties:
-        createdBy:
+        errorCode:
           type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        text:
-          type: string
-          description: Comment text.
-      description: Comment
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
+        errors:
           type: array
           items:
             $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    ProspectContact:
-      type: object
-      properties:
-        email:
+        userMessage:
           type: string
-          description: E-mail address.
-        firstName:
-          type: string
-          description: First name.
-        homePhone:
-          type: string
-          description: Home phone.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastName:
-          type: string
-          description: Last name.
-        mobilePhone:
-          type: string
-          description: Mobile phone.
-        role:
-          type: string
-          description: Role.
-        workPhone:
-          type: string
-          description: Work phone.
-      description: Contact of the prospect
     SaveProspect:
       type: object
       properties:
@@ -1358,98 +1314,142 @@ components:
           type: string
           description: Prospect Type Of Inquiry.
       description: 'Save Prospect '
-    Campaign:
+    CampaignSource:
       type: object
       properties:
-        acceptedCallTrackingTerms:
+        callTrackingGroupID:
+          type: string
+          description: Call tracking group id.
+        default:
           type: boolean
-          example: false
-          description: Indicates if the call tracking terms have been accepted.
-        callTrackingCampaignID:
-          type: string
-          description: Campaign ID used for call tracking.
-        callTrackingEnabled:
-          type: boolean
-          example: false
-          description: Indicates if call tracking is enabled for the campaign.
-        callTrackingForwar:
-          type: string
-          description: Number to which call tracking calls are forwarded.
-        callTrackingForwarAfterHours:
-          type: string
-          description: Number to which call tracking calls are forwarded after hours.
-        callTrackingPhoneNumber:
-          type: string
-          description: Phone number used for call tracking.
-        callTrackingReferrer:
-          type: string
-          description: Referrer for call tracking.
-        callTrackingSearchPhrase:
-          type: string
-          description: Search phrase for call tracking.
-        campaignSource:
-          $ref: '#/components/schemas/CampaignSource'
-        code:
-          type: string
-          description: Code of the campaign.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        customFields:
-          type: array
-          description: Custom fields.
-          items:
-            $ref: '#/components/schemas/CustomField'
-        description:
-          type: string
-          description: Description of the campaign.
-        endDate:
-          type: string
-          format: date
-          description: End date of the campaign.
         id:
           type: integer
           format: int64
           description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
         name:
           type: string
-          description: Name of the campaign.
-        startDate:
+          description: Name of the campaign source.
+        referrerDomain:
           type: string
-          format: date
-          description: Start date of the campaign.
-        targetProspectType:
+          description: Referrer domain.
+      description: CampaignSource
+    SaveAddress:
+      type: object
+      required:
+      - country
+      properties:
+        address:
           type: string
-          description: Type of the targeted prospect.
-        timezone:
+          description: Primary street and/or unit address. Required only if country is USA or Canada.
+          minLength: 0
+          maxLength: 50
+        addressCont:
           type: string
-          description: Time zone of the campaign.
-      description: Campaign
-  requestBodies:
+          description: Address continuation.
+          minLength: 0
+          maxLength: 20
+        city:
+          type: string
+          description: City. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 30
+        country:
+          type: string
+          description: Country. For US addresses, this value should be "United States". For other countries, this should be the full country name (Canada, United Kingdom, ...)
+          minLength: 0
+          maxLength: 30
+        postalCode:
+          type: string
+          description: Zip. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 20
+        stateRegion:
+          type: string
+          description: State. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 20
+      description: Address.
     SaveCustomField:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveCustomField'
-      description: saveCustomField
-      required: true
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
+          type: integer
+          format: int64
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    CustomFieldSet:
+      type: object
+      required:
+      - name
+      - value
+      properties:
+        name:
+          type: string
+          description: Custom Field name
+        value:
+          type: string
+          description: Custom Field value
+      description: Custom field set for Request
+    SaveProspectContact:
+      type: object
+      required:
+      - firstName
+      - lastName
+      properties:
+        address:
+          $ref: '#/components/schemas/SaveAddress'
+        email:
+          type: string
+          description: ' EMail.'
+        firstName:
+          type: string
+          description: First Name.
+        homePhone:
+          type: string
+          description: ' Home Phone.'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastName:
+          type: string
+          description: ' Last Name.'
+        mobilePhone:
+          type: string
+          description: ' Mobile Phone.'
+        otherPhone:
+          type: string
+          description: ' Other Phone.'
+        percentageship:
+          type: number
+          format: double
+          description: ship percentage.
+        workPhone:
+          type: string
+          description: ' Work Phone.'
+      description: Save Prospect Contact
+  requestBodies:
     SaveConversation:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/SaveConversation'
       description: saveConversation
+      required: true
+    SaveCustomField:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveCustomField'
+      description: saveCustomField
       required: true
   securitySchemes:
     clientId:

@@ -187,6 +187,29 @@ paths:
           description: Entity not found.
 components:
   schemas:
+    InspectionArea:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        items:
+          type: array
+          description: List of items in the inspection.
+          items:
+            $ref: '#/components/schemas/InspectionItem'
+        name:
+          type: string
+          description: Name of the inspection area.
+      description: Inspection Area
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
     InspectionItem:
       type: object
       properties:
@@ -204,29 +227,17 @@ components:
           type: string
           description: Status of the inspection.
       description: InspectionItem
-    RESTAPIError:
+    ErrorResponse:
       type: object
       properties:
-        key:
+        errorCode:
           type: string
-        message:
-          type: string
-    InspectionArea:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        items:
+        errors:
           type: array
-          description: List of items in the inspection.
           items:
-            $ref: '#/components/schemas/InspectionItem'
-        name:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
           type: string
-          description: Name of the inspection area.
-      description: Inspection Area
     Inspection:
       type: object
       properties:
@@ -301,17 +312,6 @@ components:
           type: string
           description: Inspection type.
       description: Inspection
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
   securitySchemes:
     clientId:
       type: apiKey

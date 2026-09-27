@@ -518,37 +518,6 @@ components:
           type: string
         message:
           type: string
-    UpdateDocument:
-      type: object
-      required:
-      - fileName
-      properties:
-        description:
-          type: string
-          description: Description of the document.
-        fileName:
-          type: string
-          description: Name of the document.
-        publishToOwnerPortal:
-          type: boolean
-          example: false
-          description: Indicates if the document is published to the owner portal.
-        publishToTenantPortal:
-          type: boolean
-          example: false
-          description: Indicates if the document is published to the tenant portal.
-      description: 'Update Document '
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
     Document:
       type: object
       properties:
@@ -616,6 +585,37 @@ components:
           type: boolean
           example: false
           description: Indicates if the document is published to the tenant portal.
+    UpdateDocument:
+      type: object
+      required:
+      - fileName
+      properties:
+        description:
+          type: string
+          description: Description of the document.
+        fileName:
+          type: string
+          description: Name of the document.
+        publishToOwnerPortal:
+          type: boolean
+          example: false
+          description: Indicates if the document is published to the owner portal.
+        publishToTenantPortal:
+          type: boolean
+          example: false
+          description: Indicates if the document is published to the tenant portal.
+      description: 'Update Document '
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
   securitySchemes:
     clientId:
       type: apiKey

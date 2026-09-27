@@ -521,6 +521,242 @@ paths:
           description: Entity not found.
 components:
   schemas:
+    ResponseEntity:
+      type: object
+      properties:
+        body:
+          type: object
+        statusCode:
+          type: string
+          enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
+    RESTAPIBulkErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
+          type: boolean
+    SaveCustomField:
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
+          type: integer
+          format: int64
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    SaveVendor:
+      type: object
+      required:
+      - companyName
+      - name
+      - nameOnCheck
+      - vendorType
+      properties:
+        accountNumber:
+          type: string
+          description: Account Number
+        address:
+          type: string
+          description: Address
+        address2:
+          type: string
+          description: Address2
+        alertEmail:
+          type: string
+          description: Alert Email
+        city:
+          type: string
+          description: City
+        companyName:
+          type: string
+          description: Vendor Company Name
+        country:
+          type: string
+          description: Country
+        creditLimit:
+          type: number
+          format: double
+          description: Credit Limit
+        daysToPay:
+          type: integer
+          format: int32
+          description: Payment Terms days to pay.
+          enum:
+          - 0
+          - 5
+          - 10
+          - 15
+          - 30
+          - 45
+          - 60
+          - 90
+        defaultBillSplitAccountId:
+          type: integer
+          format: int64
+          description: Default bill split id
+        defaultMarkupDiscountPercentage:
+          type: number
+          format: double
+          description: Default markup discount
+        description:
+          type: string
+          description: Description
+        eligible1099:
+          type: boolean
+          example: false
+          description: Eligible For 1099
+        email:
+          type: string
+          description: EMail
+        fax:
+          type: string
+          description: Fax
+        includeCompanyNameOn1099:
+          type: boolean
+          example: false
+          description: Include company name on 1099
+        markupAccountId:
+          type: integer
+          format: int64
+          description: Markup account id
+        name:
+          type: string
+          description: Vendor Name
+        nameOnCheck:
+          type: string
+          description: Vendor Name On Check
+        phone:
+          type: string
+          description: Phone
+        searchTag:
+          type: string
+          description: Search Tag
+        state:
+          type: string
+          description: State
+        syncToVMM:
+          type: boolean
+          example: false
+          description: Sync to maintenance
+        taxID:
+          type: string
+          description: Tax ID
+        taxPayerName:
+          type: string
+          description: Tax Payer Name
+        terms:
+          type: string
+          description: Payment Terms Description, default value('NET 30')
+        timeTracking:
+          type: boolean
+          example: false
+          description: Time Tracking, is enabled or disabled
+        vendorType:
+          type: string
+          description: "Vendor type. This is a user configurable list with the following initial default values <Banking - General>,\n <Banking - Mortgage>, <Banking - Investment>, <Contractors - Carpentry>, <Contractors - Dry Wall>, <Contractors - Electrical>, <Contractors - Fencing>, <Contractors - Flooring>, <Contractors - General>, <Contractors - HVAC>, <Contractors - Landscaping>, <Contractors - Masonry>, <Contractors - Miscellaneous>, <Contractors - Painting>, <Contractors - Paving>, <Contractors - Plumbing>, <Contractors - Roofing>, <Contractors - Sheet Metal>, <Contractors - Windows>, <Owners>, <Management Company>, <Suppliers - Carpets>, <Suppliers - Electrical>, <Suppliers - General>, <Suppliers - Lighting>, <Suppliers - Lumber>, <Suppliers - Plumbing>, <Suppliers - Security>, <Suppliers - Stone>, <Suppliers - Tiling>, <Suppliers - Windows>, <Utilities - Communications>, <Utilities - Gas & Electric>, <Utilities - Waste Management>, <Utilities - Water>"
+        website:
+          type: string
+          description: Website
+        zip:
+          type: string
+          description: Zip
+      description: Vendor for Request
+    CustomFieldSet:
+      type: object
+      required:
+      - name
+      - value
+      properties:
+        name:
+          type: string
+          description: Custom Field name
+        value:
+          type: string
+          description: Custom Field value
+      description: Custom field set for Request
     Comment:
       type: object
       properties:
@@ -681,31 +917,6 @@ components:
           type: string
           description: ZIP or postal code.
       description: Vendor
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
     Account:
       type: object
       properties:
@@ -837,22 +1048,6 @@ components:
           example: false
           description: Indicates if the account balance should be transferred to retained earnings.
       description: General Ledger Account
-    SaveCustomField:
-      type: object
-      required:
-      - entityId
-      - fieldSet
-      properties:
-        entityId:
-          type: integer
-          format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
     Conversation:
       type: object
       properties:
@@ -897,77 +1092,6 @@ components:
           - OWNER
           - TENANT
       description: Conversation
-    ResponseEntity:
-      type: object
-      properties:
-        body:
-          type: object
-        statusCode:
-          type: string
-          enum:
-          - '100'
-          - '101'
-          - '102'
-          - '103'
-          - '200'
-          - '201'
-          - '202'
-          - '203'
-          - '204'
-          - '205'
-          - '206'
-          - '207'
-          - '208'
-          - '226'
-          - '300'
-          - '301'
-          - '302'
-          - '303'
-          - '304'
-          - '305'
-          - '307'
-          - '308'
-          - '400'
-          - '401'
-          - '402'
-          - '403'
-          - '404'
-          - '405'
-          - '406'
-          - '407'
-          - '408'
-          - '409'
-          - '410'
-          - '411'
-          - '412'
-          - '413'
-          - '414'
-          - '415'
-          - '416'
-          - '417'
-          - '418'
-          - '419'
-          - '420'
-          - '421'
-          - '422'
-          - '423'
-          - '424'
-          - '426'
-          - '428'
-          - '429'
-          - '431'
-          - '500'
-          - '501'
-          - '502'
-          - '503'
-          - '504'
-          - '505'
-          - '506'
-          - '507'
-          - '508'
-          - '509'
-          - '510'
-          - '511'
     CustomField:
       type: object
       properties:
@@ -985,130 +1109,12 @@ components:
           type: string
           description: Value of the custom field.
       description: Custom field.
-    RESTAPIError:
+    RESTAPIBulkSuccessResponse:
       type: object
       properties:
-        key:
-          type: string
-        message:
-          type: string
-    SaveVendor:
-      type: object
-      required:
-      - companyName
-      - name
-      - nameOnCheck
-      - vendorType
-      properties:
-        accountNumber:
-          type: string
-          description: Account Number
-        address:
-          type: string
-          description: Address
-        address2:
-          type: string
-          description: Address2
-        alertEmail:
-          type: string
-          description: Alert Email
-        city:
-          type: string
-          description: City
-        companyName:
-          type: string
-          description: Vendor Company Name
-        country:
-          type: string
-          description: Country
-        creditLimit:
-          type: number
-          format: double
-          description: Credit Limit
-        daysToPay:
-          type: integer
-          format: int32
-          description: Payment Terms days to pay.
-          enum:
-          - 0
-          - 5
-          - 10
-          - 15
-          - 30
-          - 45
-          - 60
-          - 90
-        defaultBillSplitAccountId:
+        id:
           type: integer
           format: int64
-          description: Default bill split id
-        defaultMarkupDiscountPercentage:
-          type: number
-          format: double
-          description: Default markup discount
-        description:
-          type: string
-          description: Description
-        eligible1099:
-          type: boolean
-          example: false
-          description: Eligible For 1099
-        email:
-          type: string
-          description: EMail
-        fax:
-          type: string
-          description: Fax
-        includeCompanyNameOn1099:
-          type: boolean
-          example: false
-          description: Include company name on 1099
-        markupAccountId:
-          type: integer
-          format: int64
-          description: Markup account id
-        name:
-          type: string
-          description: Vendor Name
-        nameOnCheck:
-          type: string
-          description: Vendor Name On Check
-        phone:
-          type: string
-          description: Phone
-        searchTag:
-          type: string
-          description: Search Tag
-        state:
-          type: string
-          description: State
-        syncToVMM:
-          type: boolean
-          example: false
-          description: Sync to maintenance
-        taxID:
-          type: string
-          description: Tax ID
-        taxPayerName:
-          type: string
-          description: Tax Payer Name
-        terms:
-          type: string
-          description: Payment Terms Description, default value('NET 30')
-        timeTracking:
-          type: boolean
-          example: false
-          description: Time Tracking, is enabled or disabled
-        vendorType:
-          type: string
-          description: "Vendor type. This is a user configurable list with the following initial default values <Banking - General>,\n <Banking - Mortgage>, <Banking - Investment>, <Contractors - Carpentry>, <Contractors - Dry Wall>, <Contractors - Electrical>, <Contractors - Fencing>, <Contractors - Flooring>, <Contractors - General>, <Contractors - HVAC>, <Contractors - Landscaping>, <Contractors - Masonry>, <Contractors - Miscellaneous>, <Contractors - Painting>, <Contractors - Paving>, <Contractors - Plumbing>, <Contractors - Roofing>, <Contractors - Sheet Metal>, <Contractors - Windows>, <Owners>, <Management Company>, <Suppliers - Carpets>, <Suppliers - Electrical>, <Suppliers - General>, <Suppliers - Lighting>, <Suppliers - Lumber>, <Suppliers - Plumbing>, <Suppliers - Security>, <Suppliers - Stone>, <Suppliers - Tiling>, <Suppliers - Windows>, <Utilities - Communications>, <Utilities - Gas & Electric>, <Utilities - Waste Management>, <Utilities - Water>"
-        website:
-          type: string
-          description: Website
-        zip:
-          type: string
-          description: Zip
-      description: Vendor for Request
     ErrorResponse:
       type: object
       properties:
@@ -1120,12 +1126,6 @@ components:
             $ref: '#/components/schemas/RESTAPIError'
         userMessage:
           type: string
-    RESTAPIBulkSuccessResponse:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
   requestBodies:
     SaveCustomField:
       content:

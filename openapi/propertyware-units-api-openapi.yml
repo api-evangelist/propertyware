@@ -697,196 +697,6 @@ paths:
           description: Entity not found.
 components:
   schemas:
-    SaveCustomField:
-      type: object
-      required:
-      - entityId
-      - fieldSet
-      properties:
-        entityId:
-          type: integer
-          format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
-    ManagementFee:
-      type: object
-      properties:
-        accountCode:
-          type: string
-          description: Management fee account code.
-        accountNumber:
-          type: string
-          description: Management fee account number.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        manager:
-          type: string
-          description: Property manager name.
-        managersCommissionPercentage:
-          type: number
-          format: double
-          description: Property manager commission percentage.
-        passThrough:
-          type: boolean
-          example: false
-          description: Indicates if the commission account is of the passthrough type.
-        percentage:
-          type: number
-          format: double
-          description: Management fee percentage.
-      description: Management Fee
-    Address:
-      type: object
-      properties:
-        address:
-          type: string
-          description: Primary street and/or unit address.
-        addressCont:
-          type: string
-          description: Address continuation.
-        city:
-          type: string
-          description: City.
-        country:
-          type: string
-          description: Country.
-        postalCode:
-          type: string
-          description: Postal code.
-        stateRegion:
-          type: string
-          description: State/region.
-      description: Address
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
-    Amenity:
-      type: object
-      properties:
-        code:
-          type: string
-          description: Amenity code.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        name:
-          type: string
-          description: Amenity name.
-        type:
-          type: string
-          description: Amenity type.
-      description: Amenity
-    Conversation:
-      type: object
-      properties:
-        comments:
-          type: array
-          description: List of comments in the conversation.
-          items:
-            $ref: '#/components/schemas/Comment'
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        entityID:
-          type: integer
-          format: int64
-          description: Id of the entity related to this conversation.
-        entityType:
-          type: string
-          description: Type of the entity related to this conversation.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        subject:
-          type: string
-          description: Conversation subject.
-        type:
-          type: string
-          description: Conversation type.
-          enum:
-          - MANAGEMENT_TEAM
-          - OWNER
-          - TENANT
-      description: Conversation
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
-    ManagementSettings:
-      type: object
-      properties:
-        managementContractEndDate:
-          type: string
-          format: date
-          description: End date of the property contract.
-        managementContractStartDate:
-          type: string
-          format: date
-          description: Start date of the property contract.
-        managementFeeType:
-          type: string
-          description: 'Indicates the type of management fee. This field is deprecated and should not be used. Instead, use the new field ''managementFeesType''. '
-        managementFees:
-          type: array
-          description: List of property management fee rules.
-          items:
-            $ref: '#/components/schemas/ManagementFee'
-        managementFeesType:
-          type: string
-          description: Indicates the type of management fee.
-          enum:
-          - MANAGE_FEE_NONE
-          - MANAGE_FEE_GREATER_OF_FLAT_OR_PERCENTAGE
-          - MANAGE_FEE_FLAT_PLUS_PERCENTAGE
-        managementFlatFee:
-          type: number
-          format: double
-          description: Flat management fee amount.
-      description: Property management information
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
     ResponseEntity:
       type: object
       properties:
@@ -958,148 +768,257 @@ components:
           - '509'
           - '510'
           - '511'
-    SaveUnit:
+    RESTAPIBulkSuccessResponse:
       type: object
-      required:
-      - abbreviation
-      - buildingID
-      - category
-      - name
-      - portfolioID
-      - type
       properties:
-        abbreviation:
+        id:
+          type: integer
+          format: int64
+    Amenity:
+      type: object
+      properties:
+        code:
           type: string
-          description: Abbreviation of Unit.
-          minLength: 1
-          maxLength: 12
+          description: Amenity code.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        name:
+          type: string
+          description: Amenity name.
+        type:
+          type: string
+          description: Amenity type.
+      description: Amenity
+    RESTAPIBulkErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
+          type: boolean
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    ManagementSettings:
+      type: object
+      properties:
+        managementContractEndDate:
+          type: string
+          format: date
+          description: End date of the property contract.
+        managementContractStartDate:
+          type: string
+          format: date
+          description: Start date of the property contract.
+        managementFeeType:
+          type: string
+          description: 'Indicates the type of management fee. This field is deprecated and should not be used. Instead, use the new field ''managementFeesType''. '
+        managementFees:
+          type: array
+          description: List of property management fee rules.
+          items:
+            $ref: '#/components/schemas/ManagementFee'
+        managementFeesType:
+          type: string
+          description: Indicates the type of management fee.
+          enum:
+          - MANAGE_FEE_NONE
+          - MANAGE_FEE_GREATER_OF_FLAT_OR_PERCENTAGE
+          - MANAGE_FEE_FLAT_PLUS_PERCENTAGE
+        managementFlatFee:
+          type: number
+          format: double
+          description: Flat management fee amount.
+      description: Property management information
+    Comment:
+      type: object
+      properties:
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        text:
+          type: string
+          description: Comment text.
+      description: Comment
+    Address:
+      type: object
+      properties:
         address:
-          $ref: '#/components/schemas/SaveAddress'
+          type: string
+          description: Primary street and/or unit address.
+        addressCont:
+          type: string
+          description: Address continuation.
+        city:
+          type: string
+          description: City.
+        country:
+          type: string
+          description: Country.
+        postalCode:
+          type: string
+          description: Postal code.
+        stateRegion:
+          type: string
+          description: State/region.
+      description: Address
+    Marketing:
+      type: object
+      properties:
         availableDate:
           type: string
           format: date
-          description: Unit Available date to lease.
-        buildingID:
-          type: integer
-          format: int64
-          description: Id of the building associated with this unit.
-        category:
+          description: Available date to lease for a unit/building.
+        comments:
           type: string
-          description: Unit Category.
-          enum:
-          - RESIDENTIAL
-          - COMMERCIAL
-        county:
-          type: string
-          description: Unit region of a state.
-        description:
-          type: string
-          description: Marketing Description.
-          minLength: 0
-          maxLength: 65535
-        floorNumber:
-          type: integer
-          format: int32
-          description: Floor number.
-          enum:
-          - 0
-          - 1
-          - 2
-        name:
-          type: string
-          description: Name of the unit.
-        neighborhood:
-          type: string
-          description: Neighborhood.
-          minLength: 0
-          maxLength: 30
-        numberBathrooms:
-          type: number
-          format: double
-          description: Number of bathrooms in the unit.
-          enum:
-          - 0
-          - 1
-          - 1.5
-          - 2
-          - 2.5
-          - 3
-          - 3.5
-          - 4
-          - 4.5
-          - 5
-          - 5.5
-          - 6
-          - 6.5
-          - 7
-          - 7.5
-          - 8
-          - 8.5
-          - 9
-          - 9.5
-          - 10
-        numberBedrooms:
-          type: integer
-          format: int32
-          description: Number of bedrooms in the unit.
-          minimum: 0
-          maximum: 20
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this unit.
-        ready:
+          description: Marketing description.
+        featured:
           type: boolean
           example: false
-          description: Indicates if property is ready to be leased.
-        reasonForPropertyLost:
-          type: string
-          description: Reason for property lost.
-          enum:
-          - EMPTY
-          - ABANDONED
-          - FORECLOSURE
-          - MGR_RETURNED_TO_OWNER
-          - OTB_AS_FRBO
-          - OWNER_MOVED_BACK
-          - REFERRED_TO_SALES
-          - REFERRED_TO_SALES_OR_SOLD
-        residential:
+          description: Indicates if property is featured for rent or sale.
+        featuredForRent:
           type: boolean
           example: false
-          description: Is Unit is Residential or Commercial.
-        searchTag:
+          description: Indicates if the unit/building is featured for rent.
+        featuredForSale:
+          type: boolean
+          example: false
+          description: Indicates if unit/building is featured for sale.
+        forSale:
+          type: boolean
+          example: false
+          description: Indicates if this building/unit is for sale.
+        latitude:
+          type: number
+          description: Latitude for geolocation of this building/unit.
+        leaseTerms:
+          type: integer
+          format: int32
+          description: Lease terms of a unit/building.
+        leaseTermsUnits:
           type: string
-          description: Search tag.
-          minLength: 0
-          maxLength: 25
-        targetDeposit:
+          description: Unit/building lease terms units.
+        longitude:
           type: number
-          format: double
-          description: Target deposit amount.
-        targetRent:
-          type: number
-          format: double
-          description: Market rent for the unit.
-        targetRentUnits:
+          description: Longitude for geolocation of this building/unit.
+        marketingName:
           type: string
-          description: Property target rent units.
-          enum:
-          - DOLLAR_PER_SQ_FT_MONTH
-          - DOLLAR_PER_SQ_FT_YEAR
-          - DOLLAR_PER_SQ_M_MONTH
-          - DOLLAR_PER_SQ_M_YEAR
-          - DOLLAR_PER_MONTH
-          - DOLLAR_PER_WEEK
-          - DOLLAR_PER_NIGHT
-        totalArea:
+          description: Marketing name.
+        mlsLeaseNumber:
+          type: string
+          description: MLS lease number of this building/unit.
+        mlsNumber:
+          type: string
+          description: MLS number of this building/unit.
+        otherTenantCharges:
+          type: string
+          description: Other tenant charges.
+        parcelNumber:
+          type: string
+          description: Parcel number of this building/unit.
+        petsAllowed:
+          type: boolean
+          example: false
+          description: Indicates if pets are allowed in a unit/building.
+        postingTitle:
+          type: string
+          description: Posting title name for marketing this building/unit.
+        publishedForRent:
+          type: boolean
+          example: false
+          description: Published For Rent
+        publishedForSale:
+          type: boolean
+          example: false
+          description: Indicates if the unit/building is published for sale.
+        salePrice:
           type: number
           format: double
-          description: Unit Area.
+          description: Sale price of this building/unit.
+        saleTerms:
+          type: string
+          description: Sale terms of this building/unit.
+        shortDescription:
+          type: string
+          description: Marketing short description.
+        smokingAllowed:
+          type: boolean
+          example: false
+          description: Indicates if smoking is allowed in this unit/building.
+        specials:
+          type: string
+          description: Specials of this building/unit.
+      description: Marketing Information
+    Conversation:
+      type: object
+      properties:
+        comments:
+          type: array
+          description: List of comments in the conversation.
+          items:
+            $ref: '#/components/schemas/Comment'
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        entityID:
+          type: integer
+          format: int64
+          description: Id of the entity related to this conversation.
+        entityType:
+          type: string
+          description: Type of the entity related to this conversation.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        subject:
+          type: string
+          description: Conversation subject.
         type:
           type: string
-          description: Indicates Unit type like Business Office,Medical Office,Showroom,R  and  D,Assigned Parking (Indoor),Assigned Parking (Outdoor),Warehouse,Restaurant,Shopping Mall Retail,Street Retail,Manufacturing,House,Town House,Apartment,Flat,Studio,Loft,Assigned Parking (Indoor),Assigned Parking (Outdoor) etc.
-      description: SaveUnit
+          description: Conversation type.
+          enum:
+          - MANAGEMENT_TEAM
+          - OWNER
+          - TENANT
+      description: Conversation
     CustomField:
       type: object
       properties:
@@ -1117,6 +1036,46 @@ components:
           type: string
           description: Value of the custom field.
       description: Custom field.
+    ManagementFee:
+      type: object
+      properties:
+        accountCode:
+          type: string
+          description: Management fee account code.
+        accountNumber:
+          type: string
+          description: Management fee account number.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        manager:
+          type: string
+          description: Property manager name.
+        managersCommissionPercentage:
+          type: number
+          format: double
+          description: Property manager commission percentage.
+        passThrough:
+          type: boolean
+          example: false
+          description: Indicates if the commission account is of the passthrough type.
+        percentage:
+          type: number
+          format: double
+          description: Management fee percentage.
+      description: Management Fee
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
     Unit:
       type: object
       properties:
@@ -1281,120 +1240,6 @@ components:
           format: int32
           description: Property built year.
       description: Unit
-    Marketing:
-      type: object
-      properties:
-        availableDate:
-          type: string
-          format: date
-          description: Available date to lease for a unit/building.
-        comments:
-          type: string
-          description: Marketing description.
-        featured:
-          type: boolean
-          example: false
-          description: Indicates if property is featured for rent or sale.
-        featuredForRent:
-          type: boolean
-          example: false
-          description: Indicates if the unit/building is featured for rent.
-        featuredForSale:
-          type: boolean
-          example: false
-          description: Indicates if unit/building is featured for sale.
-        forSale:
-          type: boolean
-          example: false
-          description: Indicates if this building/unit is for sale.
-        latitude:
-          type: number
-          description: Latitude for geolocation of this building/unit.
-        leaseTerms:
-          type: integer
-          format: int32
-          description: Lease terms of a unit/building.
-        leaseTermsUnits:
-          type: string
-          description: Unit/building lease terms units.
-        longitude:
-          type: number
-          description: Longitude for geolocation of this building/unit.
-        marketingName:
-          type: string
-          description: Marketing name.
-        mlsLeaseNumber:
-          type: string
-          description: MLS lease number of this building/unit.
-        mlsNumber:
-          type: string
-          description: MLS number of this building/unit.
-        otherTenantCharges:
-          type: string
-          description: Other tenant charges.
-        parcelNumber:
-          type: string
-          description: Parcel number of this building/unit.
-        petsAllowed:
-          type: boolean
-          example: false
-          description: Indicates if pets are allowed in a unit/building.
-        postingTitle:
-          type: string
-          description: Posting title name for marketing this building/unit.
-        publishedForRent:
-          type: boolean
-          example: false
-          description: Published For Rent
-        publishedForSale:
-          type: boolean
-          example: false
-          description: Indicates if the unit/building is published for sale.
-        salePrice:
-          type: number
-          format: double
-          description: Sale price of this building/unit.
-        saleTerms:
-          type: string
-          description: Sale terms of this building/unit.
-        shortDescription:
-          type: string
-          description: Marketing short description.
-        smokingAllowed:
-          type: boolean
-          example: false
-          description: Indicates if smoking is allowed in this unit/building.
-        specials:
-          type: string
-          description: Specials of this building/unit.
-      description: Marketing Information
-    PropertyManager:
-      type: object
-      properties:
-        email:
-          type: string
-          description: Email address.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        name:
-          type: string
-          description: Name.
-        roleAsString:
-          type: string
-          description: Role name.
-        userID:
-          type: integer
-          format: int64
-          description: User id.
-      description: PropertyManager
-    RESTAPIBulkSuccessResponse:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
     SaveAddress:
       type: object
       required:
@@ -1431,43 +1276,198 @@ components:
           minLength: 0
           maxLength: 20
       description: Address.
-    Comment:
+    SaveCustomField:
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
+          type: integer
+          format: int64
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    CustomFieldSet:
+      type: object
+      required:
+      - name
+      - value
+      properties:
+        name:
+          type: string
+          description: Custom Field name
+        value:
+          type: string
+          description: Custom Field value
+      description: Custom field set for Request
+    PropertyManager:
       type: object
       properties:
-        createdBy:
+        email:
           type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
+          description: Email address.
         id:
           type: integer
           format: int64
           description: Unique identifier.
-        lastModifiedBy:
+        name:
           type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
+          description: Name.
+        roleAsString:
           type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        text:
-          type: string
-          description: Comment text.
-      description: Comment
-    RESTAPIBulkErrorResponse:
+          description: Role name.
+        userID:
+          type: integer
+          format: int64
+          description: User id.
+      description: PropertyManager
+    SaveUnit:
       type: object
+      required:
+      - abbreviation
+      - buildingID
+      - category
+      - name
+      - portfolioID
+      - type
       properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
+        abbreviation:
+          type: string
+          description: Abbreviation of Unit.
+          minLength: 1
+          maxLength: 12
+        address:
+          $ref: '#/components/schemas/SaveAddress'
+        availableDate:
+          type: string
+          format: date
+          description: Unit Available date to lease.
+        buildingID:
+          type: integer
+          format: int64
+          description: Id of the building associated with this unit.
+        category:
+          type: string
+          description: Unit Category.
+          enum:
+          - RESIDENTIAL
+          - COMMERCIAL
+        county:
+          type: string
+          description: Unit region of a state.
+        description:
+          type: string
+          description: Marketing Description.
+          minLength: 0
+          maxLength: 65535
+        floorNumber:
           type: integer
           format: int32
-        success:
+          description: Floor number.
+          enum:
+          - 0
+          - 1
+          - 2
+        name:
+          type: string
+          description: Name of the unit.
+        neighborhood:
+          type: string
+          description: Neighborhood.
+          minLength: 0
+          maxLength: 30
+        numberBathrooms:
+          type: number
+          format: double
+          description: Number of bathrooms in the unit.
+          enum:
+          - 0
+          - 1
+          - 1.5
+          - 2
+          - 2.5
+          - 3
+          - 3.5
+          - 4
+          - 4.5
+          - 5
+          - 5.5
+          - 6
+          - 6.5
+          - 7
+          - 7.5
+          - 8
+          - 8.5
+          - 9
+          - 9.5
+          - 10
+        numberBedrooms:
+          type: integer
+          format: int32
+          description: Number of bedrooms in the unit.
+          minimum: 0
+          maximum: 20
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this unit.
+        ready:
           type: boolean
+          example: false
+          description: Indicates if property is ready to be leased.
+        reasonForPropertyLost:
+          type: string
+          description: Reason for property lost.
+          enum:
+          - EMPTY
+          - ABANDONED
+          - FORECLOSURE
+          - MGR_RETURNED_TO_OWNER
+          - OTB_AS_FRBO
+          - OWNER_MOVED_BACK
+          - REFERRED_TO_SALES
+          - REFERRED_TO_SALES_OR_SOLD
+        residential:
+          type: boolean
+          example: false
+          description: Is Unit is Residential or Commercial.
+        searchTag:
+          type: string
+          description: Search tag.
+          minLength: 0
+          maxLength: 25
+        targetDeposit:
+          type: number
+          format: double
+          description: Target deposit amount.
+        targetRent:
+          type: number
+          format: double
+          description: Market rent for the unit.
+        targetRentUnits:
+          type: string
+          description: Property target rent units.
+          enum:
+          - DOLLAR_PER_SQ_FT_MONTH
+          - DOLLAR_PER_SQ_FT_YEAR
+          - DOLLAR_PER_SQ_M_MONTH
+          - DOLLAR_PER_SQ_M_YEAR
+          - DOLLAR_PER_MONTH
+          - DOLLAR_PER_WEEK
+          - DOLLAR_PER_NIGHT
+        totalArea:
+          type: number
+          format: double
+          description: Unit Area.
+        type:
+          type: string
+          description: Indicates Unit type like Business Office,Medical Office,Showroom,R  and  D,Assigned Parking (Indoor),Assigned Parking (Outdoor),Warehouse,Restaurant,Shopping Mall Retail,Street Retail,Manufacturing,House,Town House,Apartment,Flat,Studio,Loft,Assigned Parking (Indoor),Assigned Parking (Outdoor) etc.
+      description: SaveUnit
   requestBodies:
     SaveCustomField:
       content:

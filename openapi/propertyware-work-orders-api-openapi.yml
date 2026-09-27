@@ -842,22 +842,83 @@ components:
   schemas:
     Collection_long_:
       type: object
-    SaveCustomField:
+    ResponseEntity:
       type: object
-      required:
-      - entityId
-      - fieldSet
       properties:
-        entityId:
+        body:
+          type: object
+        statusCode:
+          type: string
+          enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
           type: integer
           format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
     BasicVendor:
       type: object
       properties:
@@ -902,6 +963,212 @@ components:
         phone:
           type: string
           description: Phone number.
+    RESTAPIBulkErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
+          type: boolean
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    TimeCardEntry:
+      type: object
+      required:
+      - vendorID
+      properties:
+        billID:
+          type: integer
+          format: int64
+          description: Bill ID.
+        comments:
+          type: string
+          description: Time card Entry Comments.
+        hourlyRate:
+          type: number
+          format: double
+          description: Hourly Rate.
+        hourlySurcharge:
+          type: number
+          format: double
+          description: Hourly Surcharge.
+        hours:
+          type: number
+          format: double
+          description: Hours.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        vendorID:
+          type: integer
+          format: int64
+          description: This is required field. Specifies the Vendor for a time card entry.
+        workDate:
+          type: string
+          format: date-time
+          description: Work Date.
+      description: TimeCardEntry
+    CustomField:
+      type: object
+      properties:
+        dataType:
+          type: string
+          description: Data type of the custom field.
+        definitionID:
+          type: integer
+          format: int64
+          description: Id of the custom field definition.
+        fieldName:
+          type: string
+          description: Name of the custom field.
+        value:
+          type: string
+          description: Value of the custom field.
+      description: Custom field.
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
+    SaveWorkOrder:
+      type: object
+      required:
+      - buildingID
+      properties:
+        authorizeEnter:
+          type: string
+          description: This field indicates if the tenant has granted the maintenance staff permission to enter the unit.
+          enum:
+          - 'NO'
+          - ANYTIME
+          - SPECIFIEDTIME
+        buildingID:
+          type: integer
+          format: int64
+          description: Id of the building associated with this work order.
+        category:
+          type: string
+          description: Category of the work order.
+        costEstimate:
+          type: number
+          format: double
+          description: Enter an estimate of the cost for performing the work outlined in the work order.
+        dateToEnter:
+          type: string
+          format: date
+          description: Authorized date to enter unit.
+        description:
+          type: string
+          description: Description of the work order.
+        hourEstimate:
+          type: number
+          format: double
+          description: Estimated number of hours to complete the work order.
+        hourToEnter:
+          type: integer
+          format: int32
+          description: 'Hour to enter. Allowed Value : 0 , 1, 2 ... 23'
+        minuteToEnter:
+          type: integer
+          format: int32
+          description: 'Minute to enter. Allowed Value : 0, 10, 20, 30, 40, 50'
+        priority:
+          type: string
+          description: Priority of the work order.
+          enum:
+          - HIGH
+          - MEDIUM
+          - LOW
+        publishToOwnerPortal:
+          type: boolean
+          example: false
+          description: Publish To Owner Portal. Default=false
+        publishToTenantPortal:
+          type: boolean
+          example: false
+          description: Publish To Tenant Portal. Default=false
+        requestedBy:
+          type: integer
+          format: int64
+          description: Id of the person that reported the problem, typically the tenant or owner associated with the buildings or units.
+        requiredMaterials:
+          type: string
+          description: Required Materials
+        scheduledEndDate:
+          type: string
+          format: date
+          description: Date on which the work is scheduled to be completed.
+        searchTag:
+          type: string
+          description: Enter a key term to allow you to quickly locate the work order.
+        source:
+          type: string
+          description: 'Source of the work order. This is a user configurable list with the following initial default values : None, Telephone, In Person, Email, Website, Internal, Tenant Portal, Inspection'
+        specificLocation:
+          type: string
+          description: Specific Location
+        startDate:
+          type: string
+          format: date
+          description: Date on which the work was started.
+        type:
+          type: string
+          description: 'This classifies the work order into one of the following types: General, Service Request, Turnover, Inspection, Estimate etc.'
+        unitIDs:
+          type: array
+          description: List of unit Ids that are attached to the building.
+          items:
+            type: integer
+            format: int64
+      description: Work Order for Request
+    SaveWorkOrderTask:
+      type: object
+      required:
+      - description
+      properties:
+        completed:
+          type: boolean
+          example: false
+          description: Indicates if the task is completed.
+        delegates:
+          type: string
+          description: Comma separated list of user ids to delegate the task to.
+        description:
+          type: string
+          description: Task description.
+        dueDate:
+          type: string
+          format: date
+          description: Task due date.
+        isPrivate:
+          type: boolean
+          example: false
+          description: Indicates if the task is private.
+        starred:
+          type: boolean
+          example: false
+          description: Indicates if the task is starred.
+        tags:
+          type: string
+          description: Comma separated task tags.
+      description: Work Order for Request
     Task:
       type: object
       properties:
@@ -953,6 +1220,31 @@ components:
           type: string
           description: List of tags associated with the task.
       description: Task
+    SaveCustomField:
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
+          type: integer
+          format: int64
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    SaveComment:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          type: string
+          description: Comment text.
+      description: Comment for Request
     CustomFieldSet:
       type: object
       required:
@@ -966,6 +1258,30 @@ components:
           type: string
           description: Custom Field value
       description: Custom field set for Request
+    CloseWorkOrder:
+      type: object
+      required:
+      - timeCardEntry
+      properties:
+        category:
+          type: string
+          description: This classifies the work order into a category.
+        comments:
+          type: string
+          description: Comments for closing workorder.
+        completedDate:
+          type: string
+          format: date
+          description: Date on which the work was completed.
+        startDate:
+          type: string
+          format: date
+          description: Date on which the work was started.
+        timeCardEntry:
+          type: array
+          description: List of TimeCard Entries to update
+          items:
+            $ref: '#/components/schemas/TimeCardEntry'
     WorkOrder:
       type: object
       properties:
@@ -1116,330 +1432,7 @@ components:
         unitIDs:
           $ref: '#/components/schemas/Collection_long_'
       description: Work Order
-    CloseWorkOrder:
-      type: object
-      required:
-      - timeCardEntry
-      properties:
-        category:
-          type: string
-          description: This classifies the work order into a category.
-        comments:
-          type: string
-          description: Comments for closing workorder.
-        completedDate:
-          type: string
-          format: date
-          description: Date on which the work was completed.
-        startDate:
-          type: string
-          format: date
-          description: Date on which the work was started.
-        timeCardEntry:
-          type: array
-          description: List of TimeCard Entries to update
-          items:
-            $ref: '#/components/schemas/TimeCardEntry'
-    SaveComment:
-      type: object
-      required:
-      - text
-      properties:
-        text:
-          type: string
-          description: Comment text.
-      description: Comment for Request
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
-    TimeCardEntry:
-      type: object
-      required:
-      - vendorID
-      properties:
-        billID:
-          type: integer
-          format: int64
-          description: Bill ID.
-        comments:
-          type: string
-          description: Time card Entry Comments.
-        hourlyRate:
-          type: number
-          format: double
-          description: Hourly Rate.
-        hourlySurcharge:
-          type: number
-          format: double
-          description: Hourly Surcharge.
-        hours:
-          type: number
-          format: double
-          description: Hours.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        vendorID:
-          type: integer
-          format: int64
-          description: This is required field. Specifies the Vendor for a time card entry.
-        workDate:
-          type: string
-          format: date-time
-          description: Work Date.
-      description: TimeCardEntry
-    ResponseEntity:
-      type: object
-      properties:
-        body:
-          type: object
-        statusCode:
-          type: string
-          enum:
-          - '100'
-          - '101'
-          - '102'
-          - '103'
-          - '200'
-          - '201'
-          - '202'
-          - '203'
-          - '204'
-          - '205'
-          - '206'
-          - '207'
-          - '208'
-          - '226'
-          - '300'
-          - '301'
-          - '302'
-          - '303'
-          - '304'
-          - '305'
-          - '307'
-          - '308'
-          - '400'
-          - '401'
-          - '402'
-          - '403'
-          - '404'
-          - '405'
-          - '406'
-          - '407'
-          - '408'
-          - '409'
-          - '410'
-          - '411'
-          - '412'
-          - '413'
-          - '414'
-          - '415'
-          - '416'
-          - '417'
-          - '418'
-          - '419'
-          - '420'
-          - '421'
-          - '422'
-          - '423'
-          - '424'
-          - '426'
-          - '428'
-          - '429'
-          - '431'
-          - '500'
-          - '501'
-          - '502'
-          - '503'
-          - '504'
-          - '505'
-          - '506'
-          - '507'
-          - '508'
-          - '509'
-          - '510'
-          - '511'
-    CustomField:
-      type: object
-      properties:
-        dataType:
-          type: string
-          description: Data type of the custom field.
-        definitionID:
-          type: integer
-          format: int64
-          description: Id of the custom field definition.
-        fieldName:
-          type: string
-          description: Name of the custom field.
-        value:
-          type: string
-          description: Value of the custom field.
-      description: Custom field.
-    SaveWorkOrder:
-      type: object
-      required:
-      - buildingID
-      properties:
-        authorizeEnter:
-          type: string
-          description: This field indicates if the tenant has granted the maintenance staff permission to enter the unit.
-          enum:
-          - 'NO'
-          - ANYTIME
-          - SPECIFIEDTIME
-        buildingID:
-          type: integer
-          format: int64
-          description: Id of the building associated with this work order.
-        category:
-          type: string
-          description: Category of the work order.
-        costEstimate:
-          type: number
-          format: double
-          description: Enter an estimate of the cost for performing the work outlined in the work order.
-        dateToEnter:
-          type: string
-          format: date
-          description: Authorized date to enter unit.
-        description:
-          type: string
-          description: Description of the work order.
-        hourEstimate:
-          type: number
-          format: double
-          description: Estimated number of hours to complete the work order.
-        hourToEnter:
-          type: integer
-          format: int32
-          description: 'Hour to enter. Allowed Value : 0 , 1, 2 ... 23'
-        minuteToEnter:
-          type: integer
-          format: int32
-          description: 'Minute to enter. Allowed Value : 0, 10, 20, 30, 40, 50'
-        priority:
-          type: string
-          description: Priority of the work order.
-          enum:
-          - HIGH
-          - MEDIUM
-          - LOW
-        publishToOwnerPortal:
-          type: boolean
-          example: false
-          description: Publish To Owner Portal. Default=false
-        publishToTenantPortal:
-          type: boolean
-          example: false
-          description: Publish To Tenant Portal. Default=false
-        requestedBy:
-          type: integer
-          format: int64
-          description: Id of the person that reported the problem, typically the tenant or owner associated with the buildings or units.
-        requiredMaterials:
-          type: string
-          description: Required Materials
-        scheduledEndDate:
-          type: string
-          format: date
-          description: Date on which the work is scheduled to be completed.
-        searchTag:
-          type: string
-          description: Enter a key term to allow you to quickly locate the work order.
-        source:
-          type: string
-          description: 'Source of the work order. This is a user configurable list with the following initial default values : None, Telephone, In Person, Email, Website, Internal, Tenant Portal, Inspection'
-        specificLocation:
-          type: string
-          description: Specific Location
-        startDate:
-          type: string
-          format: date
-          description: Date on which the work was started.
-        type:
-          type: string
-          description: 'This classifies the work order into one of the following types: General, Service Request, Turnover, Inspection, Estimate etc.'
-        unitIDs:
-          type: array
-          description: List of unit Ids that are attached to the building.
-          items:
-            type: integer
-            format: int64
-      description: Work Order for Request
-    SaveWorkOrderTask:
-      type: object
-      required:
-      - description
-      properties:
-        completed:
-          type: boolean
-          example: false
-          description: Indicates if the task is completed.
-        delegates:
-          type: string
-          description: Comma separated list of user ids to delegate the task to.
-        description:
-          type: string
-          description: Task description.
-        dueDate:
-          type: string
-          format: date
-          description: Task due date.
-        isPrivate:
-          type: boolean
-          example: false
-          description: Indicates if the task is private.
-        starred:
-          type: boolean
-          example: false
-          description: Indicates if the task is starred.
-        tags:
-          type: string
-          description: Comma separated task tags.
-      description: Work Order for Request
-    RESTAPIBulkSuccessResponse:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
   requestBodies:
-    SaveComment:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveComment'
-      description: saveComment
-      required: true
     SaveCustomField:
       content:
         application/json:
@@ -1453,6 +1446,13 @@ components:
           schema:
             $ref: '#/components/schemas/SaveWorkOrderTask'
       description: saveWorkOrderTask
+      required: true
+    SaveComment:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveComment'
+      description: saveComment
       required: true
   securitySchemes:
     clientId:

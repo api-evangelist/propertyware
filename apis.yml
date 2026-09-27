@@ -35,7 +35,7 @@ specificationVersion: '0.23'
 type: Index
 tags:
   - Property Management
-  - Real-Estate
+  - Real Estate
   - Rental Properties
   - Single-Family Rental
   - Leases
@@ -55,6 +55,7 @@ tags_raw:
   - Work Orders
   - Financial Transactions
   - Owner Reports
+  - Real-Estate
 apis:
 - aid: propertyware:propertyware-accounting-api
   name: Propertyware Accounting API

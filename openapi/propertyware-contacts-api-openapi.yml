@@ -667,6 +667,109 @@ paths:
           description: Entity not found.
 components:
   schemas:
+    SaveContact:
+      type: object
+      required:
+      - firstName
+      - lastName
+      properties:
+        address:
+          $ref: '#/components/schemas/SaveAddress'
+        allowESignature:
+          type: boolean
+          example: false
+          description: Indicate if the contact can receive eSignature request e-mail messages sent through Propertyware.
+        altEmail:
+          type: string
+          description: Alternate Email Address.
+        birthDate:
+          type: string
+          format: date
+          description: Date of Birth.
+        category:
+          type: string
+          description: Indicate contact category. Send empty "" value if contact is Uncategorized. Applicable only for CREATE Contact.
+        comments:
+          type: string
+          description: Description.
+        company:
+          type: string
+          description: Company where the contact is employed.
+          minLength: 1
+          maxLength: 75
+        email:
+          type: string
+          description: E-mail Address.
+        fax:
+          type: string
+          description: Fax.
+        firstName:
+          type: string
+          description: First Name.
+          minLength: 1
+          maxLength: 30
+        gender:
+          type: string
+          description: Gender.
+          enum:
+          - UNKNOWN
+          - MALE
+          - FEMALE
+          - DECLINE_TO_STATE
+        homePhone:
+          type: string
+          description: Home Phone.
+          minLength: 1
+          maxLength: 22
+        jobTitle:
+          type: string
+          description: Professional title or position for the contact.
+          minLength: 1
+          maxLength: 75
+        lastName:
+          type: string
+          description: Last Name.
+          minLength: 1
+          maxLength: 30
+        middleName:
+          type: string
+          description: Middle Name.
+          minLength: 1
+          maxLength: 30
+        mobilePhone:
+          type: string
+          description: Mobile Phone.
+          minLength: 1
+          maxLength: 22
+        nameOnCheck:
+          type: string
+          description: Name On Check.
+          minLength: 1
+          maxLength: 100
+        namedOnLease:
+          type: boolean
+          example: false
+          description: Is Named On Lease.
+        otherPhone:
+          type: string
+          description: Other Phone.
+          minLength: 1
+          maxLength: 22
+        salutation:
+          type: string
+          description: 'Salutation. Allowed values are : '''', ''Mr.'', ''Mrs.'', ''Ms.'', ''Dr.'', ''Prof.'''
+        searchTag:
+          type: string
+          description: SearchTag.
+        suffix:
+          type: string
+          description: 'Suffix. Allowed values are : '''', ''Jr.'', ''Sr.'', ''I'', ''II'', ''III'', ''IV'''
+        workPhone:
+          type: string
+          description: Work Phone.
+          minLength: 1
+          maxLength: 22
+      description: Contact for Request
     SaveAddress:
       type: object
       required:
@@ -703,78 +806,6 @@ components:
           minLength: 0
           maxLength: 20
       description: Address.
-    Comment:
-      type: object
-      properties:
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        text:
-          type: string
-          description: Comment text.
-      description: Comment
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    Address:
-      type: object
-      properties:
-        address:
-          type: string
-          description: Primary street and/or unit address.
-        addressCont:
-          type: string
-          description: Address continuation.
-        city:
-          type: string
-          description: City.
-        country:
-          type: string
-          description: Country.
-        postalCode:
-          type: string
-          description: Postal code.
-        stateRegion:
-          type: string
-          description: State/region.
-      description: Address
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
     SaveCustomField:
       type: object
       required:
@@ -791,67 +822,13 @@ components:
           items:
             $ref: '#/components/schemas/CustomFieldSet'
       description: Custom field for Request
-    Conversation:
+    RESTAPIError:
       type: object
       properties:
-        comments:
-          type: array
-          description: List of comments in the conversation.
-          items:
-            $ref: '#/components/schemas/Comment'
-        createdBy:
+        key:
           type: string
-          description: User who created the record.
-        createdDateTime:
+        message:
           type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        entityID:
-          type: integer
-          format: int64
-          description: Id of the entity related to this conversation.
-        entityType:
-          type: string
-          description: Type of the entity related to this conversation.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        subject:
-          type: string
-          description: Conversation subject.
-        type:
-          type: string
-          description: Conversation type.
-          enum:
-          - MANAGEMENT_TEAM
-          - OWNER
-          - TENANT
-      description: Conversation
-    CustomField:
-      type: object
-      properties:
-        dataType:
-          type: string
-          description: Data type of the custom field.
-        definitionID:
-          type: integer
-          format: int64
-          description: Id of the custom field definition.
-        fieldName:
-          type: string
-          description: Name of the custom field.
-        value:
-          type: string
-          description: Value of the custom field.
-      description: Custom field.
     ResponseEntity:
       type: object
       properties:
@@ -923,24 +900,19 @@ components:
           - '509'
           - '510'
           - '511'
-    RESTAPIError:
+    CustomFieldSet:
       type: object
+      required:
+      - name
+      - value
       properties:
-        key:
+        name:
           type: string
-        message:
+          description: Custom Field name
+        value:
           type: string
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
+          description: Custom Field value
+      description: Custom field set for Request
     Contact:
       type: object
       properties:
@@ -1050,115 +1022,65 @@ components:
           type: string
           description: Work phone.
       description: Contact Response
-    RESTAPIBulkSuccessResponse:
+    RESTAPIBulkErrorResponse:
       type: object
       properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
+          type: boolean
+    Comment:
+      type: object
+      properties:
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
         id:
           type: integer
           format: int64
-    SaveContact:
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        text:
+          type: string
+          description: Comment text.
+      description: Comment
+    Address:
       type: object
-      required:
-      - firstName
-      - lastName
       properties:
         address:
-          $ref: '#/components/schemas/SaveAddress'
-        allowESignature:
-          type: boolean
-          example: false
-          description: Indicate if the contact can receive eSignature request e-mail messages sent through Propertyware.
-        altEmail:
           type: string
-          description: Alternate Email Address.
-        birthDate:
+          description: Primary street and/or unit address.
+        addressCont:
           type: string
-          format: date
-          description: Date of Birth.
-        category:
+          description: Address continuation.
+        city:
           type: string
-          description: Indicate contact category. Send empty "" value if contact is Uncategorized. Applicable only for CREATE Contact.
-        comments:
+          description: City.
+        country:
           type: string
-          description: Description.
-        company:
+          description: Country.
+        postalCode:
           type: string
-          description: Company where the contact is employed.
-          minLength: 1
-          maxLength: 75
-        email:
+          description: Postal code.
+        stateRegion:
           type: string
-          description: E-mail Address.
-        fax:
-          type: string
-          description: Fax.
-        firstName:
-          type: string
-          description: First Name.
-          minLength: 1
-          maxLength: 30
-        gender:
-          type: string
-          description: Gender.
-          enum:
-          - UNKNOWN
-          - MALE
-          - FEMALE
-          - DECLINE_TO_STATE
-        homePhone:
-          type: string
-          description: Home Phone.
-          minLength: 1
-          maxLength: 22
-        jobTitle:
-          type: string
-          description: Professional title or position for the contact.
-          minLength: 1
-          maxLength: 75
-        lastName:
-          type: string
-          description: Last Name.
-          minLength: 1
-          maxLength: 30
-        middleName:
-          type: string
-          description: Middle Name.
-          minLength: 1
-          maxLength: 30
-        mobilePhone:
-          type: string
-          description: Mobile Phone.
-          minLength: 1
-          maxLength: 22
-        nameOnCheck:
-          type: string
-          description: Name On Check.
-          minLength: 1
-          maxLength: 100
-        namedOnLease:
-          type: boolean
-          example: false
-          description: Is Named On Lease.
-        otherPhone:
-          type: string
-          description: Other Phone.
-          minLength: 1
-          maxLength: 22
-        salutation:
-          type: string
-          description: 'Salutation. Allowed values are : '''', ''Mr.'', ''Mrs.'', ''Ms.'', ''Dr.'', ''Prof.'''
-        searchTag:
-          type: string
-          description: SearchTag.
-        suffix:
-          type: string
-          description: 'Suffix. Allowed values are : '''', ''Jr.'', ''Sr.'', ''I'', ''II'', ''III'', ''IV'''
-        workPhone:
-          type: string
-          description: Work Phone.
-          minLength: 1
-          maxLength: 22
-      description: Contact for Request
+          description: State/region.
+      description: Address
     ContactCategory:
       type: object
       properties:
@@ -1170,20 +1092,98 @@ components:
           format: int64
           description: Unique identifier.
       description: ContactCategory
+    Conversation:
+      type: object
+      properties:
+        comments:
+          type: array
+          description: List of comments in the conversation.
+          items:
+            $ref: '#/components/schemas/Comment'
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        entityID:
+          type: integer
+          format: int64
+          description: Id of the entity related to this conversation.
+        entityType:
+          type: string
+          description: Type of the entity related to this conversation.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        subject:
+          type: string
+          description: Conversation subject.
+        type:
+          type: string
+          description: Conversation type.
+          enum:
+          - MANAGEMENT_TEAM
+          - OWNER
+          - TENANT
+      description: Conversation
+    CustomField:
+      type: object
+      properties:
+        dataType:
+          type: string
+          description: Data type of the custom field.
+        definitionID:
+          type: integer
+          format: int64
+          description: Id of the custom field definition.
+        fieldName:
+          type: string
+          description: Name of the custom field.
+        value:
+          type: string
+          description: Value of the custom field.
+      description: Custom field.
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
   requestBodies:
-    SaveCustomField:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveCustomField'
-      description: saveCustomField
-      required: true
     SaveContact:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/SaveContact'
       description: saveContact
+      required: true
+    SaveCustomField:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveCustomField'
+      description: saveCustomField
       required: true
   securitySchemes:
     clientId:
