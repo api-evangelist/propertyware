@@ -567,77 +567,44 @@ paths:
           description: Entity not found.
 components:
   schemas:
-    ResponseEntity:
+    Owner:
       type: object
       properties:
-        body:
-          type: object
-        statusCode:
+        address:
+          $ref: '#/components/schemas/Address'
+        email:
           type: string
-          enum:
-          - '100'
-          - '101'
-          - '102'
-          - '103'
-          - '200'
-          - '201'
-          - '202'
-          - '203'
-          - '204'
-          - '205'
-          - '206'
-          - '207'
-          - '208'
-          - '226'
-          - '300'
-          - '301'
-          - '302'
-          - '303'
-          - '304'
-          - '305'
-          - '307'
-          - '308'
-          - '400'
-          - '401'
-          - '402'
-          - '403'
-          - '404'
-          - '405'
-          - '406'
-          - '407'
-          - '408'
-          - '409'
-          - '410'
-          - '411'
-          - '412'
-          - '413'
-          - '414'
-          - '415'
-          - '416'
-          - '417'
-          - '418'
-          - '419'
-          - '420'
-          - '421'
-          - '422'
-          - '423'
-          - '424'
-          - '426'
-          - '428'
-          - '429'
-          - '431'
-          - '500'
-          - '501'
-          - '502'
-          - '503'
-          - '504'
-          - '505'
-          - '506'
-          - '507'
-          - '508'
-          - '509'
-          - '510'
-          - '511'
+          description: Email address.
+        firstName:
+          type: string
+          description: First name.
+        homePhone:
+          type: string
+          description: Home phone.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastName:
+          type: string
+          description: Last name.
+        mobilePhone:
+          type: string
+          description: Mobile phone.
+        name:
+          type: string
+          description: Full name.
+        otherPhone:
+          type: string
+          description: Other phone.
+        percentageOwnership:
+          type: number
+          format: double
+          description: Percentage ownership.
+        workPhone:
+          type: string
+          description: Work phone.
+      description: Owner Contact
     SaveAddress:
       type: object
       required:
@@ -674,54 +641,6 @@ components:
           minLength: 0
           maxLength: 20
       description: Address.
-    SaveCustomField:
-      type: object
-      required:
-      - entityId
-      - fieldSet
-      properties:
-        entityId:
-          type: integer
-          format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
     SaveOwner:
       type: object
       required:
@@ -760,183 +679,13 @@ components:
           type: string
           description: Owner Work Phone.
       description: Save Owner Contact
-    Comment:
+    RESTAPIError:
       type: object
       properties:
-        createdBy:
+        key:
           type: string
-          description: User who created the record.
-        createdDateTime:
+        message:
           type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        text:
-          type: string
-          description: Comment text.
-      description: Comment
-    Address:
-      type: object
-      properties:
-        address:
-          type: string
-          description: Primary street and/or unit address.
-        addressCont:
-          type: string
-          description: Address continuation.
-        city:
-          type: string
-          description: City.
-        country:
-          type: string
-          description: Country.
-        postalCode:
-          type: string
-          description: Postal code.
-        stateRegion:
-          type: string
-          description: State/region.
-      description: Address
-    SavePortfolio:
-      type: object
-      required:
-      - abbreviation
-      - name
-      properties:
-        abbreviation:
-          type: string
-          description: Abbreviated name assigned to the portfolio.
-        cashAccrual:
-          type: string
-          description: Cash or accrual accounting basis.
-          enum:
-          - COMPANY_DEFAULT
-          - CASH
-          - ACCRUAL
-        closingDate:
-          type: string
-          format: date
-          description: Date when the accounting period for the portfolio will close.
-        defaultBankAccountID:
-          type: integer
-          format: int64
-          description: Portfolio Default Bank Account ID
-        defaultSecdepAccountID:
-          type: integer
-          format: int64
-          description: Portfolio Default Security Deposit Bank Account ID
-        doNotPayOwnerDraw:
-          type: boolean
-          example: false
-          description: Indicates that the owner should not be paid owner draws.
-        maintenanceSpendingLimit:
-          type: number
-          format: double
-          description: Monthly or yearly Maintenance Spending Limit set for the portfolio for maintenance bills created by work orders.
-        maintenanceSpendingLimitTime:
-          type: string
-          description: Monthly or Yearly Maintenance Spending Limit Time set for the portfolio for maintenance bills created by work orders.
-          enum:
-          - NO_LIMIT
-          - DOLLAR_PER_MONTH
-          - DOLLAR_PER_YEAR
-        name:
-          type: string
-          description: Name of the portfolio.
-        ownerIds:
-          type: array
-          description: Portfolio owner Ids
-          items:
-            type: integer
-            format: int64
-        ownerStatementReportID:
-          type: integer
-          format: int64
-          description: Portfolio Owner Statement Report ID
-        owners:
-          type: array
-          description: Portfolio owners.
-          items:
-            $ref: '#/components/schemas/SaveOwner'
-        stickyNote:
-          type: string
-          description: Sticky notes. Maximum 500 characters.
-        targetOperatingReserve:
-          type: number
-          format: double
-          description: Minimum balance to be maintained within the portfolio at all times.
-      description: 'Save Portfolio '
-    Conversation:
-      type: object
-      properties:
-        comments:
-          type: array
-          description: List of comments in the conversation.
-          items:
-            $ref: '#/components/schemas/Comment'
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        entityID:
-          type: integer
-          format: int64
-          description: Id of the entity related to this conversation.
-        entityType:
-          type: string
-          description: Type of the entity related to this conversation.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        subject:
-          type: string
-          description: Conversation subject.
-        type:
-          type: string
-          description: Conversation type.
-          enum:
-          - MANAGEMENT_TEAM
-          - OWNER
-          - TENANT
-      description: Conversation
-    CustomField:
-      type: object
-      properties:
-        dataType:
-          type: string
-          description: Data type of the custom field.
-        definitionID:
-          type: integer
-          format: int64
-          description: Id of the custom field definition.
-        fieldName:
-          type: string
-          description: Name of the custom field.
-        value:
-          type: string
-          description: Value of the custom field.
-      description: Custom field.
     Portfolio:
       type: object
       properties:
@@ -1033,12 +782,6 @@ components:
           format: double
           description: Minimum balance to be maintained within the portfolio at all times.
       description: Portfolio
-    RESTAPIBulkSuccessResponse:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
     ErrorResponse:
       type: object
       properties:
@@ -1050,58 +793,315 @@ components:
             $ref: '#/components/schemas/RESTAPIError'
         userMessage:
           type: string
-    Owner:
+    CustomField:
       type: object
       properties:
-        address:
-          $ref: '#/components/schemas/Address'
-        email:
+        dataType:
           type: string
-          description: Email address.
-        firstName:
+          description: Data type of the custom field.
+        definitionID:
+          type: integer
+          format: int64
+          description: Id of the custom field definition.
+        fieldName:
           type: string
-          description: First name.
-        homePhone:
+          description: Name of the custom field.
+        value:
           type: string
-          description: Home phone.
+          description: Value of the custom field.
+      description: Custom field.
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Conversation:
+      type: object
+      properties:
+        comments:
+          type: array
+          description: List of comments in the conversation.
+          items:
+            $ref: '#/components/schemas/Comment'
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        entityID:
+          type: integer
+          format: int64
+          description: Id of the entity related to this conversation.
+        entityType:
+          type: string
+          description: Type of the entity related to this conversation.
         id:
           type: integer
           format: int64
           description: Unique identifier.
-        lastName:
+        lastModifiedBy:
           type: string
-          description: Last name.
-        mobilePhone:
+          description: User who last modified the record.
+        lastModifiedDateTime:
           type: string
-          description: Mobile phone.
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        subject:
+          type: string
+          description: Conversation subject.
+        type:
+          type: string
+          description: Conversation type.
+          enum:
+          - MANAGEMENT_TEAM
+          - OWNER
+          - TENANT
+      description: Conversation
+    Comment:
+      type: object
+      properties:
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        text:
+          type: string
+          description: Comment text.
+      description: Comment
+    RESTAPIBulkErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
+          type: boolean
+    Address:
+      type: object
+      properties:
+        address:
+          type: string
+          description: Primary street and/or unit address.
+        addressCont:
+          type: string
+          description: Address continuation.
+        city:
+          type: string
+          description: City.
+        country:
+          type: string
+          description: Country.
+        postalCode:
+          type: string
+          description: Postal code.
+        stateRegion:
+          type: string
+          description: State/region.
+      description: Address
+    CustomFieldSet:
+      type: object
+      required:
+      - name
+      - value
+      properties:
         name:
           type: string
-          description: Full name.
-        otherPhone:
+          description: Custom Field name
+        value:
           type: string
-          description: Other phone.
-        percentageOwnership:
+          description: Custom Field value
+      description: Custom field set for Request
+    SaveCustomField:
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
+          type: integer
+          format: int64
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    SavePortfolio:
+      type: object
+      required:
+      - abbreviation
+      - name
+      properties:
+        abbreviation:
+          type: string
+          description: Abbreviated name assigned to the portfolio.
+        cashAccrual:
+          type: string
+          description: Cash or accrual accounting basis.
+          enum:
+          - COMPANY_DEFAULT
+          - CASH
+          - ACCRUAL
+        closingDate:
+          type: string
+          format: date
+          description: Date when the accounting period for the portfolio will close.
+        defaultBankAccountID:
+          type: integer
+          format: int64
+          description: Portfolio Default Bank Account ID
+        defaultSecdepAccountID:
+          type: integer
+          format: int64
+          description: Portfolio Default Security Deposit Bank Account ID
+        doNotPayOwnerDraw:
+          type: boolean
+          example: false
+          description: Indicates that the owner should not be paid owner draws.
+        maintenanceSpendingLimit:
           type: number
           format: double
-          description: Percentage ownership.
-        workPhone:
+          description: Monthly or yearly Maintenance Spending Limit set for the portfolio for maintenance bills created by work orders.
+        maintenanceSpendingLimitTime:
           type: string
-          description: Work phone.
-      description: Owner Contact
+          description: Monthly or Yearly Maintenance Spending Limit Time set for the portfolio for maintenance bills created by work orders.
+          enum:
+          - NO_LIMIT
+          - DOLLAR_PER_MONTH
+          - DOLLAR_PER_YEAR
+        name:
+          type: string
+          description: Name of the portfolio.
+        ownerIds:
+          type: array
+          description: Portfolio owner Ids
+          items:
+            type: integer
+            format: int64
+        ownerStatementReportID:
+          type: integer
+          format: int64
+          description: Portfolio Owner Statement Report ID
+        owners:
+          type: array
+          description: Portfolio owners.
+          items:
+            $ref: '#/components/schemas/SaveOwner'
+        stickyNote:
+          type: string
+          description: Sticky notes. Maximum 500 characters.
+        targetOperatingReserve:
+          type: number
+          format: double
+          description: Minimum balance to be maintained within the portfolio at all times.
+      description: 'Save Portfolio '
+    ResponseEntity:
+      type: object
+      properties:
+        body:
+          type: object
+        statusCode:
+          type: string
+          enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
   requestBodies:
-    SavePortfolio:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SavePortfolio'
-      description: savePortfolio
-      required: true
     SaveCustomField:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/SaveCustomField'
       description: saveCustomField
+      required: true
+    SavePortfolio:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SavePortfolio'
+      description: savePortfolio
       required: true
   securitySchemes:
     clientId:

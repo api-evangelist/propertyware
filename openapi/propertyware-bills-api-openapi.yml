@@ -1002,213 +1002,47 @@ paths:
           description: Entity not found.
 components:
   schemas:
-    ResponseEntity:
-      type: object
-      properties:
-        body:
-          type: object
-        statusCode:
-          type: string
-          enum:
-          - '100'
-          - '101'
-          - '102'
-          - '103'
-          - '200'
-          - '201'
-          - '202'
-          - '203'
-          - '204'
-          - '205'
-          - '206'
-          - '207'
-          - '208'
-          - '226'
-          - '300'
-          - '301'
-          - '302'
-          - '303'
-          - '304'
-          - '305'
-          - '307'
-          - '308'
-          - '400'
-          - '401'
-          - '402'
-          - '403'
-          - '404'
-          - '405'
-          - '406'
-          - '407'
-          - '408'
-          - '409'
-          - '410'
-          - '411'
-          - '412'
-          - '413'
-          - '414'
-          - '415'
-          - '416'
-          - '417'
-          - '418'
-          - '419'
-          - '420'
-          - '421'
-          - '422'
-          - '423'
-          - '424'
-          - '426'
-          - '428'
-          - '429'
-          - '431'
-          - '500'
-          - '501'
-          - '502'
-          - '503'
-          - '504'
-          - '505'
-          - '506'
-          - '507'
-          - '508'
-          - '509'
-          - '510'
-          - '511'
-    BillPayment:
-      type: object
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Payment amount.
-        bills:
-          type: array
-          description: List of bills that were paid.
-          items:
-            $ref: '#/components/schemas/BillPaid'
-        checkNumber:
-          type: string
-          description: Payment check number.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        lines:
-          type: array
-          description: A collection of payment line items.
-          items:
-            $ref: '#/components/schemas/LineItem'
-        memo:
-          type: string
-          description: Memo.
-        nameOnCheck:
-          type: string
-          description: Name on check.
-        paymentAccountID:
-          type: integer
-          format: int64
-          description: Id of the payment general ledger account.
-        paymentDate:
-          type: string
-          format: date
-          description: Payment date.
-        paymentMethod:
-          type: string
-          description: Payment method.
-          enum:
-          - PAYMENT_METHOD_CHECK
-          - PAYMENT_METHOD_CASH
-          - PAYMENT_METHOD_BANK_BILL_PAY
-          - PAYMENT_METHOD_ONLINE_BANK_TRANSFER
-        toBePrinted:
-          type: boolean
-          example: false
-          description: Indicates if the check should be printed.
-        vendorID:
-          type: integer
-          format: int64
-          description: Id of the vendor associated with this payment.
-      description: BillPayment
-    CheckSplit:
+    ExpenseRecoveryCharge:
       type: object
       required:
-      - portfolioID
+      - amount
+      - date
       properties:
         amount:
           type: number
           format: double
           description: Amount.
-        buildingID:
-          type: integer
-          format: int64
-          description: Id of the building associated with this check split.
         comments:
           type: string
           description: Comments.
+        date:
+          type: string
+          format: date
+          description: Post date.
         glAccountID:
           type: integer
           format: int64
-          description: Id of the general ledger account associated with this check split.
+          description: Id of the general ledger account associated with this charge.
         id:
           type: integer
           format: int64
           description: Unique identifier.
-        portfolioID:
+        leaseID:
           type: integer
           format: int64
-          description: Id of the portfolio associated with this check split.
-        unitID:
-          type: integer
-          format: int64
-          description: Id of the unit associated with this check split.
-      description: VendorCheckSplit
-    SaveBillPayment:
+          description: Id of the lease associated with this charge.
+    RESTAPIBulkErrorResponse:
       type: object
       properties:
-        bills:
+        error:
           type: array
-          description: Bills to pay.
           items:
-            $ref: '#/components/schemas/BillPay'
-        checkNumber:
-          type: string
-          description: Payment check number.
-        memo:
-          type: string
-          description: Memo.
-        paymentAccountID:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
           type: integer
-          format: int64
-          description: Bank Account to pay from.
-        paymentDate:
-          type: string
-          format: date
-          description: Payment Date.
-        paymentMethod:
-          type: string
-          description: Payment method.
-          enum:
-          - Check
-          - Cash
-          - Bank Bill Pay
-          - Online Bank Transfer
-        vendorID:
-          type: integer
-          format: int64
-          description: Vendor ID to Pay.
+          format: int32
+        success:
+          type: boolean
     Bill:
       type: object
       properties:
@@ -1290,6 +1124,207 @@ components:
           format: int64
           description: The ID of the work order associated with the bill.
       description: Bill
+    SaveBill:
+      type: object
+      required:
+      - billDate
+      - billSplits
+      - dueDate
+      - vendorID
+      properties:
+        billDate:
+          type: string
+          format: date
+          description: Bill date.
+        billNumber:
+          type: integer
+          format: int32
+          description: Bill number.
+        billSplits:
+          type: array
+          description: Splits list.
+          items:
+            $ref: '#/components/schemas/SaveBillSplit'
+        comments:
+          type: string
+          description: Description.
+        dueDate:
+          type: string
+          format: date
+          description: Bill Due date.
+        markupAccountID:
+          type: integer
+          format: int64
+          description: Markup general ledger account ID.
+        markupPercentage:
+          type: number
+          format: double
+          description: Markup percentage.
+        paymentDate:
+          type: string
+          format: date
+          description: Payment Date.
+        refNo:
+          type: string
+          description: Reference number.
+        terms:
+          type: string
+          description: Bill terms.
+        vendorID:
+          type: integer
+          format: int64
+          description: Related vendor ID.
+        workOrderID:
+          type: integer
+          format: int64
+          description: WorkOrder ID associated to this Bill.
+      description: Bill
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    BillPaid:
+      type: object
+      properties:
+        billDate:
+          type: string
+          format: date
+          description: Bill date.
+        billNumber:
+          type: integer
+          format: int32
+          description: Bill number.
+        billSplits:
+          type: array
+          description: List of bill splits.
+          items:
+            $ref: '#/components/schemas/SplitPaid'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+    LineItem:
+      type: object
+      properties:
+        buildingID:
+          type: integer
+          format: int64
+          description: Id of the building associated with this entry.
+        credit:
+          type: number
+          format: double
+          description: Credit amount.
+        debit:
+          type: number
+          format: double
+          description: Debit amount.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this entry.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this entry.
+        unitID:
+          type: integer
+          format: int64
+          description: Id of the unit associated with this entry.
+      description: Payment line items
+    BillPayment:
+      type: object
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Payment amount.
+        bills:
+          type: array
+          description: List of bills that were paid.
+          items:
+            $ref: '#/components/schemas/BillPaid'
+        checkNumber:
+          type: string
+          description: Payment check number.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        lines:
+          type: array
+          description: A collection of payment line items.
+          items:
+            $ref: '#/components/schemas/LineItem'
+        memo:
+          type: string
+          description: Memo.
+        nameOnCheck:
+          type: string
+          description: Name on check.
+        paymentAccountID:
+          type: integer
+          format: int64
+          description: Id of the payment general ledger account.
+        paymentDate:
+          type: string
+          format: date
+          description: Payment date.
+        paymentMethod:
+          type: string
+          description: Payment method.
+          enum:
+          - PAYMENT_METHOD_CHECK
+          - PAYMENT_METHOD_CASH
+          - PAYMENT_METHOD_BANK_BILL_PAY
+          - PAYMENT_METHOD_ONLINE_BANK_TRANSFER
+        toBePrinted:
+          type: boolean
+          example: false
+          description: Indicates if the check should be printed.
+        vendorID:
+          type: integer
+          format: int64
+          description: Id of the vendor associated with this payment.
+      description: BillPayment
+    BillPay:
+      type: object
+      properties:
+        billSplits:
+          type: array
+          description: Bill splits list.
+          items:
+            $ref: '#/components/schemas/SplitPay'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
     Check:
       type: object
       required:
@@ -1356,105 +1391,6 @@ components:
           format: int64
           description: Id of the vendor associated with this check.
       description: Vendor Check
-    RESTAPIBulkSuccessResponse:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
-    SaveCredit:
-      type: object
-      required:
-      - billDate
-      - billSplits
-      - vendorID
-      properties:
-        billDate:
-          type: string
-          format: date
-          description: Credit Date.
-        billSplits:
-          type: array
-          description: Splits list.
-          items:
-            $ref: '#/components/schemas/SaveBillSplit'
-        comments:
-          type: string
-          description: Description.
-        refNo:
-          type: string
-          description: Reference number.
-        vendorID:
-          type: integer
-          format: int64
-          description: Related vendor ID.
-        workOrderID:
-          type: integer
-          format: int64
-          description: Related workorder ID.
-      description: SaveCredit
-    LineItem:
-      type: object
-      properties:
-        buildingID:
-          type: integer
-          format: int64
-          description: Id of the building associated with this entry.
-        credit:
-          type: number
-          format: double
-          description: Credit amount.
-        debit:
-          type: number
-          format: double
-          description: Debit amount.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this entry.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this entry.
-        unitID:
-          type: integer
-          format: int64
-          description: Id of the unit associated with this entry.
-      description: Payment line items
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
     SaveCheck:
       type: object
       required:
@@ -1541,6 +1477,116 @@ components:
           format: int64
           description: Id of the unit associated with this bill split.
       description: BillSplit
+    SaveBillPayment:
+      type: object
+      properties:
+        bills:
+          type: array
+          description: Bills to pay.
+          items:
+            $ref: '#/components/schemas/BillPay'
+        checkNumber:
+          type: string
+          description: Payment check number.
+        memo:
+          type: string
+          description: Memo.
+        paymentAccountID:
+          type: integer
+          format: int64
+          description: Bank Account to pay from.
+        paymentDate:
+          type: string
+          format: date
+          description: Payment Date.
+        paymentMethod:
+          type: string
+          description: Payment method.
+          enum:
+          - Check
+          - Cash
+          - Bank Bill Pay
+          - Online Bank Transfer
+        vendorID:
+          type: integer
+          format: int64
+          description: Vendor ID to Pay.
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
+    SaveCheckSplit:
+      type: object
+      required:
+      - glAccountID
+      - portfolioID
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Check Split amount.
+        buildingID:
+          type: integer
+          format: int64
+          description: Check Location Building ID.
+        comments:
+          type: string
+          description: CheckSplit Comments.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Split GL Account ID.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Portfolio id to apply payment.
+        unitID:
+          type: integer
+          format: int64
+          description: Check Location Unit ID.
+      description: SaveCheckfor Request
+    SaveCredit:
+      type: object
+      required:
+      - billDate
+      - billSplits
+      - vendorID
+      properties:
+        billDate:
+          type: string
+          format: date
+          description: Credit Date.
+        billSplits:
+          type: array
+          description: Splits list.
+          items:
+            $ref: '#/components/schemas/SaveBillSplit'
+        comments:
+          type: string
+          description: Description.
+        refNo:
+          type: string
+          description: Reference number.
+        vendorID:
+          type: integer
+          format: int64
+          description: Related vendor ID.
+        workOrderID:
+          type: integer
+          format: int64
+          description: Related workorder ID.
+      description: SaveCredit
     SaveBillSplit:
       type: object
       required:
@@ -1626,6 +1672,39 @@ components:
           type: integer
           format: int64
           description: Id of the unit associated with this line item.
+    CheckSplit:
+      type: object
+      required:
+      - portfolioID
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Amount.
+        buildingID:
+          type: integer
+          format: int64
+          description: Id of the building associated with this check split.
+        comments:
+          type: string
+          description: Comments.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this check split.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this check split.
+        unitID:
+          type: integer
+          format: int64
+          description: Id of the unit associated with this check split.
+      description: VendorCheckSplit
     SplitPay:
       type: object
       properties:
@@ -1637,156 +1716,77 @@ components:
           type: integer
           format: int64
           description: Unique identifier.
-    BillPay:
+    ResponseEntity:
       type: object
       properties:
-        billSplits:
-          type: array
-          description: Bill splits list.
-          items:
-            $ref: '#/components/schemas/SplitPay'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-    ExpenseRecoveryCharge:
-      type: object
-      required:
-      - amount
-      - date
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount.
-        comments:
+        body:
+          type: object
+        statusCode:
           type: string
-          description: Comments.
-        date:
-          type: string
-          format: date
-          description: Post date.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this charge.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        leaseID:
-          type: integer
-          format: int64
-          description: Id of the lease associated with this charge.
-    BillPaid:
-      type: object
-      properties:
-        billDate:
-          type: string
-          format: date
-          description: Bill date.
-        billNumber:
-          type: integer
-          format: int32
-          description: Bill number.
-        billSplits:
-          type: array
-          description: List of bill splits.
-          items:
-            $ref: '#/components/schemas/SplitPaid'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-    SaveBill:
-      type: object
-      required:
-      - billDate
-      - billSplits
-      - dueDate
-      - vendorID
-      properties:
-        billDate:
-          type: string
-          format: date
-          description: Bill date.
-        billNumber:
-          type: integer
-          format: int32
-          description: Bill number.
-        billSplits:
-          type: array
-          description: Splits list.
-          items:
-            $ref: '#/components/schemas/SaveBillSplit'
-        comments:
-          type: string
-          description: Description.
-        dueDate:
-          type: string
-          format: date
-          description: Bill Due date.
-        markupAccountID:
-          type: integer
-          format: int64
-          description: Markup general ledger account ID.
-        markupPercentage:
-          type: number
-          format: double
-          description: Markup percentage.
-        paymentDate:
-          type: string
-          format: date
-          description: Payment Date.
-        refNo:
-          type: string
-          description: Reference number.
-        terms:
-          type: string
-          description: Bill terms.
-        vendorID:
-          type: integer
-          format: int64
-          description: Related vendor ID.
-        workOrderID:
-          type: integer
-          format: int64
-          description: WorkOrder ID associated to this Bill.
-      description: Bill
-    SaveCheckSplit:
-      type: object
-      required:
-      - glAccountID
-      - portfolioID
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Check Split amount.
-        buildingID:
-          type: integer
-          format: int64
-          description: Check Location Building ID.
-        comments:
-          type: string
-          description: CheckSplit Comments.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Split GL Account ID.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        portfolioID:
-          type: integer
-          format: int64
-          description: Portfolio id to apply payment.
-        unitID:
-          type: integer
-          format: int64
-          description: Check Location Unit ID.
-      description: SaveCheckfor Request
+          enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
   requestBodies:
     SaveBill:
       content:
@@ -1794,6 +1794,13 @@ components:
           schema:
             $ref: '#/components/schemas/SaveBill'
       description: saveBill
+      required: true
+    SaveCredit:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveCredit'
+      description: saveCredit
       required: true
     SaveBillPayment:
       content:
@@ -1808,13 +1815,6 @@ components:
           schema:
             $ref: '#/components/schemas/SaveCheck'
       description: saveCheck
-      required: true
-    SaveCredit:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveCredit'
-      description: saveCredit
       required: true
   securitySchemes:
     clientId:

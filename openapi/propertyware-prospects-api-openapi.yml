@@ -688,96 +688,23 @@ paths:
           description: Entity not found.
 components:
   schemas:
-    ProspectStatus:
+    CustomField:
       type: object
       properties:
-        id:
+        dataType:
+          type: string
+          description: Data type of the custom field.
+        definitionID:
           type: integer
           format: int64
-          description: Unique identifier.
-        readonly:
-          type: boolean
-          example: false
-          description: Read Only
-        status:
+          description: Id of the custom field definition.
+        fieldName:
           type: string
-          description: Status
-        visibleOnPortal:
-          type: boolean
-          example: false
-          description: Status visible On Portal
-      description: Prospect Status
-    ResponseEntity:
-      type: object
-      properties:
-        body:
-          type: object
-        statusCode:
+          description: Name of the custom field.
+        value:
           type: string
-          enum:
-          - '100'
-          - '101'
-          - '102'
-          - '103'
-          - '200'
-          - '201'
-          - '202'
-          - '203'
-          - '204'
-          - '205'
-          - '206'
-          - '207'
-          - '208'
-          - '226'
-          - '300'
-          - '301'
-          - '302'
-          - '303'
-          - '304'
-          - '305'
-          - '307'
-          - '308'
-          - '400'
-          - '401'
-          - '402'
-          - '403'
-          - '404'
-          - '405'
-          - '406'
-          - '407'
-          - '408'
-          - '409'
-          - '410'
-          - '411'
-          - '412'
-          - '413'
-          - '414'
-          - '415'
-          - '416'
-          - '417'
-          - '418'
-          - '419'
-          - '420'
-          - '421'
-          - '422'
-          - '423'
-          - '424'
-          - '426'
-          - '428'
-          - '429'
-          - '431'
-          - '500'
-          - '501'
-          - '502'
-          - '503'
-          - '504'
-          - '505'
-          - '506'
-          - '507'
-          - '508'
-          - '509'
-          - '510'
-          - '511'
+          description: Value of the custom field.
+      description: Custom field.
     ProspectContact:
       type: object
       properties:
@@ -807,29 +734,113 @@ components:
           type: string
           description: Work phone.
       description: Contact of the prospect
-    SaveConversation:
-      type: object
-      required:
-      - text
-      - type
-      properties:
-        text:
-          type: string
-          description: Comment text.
-        type:
-          type: string
-          description: Conversation type.
-          enum:
-          - MANAGEMENT_TEAM
-          - OWNER
-          - TENANT
-      description: Conversation for Request
-    RESTAPIBulkSuccessResponse:
+    SaveProspect:
       type: object
       properties:
-        id:
+        buildingID:
           type: integer
           format: int64
+          description: Unique identifier of the building associated with the prospect.
+        comments:
+          type: string
+          description: This is a description of the Prospect.
+        contacts:
+          type: array
+          description: Prospect contacts.
+          items:
+            $ref: '#/components/schemas/SaveProspectContact'
+        currentHomeType:
+          type: string
+          description: Prospect Current Home Type.
+        currentRentMortgage:
+          type: number
+          format: double
+          description: Prospect Current Home Mortgage.
+        hasPets:
+          type: boolean
+          example: false
+          description: Prospect Has Pets.
+        moveInDate:
+          type: string
+          format: date
+          description: Prospect Move In Date.
+        neighborhoodDesired:
+          type: string
+          description: Prospect Neighborhood Desired.
+        numberBathrooms:
+          type: number
+          format: double
+          description: Prospect Number Of Bathrooms.
+        numberBedrooms:
+          type: integer
+          format: int32
+          description: Prospect Number Of Bedrooms.
+        numberOfPets:
+          type: integer
+          format: int32
+          description: Prospect Number Of Pets.
+        petType:
+          type: string
+          description: Prospect Pet Type.
+        petWeights:
+          type: string
+          description: Prospect Pet Weights.
+        preferredContactMethod:
+          type: string
+          description: Prospect Preferred Contact Method.
+        propertyAddress:
+          type: string
+          description: Property Address.
+        propertyAddress2:
+          type: string
+          description: Property Address Continued.
+        propertyCity:
+          type: string
+          description: Property City.
+        propertyCountry:
+          type: string
+          description: Property Country.
+        propertyNumberBathrooms:
+          type: number
+          format: double
+          description: Property Number Of Bath rooms.
+        propertyNumberBedrooms:
+          type: integer
+          format: int32
+          description: Property Number Of Bedrooms.
+        propertyState:
+          type: string
+          description: Property State.
+        propertyZip:
+          type: string
+          description: Property Zip.
+        reasonForMoving:
+          type: string
+          description: Prospect Reason For Moving.
+        rentMax:
+          type: number
+          format: double
+          description: Prospect Rent Maximum.
+        rentMin:
+          type: number
+          format: double
+          description: Prospect Rent Minimum.
+        source:
+          type: string
+          description: Prospect Source.
+        status:
+          type: string
+          description: Prospect Status.
+        timeAtCurrentResidence:
+          type: string
+          description: Prospect Time At Current Residence.
+        type:
+          type: string
+          description: Prospect Type.
+        typeOfInquiry:
+          type: string
+          description: Prospect Type Of Inquiry.
+      description: 'Save Prospect '
     RESTAPIBulkErrorResponse:
       type: object
       properties:
@@ -849,170 +860,12 @@ components:
           type: string
         message:
           type: string
-    Comment:
+    RESTAPIBulkSuccessResponse:
       type: object
       properties:
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
         id:
           type: integer
           format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        text:
-          type: string
-          description: Comment text.
-      description: Comment
-    Conversation:
-      type: object
-      properties:
-        comments:
-          type: array
-          description: List of comments in the conversation.
-          items:
-            $ref: '#/components/schemas/Comment'
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        entityID:
-          type: integer
-          format: int64
-          description: Id of the entity related to this conversation.
-        entityType:
-          type: string
-          description: Type of the entity related to this conversation.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        subject:
-          type: string
-          description: Conversation subject.
-        type:
-          type: string
-          description: Conversation type.
-          enum:
-          - MANAGEMENT_TEAM
-          - OWNER
-          - TENANT
-      description: Conversation
-    CustomField:
-      type: object
-      properties:
-        dataType:
-          type: string
-          description: Data type of the custom field.
-        definitionID:
-          type: integer
-          format: int64
-          description: Id of the custom field definition.
-        fieldName:
-          type: string
-          description: Name of the custom field.
-        value:
-          type: string
-          description: Value of the custom field.
-      description: Custom field.
-    Campaign:
-      type: object
-      properties:
-        acceptedCallTrackingTerms:
-          type: boolean
-          example: false
-          description: Indicates if the call tracking terms have been accepted.
-        callTrackingCampaignID:
-          type: string
-          description: Campaign ID used for call tracking.
-        callTrackingEnabled:
-          type: boolean
-          example: false
-          description: Indicates if call tracking is enabled for the campaign.
-        callTrackingForwar:
-          type: string
-          description: Number to which call tracking calls are forwarded.
-        callTrackingForwarAfterHours:
-          type: string
-          description: Number to which call tracking calls are forwarded after hours.
-        callTrackingPhoneNumber:
-          type: string
-          description: Phone number used for call tracking.
-        callTrackingReferrer:
-          type: string
-          description: Referrer for call tracking.
-        callTrackingSearchPhrase:
-          type: string
-          description: Search phrase for call tracking.
-        campaignSource:
-          $ref: '#/components/schemas/CampaignSource'
-        code:
-          type: string
-          description: Code of the campaign.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        customFields:
-          type: array
-          description: Custom fields.
-          items:
-            $ref: '#/components/schemas/CustomField'
-        description:
-          type: string
-          description: Description of the campaign.
-        endDate:
-          type: string
-          format: date
-          description: End date of the campaign.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        name:
-          type: string
-          description: Name of the campaign.
-        startDate:
-          type: string
-          format: date
-          description: Start date of the campaign.
-        targetProspectType:
-          type: string
-          description: Type of the targeted prospect.
-        timezone:
-          type: string
-          description: Time zone of the campaign.
-      description: Campaign
     Prospect:
       type: object
       properties:
@@ -1196,6 +1049,44 @@ components:
           type: string
           description: Desired zip code.
       description: Prospect
+    Comment:
+      type: object
+      properties:
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        text:
+          type: string
+          description: Comment text.
+      description: Comment
+    CustomFieldSet:
+      type: object
+      required:
+      - name
+      - value
+      properties:
+        name:
+          type: string
+          description: Custom Field name
+        value:
+          type: string
+          description: Custom Field value
+      description: Custom field set for Request
     ErrorResponse:
       type: object
       properties:
@@ -1207,113 +1098,6 @@ components:
             $ref: '#/components/schemas/RESTAPIError'
         userMessage:
           type: string
-    SaveProspect:
-      type: object
-      properties:
-        buildingID:
-          type: integer
-          format: int64
-          description: Unique identifier of the building associated with the prospect.
-        comments:
-          type: string
-          description: This is a description of the Prospect.
-        contacts:
-          type: array
-          description: Prospect contacts.
-          items:
-            $ref: '#/components/schemas/SaveProspectContact'
-        currentHomeType:
-          type: string
-          description: Prospect Current Home Type.
-        currentRentMortgage:
-          type: number
-          format: double
-          description: Prospect Current Home Mortgage.
-        hasPets:
-          type: boolean
-          example: false
-          description: Prospect Has Pets.
-        moveInDate:
-          type: string
-          format: date
-          description: Prospect Move In Date.
-        neighborhoodDesired:
-          type: string
-          description: Prospect Neighborhood Desired.
-        numberBathrooms:
-          type: number
-          format: double
-          description: Prospect Number Of Bathrooms.
-        numberBedrooms:
-          type: integer
-          format: int32
-          description: Prospect Number Of Bedrooms.
-        numberOfPets:
-          type: integer
-          format: int32
-          description: Prospect Number Of Pets.
-        petType:
-          type: string
-          description: Prospect Pet Type.
-        petWeights:
-          type: string
-          description: Prospect Pet Weights.
-        preferredContactMethod:
-          type: string
-          description: Prospect Preferred Contact Method.
-        propertyAddress:
-          type: string
-          description: Property Address.
-        propertyAddress2:
-          type: string
-          description: Property Address Continued.
-        propertyCity:
-          type: string
-          description: Property City.
-        propertyCountry:
-          type: string
-          description: Property Country.
-        propertyNumberBathrooms:
-          type: number
-          format: double
-          description: Property Number Of Bath rooms.
-        propertyNumberBedrooms:
-          type: integer
-          format: int32
-          description: Property Number Of Bedrooms.
-        propertyState:
-          type: string
-          description: Property State.
-        propertyZip:
-          type: string
-          description: Property Zip.
-        reasonForMoving:
-          type: string
-          description: Prospect Reason For Moving.
-        rentMax:
-          type: number
-          format: double
-          description: Prospect Rent Maximum.
-        rentMin:
-          type: number
-          format: double
-          description: Prospect Rent Minimum.
-        source:
-          type: string
-          description: Prospect Source.
-        status:
-          type: string
-          description: Prospect Status.
-        timeAtCurrentResidence:
-          type: string
-          description: Prospect Time At Current Residence.
-        type:
-          type: string
-          description: Prospect Type.
-        typeOfInquiry:
-          type: string
-          description: Prospect Type Of Inquiry.
-      description: 'Save Prospect '
     CampaignSource:
       type: object
       properties:
@@ -1333,42 +1117,84 @@ components:
           type: string
           description: Referrer domain.
       description: CampaignSource
-    SaveAddress:
+    Campaign:
       type: object
-      required:
-      - country
       properties:
-        address:
+        acceptedCallTrackingTerms:
+          type: boolean
+          example: false
+          description: Indicates if the call tracking terms have been accepted.
+        callTrackingCampaignID:
           type: string
-          description: Primary street and/or unit address. Required only if country is USA or Canada.
-          minLength: 0
-          maxLength: 50
-        addressCont:
+          description: Campaign ID used for call tracking.
+        callTrackingEnabled:
+          type: boolean
+          example: false
+          description: Indicates if call tracking is enabled for the campaign.
+        callTrackingForwar:
           type: string
-          description: Address continuation.
-          minLength: 0
-          maxLength: 20
-        city:
+          description: Number to which call tracking calls are forwarded.
+        callTrackingForwarAfterHours:
           type: string
-          description: City. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 30
-        country:
+          description: Number to which call tracking calls are forwarded after hours.
+        callTrackingPhoneNumber:
           type: string
-          description: Country. For US addresses, this value should be "United States". For other countries, this should be the full country name (Canada, United Kingdom, ...)
-          minLength: 0
-          maxLength: 30
-        postalCode:
+          description: Phone number used for call tracking.
+        callTrackingReferrer:
           type: string
-          description: Zip. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 20
-        stateRegion:
+          description: Referrer for call tracking.
+        callTrackingSearchPhrase:
           type: string
-          description: State. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 20
-      description: Address.
+          description: Search phrase for call tracking.
+        campaignSource:
+          $ref: '#/components/schemas/CampaignSource'
+        code:
+          type: string
+          description: Code of the campaign.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        customFields:
+          type: array
+          description: Custom fields.
+          items:
+            $ref: '#/components/schemas/CustomField'
+        description:
+          type: string
+          description: Description of the campaign.
+        endDate:
+          type: string
+          format: date
+          description: End date of the campaign.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        name:
+          type: string
+          description: Name of the campaign.
+        startDate:
+          type: string
+          format: date
+          description: Start date of the campaign.
+        targetProspectType:
+          type: string
+          description: Type of the targeted prospect.
+        timezone:
+          type: string
+          description: Time zone of the campaign.
+      description: Campaign
     SaveCustomField:
       type: object
       required:
@@ -1385,19 +1211,6 @@ components:
           items:
             $ref: '#/components/schemas/CustomFieldSet'
       description: Custom field for Request
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
     SaveProspectContact:
       type: object
       required:
@@ -1436,20 +1249,207 @@ components:
           type: string
           description: ' Work Phone.'
       description: Save Prospect Contact
-  requestBodies:
+    SaveAddress:
+      type: object
+      required:
+      - country
+      properties:
+        address:
+          type: string
+          description: Primary street and/or unit address. Required only if country is USA or Canada.
+          minLength: 0
+          maxLength: 50
+        addressCont:
+          type: string
+          description: Address continuation.
+          minLength: 0
+          maxLength: 20
+        city:
+          type: string
+          description: City. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 30
+        country:
+          type: string
+          description: Country. For US addresses, this value should be "United States". For other countries, this should be the full country name (Canada, United Kingdom, ...)
+          minLength: 0
+          maxLength: 30
+        postalCode:
+          type: string
+          description: Zip. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 20
+        stateRegion:
+          type: string
+          description: State. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 20
+      description: Address.
     SaveConversation:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveConversation'
-      description: saveConversation
-      required: true
+      type: object
+      required:
+      - text
+      - type
+      properties:
+        text:
+          type: string
+          description: Comment text.
+        type:
+          type: string
+          description: Conversation type.
+          enum:
+          - MANAGEMENT_TEAM
+          - OWNER
+          - TENANT
+      description: Conversation for Request
+    Conversation:
+      type: object
+      properties:
+        comments:
+          type: array
+          description: List of comments in the conversation.
+          items:
+            $ref: '#/components/schemas/Comment'
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        entityID:
+          type: integer
+          format: int64
+          description: Id of the entity related to this conversation.
+        entityType:
+          type: string
+          description: Type of the entity related to this conversation.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        subject:
+          type: string
+          description: Conversation subject.
+        type:
+          type: string
+          description: Conversation type.
+          enum:
+          - MANAGEMENT_TEAM
+          - OWNER
+          - TENANT
+      description: Conversation
+    ProspectStatus:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        readonly:
+          type: boolean
+          example: false
+          description: Read Only
+        status:
+          type: string
+          description: Status
+        visibleOnPortal:
+          type: boolean
+          example: false
+          description: Status visible On Portal
+      description: Prospect Status
+    ResponseEntity:
+      type: object
+      properties:
+        body:
+          type: object
+        statusCode:
+          type: string
+          enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
+  requestBodies:
     SaveCustomField:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/SaveCustomField'
       description: saveCustomField
+      required: true
+    SaveConversation:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveConversation'
+      description: saveConversation
       required: true
   securitySchemes:
     clientId:

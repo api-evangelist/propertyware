@@ -988,683 +988,22 @@ paths:
         '404':
           description: Entity not found.
 components:
-  schemas:
-    CurrentAsset:
-      type: object
-      properties:
-        discountAccount:
-          type: boolean
-          example: false
-          description: Indicates if the account is a discount account.
-        escrowAccount:
-          type: boolean
-          example: false
-          description: Indicates if the account is a escrow account.
-        excludeFrom1099:
-          type: boolean
-          example: false
-          description: Indicates if the account is excluded from 1099 tax forms.
-        excludeFromPayInFull:
-          type: boolean
-          example: false
-          description: Indicates if the account is a tax account.
-        excludeLateFee:
-          type: boolean
-          example: false
-          description: Indicates if excluded from late fees.
-        rentAccount:
-          type: boolean
-          example: false
-          description: Indicates if the account is a rent account.
-        taxAccount:
-          type: boolean
-          example: false
-          description: Indicates if the account is a tax account.
-      description: Current Asset for Request
-    ResponseEntity:
-      type: object
-      properties:
-        body:
-          type: object
-        statusCode:
-          type: string
-          enum:
-          - '100'
-          - '101'
-          - '102'
-          - '103'
-          - '200'
-          - '201'
-          - '202'
-          - '203'
-          - '204'
-          - '205'
-          - '206'
-          - '207'
-          - '208'
-          - '226'
-          - '300'
-          - '301'
-          - '302'
-          - '303'
-          - '304'
-          - '305'
-          - '307'
-          - '308'
-          - '400'
-          - '401'
-          - '402'
-          - '403'
-          - '404'
-          - '405'
-          - '406'
-          - '407'
-          - '408'
-          - '409'
-          - '410'
-          - '411'
-          - '412'
-          - '413'
-          - '414'
-          - '415'
-          - '416'
-          - '417'
-          - '418'
-          - '419'
-          - '420'
-          - '421'
-          - '422'
-          - '423'
-          - '424'
-          - '426'
-          - '428'
-          - '429'
-          - '431'
-          - '500'
-          - '501'
-          - '502'
-          - '503'
-          - '504'
-          - '505'
-          - '506'
-          - '507'
-          - '508'
-          - '509'
-          - '510'
-          - '511'
-    OwnerDraw:
-      type: object
-      required:
-      - amount
-      - date
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount.
-        comments:
-          type: string
-          description: Comments.
-        contactID:
-          type: integer
-          format: int64
-          description: Id of the contact associated with this owner draw.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        date:
-          type: string
-          format: date
-          description: Post date.
-        destinationAccountId:
-          type: integer
-          format: int64
-          description: Id of the bank account where the payment will be made from.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this owner draw.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        lines:
-          type: array
-          description: A collection of payment line items.
-          items:
-            $ref: '#/components/schemas/LineItem'
-        paymentType:
-          type: string
-          description: Payment type.
-          enum:
-          - CHECK
-          - CHECK21
-          - CASHIERS_CHECK
-          - CREDIT_CARD
-          - CASH
-          - MONEY_ORDER
-          - OTHER
-          - CLICKPAY
-          - SECTION8
-          - EPAY
-          - ECHECK
-          - NACHA
-          - RENTMONEY
-          - PUBLIC_ASSISTANCE
-          - PAYMENT_TYPE_NA
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this owner draw.
-        refNo:
-          type: string
-          description: Reference number.
-      description: Owner Draw
-    Entry:
-      type: object
-      properties:
-        buildingID:
-          type: integer
-          format: int64
-          description: Id of the building associated with this entry.
-        comment:
-          type: string
-          description: Transaction comment.
-        credit:
-          type: number
-          format: double
-          description: Credit amount.
-        debit:
-          type: number
-          format: double
-          description: Debit amount.
-        glaccountCode:
-          type: string
-        glaccountID:
-          type: integer
-          format: int64
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this entry.
-        unitID:
-          type: integer
-          format: int64
-          description: Id of the unit associated with this entry.
-      description: General Ledger Entry
-    SaveBankDeposit:
-      type: object
-      required:
-      - bankGLAccountID
-      - dateOpened
-      - listOfTxIDs
-      properties:
-        bankGLAccountID:
-          type: integer
-          format: int64
-          description: Bank general ledger account ID.
-        dateOpened:
-          type: string
-          format: date
-          description: Date opened.
-        description:
-          type: string
-          description: Description
-        listOfTxIDs:
-          type: string
-          description: Comma separated list of Transaction IDs.
-      description: Bank Deposit for Request
-    NonOperatingExpense:
-      type: object
-      properties:
-        camRecoveryAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a CAM recovery account.
-        discountAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a discount account.
-        escrowAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a escrow account.
-        excludeFrom1099:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from Form1099.
-        excludeFromPayInFull:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from paying in full.
-        excludeLateFee:
-          type: boolean
-          example: false
-          description: Indicates if excluding from late fees.
-        rentAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a rent account.
-        taxAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a tax account.
-      description: Non Operating Expense for Request
-    RESTAPIBulkSuccessResponse:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
+  requestBodies:
     SaveOwnerDraw:
-      type: object
-      required:
-      - amount
-      - contactID
-      - date
-      - destinationAccountID
-      - glAccountID
-      - portfolioID
-      - toBePrinted
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount.
-        comments:
-          type: string
-          description: Comments.
-        contactID:
-          type: integer
-          format: int64
-          description: Id of the contact associated with this owner draw.
-        date:
-          type: string
-          format: date
-          description: Post Date.
-        destinationAccountID:
-          type: integer
-          format: int64
-          description: Id of the bank account where the payment will be made from.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this owner draw.
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this owner draw.
-        refNo:
-          type: string
-          description: Check no required when payment method is Hand written check (i.e toBePrinted = false).
-        toBePrinted:
-          type: boolean
-          example: false
-          description: Indicates if Check is to be printed.
-      description: Owner Draw for Request
-    OwnerContribution:
-      type: object
-      required:
-      - amount
-      - date
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount.
-        comments:
-          type: string
-          description: Comments.
-        contactID:
-          type: integer
-          format: int64
-          description: Id of the contact associated with this owner contribution.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        date:
-          type: string
-          format: date
-          description: Post date.
-        destinationAccountID:
-          type: integer
-          format: int64
-          description: Id of the bank account where the payment will be deposited.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this owner contribution.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        lines:
-          type: array
-          description: A collection of payment line items.
-          items:
-            $ref: '#/components/schemas/LineItem'
-        paymentType:
-          type: string
-          description: Payment type.
-          enum:
-          - CHECK
-          - CHECK21
-          - CASHIERS_CHECK
-          - CREDIT_CARD
-          - CASH
-          - MONEY_ORDER
-          - OTHER
-          - CLICKPAY
-          - SECTION8
-          - EPAY
-          - ECHECK
-          - NACHA
-          - RENTMONEY
-          - PUBLIC_ASSISTANCE
-          - PAYMENT_TYPE_NA
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio to apply the payment to.
-        refNo:
-          type: string
-          description: Reference number.
-      description: Owner Contribution
-    Equity:
-      type: object
-      properties:
-        discountAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a discount account.
-        escrowAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a escrow account.
-        excludeFrom1099:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from Form1099.
-        excludeFromPayInFull:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from paying in full.
-        excludeLateFee:
-          type: boolean
-          example: false
-          description: Indicates if excluding from late fees.
-        rentAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a rent account.
-        taxAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a tax account.
-        transferBalanceToRetainedEarnings:
-          type: boolean
-          example: false
-          description: Indicates if Transfer balance at year end to Retained earnings.
-      description: Equity for Request
-    SaveOwnerContribution:
-      type: object
-      required:
-      - amount
-      - contactID
-      - date
-      - destinationAccountID
-      - glAccountID
-      - paymentType
-      - portfolioID
-      - refNo
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount.
-        comments:
-          type: string
-          description: Comments.
-        contactID:
-          type: integer
-          format: int64
-          description: Id of the contact associated with this owner contribution.
-        date:
-          type: string
-          format: date
-          description: Post Date.
-        destinationAccountID:
-          type: integer
-          format: int64
-          description: Id of the bank account where the payment will be deposited.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this owner contribution.
-        paymentType:
-          type: string
-          description: Payment Type.
-          enum:
-          - CHECK
-          - CHECK21
-          - CASHIERS_CHECK
-          - CREDIT_CARD
-          - CASH
-          - MONEY_ORDER
-          - OTHER
-          - CLICKPAY
-          - SECTION8
-          - EPAY
-          - ECHECK
-          - NACHA
-          - RENTMONEY
-          - PUBLIC_ASSISTANCE
-          - PAYMENT_TYPE_NA
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio to apply the payment to.
-        refNo:
-          type: string
-          description: Reference No.
-      description: Charge for request
-    LineItem:
-      type: object
-      properties:
-        buildingID:
-          type: integer
-          format: int64
-          description: Id of the building associated with this entry.
-        credit:
-          type: number
-          format: double
-          description: Credit amount.
-        debit:
-          type: number
-          format: double
-          description: Debit amount.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this entry.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this entry.
-        unitID:
-          type: integer
-          format: int64
-          description: Id of the unit associated with this entry.
-      description: Payment line items
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
-    Bank:
-      type: object
-      properties:
-        bankAccountHolder:
-          type: string
-          description: Account holder.
-        bankAccountHolderSSNMasked:
-          type: string
-          description: Account holder SSN.
-        bankAccountNumberDecrypted:
-          type: string
-          description: Bank account number.
-        bankAccountType:
-          type: integer
-          format: int32
-          description: 'Bank account type - 1: Checking, 2: Savings'
-        bankAddress:
-          type: string
-          description: Bank address line 1.
-        bankAddress2:
-          type: string
-          description: Bank address line 2.
-        bankCity:
-          type: string
-          description: City.
-        bankInstitution:
-          type: string
-          description: Bank name.
-        bankRoutingNumberDecrypted:
-          type: string
-          description: Bank routing number.
-        bankState:
-          type: string
-          description: State.
-        bankTransitFraction:
-          type: string
-          description: Bank transit fraction.
-        bankZip:
-          type: string
-          description: Zip.
-        depositTicketType:
-          type: integer
-          format: int32
-          description: Deposit ticket type.
-        nachaCompanyID:
-          type: string
-          description: Nacha company ID.
-        nachaEnabled:
-          type: boolean
-          example: false
-          description: Indicates if Nacha payment type is enabled.
-        nachaImmediateDestinationNumber:
-          type: string
-          description: Nacha destination number.
-        nachaImmediateOriginNumber:
-          type: string
-          description: Nacha immediate origin number.
-        nachaOriginatingDFINumber:
-          type: string
-          description: Nacha originating DFI number.
-      description: Bank for Request
-    GLItem:
-      type: object
-      properties:
-        comment:
-          type: string
-          description: Comments.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        glentries:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entry'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        leaseID:
-          type: integer
-          format: int64
-          description: Id of the lease associated with this transaction.
-        ownerID:
-          type: integer
-          format: int64
-          description: Id of the owner associated with this transaction.
-        transactionType:
-          type: string
-          description: Transaction type.
-        txDate:
-          type: string
-          format: date
-          description: Transaction date.
-        vendorID:
-          type: integer
-          format: int64
-          description: Id of the vendor associated with this transaction.
-      description: General Ledger Transaction
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveOwnerDraw'
+      description: saveOwnerDraw
+      required: true
+    SaveAccount:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveAccount'
+      description: saveAccount
+      required: true
+  schemas:
     Account:
       type: object
       properties:
@@ -1796,118 +1135,161 @@ components:
           example: false
           description: Indicates if the account balance should be transferred to retained earnings.
       description: General Ledger Account
-    Income:
+    SaveOwnerDraw:
+      type: object
+      required:
+      - amount
+      - contactID
+      - date
+      - destinationAccountID
+      - glAccountID
+      - portfolioID
+      - toBePrinted
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Amount.
+        comments:
+          type: string
+          description: Comments.
+        contactID:
+          type: integer
+          format: int64
+          description: Id of the contact associated with this owner draw.
+        date:
+          type: string
+          format: date
+          description: Post Date.
+        destinationAccountID:
+          type: integer
+          format: int64
+          description: Id of the bank account where the payment will be made from.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this owner draw.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this owner draw.
+        refNo:
+          type: string
+          description: Check no required when payment method is Hand written check (i.e toBePrinted = false).
+        toBePrinted:
+          type: boolean
+          example: false
+          description: Indicates if Check is to be printed.
+      description: Owner Draw for Request
+    GLItem:
       type: object
       properties:
-        camRecoveryAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a CAM recovery account.
-        discountAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a discount account.
-        escrowAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a escrow account.
-        excludeFrom1099:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from Form1099.
-        excludeFromPayInFull:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from paying in full.
-        excludeLateFee:
-          type: boolean
-          example: false
-          description: Indicates if excluding from late fees.
-        rentAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a rent account.
-        section8:
-          type: boolean
-          example: false
-          description: Indicates if account is a section8 account.
-        taxAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a tax account.
-      description: Income for Request
-    Expense:
+        comment:
+          type: string
+          description: Comments.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        glentries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entry'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        leaseID:
+          type: integer
+          format: int64
+          description: Id of the lease associated with this transaction.
+        ownerID:
+          type: integer
+          format: int64
+          description: Id of the owner associated with this transaction.
+        transactionType:
+          type: string
+          description: Transaction type.
+        txDate:
+          type: string
+          format: date
+          description: Transaction date.
+        vendorID:
+          type: integer
+          format: int64
+          description: Id of the vendor associated with this transaction.
+      description: General Ledger Transaction
+    Bank:
       type: object
       properties:
-        camRecoveryAccount:
+        bankAccountHolder:
+          type: string
+          description: Account holder.
+        bankAccountHolderSSNMasked:
+          type: string
+          description: Account holder SSN.
+        bankAccountNumberDecrypted:
+          type: string
+          description: Bank account number.
+        bankAccountType:
+          type: integer
+          format: int32
+          description: 'Bank account type - 1: Checking, 2: Savings'
+        bankAddress:
+          type: string
+          description: Bank address line 1.
+        bankAddress2:
+          type: string
+          description: Bank address line 2.
+        bankCity:
+          type: string
+          description: City.
+        bankInstitution:
+          type: string
+          description: Bank name.
+        bankRoutingNumberDecrypted:
+          type: string
+          description: Bank routing number.
+        bankState:
+          type: string
+          description: State.
+        bankTransitFraction:
+          type: string
+          description: Bank transit fraction.
+        bankZip:
+          type: string
+          description: Zip.
+        depositTicketType:
+          type: integer
+          format: int32
+          description: Deposit ticket type.
+        nachaCompanyID:
+          type: string
+          description: Nacha company ID.
+        nachaEnabled:
           type: boolean
           example: false
-          description: Indicates if account is a CAM recovery account.
-        discountAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a discount account.
-        escrowAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a escrow account.
-        excludeFrom1099:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from Form1099.
-        excludeFromPayInFull:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from paying in full.
-        excludeLateFee:
-          type: boolean
-          example: false
-          description: Indicates if excluding from late fees.
-        rentAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a rent account.
-        taxAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a tax account.
-      description: Expense for Request
-    NonCurrentLiability:
-      type: object
-      properties:
-        discountAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a discount account.
-        escrowAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a escrow account.
-        excludeFrom1099:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from Form1099.
-        excludeFromPayInFull:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from paying in full.
-        excludeLateFee:
-          type: boolean
-          example: false
-          description: Indicates if excluding from late fees.
-        rentAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a rent account.
-        securityDepositAccount:
-          type: boolean
-          example: false
-          description: Indicates if the account is security deposit account
-        taxAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a tax account.
-      description: Non Current Liability for Request
+          description: Indicates if Nacha payment type is enabled.
+        nachaImmediateDestinationNumber:
+          type: string
+          description: Nacha destination number.
+        nachaImmediateOriginNumber:
+          type: string
+          description: Nacha immediate origin number.
+        nachaOriginatingDFINumber:
+          type: string
+          description: Nacha originating DFI number.
+      description: Bank for Request
     BankDeposit:
       type: object
       properties:
@@ -1942,66 +1324,57 @@ components:
           type: string
           description: Status.
       description: Bank Deposit
-    CurrentLiability:
+    RESTAPIBulkErrorResponse:
       type: object
       properties:
-        discountAccount:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
           type: boolean
-          example: false
-          description: Indicates if the account is a discount account.
-        escrowAccount:
-          type: boolean
-          example: false
-          description: Indicates if the account is a escrow account.
-        excludeFrom1099:
-          type: boolean
-          example: false
-          description: Indicates if the account is excluded from 1099 tax forms.
-        excludeFromPayInFull:
-          type: boolean
-          example: false
-          description: Indicates if the account is excluded from paying in full.
-        excludeLateFee:
-          type: boolean
-          example: false
-          description: Indicates if the account is excluded from late fees.
-        rentAccount:
-          type: boolean
-          example: false
-          description: Indicates if the account is a rent account.
-        securityDepositAccount:
-          type: boolean
-          example: false
-          description: Indicates if the account is security deposit account
-        taxAccount:
-          type: boolean
-          example: false
-          description: Indicates if the account is a tax account.
-      description: Current Liability for Request
-    NonCurrentAsset:
+    RESTAPIError:
       type: object
       properties:
-        discountAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a discount account.
-        escrowAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a escrow account.
-        excludeFrom1099:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from Form1099.
-        excludeFromPayInFull:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from paying in full.
-        excludeLateFee:
-          type: boolean
-          example: false
-          description: Indicates if excluding from late fees.
-      description: Non Current Asset for Request
+        key:
+          type: string
+        message:
+          type: string
+    LineItem:
+      type: object
+      properties:
+        buildingID:
+          type: integer
+          format: int64
+          description: Id of the building associated with this entry.
+        credit:
+          type: number
+          format: double
+          description: Credit amount.
+        debit:
+          type: number
+          format: double
+          description: Debit amount.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this entry.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this entry.
+        unitID:
+          type: integer
+          format: int64
+          description: Id of the unit associated with this entry.
+      description: Payment line items
     SaveAccount:
       type: object
       required:
@@ -2058,6 +1431,515 @@ components:
           example: false
           description: Indicates if the account is taxable.
       description: Create GL Account Request
+    OwnerContribution:
+      type: object
+      required:
+      - amount
+      - date
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Amount.
+        comments:
+          type: string
+          description: Comments.
+        contactID:
+          type: integer
+          format: int64
+          description: Id of the contact associated with this owner contribution.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        date:
+          type: string
+          format: date
+          description: Post date.
+        destinationAccountID:
+          type: integer
+          format: int64
+          description: Id of the bank account where the payment will be deposited.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this owner contribution.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        lines:
+          type: array
+          description: A collection of payment line items.
+          items:
+            $ref: '#/components/schemas/LineItem'
+        paymentType:
+          type: string
+          description: Payment type.
+          enum:
+          - CHECK
+          - CHECK21
+          - CASHIERS_CHECK
+          - CREDIT_CARD
+          - CASH
+          - MONEY_ORDER
+          - OTHER
+          - CLICKPAY
+          - SECTION8
+          - EPAY
+          - ECHECK
+          - NACHA
+          - RENTMONEY
+          - PUBLIC_ASSISTANCE
+          - PAYMENT_TYPE_NA
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio to apply the payment to.
+        refNo:
+          type: string
+          description: Reference number.
+      description: Owner Contribution
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Entry:
+      type: object
+      properties:
+        buildingID:
+          type: integer
+          format: int64
+          description: Id of the building associated with this entry.
+        comment:
+          type: string
+          description: Transaction comment.
+        credit:
+          type: number
+          format: double
+          description: Credit amount.
+        debit:
+          type: number
+          format: double
+          description: Debit amount.
+        glaccountCode:
+          type: string
+        glaccountID:
+          type: integer
+          format: int64
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this entry.
+        unitID:
+          type: integer
+          format: int64
+          description: Id of the unit associated with this entry.
+      description: General Ledger Entry
+    CurrentAsset:
+      type: object
+      properties:
+        discountAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is a discount account.
+        escrowAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is a escrow account.
+        excludeFrom1099:
+          type: boolean
+          example: false
+          description: Indicates if the account is excluded from 1099 tax forms.
+        excludeFromPayInFull:
+          type: boolean
+          example: false
+          description: Indicates if the account is a tax account.
+        excludeLateFee:
+          type: boolean
+          example: false
+          description: Indicates if excluded from late fees.
+        rentAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is a rent account.
+        taxAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is a tax account.
+      description: Current Asset for Request
+    CurrentLiability:
+      type: object
+      properties:
+        discountAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is a discount account.
+        escrowAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is a escrow account.
+        excludeFrom1099:
+          type: boolean
+          example: false
+          description: Indicates if the account is excluded from 1099 tax forms.
+        excludeFromPayInFull:
+          type: boolean
+          example: false
+          description: Indicates if the account is excluded from paying in full.
+        excludeLateFee:
+          type: boolean
+          example: false
+          description: Indicates if the account is excluded from late fees.
+        rentAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is a rent account.
+        securityDepositAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is security deposit account
+        taxAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is a tax account.
+      description: Current Liability for Request
+    Expense:
+      type: object
+      properties:
+        camRecoveryAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a CAM recovery account.
+        discountAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a discount account.
+        escrowAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a escrow account.
+        excludeFrom1099:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from Form1099.
+        excludeFromPayInFull:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from paying in full.
+        excludeLateFee:
+          type: boolean
+          example: false
+          description: Indicates if excluding from late fees.
+        rentAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a rent account.
+        taxAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a tax account.
+      description: Expense for Request
+    SaveOwnerContribution:
+      type: object
+      required:
+      - amount
+      - contactID
+      - date
+      - destinationAccountID
+      - glAccountID
+      - paymentType
+      - portfolioID
+      - refNo
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Amount.
+        comments:
+          type: string
+          description: Comments.
+        contactID:
+          type: integer
+          format: int64
+          description: Id of the contact associated with this owner contribution.
+        date:
+          type: string
+          format: date
+          description: Post Date.
+        destinationAccountID:
+          type: integer
+          format: int64
+          description: Id of the bank account where the payment will be deposited.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this owner contribution.
+        paymentType:
+          type: string
+          description: Payment Type.
+          enum:
+          - CHECK
+          - CHECK21
+          - CASHIERS_CHECK
+          - CREDIT_CARD
+          - CASH
+          - MONEY_ORDER
+          - OTHER
+          - CLICKPAY
+          - SECTION8
+          - EPAY
+          - ECHECK
+          - NACHA
+          - RENTMONEY
+          - PUBLIC_ASSISTANCE
+          - PAYMENT_TYPE_NA
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio to apply the payment to.
+        refNo:
+          type: string
+          description: Reference No.
+      description: Charge for request
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
+    NonOperatingExpense:
+      type: object
+      properties:
+        camRecoveryAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a CAM recovery account.
+        discountAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a discount account.
+        escrowAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a escrow account.
+        excludeFrom1099:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from Form1099.
+        excludeFromPayInFull:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from paying in full.
+        excludeLateFee:
+          type: boolean
+          example: false
+          description: Indicates if excluding from late fees.
+        rentAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a rent account.
+        taxAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a tax account.
+      description: Non Operating Expense for Request
+    Equity:
+      type: object
+      properties:
+        discountAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a discount account.
+        escrowAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a escrow account.
+        excludeFrom1099:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from Form1099.
+        excludeFromPayInFull:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from paying in full.
+        excludeLateFee:
+          type: boolean
+          example: false
+          description: Indicates if excluding from late fees.
+        rentAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a rent account.
+        taxAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a tax account.
+        transferBalanceToRetainedEarnings:
+          type: boolean
+          example: false
+          description: Indicates if Transfer balance at year end to Retained earnings.
+      description: Equity for Request
+    NonCurrentLiability:
+      type: object
+      properties:
+        discountAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a discount account.
+        escrowAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a escrow account.
+        excludeFrom1099:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from Form1099.
+        excludeFromPayInFull:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from paying in full.
+        excludeLateFee:
+          type: boolean
+          example: false
+          description: Indicates if excluding from late fees.
+        rentAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a rent account.
+        securityDepositAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is security deposit account
+        taxAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a tax account.
+      description: Non Current Liability for Request
+    OwnerDraw:
+      type: object
+      required:
+      - amount
+      - date
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Amount.
+        comments:
+          type: string
+          description: Comments.
+        contactID:
+          type: integer
+          format: int64
+          description: Id of the contact associated with this owner draw.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        date:
+          type: string
+          format: date
+          description: Post date.
+        destinationAccountId:
+          type: integer
+          format: int64
+          description: Id of the bank account where the payment will be made from.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this owner draw.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        lines:
+          type: array
+          description: A collection of payment line items.
+          items:
+            $ref: '#/components/schemas/LineItem'
+        paymentType:
+          type: string
+          description: Payment type.
+          enum:
+          - CHECK
+          - CHECK21
+          - CASHIERS_CHECK
+          - CREDIT_CARD
+          - CASH
+          - MONEY_ORDER
+          - OTHER
+          - CLICKPAY
+          - SECTION8
+          - EPAY
+          - ECHECK
+          - NACHA
+          - RENTMONEY
+          - PUBLIC_ASSISTANCE
+          - PAYMENT_TYPE_NA
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this owner draw.
+        refNo:
+          type: string
+          description: Reference number.
+      description: Owner Draw
+    NonCurrentAsset:
+      type: object
+      properties:
+        discountAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a discount account.
+        escrowAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a escrow account.
+        excludeFrom1099:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from Form1099.
+        excludeFromPayInFull:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from paying in full.
+        excludeLateFee:
+          type: boolean
+          example: false
+          description: Indicates if excluding from late fees.
+      description: Non Current Asset for Request
     NonOperatingInome:
       type: object
       properties:
@@ -2094,6 +1976,46 @@ components:
           example: false
           description: Indicates if account is a tax account.
       description: Non Operating Income for Request
+    Income:
+      type: object
+      properties:
+        camRecoveryAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a CAM recovery account.
+        discountAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a discount account.
+        escrowAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a escrow account.
+        excludeFrom1099:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from Form1099.
+        excludeFromPayInFull:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from paying in full.
+        excludeLateFee:
+          type: boolean
+          example: false
+          description: Indicates if excluding from late fees.
+        rentAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a rent account.
+        section8:
+          type: boolean
+          example: false
+          description: Indicates if account is a section8 account.
+        taxAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a tax account.
+      description: Income for Request
     CreditCardAccount:
       type: object
       properties:
@@ -2101,21 +2023,99 @@ components:
           type: string
           description: Credit card number.
       description: Credit Card Account for Request
-  requestBodies:
-    SaveAccount:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveAccount'
-      description: saveAccount
-      required: true
-    SaveOwnerDraw:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveOwnerDraw'
-      description: saveOwnerDraw
-      required: true
+    SaveBankDeposit:
+      type: object
+      required:
+      - bankGLAccountID
+      - dateOpened
+      - listOfTxIDs
+      properties:
+        bankGLAccountID:
+          type: integer
+          format: int64
+          description: Bank general ledger account ID.
+        dateOpened:
+          type: string
+          format: date
+          description: Date opened.
+        description:
+          type: string
+          description: Description
+        listOfTxIDs:
+          type: string
+          description: Comma separated list of Transaction IDs.
+      description: Bank Deposit for Request
+    ResponseEntity:
+      type: object
+      properties:
+        body:
+          type: object
+        statusCode:
+          type: string
+          enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
   securitySchemes:
     clientId:
       type: apiKey

@@ -71,6 +71,17 @@ paths:
           description: Entity not found.
 components:
   schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
     CustomFieldDefinition:
       type: object
       properties:
@@ -91,17 +102,6 @@ components:
         key:
           type: string
         message:
-          type: string
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
           type: string
   securitySchemes:
     clientId:
