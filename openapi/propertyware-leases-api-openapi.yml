@@ -3014,24 +3014,13 @@ paths:
           description: Entity not found.
 components:
   schemas:
-    LeaseClause:
-      type: object
-      properties:
-        description:
-          type: string
-          description: Description of the clause.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        name:
-          type: string
-          description: Name of the clause.
-    Discount:
+    SaveCharge:
       type: object
       required:
       - amount
       - date
+      - glAccountID
+      - leaseID
       properties:
         amount:
           type: number
@@ -3040,606 +3029,22 @@ components:
         comments:
           type: string
           description: Comments.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
         date:
           type: string
           format: date
-          description: Post date.
+          description: Post Date.
         glAccountID:
           type: integer
           format: int64
-          description: Id of the general ledger account associated with this discount.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        leaseID:
-          type: integer
-          format: int64
-          description: Id of the lease associated with this discount.
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this transaction.
-        refNo:
-          type: string
-          description: Reference number.
-      description: Discount
-    Charge:
-      type: object
-      required:
-      - frequency
-      - startDate
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Auto charge amount.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        description:
-          type: string
-          description: Description of the auto charge.
-        dueDay:
-          type: integer
-          format: int32
-          description: Description of the day when the auto charge is due.
-        endDate:
-          type: string
-          format: date
-          description: End date of auto charge.
-        frequency:
-          type: string
-          description: Frequency of the auto charge.
-          enum:
-          - WEEKLY
-          - MONTHLY
-          - QUARTERLY
-          - SEMIANUUAL
-          - ANUUAL
-          - ANUUAL_ACCRUAL
-        glAccountID:
-          type: integer
-          format: int64
-          description: ID of the General Ledger Account associated to this auto charge.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        lastPostDate:
-          type: string
-          format: date
-          description: Last post date.
-        leaseID:
-          type: integer
-          format: int64
-          description: ID of the lease associated to auto charge
-        referenceNumber:
-          type: string
-          description: Reference number.
-        startDate:
-          type: string
-          format: date
-          description: Start date of auto charge.
-    CustomField:
-      type: object
-      properties:
-        dataType:
-          type: string
-          description: Data type of the custom field.
-        definitionID:
-          type: integer
-          format: int64
-          description: Id of the custom field definition.
-        fieldName:
-          type: string
-          description: Name of the custom field.
-        value:
-          type: string
-          description: Value of the custom field.
-      description: Custom field.
-    AutoJournalEntry:
-      type: object
-      properties:
-        comments:
-          type: string
-          description: Comments.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        credit:
-          type: string
-          description: Credit amount.
-        debit:
-          type: string
-          description: Debit amount.
-        endDate:
-          type: string
-          format: date
-          description: End date.
-        frequency:
-          type: string
-          description: Frequency.
-          enum:
-          - WEEKLY
-          - MONTHLY
-          - YEARLY
-          - MANUALLY
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        lastPostDate:
-          type: string
-          format: date
-          description: Last post date.
-        name:
-          type: string
-          description: Auto journal entry name.
-        nextPostDate:
-          type: string
-          format: date
-          description: Next post date.
-        payDay:
-          type: string
-          description: Pay day.
-        startDate:
-          type: string
-          format: date
-          description: Start date.
-    AutoCharge:
-      type: object
-      required:
-      - charges
-      - leaseID
-      properties:
-        charges:
-          type: array
-          description: List of Auto charges.
-          items:
-            $ref: '#/components/schemas/SaveAutoCharge'
+          description: GL Account ID.
         leaseID:
           type: integer
           format: int64
           description: Lease ID.
-      description: Auto charge request
-    Address:
-      type: object
-      properties:
-        address:
-          type: string
-          description: Primary street and/or unit address.
-        addressCont:
-          type: string
-          description: Address continuation.
-        city:
-          type: string
-          description: City.
-        country:
-          type: string
-          description: Country.
-        postalCode:
-          type: string
-          description: Postal code.
-        stateRegion:
-          type: string
-          description: State/region.
-      description: Address
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    LeaseStatus:
-      type: object
-      properties:
-        defineActive:
-          type: boolean
-        id:
-          type: integer
-          format: int64
-        orderIndex:
-          type: integer
-          format: int32
-        portalLoginEnabled:
-          type: boolean
-        readonly:
-          type: boolean
-        status:
-          type: string
-      description: Lease Status
-    SaveJournalEntrySplit:
-      type: object
-      required:
-      - creditAmount
-      - debitAmount
-      - glAccountID
-      properties:
-        creditAmount:
-          type: number
-          format: double
-          description: Credit Amount.
-        debitAmount:
-          type: number
-          format: double
-          description: Debit Amount.
-        glAccountID:
-          type: integer
-          format: int64
-          description: GL Account ID.
-      description: Journal Entry Split for Request
-    JournalEntry:
-      type: object
-      properties:
-        comments:
-          type: string
-          description: Comments.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        date:
-          type: string
-          description: Journal entry post date.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        journalEntrySplit:
-          type: array
-          description: List of journal entry splits.
-          items:
-            $ref: '#/components/schemas/JournalEntrySplitResponse'
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        leaseID:
-          type: integer
-          format: int64
-          description: Id of the lease associated with this journal entry.
         refNo:
           type: string
-          description: Journal entry reference number.
-      description: Journal Entry
-    PaymentCharge:
-      type: object
-      required:
-      - amount
-      - chargeAmountPaid
-      - date
-      - settledDate
-      properties:
-        accountID:
-          type: integer
-          format: int64
-          description: Id of the bank account where the payment was deposited.
-        amount:
-          type: number
-          format: double
-          description: Total payment Amount.
-        chargeAmountPaid:
-          type: number
-          format: double
-          description: Amount paid for this charge
-        comments:
-          type: string
-          description: Comments.
-        date:
-          type: string
-          format: date
-          description: Payment applied date.
-        id:
-          type: integer
-          format: int64
-          description: Payment ID
-        payeePayer:
-          type: string
-          description: Payer name.
-        paymentType:
-          type: string
-          description: Payment type. Electronic payments are only for book keeping.
-          enum:
-          - CHECK
-          - CHECK21
-          - CASHIERS_CHECK
-          - CREDIT_CARD
-          - CASH
-          - MONEY_ORDER
-          - OTHER
-          - CLICKPAY
-          - SECTION8
-          - EPAY
-          - ECHECK
-          - NACHA
-          - RENTMONEY
-          - PUBLIC_ASSISTANCE
-          - PAYMENT_TYPE_NA
-        receiptNumber:
-          type: integer
-          format: int64
-          description: Payment receipt number.
-        refNo:
-          type: string
-          description: Payment reference number.
-        settledDate:
-          type: string
-          format: date
-          description: Payment settlement date.
-        status:
-          type: string
-          description: Charge payment status.
-      description: Tenant Payment
-    JournalEntrySplitResponse:
-      type: object
-      required:
-      - creditAmount
-      - debitAmount
-      - glAccountID
-      properties:
-        creditAmount:
-          type: number
-          format: double
-          description: Credit amount.
-        debitAmount:
-          type: number
-          format: double
-          description: Debit amount.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this journal entry split.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-    Adjustment:
-      type: object
-      required:
-      - amount
-      - date
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount.
-        comments:
-          type: string
-          description: Comments.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        date:
-          type: string
-          format: date
-          description: Post date.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this charge.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        leaseID:
-          type: integer
-          format: int64
-          description: Id of the lease associated with this charge.
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this charge.
-        refNo:
-          type: string
-          description: Reference number.
-      description: Adjustment
-    AutoPayment:
-      type: object
-      properties:
-        account:
-          type: string
-          description: Payment general ledger account.
-        amount:
-          type: number
-          format: double
-          description: Payment amount.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        description:
-          type: string
-          description: Description.
-        endDate:
-          type: string
-          format: date
-          description: End date.
-        feeAmount:
-          type: number
-          format: double
-          description: Fee amount.
-        frequency:
-          type: string
-          description: Payment frequency.
-          enum:
-          - WEEKLY
-          - MONTHLY
-          - QUARTERLY
-          - SEMIANNUAL
-          - YEARLY
-        glAccountID:
-          type: integer
-          format: int64
-          description: Payment general ledger account ID.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        lastPostDate:
-          type: string
-          format: date
-          description: Last post date.
-        startDate:
-          type: string
-          format: date
-          description: Start date.
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
-    LineItem:
-      type: object
-      properties:
-        buildingID:
-          type: integer
-          format: int64
-          description: Id of the building associated with this entry.
-        credit:
-          type: number
-          format: double
-          description: Credit amount.
-        debit:
-          type: number
-          format: double
-          description: Debit amount.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this entry.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this entry.
-        unitID:
-          type: integer
-          format: int64
-          description: Id of the unit associated with this entry.
-      description: Payment line items
-    SaveAutoCharge:
-      type: object
-      required:
-      - amount
-      - dueDay
-      - frequency
-      - glAccountID
-      - startDate
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Auto charge amount.
-        description:
-          type: string
-          description: Description of the auto charge.
-        dueDay:
-          type: integer
-          format: int32
-          description: 'Charge due day. Allowed values : For frequency "Weekly" (1 to 7) , for other frequency (1 to 31)'
-        endDate:
-          type: string
-          format: date
-          description: Auto charge end date.
-        frequency:
-          type: string
-          description: Charge frequency.
-          enum:
-          - WEEKLY
-          - MONTHLY
-          - QUARTERLY
-          - SEMIANUUAL
-          - ANUUAL
-          - ANUUAL_ACCRUAL
-        glAccountID:
-          type: integer
-          format: int64
-          description: GL Account ID.
-        referenceNumber:
-          type: string
-          description: Reference number.
-          minLength: 0
-          maxLength: 35
-        startDate:
-          type: string
-          format: date
-          description: Auto charge start date.
-      description: Auto charge request
+          description: Charge reference No.
+      description: Charge for Request
     ContactExtension:
       type: object
       properties:
@@ -3752,6 +3157,103 @@ components:
           type: string
           description: Work phone.
       description: Contact Response
+    ResponseEntity:
+      type: object
+      properties:
+        body:
+          type: object
+        statusCode:
+          type: string
+          enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
+    LeaseClause:
+      type: object
+      properties:
+        description:
+          type: string
+          description: Description of the clause.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        name:
+          type: string
+          description: Name of the clause.
+    CustomFieldSet:
+      type: object
+      required:
+      - name
+      - value
+      properties:
+        name:
+          type: string
+          description: Custom Field name
+        value:
+          type: string
+          description: Custom Field value
+      description: Custom field set for Request
     Payment:
       type: object
       required:
@@ -3846,69 +3348,6 @@ components:
           type: string
           description: Lease status.
       description: Tenant Payment
-    RESTAPIBulkSuccessResponse:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-    Collection_long_:
-      type: object
-    CreditMemo:
-      type: object
-      required:
-      - amount
-      - date
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount.
-        comments:
-          type: string
-          description: Comments
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        date:
-          type: string
-          format: date
-          description: Post date.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this credit memo.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        leaseID:
-          type: integer
-          format: int64
-          description: Id of the lease associated with this credit memo.
-        parentTxID:
-          type: integer
-          format: int64
-          description: Id of the payment causing this prepay application.
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this credit memo.
-        refNo:
-          type: string
-          description: Reference number.
-      description: Transaction
     Comment:
       type: object
       properties:
@@ -3934,6 +3373,246 @@ components:
           type: string
           description: Comment text.
       description: Comment
+    RESTAPIBulkErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
+          type: boolean
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    SavePayment:
+      type: object
+      required:
+      - amount
+      - contactID
+      - date
+      - depositDate
+      - destinationAccountID
+      - leaseID
+      - paymentType
+      - refNo
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Amount.
+        comments:
+          type: string
+          description: Comments.
+        contactID:
+          type: integer
+          format: int64
+          description: Id of the contact associated with lease payment
+        date:
+          type: string
+          format: date
+          description: Post Date.
+        depositDate:
+          type: string
+          format: date
+          description: Payment deposit date.
+        destinationAccountID:
+          type: integer
+          format: int64
+          description: Bank GL account ID to deposit.
+        leaseID:
+          type: integer
+          format: int64
+          description: Id of the lease associated with this payment.
+        paymentType:
+          type: string
+          description: Payment type.
+          enum:
+          - CHECK
+          - CHECK21
+          - CASHIERS_CHECK
+          - CREDIT_CARD
+          - CASH
+          - MONEY_ORDER
+          - OTHER
+          - CLICKPAY
+          - SECTION8
+          - EPAY
+          - ECHECK
+          - NACHA
+          - RENTMONEY
+          - PUBLIC_ASSISTANCE
+          - PAYMENT_TYPE_NA
+        refNo:
+          type: string
+          description: Payment reference number
+      description: Tenant Payment for Request
+    SaveJournalEntrySplit:
+      type: object
+      required:
+      - creditAmount
+      - debitAmount
+      - glAccountID
+      properties:
+        creditAmount:
+          type: number
+          format: double
+          description: Credit Amount.
+        debitAmount:
+          type: number
+          format: double
+          description: Debit Amount.
+        glAccountID:
+          type: integer
+          format: int64
+          description: GL Account ID.
+      description: Journal Entry Split for Request
+    LeaseContact:
+      type: object
+      properties:
+        company:
+          type: string
+          description: Company where the contact is employed.
+        email:
+          type: string
+          description: E-mail address.
+        firstName:
+          type: string
+          description: First name.
+        homePhone:
+          type: string
+          description: Home phone.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastName:
+          type: string
+          description: Last name.
+        mobilePhone:
+          type: string
+          description: Mobile phone.
+        namedOnLease:
+          type: boolean
+          example: false
+          description: Indicates if contact is named on lease.
+        primary:
+          type: boolean
+          example: false
+          description: Indicates if contact is primary contact of the lease.
+        role:
+          type: string
+          description: Role.
+        workPhone:
+          type: string
+          description: Work phone.
+      description: Contact of the lease
+    LineItem:
+      type: object
+      properties:
+        buildingID:
+          type: integer
+          format: int64
+          description: Id of the building associated with this entry.
+        credit:
+          type: number
+          format: double
+          description: Credit amount.
+        debit:
+          type: number
+          format: double
+          description: Debit amount.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this entry.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this entry.
+        unitID:
+          type: integer
+          format: int64
+          description: Id of the unit associated with this entry.
+      description: Payment line items
+    SaveLeaseJournalEntry:
+      type: object
+      required:
+      - comments
+      - date
+      - leaseID
+      properties:
+        comments:
+          type: string
+          description: Comments.
+        date:
+          type: string
+          format: date
+          description: Journal entry date.
+        journalEntrySplit:
+          type: array
+          description: Journal Entry Splits.
+          items:
+            $ref: '#/components/schemas/SaveJournalEntrySplit'
+        leaseID:
+          type: integer
+          format: int64
+          description: Lease id to apply journal entry.
+        refNo:
+          type: string
+          description: Journal entry reference number.
+      description: Lease Journal Entry for Request
+    JournalEntry:
+      type: object
+      properties:
+        comments:
+          type: string
+          description: Comments.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        date:
+          type: string
+          description: Journal entry post date.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        journalEntrySplit:
+          type: array
+          description: List of journal entry splits.
+          items:
+            $ref: '#/components/schemas/JournalEntrySplitResponse'
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        leaseID:
+          type: integer
+          format: int64
+          description: Id of the lease associated with this journal entry.
+        refNo:
+          type: string
+          description: Journal entry reference number.
+      description: Journal Entry
     SaveComment:
       type: object
       required:
@@ -3943,6 +3622,438 @@ components:
           type: string
           description: Comment text.
       description: Comment for Request
+    AutoJournalEntry:
+      type: object
+      properties:
+        comments:
+          type: string
+          description: Comments.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        credit:
+          type: string
+          description: Credit amount.
+        debit:
+          type: string
+          description: Debit amount.
+        endDate:
+          type: string
+          format: date
+          description: End date.
+        frequency:
+          type: string
+          description: Frequency.
+          enum:
+          - WEEKLY
+          - MONTHLY
+          - YEARLY
+          - MANUALLY
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        lastPostDate:
+          type: string
+          format: date
+          description: Last post date.
+        name:
+          type: string
+          description: Auto journal entry name.
+        nextPostDate:
+          type: string
+          format: date
+          description: Next post date.
+        payDay:
+          type: string
+          description: Pay day.
+        startDate:
+          type: string
+          format: date
+          description: Start date.
+    LateFeeRule:
+      type: object
+      properties:
+        dueDay:
+          type: integer
+          format: int32
+          description: Fee due day.
+        feeType:
+          type: string
+          description: Late fee type.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        minimumDue:
+          type: number
+          format: double
+          description: Minimum amount due to trigger the late fee process.
+        summary:
+          type: string
+          description: Textual description of the late fee calculation.
+    Lease:
+      type: object
+      properties:
+        active:
+          type: boolean
+          example: false
+          description: Indicates if lease is Active.
+        addendums:
+          type: array
+          description: Lease addendum(s).
+          items:
+            $ref: '#/components/schemas/LeaseClause'
+        arBalance:
+          type: number
+          format: double
+          description: Lease Accounts Receivable Balance
+        baseRent:
+          type: number
+          format: double
+          description: Property base rent.
+        buildingID:
+          type: integer
+          format: int64
+          description: Id of the building associated with this lease.
+        comments:
+          type: string
+          description: Description of the lease.
+        contacts:
+          type: array
+          description: List of the current tenants on the lease.
+          items:
+            $ref: '#/components/schemas/LeaseContact'
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        customFields:
+          type: array
+          description: Custom fields.
+          items:
+            $ref: '#/components/schemas/CustomField'
+        endDate:
+          type: string
+          format: date
+          description: End date of the lease term.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        idNumber:
+          type: integer
+          format: int32
+          description: Lease identification number.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        lateFeeRule:
+          type: string
+          description: Textual description of the late fee rule applied to delinquent or unpaid lease charges.
+        leaseBalance:
+          type: number
+          format: double
+          description: Lease Balance.
+        leaseName:
+          type: string
+          description: Lease Name.
+        location:
+          type: string
+          description: Building and/or units the lease is currently attached to.
+        moveInDate:
+          type: string
+          format: date
+          description: Day that the tenant(s) moved into the property.
+        moveOutDate:
+          type: string
+          format: date
+          description: Day that the tenant(s) vacated the property.
+        noticeGivenDate:
+          type: string
+          format: date
+          description: Day that the tenant(s) turned in a notice to vacate.
+        paymentRestriction:
+          type: string
+          description: Indicates if the lease has any payment types that they are prevented from using. For example, a lease with several bounced checks may be restricted from paying with checks for future payments.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this lease.
+        publicAssistanceProgram:
+          type: string
+          description: Indicates if the tenant(s) of the lease receive any aid from a Public Assistance Program.
+        reasonForLeaving:
+          type: string
+          description: Reason for vacating the property.
+        scheduleMoveOutDate:
+          type: string
+          format: date
+          description: Day that the tenant(s) are expected to vacate the property.
+        searchTag:
+          type: string
+          description: Search tag.
+        signedDate:
+          type: string
+          format: date
+          description: Lease signed date.
+        startDate:
+          type: string
+          format: date
+          description: Start date of the lease term.
+        status:
+          type: string
+          description: Lease's current status.
+        tenantsOptsIntoAssetProtectionPlan:
+          type: string
+          description: Indicates if the tenants opted into Asset Protection Plan.
+        terminatedDate:
+          type: string
+          format: date
+          description: Lease Terminated Date.
+        unitID:
+          type: integer
+          format: int64
+          description: Id of the unit associated with this lease.
+      description: Lease
+    Conversation:
+      type: object
+      properties:
+        comments:
+          type: array
+          description: List of comments in the conversation.
+          items:
+            $ref: '#/components/schemas/Comment'
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        entityID:
+          type: integer
+          format: int64
+          description: Id of the entity related to this conversation.
+        entityType:
+          type: string
+          description: Type of the entity related to this conversation.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        subject:
+          type: string
+          description: Conversation subject.
+        type:
+          type: string
+          description: Conversation type.
+          enum:
+          - MANAGEMENT_TEAM
+          - OWNER
+          - TENANT
+      description: Conversation
+    Adjustment:
+      type: object
+      required:
+      - amount
+      - date
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Amount.
+        comments:
+          type: string
+          description: Comments.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        date:
+          type: string
+          format: date
+          description: Post date.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this charge.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        leaseID:
+          type: integer
+          format: int64
+          description: Id of the lease associated with this charge.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this charge.
+        refNo:
+          type: string
+          description: Reference number.
+      description: Adjustment
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    AutoCharge:
+      type: object
+      required:
+      - charges
+      - leaseID
+      properties:
+        charges:
+          type: array
+          description: List of Auto charges.
+          items:
+            $ref: '#/components/schemas/SaveAutoCharge'
+        leaseID:
+          type: integer
+          format: int64
+          description: Lease ID.
+      description: Auto charge request
+    Discount:
+      type: object
+      required:
+      - amount
+      - date
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Amount.
+        comments:
+          type: string
+          description: Comments.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        date:
+          type: string
+          format: date
+          description: Post date.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this discount.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        leaseID:
+          type: integer
+          format: int64
+          description: Id of the lease associated with this discount.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this transaction.
+        refNo:
+          type: string
+          description: Reference number.
+      description: Discount
+    CustomField:
+      type: object
+      properties:
+        dataType:
+          type: string
+          description: Data type of the custom field.
+        definitionID:
+          type: integer
+          format: int64
+          description: Id of the custom field definition.
+        fieldName:
+          type: string
+          description: Name of the custom field.
+        value:
+          type: string
+          description: Value of the custom field.
+      description: Custom field.
+    JournalEntrySplit:
+      type: object
+      required:
+      - creditAmount
+      - debitAmount
+      - glAccountID
+      properties:
+        creditAmount:
+          type: number
+          format: double
+          description: Credit amount.
+        debitAmount:
+          type: number
+          format: double
+          description: Debit amount.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this journal entry split.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+      description: Journal Entry Split
     WorkOrder:
       type: object
       properties:
@@ -4093,432 +4204,6 @@ components:
         unitIDs:
           $ref: '#/components/schemas/Collection_long_'
       description: Work Order
-    LeaseContact:
-      type: object
-      properties:
-        company:
-          type: string
-          description: Company where the contact is employed.
-        email:
-          type: string
-          description: E-mail address.
-        firstName:
-          type: string
-          description: First name.
-        homePhone:
-          type: string
-          description: Home phone.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastName:
-          type: string
-          description: Last name.
-        mobilePhone:
-          type: string
-          description: Mobile phone.
-        namedOnLease:
-          type: boolean
-          example: false
-          description: Indicates if contact is named on lease.
-        primary:
-          type: boolean
-          example: false
-          description: Indicates if contact is primary contact of the lease.
-        role:
-          type: string
-          description: Role.
-        workPhone:
-          type: string
-          description: Work phone.
-      description: Contact of the lease
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
-    Document:
-      type: object
-      properties:
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        description:
-          type: string
-          description: Description of a document.
-        entityId:
-          type: integer
-          format: int64
-          description: Unique identifier of an entity document is attached to.
-        entityType:
-          type: string
-          description: Type of an entity document is attached to.
-          enum:
-          - APPOINTMENT
-          - ASSET
-          - BILL
-          - BANK_DEPOSIT
-          - BILL_PAYMENT
-          - BUILDING
-          - CONTACT
-          - FLOOR_PLAN
-          - DESKTOP
-          - EMAIL_TEMPLATE
-          - INSPECTION
-          - LEASE
-          - OTHER
-          - PORTFOLIO
-          - PROSPECT
-          - RECONCILIATION
-          - TASK
-          - TRANSACTION
-          - UNIT
-          - VENDOR
-          - WORK_ORDER
-        fileName:
-          type: string
-          description: File name.
-        fileType:
-          type: string
-          description: File type.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        publishToOwnerPortal:
-          type: boolean
-          example: false
-          description: Indicates if the document is published to the owner portal.
-        publishToTenantPortal:
-          type: boolean
-          example: false
-          description: Indicates if the document is published to the tenant portal.
-    SaveCharge:
-      type: object
-      required:
-      - amount
-      - date
-      - glAccountID
-      - leaseID
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount.
-        comments:
-          type: string
-          description: Comments.
-        date:
-          type: string
-          format: date
-          description: Post Date.
-        glAccountID:
-          type: integer
-          format: int64
-          description: GL Account ID.
-        leaseID:
-          type: integer
-          format: int64
-          description: Lease ID.
-        refNo:
-          type: string
-          description: Charge reference No.
-      description: Charge for Request
-    SaveLeaseJournalEntry:
-      type: object
-      required:
-      - comments
-      - date
-      - leaseID
-      properties:
-        comments:
-          type: string
-          description: Comments.
-        date:
-          type: string
-          format: date
-          description: Journal entry date.
-        journalEntrySplit:
-          type: array
-          description: Journal Entry Splits.
-          items:
-            $ref: '#/components/schemas/SaveJournalEntrySplit'
-        leaseID:
-          type: integer
-          format: int64
-          description: Lease id to apply journal entry.
-        refNo:
-          type: string
-          description: Journal entry reference number.
-      description: Lease Journal Entry for Request
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
-    SaveRefund:
-      type: object
-      required:
-      - amount
-      - date
-      - destinationAccountID
-      - glAccountID
-      - leaseID
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount.
-        comments:
-          type: string
-          description: Comments.
-        date:
-          type: string
-          format: date
-          description: Post Date.
-        destinationAccountID:
-          type: integer
-          format: int64
-          description: Id of the bank account to send the refund from.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with the refund.
-        leaseID:
-          type: integer
-          format: int64
-          description: Id of the lease associated with the refund.
-        refNo:
-          type: string
-          description: Reference number.
-        toBePrinted:
-          type: boolean
-          example: false
-          description: Indicates if the check is to be printed.
-        toPrimaryTenant:
-          type: boolean
-          example: false
-          description: Indicates if refund is for primary contact only
-      description: Refund for Request
-    SavePayment:
-      type: object
-      required:
-      - amount
-      - contactID
-      - date
-      - depositDate
-      - destinationAccountID
-      - leaseID
-      - paymentType
-      - refNo
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount.
-        comments:
-          type: string
-          description: Comments.
-        contactID:
-          type: integer
-          format: int64
-          description: Id of the contact associated with lease payment
-        date:
-          type: string
-          format: date
-          description: Post Date.
-        depositDate:
-          type: string
-          format: date
-          description: Payment deposit date.
-        destinationAccountID:
-          type: integer
-          format: int64
-          description: Bank GL account ID to deposit.
-        leaseID:
-          type: integer
-          format: int64
-          description: Id of the lease associated with this payment.
-        paymentType:
-          type: string
-          description: Payment type.
-          enum:
-          - CHECK
-          - CHECK21
-          - CASHIERS_CHECK
-          - CREDIT_CARD
-          - CASH
-          - MONEY_ORDER
-          - OTHER
-          - CLICKPAY
-          - SECTION8
-          - EPAY
-          - ECHECK
-          - NACHA
-          - RENTMONEY
-          - PUBLIC_ASSISTANCE
-          - PAYMENT_TYPE_NA
-        refNo:
-          type: string
-          description: Payment reference number
-      description: Tenant Payment for Request
-    Lease:
-      type: object
-      properties:
-        active:
-          type: boolean
-          example: false
-          description: Indicates if lease is Active.
-        addendums:
-          type: array
-          description: Lease addendum(s).
-          items:
-            $ref: '#/components/schemas/LeaseClause'
-        arBalance:
-          type: number
-          format: double
-          description: Lease Accounts Receivable Balance
-        baseRent:
-          type: number
-          format: double
-          description: Property base rent.
-        buildingID:
-          type: integer
-          format: int64
-          description: Id of the building associated with this lease.
-        comments:
-          type: string
-          description: Description of the lease.
-        contacts:
-          type: array
-          description: List of the current tenants on the lease.
-          items:
-            $ref: '#/components/schemas/LeaseContact'
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        customFields:
-          type: array
-          description: Custom fields.
-          items:
-            $ref: '#/components/schemas/CustomField'
-        endDate:
-          type: string
-          format: date
-          description: End date of the lease term.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        idNumber:
-          type: integer
-          format: int32
-          description: Lease identification number.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        lateFeeRule:
-          type: string
-          description: Textual description of the late fee rule applied to delinquent or unpaid lease charges.
-        leaseBalance:
-          type: number
-          format: double
-          description: Lease Balance.
-        leaseName:
-          type: string
-          description: Lease Name.
-        location:
-          type: string
-          description: Building and/or units the lease is currently attached to.
-        moveInDate:
-          type: string
-          format: date
-          description: Day that the tenant(s) moved into the property.
-        moveOutDate:
-          type: string
-          format: date
-          description: Day that the tenant(s) vacated the property.
-        noticeGivenDate:
-          type: string
-          format: date
-          description: Day that the tenant(s) turned in a notice to vacate.
-        paymentRestriction:
-          type: string
-          description: Indicates if the lease has any payment types that they are prevented from using. For example, a lease with several bounced checks may be restricted from paying with checks for future payments.
-        portfolioID:
-          type: integer
-          format: int64
-          description: Id of the portfolio associated with this lease.
-        publicAssistanceProgram:
-          type: string
-          description: Indicates if the tenant(s) of the lease receive any aid from a Public Assistance Program.
-        reasonForLeaving:
-          type: string
-          description: Reason for vacating the property.
-        scheduleMoveOutDate:
-          type: string
-          format: date
-          description: Day that the tenant(s) are expected to vacate the property.
-        searchTag:
-          type: string
-          description: Search tag.
-        signedDate:
-          type: string
-          format: date
-          description: Lease signed date.
-        startDate:
-          type: string
-          format: date
-          description: Start date of the lease term.
-        status:
-          type: string
-          description: Lease's current status.
-        tenantsOptsIntoAssetProtectionPlan:
-          type: string
-          description: Indicates if the tenants opted into Asset Protection Plan.
-        terminatedDate:
-          type: string
-          format: date
-          description: Lease Terminated Date.
-        unitID:
-          type: integer
-          format: int64
-          description: Id of the unit associated with this lease.
-      description: Lease
     ChargeTx:
       type: object
       required:
@@ -4587,26 +4272,12 @@ components:
           type: string
           description: Reference number.
       description: Charge Transaction
-    SaveCustomField:
-      type: object
-      required:
-      - entityId
-      - fieldSet
-      properties:
-        entityId:
-          type: integer
-          format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
-    SaveAdjustment:
+    SaveDiscount:
       type: object
       required:
       - amount
+      - date
+      - discountAccountID
       - leaseID
       properties:
         amount:
@@ -4619,60 +4290,181 @@ components:
         date:
           type: string
           format: date
-          description: Lease Adjustment date.
+          description: Date.
+        discountAccountID:
+          type: integer
+          format: int64
+          description: Discount GL Account ID.
         leaseID:
           type: integer
           format: int64
-          description: Id of the lease associated with the Adjustment.
+          description: Id of the lease associated with this discount.
         refNo:
           type: string
-          description: Reference number.
-      description: Adjustment for Request
-    JournalEntrySplit:
+          description: Ref No.
+      description: Discount for Request
+    SaveAutoCharge:
       type: object
       required:
-      - creditAmount
-      - debitAmount
+      - amount
+      - dueDay
+      - frequency
       - glAccountID
+      - startDate
       properties:
-        creditAmount:
+        amount:
           type: number
           format: double
-          description: Credit amount.
-        debitAmount:
-          type: number
-          format: double
-          description: Debit amount.
-        glAccountID:
-          type: integer
-          format: int64
-          description: Id of the general ledger account associated with this journal entry split.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-      description: Journal Entry Split
-    LateFeeRule:
-      type: object
-      properties:
+          description: Auto charge amount.
+        description:
+          type: string
+          description: Description of the auto charge.
         dueDay:
           type: integer
           format: int32
-          description: Fee due day.
-        feeType:
+          description: 'Charge due day. Allowed values : For frequency "Weekly" (1 to 7) , for other frequency (1 to 31)'
+        endDate:
           type: string
-          description: Late fee type.
+          format: date
+          description: Auto charge end date.
+        frequency:
+          type: string
+          description: Charge frequency.
+          enum:
+          - WEEKLY
+          - MONTHLY
+          - QUARTERLY
+          - SEMIANUUAL
+          - ANUUAL
+          - ANUUAL_ACCRUAL
+        glAccountID:
+          type: integer
+          format: int64
+          description: GL Account ID.
+        referenceNumber:
+          type: string
+          description: Reference number.
+          minLength: 0
+          maxLength: 35
+        startDate:
+          type: string
+          format: date
+          description: Auto charge start date.
+      description: Auto charge request
+    BasicVendor:
+      type: object
+      properties:
+        address:
+          type: string
+          description: Address.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        customFields:
+          type: array
+          description: Custom fields.
+          items:
+            $ref: '#/components/schemas/CustomField'
+        email:
+          type: string
+          description: Email address.
+        fax:
+          type: string
+          description: Fax number.
         id:
           type: integer
           format: int64
           description: Unique identifier.
-        minimumDue:
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        name:
+          type: string
+          description: Name.
+        otherPhone:
+          type: string
+          description: Other phone number.
+        phone:
+          type: string
+          description: Phone number.
+    Collection_long_:
+      type: object
+    Charge:
+      type: object
+      required:
+      - frequency
+      - startDate
+      properties:
+        amount:
           type: number
           format: double
-          description: Minimum amount due to trigger the late fee process.
-        summary:
+          description: Auto charge amount.
+        createdBy:
           type: string
-          description: Textual description of the late fee calculation.
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        description:
+          type: string
+          description: Description of the auto charge.
+        dueDay:
+          type: integer
+          format: int32
+          description: Description of the day when the auto charge is due.
+        endDate:
+          type: string
+          format: date
+          description: End date of auto charge.
+        frequency:
+          type: string
+          description: Frequency of the auto charge.
+          enum:
+          - WEEKLY
+          - MONTHLY
+          - QUARTERLY
+          - SEMIANUUAL
+          - ANUUAL
+          - ANUUAL_ACCRUAL
+        glAccountID:
+          type: integer
+          format: int64
+          description: ID of the General Ledger Account associated to this auto charge.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        lastPostDate:
+          type: string
+          format: date
+          description: Last post date.
+        leaseID:
+          type: integer
+          format: int64
+          description: ID of the lease associated to auto charge
+        referenceNumber:
+          type: string
+          description: Reference number.
+        startDate:
+          type: string
+          format: date
+          description: Start date of auto charge.
     Refund:
       type: object
       required:
@@ -4732,6 +4524,267 @@ components:
           example: false
           description: Indicates if the check is to be printed.
       description: Tenant Refund
+    Note:
+      type: object
+      properties:
+        body:
+          type: string
+          description: Content of the note.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        date:
+          type: string
+          format: date
+          description: Date the note was created.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        private:
+          type: boolean
+        subject:
+          type: string
+          description: Subject.
+    LeaseStatus:
+      type: object
+      properties:
+        defineActive:
+          type: boolean
+        id:
+          type: integer
+          format: int64
+        orderIndex:
+          type: integer
+          format: int32
+        portalLoginEnabled:
+          type: boolean
+        readonly:
+          type: boolean
+        status:
+          type: string
+      description: Lease Status
+    PaymentCharge:
+      type: object
+      required:
+      - amount
+      - chargeAmountPaid
+      - date
+      - settledDate
+      properties:
+        accountID:
+          type: integer
+          format: int64
+          description: Id of the bank account where the payment was deposited.
+        amount:
+          type: number
+          format: double
+          description: Total payment Amount.
+        chargeAmountPaid:
+          type: number
+          format: double
+          description: Amount paid for this charge
+        comments:
+          type: string
+          description: Comments.
+        date:
+          type: string
+          format: date
+          description: Payment applied date.
+        id:
+          type: integer
+          format: int64
+          description: Payment ID
+        payeePayer:
+          type: string
+          description: Payer name.
+        paymentType:
+          type: string
+          description: Payment type. Electronic payments are only for book keeping.
+          enum:
+          - CHECK
+          - CHECK21
+          - CASHIERS_CHECK
+          - CREDIT_CARD
+          - CASH
+          - MONEY_ORDER
+          - OTHER
+          - CLICKPAY
+          - SECTION8
+          - EPAY
+          - ECHECK
+          - NACHA
+          - RENTMONEY
+          - PUBLIC_ASSISTANCE
+          - PAYMENT_TYPE_NA
+        receiptNumber:
+          type: integer
+          format: int64
+          description: Payment receipt number.
+        refNo:
+          type: string
+          description: Payment reference number.
+        settledDate:
+          type: string
+          format: date
+          description: Payment settlement date.
+        status:
+          type: string
+          description: Charge payment status.
+      description: Tenant Payment
+    Address:
+      type: object
+      properties:
+        address:
+          type: string
+          description: Primary street and/or unit address.
+        addressCont:
+          type: string
+          description: Address continuation.
+        city:
+          type: string
+          description: City.
+        country:
+          type: string
+          description: Country.
+        postalCode:
+          type: string
+          description: Postal code.
+        stateRegion:
+          type: string
+          description: State/region.
+      description: Address
+    AutoPayment:
+      type: object
+      properties:
+        account:
+          type: string
+          description: Payment general ledger account.
+        amount:
+          type: number
+          format: double
+          description: Payment amount.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        description:
+          type: string
+          description: Description.
+        endDate:
+          type: string
+          format: date
+          description: End date.
+        feeAmount:
+          type: number
+          format: double
+          description: Fee amount.
+        frequency:
+          type: string
+          description: Payment frequency.
+          enum:
+          - WEEKLY
+          - MONTHLY
+          - QUARTERLY
+          - SEMIANNUAL
+          - YEARLY
+        glAccountID:
+          type: integer
+          format: int64
+          description: Payment general ledger account ID.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        lastPostDate:
+          type: string
+          format: date
+          description: Last post date.
+        startDate:
+          type: string
+          format: date
+          description: Start date.
+    SaveCustomField:
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
+          type: integer
+          format: int64
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    SaveRefund:
+      type: object
+      required:
+      - amount
+      - date
+      - destinationAccountID
+      - glAccountID
+      - leaseID
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Amount.
+        comments:
+          type: string
+          description: Comments.
+        date:
+          type: string
+          format: date
+          description: Post Date.
+        destinationAccountID:
+          type: integer
+          format: int64
+          description: Id of the bank account to send the refund from.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with the refund.
+        leaseID:
+          type: integer
+          format: int64
+          description: Id of the lease associated with the refund.
+        refNo:
+          type: string
+          description: Reference number.
+        toBePrinted:
+          type: boolean
+          example: false
+          description: Indicates if the check is to be printed.
+        toPrimaryTenant:
+          type: boolean
+          example: false
+          description: Indicates if refund is for primary contact only
+      description: Refund for Request
     UpdateLeaseJournalEntry:
       type: object
       required:
@@ -4759,6 +4812,84 @@ components:
           type: string
           description: Journal entry reference number.
       description: Update Lease Journal Entry
+    CreditMemo:
+      type: object
+      required:
+      - amount
+      - date
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Amount.
+        comments:
+          type: string
+          description: Comments
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        date:
+          type: string
+          format: date
+          description: Post date.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this credit memo.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        leaseID:
+          type: integer
+          format: int64
+          description: Id of the lease associated with this credit memo.
+        parentTxID:
+          type: integer
+          format: int64
+          description: Id of the payment causing this prepay application.
+        portfolioID:
+          type: integer
+          format: int64
+          description: Id of the portfolio associated with this credit memo.
+        refNo:
+          type: string
+          description: Reference number.
+      description: Transaction
+    JournalEntrySplitResponse:
+      type: object
+      required:
+      - creditAmount
+      - debitAmount
+      - glAccountID
+      properties:
+        creditAmount:
+          type: number
+          format: double
+          description: Credit amount.
+        debitAmount:
+          type: number
+          format: double
+          description: Debit amount.
+        glAccountID:
+          type: integer
+          format: int64
+          description: Id of the general ledger account associated with this journal entry split.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
     SaveConversation:
       type: object
       required:
@@ -4776,14 +4907,9 @@ components:
           - OWNER
           - TENANT
       description: Conversation for Request
-    Conversation:
+    Document:
       type: object
       properties:
-        comments:
-          type: array
-          description: List of comments in the conversation.
-          items:
-            $ref: '#/components/schemas/Comment'
         createdBy:
           type: string
           description: User who created the record.
@@ -4791,13 +4917,44 @@ components:
           type: string
           format: date-time
           description: 'Date and time the record was created. (Timezone: UTC)'
-        entityID:
+        description:
+          type: string
+          description: Description of a document.
+        entityId:
           type: integer
           format: int64
-          description: Id of the entity related to this conversation.
+          description: Unique identifier of an entity document is attached to.
         entityType:
           type: string
-          description: Type of the entity related to this conversation.
+          description: Type of an entity document is attached to.
+          enum:
+          - APPOINTMENT
+          - ASSET
+          - BILL
+          - BANK_DEPOSIT
+          - BILL_PAYMENT
+          - BUILDING
+          - CONTACT
+          - FLOOR_PLAN
+          - DESKTOP
+          - EMAIL_TEMPLATE
+          - INSPECTION
+          - LEASE
+          - OTHER
+          - PORTFOLIO
+          - PROSPECT
+          - RECONCILIATION
+          - TASK
+          - TRANSACTION
+          - UNIT
+          - VENDOR
+          - WORK_ORDER
+        fileName:
+          type: string
+          description: File name.
+        fileType:
+          type: string
+          description: File type.
         id:
           type: integer
           format: int64
@@ -4809,48 +4966,14 @@ components:
           type: string
           format: date-time
           description: 'Date and time the record was last modified. (Timezone: UTC)'
-        subject:
-          type: string
-          description: Conversation subject.
-        type:
-          type: string
-          description: Conversation type.
-          enum:
-          - MANAGEMENT_TEAM
-          - OWNER
-          - TENANT
-      description: Conversation
-    SaveDiscount:
-      type: object
-      required:
-      - amount
-      - date
-      - discountAccountID
-      - leaseID
-      properties:
-        amount:
-          type: number
-          format: double
-          description: Amount, should be negative.
-        comments:
-          type: string
-          description: Comments.
-        date:
-          type: string
-          format: date
-          description: Date.
-        discountAccountID:
-          type: integer
-          format: int64
-          description: Discount GL Account ID.
-        leaseID:
-          type: integer
-          format: int64
-          description: Id of the lease associated with this discount.
-        refNo:
-          type: string
-          description: Ref No.
-      description: Discount for Request
+        publishToOwnerPortal:
+          type: boolean
+          example: false
+          description: Indicates if the document is published to the owner portal.
+        publishToTenantPortal:
+          type: boolean
+          example: false
+          description: Indicates if the document is published to the tenant portal.
     SaveLease:
       type: object
       required:
@@ -4958,161 +5081,59 @@ components:
           format: int64
           description: Unit/Building ID associated with this lease.
       description: Lease for Request
-    Note:
+    SaveAdjustment:
       type: object
+      required:
+      - amount
+      - leaseID
       properties:
-        body:
+        amount:
+          type: number
+          format: double
+          description: Amount, should be negative.
+        comments:
           type: string
-          description: Content of the note.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
+          description: Comments.
         date:
           type: string
           format: date
-          description: Date the note was created.
-        id:
+          description: Lease Adjustment date.
+        leaseID:
           type: integer
           format: int64
-          description: Unique identifier.
-        lastModifiedBy:
+          description: Id of the lease associated with the Adjustment.
+        refNo:
           type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        private:
-          type: boolean
-        subject:
-          type: string
-          description: Subject.
-    ResponseEntity:
-      type: object
-      properties:
-        body:
-          type: object
-        statusCode:
-          type: string
-          enum:
-          - '100'
-          - '101'
-          - '102'
-          - '103'
-          - '200'
-          - '201'
-          - '202'
-          - '203'
-          - '204'
-          - '205'
-          - '206'
-          - '207'
-          - '208'
-          - '226'
-          - '300'
-          - '301'
-          - '302'
-          - '303'
-          - '304'
-          - '305'
-          - '307'
-          - '308'
-          - '400'
-          - '401'
-          - '402'
-          - '403'
-          - '404'
-          - '405'
-          - '406'
-          - '407'
-          - '408'
-          - '409'
-          - '410'
-          - '411'
-          - '412'
-          - '413'
-          - '414'
-          - '415'
-          - '416'
-          - '417'
-          - '418'
-          - '419'
-          - '420'
-          - '421'
-          - '422'
-          - '423'
-          - '424'
-          - '426'
-          - '428'
-          - '429'
-          - '431'
-          - '500'
-          - '501'
-          - '502'
-          - '503'
-          - '504'
-          - '505'
-          - '506'
-          - '507'
-          - '508'
-          - '509'
-          - '510'
-          - '511'
-    BasicVendor:
-      type: object
-      properties:
-        address:
-          type: string
-          description: Address.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        customFields:
-          type: array
-          description: Custom fields.
-          items:
-            $ref: '#/components/schemas/CustomField'
-        email:
-          type: string
-          description: Email address.
-        fax:
-          type: string
-          description: Fax number.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        name:
-          type: string
-          description: Name.
-        otherPhone:
-          type: string
-          description: Other phone number.
-        phone:
-          type: string
-          description: Phone number.
+          description: Reference number.
+      description: Adjustment for Request
   requestBodies:
-    SaveCharge:
+    SaveConversation:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/SaveCharge'
-      description: saveCharge
+            $ref: '#/components/schemas/SaveConversation'
+      description: saveConversation
+      required: true
+    SaveRefund:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveRefund'
+      description: saveRefund
+      required: true
+    SavePayment:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SavePayment'
+      description: savePayment
+      required: true
+    SaveCustomField:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveCustomField'
+      description: saveCustomField
       required: true
     SaveComment:
       content:
@@ -5128,40 +5149,19 @@ components:
             $ref: '#/components/schemas/SaveAdjustment'
       description: saveAdjustment
       required: true
+    SaveCharge:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveCharge'
+      description: saveCharge
+      required: true
     SaveDiscount:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/SaveDiscount'
       description: saveDiscount
-      required: true
-    SaveCustomField:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveCustomField'
-      description: saveCustomField
-      required: true
-    SavePayment:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SavePayment'
-      description: savePayment
-      required: true
-    SaveConversation:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveConversation'
-      description: saveConversation
-      required: true
-    SaveRefund:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveRefund'
-      description: saveRefund
       required: true
   securitySchemes:
     clientId:

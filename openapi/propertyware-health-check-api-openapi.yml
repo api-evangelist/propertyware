@@ -55,17 +55,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
     ResponseEntity:
       type: object
       properties:
@@ -137,6 +126,17 @@ components:
           - '509'
           - '510'
           - '511'
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
     RESTAPIError:
       type: object
       properties:

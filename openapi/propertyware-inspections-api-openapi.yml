@@ -187,13 +187,6 @@ paths:
           description: Entity not found.
 components:
   schemas:
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
     ErrorResponse:
       type: object
       properties:
@@ -205,6 +198,46 @@ components:
             $ref: '#/components/schemas/RESTAPIError'
         userMessage:
           type: string
+    InspectionItem:
+      type: object
+      properties:
+        comments:
+          type: string
+          description: Comments.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        name:
+          type: string
+          description: Name of the inspection item.
+        status:
+          type: string
+          description: Status of the inspection.
+      description: InspectionItem
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    InspectionArea:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        items:
+          type: array
+          description: List of items in the inspection.
+          items:
+            $ref: '#/components/schemas/InspectionItem'
+        name:
+          type: string
+          description: Name of the inspection area.
+      description: Inspection Area
     Inspection:
       type: object
       properties:
@@ -279,39 +312,6 @@ components:
           type: string
           description: Inspection type.
       description: Inspection
-    InspectionItem:
-      type: object
-      properties:
-        comments:
-          type: string
-          description: Comments.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        name:
-          type: string
-          description: Name of the inspection item.
-        status:
-          type: string
-          description: Status of the inspection.
-      description: InspectionItem
-    InspectionArea:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        items:
-          type: array
-          description: List of items in the inspection.
-          items:
-            $ref: '#/components/schemas/InspectionItem'
-        name:
-          type: string
-          description: Name of the inspection area.
-      description: Inspection Area
   securitySchemes:
     clientId:
       type: apiKey

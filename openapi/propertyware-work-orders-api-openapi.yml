@@ -840,6 +840,172 @@ paths:
           description: Entity not found.
 components:
   schemas:
+    ResponseEntity:
+      type: object
+      properties:
+        body:
+          type: object
+        statusCode:
+          type: string
+          enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
+    CustomFieldSet:
+      type: object
+      required:
+      - name
+      - value
+      properties:
+        name:
+          type: string
+          description: Custom Field name
+        value:
+          type: string
+          description: Custom Field value
+      description: Custom field set for Request
+    RESTAPIBulkErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
+          type: boolean
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    SaveComment:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          type: string
+          description: Comment text.
+      description: Comment for Request
+    TimeCardEntry:
+      type: object
+      required:
+      - vendorID
+      properties:
+        billID:
+          type: integer
+          format: int64
+          description: Bill ID.
+        comments:
+          type: string
+          description: Time card Entry Comments.
+        hourlyRate:
+          type: number
+          format: double
+          description: Hourly Rate.
+        hourlySurcharge:
+          type: number
+          format: double
+          description: Hourly Surcharge.
+        hours:
+          type: number
+          format: double
+          description: Hours.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        vendorID:
+          type: integer
+          format: int64
+          description: This is required field. Specifies the Vendor for a time card entry.
+        workDate:
+          type: string
+          format: date-time
+          description: Work Date.
+      description: TimeCardEntry
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
     SaveWorkOrder:
       type: object
       required:
@@ -948,110 +1114,6 @@ components:
           type: string
           description: Value of the custom field.
       description: Custom field.
-    TimeCardEntry:
-      type: object
-      required:
-      - vendorID
-      properties:
-        billID:
-          type: integer
-          format: int64
-          description: Bill ID.
-        comments:
-          type: string
-          description: Time card Entry Comments.
-        hourlyRate:
-          type: number
-          format: double
-          description: Hourly Rate.
-        hourlySurcharge:
-          type: number
-          format: double
-          description: Hourly Surcharge.
-        hours:
-          type: number
-          format: double
-          description: Hours.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        vendorID:
-          type: integer
-          format: int64
-          description: This is required field. Specifies the Vendor for a time card entry.
-        workDate:
-          type: string
-          format: date-time
-          description: Work Date.
-      description: TimeCardEntry
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    SaveWorkOrderTask:
-      type: object
-      required:
-      - description
-      properties:
-        completed:
-          type: boolean
-          example: false
-          description: Indicates if the task is completed.
-        delegates:
-          type: string
-          description: Comma separated list of user ids to delegate the task to.
-        description:
-          type: string
-          description: Task description.
-        dueDate:
-          type: string
-          format: date
-          description: Task due date.
-        isPrivate:
-          type: boolean
-          example: false
-          description: Indicates if the task is private.
-        starred:
-          type: boolean
-          example: false
-          description: Indicates if the task is starred.
-        tags:
-          type: string
-          description: Comma separated task tags.
-      description: Work Order for Request
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
-    RESTAPIBulkSuccessResponse:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-    Collection_long_:
-      type: object
-    SaveComment:
-      type: object
-      required:
-      - text
-      properties:
-        text:
-          type: string
-          description: Comment text.
-      description: Comment for Request
     WorkOrder:
       type: object
       properties:
@@ -1202,70 +1264,52 @@ components:
         unitIDs:
           $ref: '#/components/schemas/Collection_long_'
       description: Work Order
-    CustomFieldSet:
+    BasicVendor:
       type: object
-      required:
-      - name
-      - value
       properties:
-        name:
+        address:
           type: string
-          description: Custom Field name
-        value:
+          description: Address.
+        createdBy:
           type: string
-          description: Custom Field value
-      description: Custom field set for Request
-    CloseWorkOrder:
-      type: object
-      required:
-      - timeCardEntry
-      properties:
-        category:
+          description: User who created the record.
+        createdDateTime:
           type: string
-          description: This classifies the work order into a category.
-        comments:
-          type: string
-          description: Comments for closing workorder.
-        completedDate:
-          type: string
-          format: date
-          description: Date on which the work was completed.
-        startDate:
-          type: string
-          format: date
-          description: Date on which the work was started.
-        timeCardEntry:
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        customFields:
           type: array
-          description: List of TimeCard Entries to update
+          description: Custom fields.
           items:
-            $ref: '#/components/schemas/TimeCardEntry'
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
+            $ref: '#/components/schemas/CustomField'
+        email:
           type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
+          description: Email address.
+        fax:
           type: string
-    SaveCustomField:
-      type: object
-      required:
-      - entityId
-      - fieldSet
-      properties:
-        entityId:
+          description: Fax number.
+        id:
           type: integer
           format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        name:
+          type: string
+          description: Name.
+        otherPhone:
+          type: string
+          description: Other phone number.
+        phone:
+          type: string
+          description: Phone number.
+    Collection_long_:
+      type: object
     Task:
       type: object
       properties:
@@ -1317,129 +1361,78 @@ components:
           type: string
           description: List of tags associated with the task.
       description: Task
-    ResponseEntity:
+    CloseWorkOrder:
       type: object
+      required:
+      - timeCardEntry
       properties:
-        body:
-          type: object
-        statusCode:
+        category:
           type: string
-          enum:
-          - '100'
-          - '101'
-          - '102'
-          - '103'
-          - '200'
-          - '201'
-          - '202'
-          - '203'
-          - '204'
-          - '205'
-          - '206'
-          - '207'
-          - '208'
-          - '226'
-          - '300'
-          - '301'
-          - '302'
-          - '303'
-          - '304'
-          - '305'
-          - '307'
-          - '308'
-          - '400'
-          - '401'
-          - '402'
-          - '403'
-          - '404'
-          - '405'
-          - '406'
-          - '407'
-          - '408'
-          - '409'
-          - '410'
-          - '411'
-          - '412'
-          - '413'
-          - '414'
-          - '415'
-          - '416'
-          - '417'
-          - '418'
-          - '419'
-          - '420'
-          - '421'
-          - '422'
-          - '423'
-          - '424'
-          - '426'
-          - '428'
-          - '429'
-          - '431'
-          - '500'
-          - '501'
-          - '502'
-          - '503'
-          - '504'
-          - '505'
-          - '506'
-          - '507'
-          - '508'
-          - '509'
-          - '510'
-          - '511'
-    BasicVendor:
-      type: object
-      properties:
-        address:
+          description: This classifies the work order into a category.
+        comments:
           type: string
-          description: Address.
-        createdBy:
+          description: Comments for closing workorder.
+        completedDate:
           type: string
-          description: User who created the record.
-        createdDateTime:
+          format: date
+          description: Date on which the work was completed.
+        startDate:
           type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        customFields:
+          format: date
+          description: Date on which the work was started.
+        timeCardEntry:
           type: array
-          description: Custom fields.
+          description: List of TimeCard Entries to update
           items:
-            $ref: '#/components/schemas/CustomField'
-        email:
-          type: string
-          description: Email address.
-        fax:
-          type: string
-          description: Fax number.
-        id:
+            $ref: '#/components/schemas/TimeCardEntry'
+    SaveCustomField:
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
           type: integer
           format: int64
-          description: Unique identifier.
-        lastModifiedBy:
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    SaveWorkOrderTask:
+      type: object
+      required:
+      - description
+      properties:
+        completed:
+          type: boolean
+          example: false
+          description: Indicates if the task is completed.
+        delegates:
           type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
+          description: Comma separated list of user ids to delegate the task to.
+        description:
           type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        name:
+          description: Task description.
+        dueDate:
           type: string
-          description: Name.
-        otherPhone:
+          format: date
+          description: Task due date.
+        isPrivate:
+          type: boolean
+          example: false
+          description: Indicates if the task is private.
+        starred:
+          type: boolean
+          example: false
+          description: Indicates if the task is starred.
+        tags:
           type: string
-          description: Other phone number.
-        phone:
-          type: string
-          description: Phone number.
+          description: Comma separated task tags.
+      description: Work Order for Request
   requestBodies:
-    SaveComment:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SaveComment'
-      description: saveComment
-      required: true
     SaveWorkOrderTask:
       content:
         application/json:
@@ -1453,6 +1446,13 @@ components:
           schema:
             $ref: '#/components/schemas/SaveCustomField'
       description: saveCustomField
+      required: true
+    SaveComment:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SaveComment'
+      description: saveComment
       required: true
   securitySchemes:
     clientId:

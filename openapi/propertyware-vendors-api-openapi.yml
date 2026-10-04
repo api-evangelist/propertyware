@@ -521,161 +521,77 @@ paths:
           description: Entity not found.
 components:
   schemas:
-    Account:
+    ResponseEntity:
       type: object
       properties:
-        accountCode:
+        body:
+          type: object
+        statusCode:
           type: string
-          description: Account code.
-        accountNumber:
-          type: string
-          description: Account number.
-        accountType:
-          type: string
-          description: Account type.
-        active:
-          type: boolean
-          example: false
-          description: Indicates if the account is active.
-        autoApplyPrepayment:
-          type: boolean
-          example: false
-          description: Indicates if prepayments should be auto applied.
-        bankAccountHolder:
-          type: string
-          description: Bank account holder name.
-        bankAccountNumber:
-          type: string
-          description: Bank account number.
-        bankAddress:
-          type: string
-          description: Bank address.
-        bankAddress2:
-          type: string
-          description: Bank address 2.
-        bankCity:
-          type: string
-          description: Bank city.
-        bankInstitution:
-          type: string
-          description: Bank institution name.
-        bankRoutingNumber:
-          type: string
-          description: Bank account routing number.
-        bankState:
-          type: string
-          description: Bank state.
-        bankZip:
-          type: string
-          description: Bank zip code.
-        camRecoveryAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a CAM recovery account.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        description:
-          type: string
-          description: Description of the account.
-        discountAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a discount account.
-        escrowAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a escrow account.
-        excludeFrom1099:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from Form1099.
-        excludeFromPayInFull:
-          type: boolean
-          example: false
-          description: Indicates if account is excluded from paying in full.
-        excludeLateFee:
-          type: boolean
-          example: false
-          description: Indicates if excluding from late fees.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        lateFeeApplicable:
-          type: boolean
-          example: false
-          description: Indicates if a late fee is applicable.
-        name:
-          type: string
-          description: Account name.
-        parentGLAccountId:
-          type: integer
-          format: int64
-          description: Parent account ID.
-        parentRef:
-          type: string
-          description: Parent account reference.
-        paymentPriority:
-          type: integer
-          format: int32
-          description: Account payment priority.
-        rentAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a rent account.
-        section8:
-          type: boolean
-          example: false
-          description: Indicates if account is a section8 account.
-        securityDepositAccount:
-          type: boolean
-          example: false
-          description: Indicates if the account is security deposit account
-        taxAccount:
-          type: boolean
-          example: false
-          description: Indicates if account is a tax account.
-        transferBalanceToRetainedEarnings:
-          type: boolean
-          example: false
-          description: Indicates if the account balance should be transferred to retained earnings.
-      description: General Ledger Account
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
-    CustomField:
-      type: object
-      properties:
-        dataType:
-          type: string
-          description: Data type of the custom field.
-        definitionID:
-          type: integer
-          format: int64
-          description: Id of the custom field definition.
-        fieldName:
-          type: string
-          description: Name of the custom field.
-        value:
-          type: string
-          description: Value of the custom field.
-      description: Custom field.
+          enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
     ErrorResponse:
       type: object
       properties:
@@ -693,6 +609,39 @@ components:
         id:
           type: integer
           format: int64
+    SaveCustomField:
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
+          type: integer
+          format: int64
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    CustomField:
+      type: object
+      properties:
+        dataType:
+          type: string
+          description: Data type of the custom field.
+        definitionID:
+          type: integer
+          format: int64
+          description: Id of the custom field definition.
+        fieldName:
+          type: string
+          description: Name of the custom field.
+        value:
+          type: string
+          description: Value of the custom field.
+      description: Custom field.
     Vendor:
       type: object
       properties:
@@ -828,50 +777,19 @@ components:
           type: string
           description: ZIP or postal code.
       description: Vendor
-    Conversation:
+    CustomFieldSet:
       type: object
+      required:
+      - name
+      - value
       properties:
-        comments:
-          type: array
-          description: List of comments in the conversation.
-          items:
-            $ref: '#/components/schemas/Comment'
-        createdBy:
+        name:
           type: string
-          description: User who created the record.
-        createdDateTime:
+          description: Custom Field name
+        value:
           type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        entityID:
-          type: integer
-          format: int64
-          description: Id of the entity related to this conversation.
-        entityType:
-          type: string
-          description: Type of the entity related to this conversation.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        subject:
-          type: string
-          description: Conversation subject.
-        type:
-          type: string
-          description: Conversation type.
-          enum:
-          - MANAGEMENT_TEAM
-          - OWNER
-          - TENANT
-      description: Conversation
+          description: Custom Field value
+      description: Custom field set for Request
     Comment:
       type: object
       properties:
@@ -909,106 +827,6 @@ components:
           format: int32
         success:
           type: boolean
-    SaveCustomField:
-      type: object
-      required:
-      - entityId
-      - fieldSet
-      properties:
-        entityId:
-          type: integer
-          format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
-    ResponseEntity:
-      type: object
-      properties:
-        body:
-          type: object
-        statusCode:
-          type: string
-          enum:
-          - '100'
-          - '101'
-          - '102'
-          - '103'
-          - '200'
-          - '201'
-          - '202'
-          - '203'
-          - '204'
-          - '205'
-          - '206'
-          - '207'
-          - '208'
-          - '226'
-          - '300'
-          - '301'
-          - '302'
-          - '303'
-          - '304'
-          - '305'
-          - '307'
-          - '308'
-          - '400'
-          - '401'
-          - '402'
-          - '403'
-          - '404'
-          - '405'
-          - '406'
-          - '407'
-          - '408'
-          - '409'
-          - '410'
-          - '411'
-          - '412'
-          - '413'
-          - '414'
-          - '415'
-          - '416'
-          - '417'
-          - '418'
-          - '419'
-          - '420'
-          - '421'
-          - '422'
-          - '423'
-          - '424'
-          - '426'
-          - '428'
-          - '429'
-          - '431'
-          - '500'
-          - '501'
-          - '502'
-          - '503'
-          - '504'
-          - '505'
-          - '506'
-          - '507'
-          - '508'
-          - '509'
-          - '510'
-          - '511'
     SaveVendor:
       type: object
       required:
@@ -1126,6 +944,188 @@ components:
           type: string
           description: Zip
       description: Vendor for Request
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    Account:
+      type: object
+      properties:
+        accountCode:
+          type: string
+          description: Account code.
+        accountNumber:
+          type: string
+          description: Account number.
+        accountType:
+          type: string
+          description: Account type.
+        active:
+          type: boolean
+          example: false
+          description: Indicates if the account is active.
+        autoApplyPrepayment:
+          type: boolean
+          example: false
+          description: Indicates if prepayments should be auto applied.
+        bankAccountHolder:
+          type: string
+          description: Bank account holder name.
+        bankAccountNumber:
+          type: string
+          description: Bank account number.
+        bankAddress:
+          type: string
+          description: Bank address.
+        bankAddress2:
+          type: string
+          description: Bank address 2.
+        bankCity:
+          type: string
+          description: Bank city.
+        bankInstitution:
+          type: string
+          description: Bank institution name.
+        bankRoutingNumber:
+          type: string
+          description: Bank account routing number.
+        bankState:
+          type: string
+          description: Bank state.
+        bankZip:
+          type: string
+          description: Bank zip code.
+        camRecoveryAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a CAM recovery account.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        description:
+          type: string
+          description: Description of the account.
+        discountAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a discount account.
+        escrowAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a escrow account.
+        excludeFrom1099:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from Form1099.
+        excludeFromPayInFull:
+          type: boolean
+          example: false
+          description: Indicates if account is excluded from paying in full.
+        excludeLateFee:
+          type: boolean
+          example: false
+          description: Indicates if excluding from late fees.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        lateFeeApplicable:
+          type: boolean
+          example: false
+          description: Indicates if a late fee is applicable.
+        name:
+          type: string
+          description: Account name.
+        parentGLAccountId:
+          type: integer
+          format: int64
+          description: Parent account ID.
+        parentRef:
+          type: string
+          description: Parent account reference.
+        paymentPriority:
+          type: integer
+          format: int32
+          description: Account payment priority.
+        rentAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a rent account.
+        section8:
+          type: boolean
+          example: false
+          description: Indicates if account is a section8 account.
+        securityDepositAccount:
+          type: boolean
+          example: false
+          description: Indicates if the account is security deposit account
+        taxAccount:
+          type: boolean
+          example: false
+          description: Indicates if account is a tax account.
+        transferBalanceToRetainedEarnings:
+          type: boolean
+          example: false
+          description: Indicates if the account balance should be transferred to retained earnings.
+      description: General Ledger Account
+    Conversation:
+      type: object
+      properties:
+        comments:
+          type: array
+          description: List of comments in the conversation.
+          items:
+            $ref: '#/components/schemas/Comment'
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        entityID:
+          type: integer
+          format: int64
+          description: Id of the entity related to this conversation.
+        entityType:
+          type: string
+          description: Type of the entity related to this conversation.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        subject:
+          type: string
+          description: Conversation subject.
+        type:
+          type: string
+          description: Conversation type.
+          enum:
+          - MANAGEMENT_TEAM
+          - OWNER
+          - TENANT
+      description: Conversation
   requestBodies:
     SaveCustomField:
       content:

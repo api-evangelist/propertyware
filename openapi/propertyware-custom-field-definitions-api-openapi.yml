@@ -71,6 +71,13 @@ paths:
           description: Entity not found.
 components:
   schemas:
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
     ErrorResponse:
       type: object
       properties:
@@ -96,13 +103,6 @@ components:
         requiredField:
           type: string
       description: Custom field definition.
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
   securitySchemes:
     clientId:
       type: apiKey
