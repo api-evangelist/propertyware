@@ -802,6 +802,160 @@ paths:
           description: Entity not found.
 components:
   schemas:
+    CustomField:
+      type: object
+      properties:
+        dataType:
+          type: string
+          description: Data type of the custom field.
+        definitionID:
+          type: integer
+          format: int64
+          description: Id of the custom field definition.
+        fieldName:
+          type: string
+          description: Name of the custom field.
+        value:
+          type: string
+          description: Value of the custom field.
+      description: Custom field.
+    CustomFieldSet:
+      type: object
+      required:
+      - name
+      - value
+      properties:
+        name:
+          type: string
+          description: Custom Field name
+        value:
+          type: string
+          description: Custom Field value
+      description: Custom field set for Request
+    RESTAPIBulkErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
+          type: boolean
+    ManagementSettings:
+      type: object
+      properties:
+        managementContractEndDate:
+          type: string
+          format: date
+          description: End date of the property contract.
+        managementContractStartDate:
+          type: string
+          format: date
+          description: Start date of the property contract.
+        managementFeeType:
+          type: string
+          description: 'Indicates the type of management fee. This field is deprecated and should not be used. Instead, use the new field ''managementFeesType''. '
+        managementFees:
+          type: array
+          description: List of property management fee rules.
+          items:
+            $ref: '#/components/schemas/ManagementFee'
+        managementFeesType:
+          type: string
+          description: Indicates the type of management fee.
+          enum:
+          - MANAGE_FEE_NONE
+          - MANAGE_FEE_GREATER_OF_FLAT_OR_PERCENTAGE
+          - MANAGE_FEE_FLAT_PLUS_PERCENTAGE
+        managementFlatFee:
+          type: number
+          format: double
+          description: Flat management fee amount.
+      description: Property management information
+    Comment:
+      type: object
+      properties:
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        text:
+          type: string
+          description: Comment text.
+      description: Comment
+    ManagementFee:
+      type: object
+      properties:
+        accountCode:
+          type: string
+          description: Management fee account code.
+        accountNumber:
+          type: string
+          description: Management fee account number.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        manager:
+          type: string
+          description: Property manager name.
+        managersCommissionPercentage:
+          type: number
+          format: double
+          description: Property manager commission percentage.
+        passThrough:
+          type: boolean
+          example: false
+          description: Indicates if the commission account is of the passthrough type.
+        percentage:
+          type: number
+          format: double
+          description: Management fee percentage.
+      description: Management Fee
+    PropertyManager:
+      type: object
+      properties:
+        email:
+          type: string
+          description: Email address.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        name:
+          type: string
+          description: Name.
+        roleAsString:
+          type: string
+          description: Role name.
+        userID:
+          type: integer
+          format: int64
+          description: User id.
+      description: PropertyManager
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
     ResponseEntity:
       type: object
       properties:
@@ -873,159 +1027,6 @@ components:
           - '509'
           - '510'
           - '511'
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
-    Comment:
-      type: object
-      properties:
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        text:
-          type: string
-          description: Comment text.
-      description: Comment
-    ManagementSettings:
-      type: object
-      properties:
-        managementContractEndDate:
-          type: string
-          format: date
-          description: End date of the property contract.
-        managementContractStartDate:
-          type: string
-          format: date
-          description: Start date of the property contract.
-        managementFeeType:
-          type: string
-          description: 'Indicates the type of management fee. This field is deprecated and should not be used. Instead, use the new field ''managementFeesType''. '
-        managementFees:
-          type: array
-          description: List of property management fee rules.
-          items:
-            $ref: '#/components/schemas/ManagementFee'
-        managementFeesType:
-          type: string
-          description: Indicates the type of management fee.
-          enum:
-          - MANAGE_FEE_NONE
-          - MANAGE_FEE_GREATER_OF_FLAT_OR_PERCENTAGE
-          - MANAGE_FEE_FLAT_PLUS_PERCENTAGE
-        managementFlatFee:
-          type: number
-          format: double
-          description: Flat management fee amount.
-      description: Property management information
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
-    SaveAddress:
-      type: object
-      required:
-      - country
-      properties:
-        address:
-          type: string
-          description: Primary street and/or unit address. Required only if country is USA or Canada.
-          minLength: 0
-          maxLength: 50
-        addressCont:
-          type: string
-          description: Address continuation.
-          minLength: 0
-          maxLength: 20
-        city:
-          type: string
-          description: City. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 30
-        country:
-          type: string
-          description: Country. For US addresses, this value should be "United States". For other countries, this should be the full country name (Canada, United Kingdom, ...)
-          minLength: 0
-          maxLength: 30
-        postalCode:
-          type: string
-          description: Zip. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 20
-        stateRegion:
-          type: string
-          description: State. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 20
-      description: Address.
-    ManagementFee:
-      type: object
-      properties:
-        accountCode:
-          type: string
-          description: Management fee account code.
-        accountNumber:
-          type: string
-          description: Management fee account number.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        manager:
-          type: string
-          description: Property manager name.
-        managersCommissionPercentage:
-          type: number
-          format: double
-          description: Property manager commission percentage.
-        passThrough:
-          type: boolean
-          example: false
-          description: Indicates if the commission account is of the passthrough type.
-        percentage:
-          type: number
-          format: double
-          description: Management fee percentage.
-      description: Management Fee
     Conversation:
       type: object
       properties:
@@ -1070,6 +1071,236 @@ components:
           - OWNER
           - TENANT
       description: Conversation
+    SaveBuilding:
+      type: object
+      required:
+      - abbreviation
+      - category
+      - countUnit
+      - name
+      - portfolioID
+      - propertyType
+      - rentable
+      - type
+      properties:
+        abbreviation:
+          type: string
+          description: Abbreviation of Building.
+          minLength: 1
+          maxLength: 12
+        address:
+          $ref: '#/components/schemas/SaveAddress'
+        allocationMethod:
+          type: string
+          description: Allocation method.
+          enum:
+          - By Square Foot
+          - By Percent
+        availableDate:
+          type: string
+          format: date
+          description: Date the building is available for leasing.
+        baseYear:
+          type: integer
+          format: int32
+          description: Base Year.
+        baseYearOperatingExpenses:
+          type: string
+          description: Base Year Operating Expenses.
+        baseYearPropertyInsurance:
+          type: string
+          description: Base Year Property Insurance.
+        baseYearPropertyTaxes:
+          type: string
+          description: Base Year Property Taxes.
+        category:
+          type: string
+          description: Building category.
+          enum:
+          - RESIDENTIAL
+          - COMMERCIAL
+        countUnit:
+          type: integer
+          format: int32
+          description: Indicates number of units in the building. Applicable for multi unit building creation and updating a single family building to multi unit building
+        customNaming:
+          type: string
+          description: 'if we selected naming as "Custom" then enter the customer naming value '
+        description:
+          type: string
+          description: Marketing description.
+        featuredForRent:
+          type: boolean
+          example: false
+          description: Featured Rental
+        floorNumber:
+          type: integer
+          format: int32
+          description: Floor number.
+        managementContractEndDate:
+          type: string
+          format: date
+          description: End date of the property contract.
+        managementContractStartDate:
+          type: string
+          format: date
+          description: Start date of the property contract.
+        managementFeeType:
+          type: string
+          description: 'Indicates management fee type of a building. This field is deprecated and should not be used. Instead, use the new field ''managementFeesType''.  '
+        managementFeesType:
+          type: string
+          description: Indicates management fee type of a building.
+          enum:
+          - MANAGE_FEE_NONE
+          - MANAGE_FEE_GREATER_OF_FLAT_OR_PERCENTAGE
+          - MANAGE_FEE_FLAT_PLUS_PERCENTAGE
+        managementFlatFee:
+          type: number
+          format: double
+          description: Indicates management flat fee.
+        marketingName:
+          type: string
+          description: Marketing name.
+        moveInDays:
+          type: integer
+          format: int32
+          description: Move in Window must be with in these days given here 1 to 30 and 45,60,75,90
+        name:
+          type: string
+          description: Name of the building.
+          minLength: 1
+          maxLength: 100
+        naming:
+          type: string
+          description: Unit naming
+          enum:
+          - UNIT
+          - SUITE
+          - SPACE
+          - CUSTOM
+        neighborhood:
+          type: string
+          description: Neighborhood.
+          minLength: 0
+          maxLength: 30
+        numberBathrooms:
+          type: number
+          format: double
+          description: Number of Bath rooms in the Building. Applicable for single family buildings
+          minimum: 0
+          maximum: 10
+        numberBedrooms:
+          type: integer
+          format: int32
+          description: Number of bedrooms in the building. Applicable for single family buildings
+          minimum: 0
+          maximum: 20
+        numberFloors:
+          type: integer
+          format: int32
+          description: Number of floors.
+        numbered:
+          type: string
+          description: Unit creation format.
+          enum:
+          - Alpha
+          - Numeric
+        otherTenantCharges:
+          type: string
+          description: Other tenant charges.
+        parcelNumber:
+          type: string
+          description: Parcel number.
+        petsAllowed:
+          type: boolean
+          example: false
+          description: Pets allowed.
+        portfolioID:
+          type: integer
+          format: int64
+          description: ID of the portfolio associated with this building.
+        postingTitle:
+          type: string
+          description: Marketing posting title.
+        propertyType:
+          type: string
+          description: Property type.
+          enum:
+          - NONE
+          - APARTMENT
+          - CONDO
+          - COMMERCIAL
+          - DU_FOUR_PLEX
+          - HOUSE
+          - SECTION_8_AFFORDABLE
+          - SENIOR
+          - SHORT_TERM_VACATION
+          - STUDENT
+          - TOWNHOUSE
+          - OTHER
+        publishedForRent:
+          type: string
+          description: Published for rent.
+          enum:
+          - 'Yes'
+          - 'No'
+        ready:
+          type: boolean
+          example: false
+          description: Ready to Lease
+        rentable:
+          type: boolean
+          example: false
+          description: This is required field. False value indicates Multifamily building, True value indicates single family building.
+        searchTag:
+          type: string
+          description: Search tag name.
+          minLength: 0
+          maxLength: 25
+        shortDescription:
+          type: string
+          description: Marketing short description.
+        syndicate:
+          type: boolean
+          example: false
+          description: Syndicate
+        targetDeposit:
+          type: string
+          description: Target deposit amount. Applicable for single family buildings
+          enum:
+          - $1.2
+          - '1.2'
+        targetRent:
+          type: number
+          format: double
+          description: Market rent for the building. Applicable for single family buildings
+        targetRentUnits:
+          type: string
+          description: Property target rent units. Applicable for single family buildings
+          enum:
+          - DOLLAR_PER_SQ_FT_MONTH
+          - DOLLAR_PER_SQ_FT_YEAR
+          - DOLLAR_PER_SQ_M_MONTH
+          - DOLLAR_PER_SQ_M_YEAR
+          - DOLLAR_PER_MONTH
+          - DOLLAR_PER_WEEK
+          - DOLLAR_PER_NIGHT
+        totalArea:
+          type: number
+          format: double
+          description: Building area.
+        type:
+          type: string
+          description: Indicates Building type like Office, Industrial, Retail, Healthcare, Government, Airport, Garage/Parking, Apartment Building, Duplex / Triplex, Mobile Home / RV Community etc.
+        unitType:
+          type: string
+          description: Indicates Unit type like Condo,Lower Unit,Side By Side Duplex,Upper Unit,Townhome,Land,Commercial etc.
+        yearBuilt:
+          type: integer
+          format: int32
+          description: Building built year.
+      description: SaveBuilding
     UpdateBuilding:
       type: object
       required:
@@ -1288,6 +1519,23 @@ components:
           format: int32
           description: Building built year.
       description: UpdateBuilding
+    Amenity:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Amenity code.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        name:
+          type: string
+          description: Amenity name.
+        type:
+          type: string
+          description: Amenity type.
+      description: Amenity
     ErrorResponse:
       type: object
       properties:
@@ -1299,50 +1547,207 @@ components:
             $ref: '#/components/schemas/RESTAPIError'
         userMessage:
           type: string
-    RESTAPIBulkSuccessResponse:
+    Note:
       type: object
       properties:
-        id:
-          type: integer
-          format: int64
-    CustomField:
-      type: object
-      properties:
-        dataType:
+        body:
           type: string
-          description: Data type of the custom field.
-        definitionID:
-          type: integer
-          format: int64
-          description: Id of the custom field definition.
-        fieldName:
+          description: Content of the note.
+        createdBy:
           type: string
-          description: Name of the custom field.
-        value:
+          description: User who created the record.
+        createdDateTime:
           type: string
-          description: Value of the custom field.
-      description: Custom field.
-    PropertyManager:
-      type: object
-      properties:
-        email:
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        date:
           type: string
-          description: Email address.
+          format: date
+          description: Date the note was created.
         id:
           type: integer
           format: int64
           description: Unique identifier.
-        name:
+        lastModifiedBy:
           type: string
-          description: Name.
-        roleAsString:
+          description: User who last modified the record.
+        lastModifiedDateTime:
           type: string
-          description: Role name.
-        userID:
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        private:
+          type: boolean
+        subject:
+          type: string
+          description: Subject.
+    SaveCustomField:
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
           type: integer
           format: int64
-          description: User id.
-      description: PropertyManager
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    Address:
+      type: object
+      properties:
+        address:
+          type: string
+          description: Primary street and/or unit address.
+        addressCont:
+          type: string
+          description: Address continuation.
+        city:
+          type: string
+          description: City.
+        country:
+          type: string
+          description: Country.
+        postalCode:
+          type: string
+          description: Postal code.
+        stateRegion:
+          type: string
+          description: State/region.
+      description: Address
+    Marketing:
+      type: object
+      properties:
+        availableDate:
+          type: string
+          format: date
+          description: Available date to lease for a unit/building.
+        comments:
+          type: string
+          description: Marketing description.
+        featured:
+          type: boolean
+          example: false
+          description: Indicates if property is featured for rent or sale.
+        featuredForRent:
+          type: boolean
+          example: false
+          description: Indicates if the unit/building is featured for rent.
+        featuredForSale:
+          type: boolean
+          example: false
+          description: Indicates if unit/building is featured for sale.
+        forSale:
+          type: boolean
+          example: false
+          description: Indicates if this building/unit is for sale.
+        latitude:
+          type: number
+          description: Latitude for geolocation of this building/unit.
+        leaseTerms:
+          type: integer
+          format: int32
+          description: Lease terms of a unit/building.
+        leaseTermsUnits:
+          type: string
+          description: Unit/building lease terms units.
+        longitude:
+          type: number
+          description: Longitude for geolocation of this building/unit.
+        marketingName:
+          type: string
+          description: Marketing name.
+        mlsLeaseNumber:
+          type: string
+          description: MLS lease number of this building/unit.
+        mlsNumber:
+          type: string
+          description: MLS number of this building/unit.
+        otherTenantCharges:
+          type: string
+          description: Other tenant charges.
+        parcelNumber:
+          type: string
+          description: Parcel number of this building/unit.
+        petsAllowed:
+          type: boolean
+          example: false
+          description: Indicates if pets are allowed in a unit/building.
+        postingTitle:
+          type: string
+          description: Posting title name for marketing this building/unit.
+        publishedForRent:
+          type: boolean
+          example: false
+          description: Published For Rent
+        publishedForSale:
+          type: boolean
+          example: false
+          description: Indicates if the unit/building is published for sale.
+        salePrice:
+          type: number
+          format: double
+          description: Sale price of this building/unit.
+        saleTerms:
+          type: string
+          description: Sale terms of this building/unit.
+        shortDescription:
+          type: string
+          description: Marketing short description.
+        smokingAllowed:
+          type: boolean
+          example: false
+          description: Indicates if smoking is allowed in this unit/building.
+        specials:
+          type: string
+          description: Specials of this building/unit.
+      description: Marketing Information
+    SaveAddress:
+      type: object
+      required:
+      - country
+      properties:
+        address:
+          type: string
+          description: Primary street and/or unit address. Required only if country is USA or Canada.
+          minLength: 0
+          maxLength: 50
+        addressCont:
+          type: string
+          description: Address continuation.
+          minLength: 0
+          maxLength: 20
+        city:
+          type: string
+          description: City. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 30
+        country:
+          type: string
+          description: Country. For US addresses, this value should be "United States". For other countries, this should be the full country name (Canada, United Kingdom, ...)
+          minLength: 0
+          maxLength: 30
+        postalCode:
+          type: string
+          description: Zip. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 20
+        stateRegion:
+          type: string
+          description: State. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 20
+      description: Address.
     Building:
       type: object
       properties:
@@ -1575,411 +1980,6 @@ components:
           format: int32
           description: Property built year.
       description: Building
-    Amenity:
-      type: object
-      properties:
-        code:
-          type: string
-          description: Amenity code.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        name:
-          type: string
-          description: Amenity name.
-        type:
-          type: string
-          description: Amenity type.
-      description: Amenity
-    Note:
-      type: object
-      properties:
-        body:
-          type: string
-          description: Content of the note.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        date:
-          type: string
-          format: date
-          description: Date the note was created.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        private:
-          type: boolean
-        subject:
-          type: string
-          description: Subject.
-    Address:
-      type: object
-      properties:
-        address:
-          type: string
-          description: Primary street and/or unit address.
-        addressCont:
-          type: string
-          description: Address continuation.
-        city:
-          type: string
-          description: City.
-        country:
-          type: string
-          description: Country.
-        postalCode:
-          type: string
-          description: Postal code.
-        stateRegion:
-          type: string
-          description: State/region.
-      description: Address
-    SaveCustomField:
-      type: object
-      required:
-      - entityId
-      - fieldSet
-      properties:
-        entityId:
-          type: integer
-          format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
-    Marketing:
-      type: object
-      properties:
-        availableDate:
-          type: string
-          format: date
-          description: Available date to lease for a unit/building.
-        comments:
-          type: string
-          description: Marketing description.
-        featured:
-          type: boolean
-          example: false
-          description: Indicates if property is featured for rent or sale.
-        featuredForRent:
-          type: boolean
-          example: false
-          description: Indicates if the unit/building is featured for rent.
-        featuredForSale:
-          type: boolean
-          example: false
-          description: Indicates if unit/building is featured for sale.
-        forSale:
-          type: boolean
-          example: false
-          description: Indicates if this building/unit is for sale.
-        latitude:
-          type: number
-          description: Latitude for geolocation of this building/unit.
-        leaseTerms:
-          type: integer
-          format: int32
-          description: Lease terms of a unit/building.
-        leaseTermsUnits:
-          type: string
-          description: Unit/building lease terms units.
-        longitude:
-          type: number
-          description: Longitude for geolocation of this building/unit.
-        marketingName:
-          type: string
-          description: Marketing name.
-        mlsLeaseNumber:
-          type: string
-          description: MLS lease number of this building/unit.
-        mlsNumber:
-          type: string
-          description: MLS number of this building/unit.
-        otherTenantCharges:
-          type: string
-          description: Other tenant charges.
-        parcelNumber:
-          type: string
-          description: Parcel number of this building/unit.
-        petsAllowed:
-          type: boolean
-          example: false
-          description: Indicates if pets are allowed in a unit/building.
-        postingTitle:
-          type: string
-          description: Posting title name for marketing this building/unit.
-        publishedForRent:
-          type: boolean
-          example: false
-          description: Published For Rent
-        publishedForSale:
-          type: boolean
-          example: false
-          description: Indicates if the unit/building is published for sale.
-        salePrice:
-          type: number
-          format: double
-          description: Sale price of this building/unit.
-        saleTerms:
-          type: string
-          description: Sale terms of this building/unit.
-        shortDescription:
-          type: string
-          description: Marketing short description.
-        smokingAllowed:
-          type: boolean
-          example: false
-          description: Indicates if smoking is allowed in this unit/building.
-        specials:
-          type: string
-          description: Specials of this building/unit.
-      description: Marketing Information
-    SaveBuilding:
-      type: object
-      required:
-      - abbreviation
-      - category
-      - countUnit
-      - name
-      - portfolioID
-      - propertyType
-      - rentable
-      - type
-      properties:
-        abbreviation:
-          type: string
-          description: Abbreviation of Building.
-          minLength: 1
-          maxLength: 12
-        address:
-          $ref: '#/components/schemas/SaveAddress'
-        allocationMethod:
-          type: string
-          description: Allocation method.
-          enum:
-          - By Square Foot
-          - By Percent
-        availableDate:
-          type: string
-          format: date
-          description: Date the building is available for leasing.
-        baseYear:
-          type: integer
-          format: int32
-          description: Base Year.
-        baseYearOperatingExpenses:
-          type: string
-          description: Base Year Operating Expenses.
-        baseYearPropertyInsurance:
-          type: string
-          description: Base Year Property Insurance.
-        baseYearPropertyTaxes:
-          type: string
-          description: Base Year Property Taxes.
-        category:
-          type: string
-          description: Building category.
-          enum:
-          - RESIDENTIAL
-          - COMMERCIAL
-        countUnit:
-          type: integer
-          format: int32
-          description: Indicates number of units in the building. Applicable for multi unit building creation and updating a single family building to multi unit building
-        customNaming:
-          type: string
-          description: 'if we selected naming as "Custom" then enter the customer naming value '
-        description:
-          type: string
-          description: Marketing description.
-        featuredForRent:
-          type: boolean
-          example: false
-          description: Featured Rental
-        floorNumber:
-          type: integer
-          format: int32
-          description: Floor number.
-        managementContractEndDate:
-          type: string
-          format: date
-          description: End date of the property contract.
-        managementContractStartDate:
-          type: string
-          format: date
-          description: Start date of the property contract.
-        managementFeeType:
-          type: string
-          description: 'Indicates management fee type of a building. This field is deprecated and should not be used. Instead, use the new field ''managementFeesType''.  '
-        managementFeesType:
-          type: string
-          description: Indicates management fee type of a building.
-          enum:
-          - MANAGE_FEE_NONE
-          - MANAGE_FEE_GREATER_OF_FLAT_OR_PERCENTAGE
-          - MANAGE_FEE_FLAT_PLUS_PERCENTAGE
-        managementFlatFee:
-          type: number
-          format: double
-          description: Indicates management flat fee.
-        marketingName:
-          type: string
-          description: Marketing name.
-        moveInDays:
-          type: integer
-          format: int32
-          description: Move in Window must be with in these days given here 1 to 30 and 45,60,75,90
-        name:
-          type: string
-          description: Name of the building.
-          minLength: 1
-          maxLength: 100
-        naming:
-          type: string
-          description: Unit naming
-          enum:
-          - UNIT
-          - SUITE
-          - SPACE
-          - CUSTOM
-        neighborhood:
-          type: string
-          description: Neighborhood.
-          minLength: 0
-          maxLength: 30
-        numberBathrooms:
-          type: number
-          format: double
-          description: Number of Bath rooms in the Building. Applicable for single family buildings
-          minimum: 0
-          maximum: 10
-        numberBedrooms:
-          type: integer
-          format: int32
-          description: Number of bedrooms in the building. Applicable for single family buildings
-          minimum: 0
-          maximum: 20
-        numberFloors:
-          type: integer
-          format: int32
-          description: Number of floors.
-        numbered:
-          type: string
-          description: Unit creation format.
-          enum:
-          - Alpha
-          - Numeric
-        otherTenantCharges:
-          type: string
-          description: Other tenant charges.
-        parcelNumber:
-          type: string
-          description: Parcel number.
-        petsAllowed:
-          type: boolean
-          example: false
-          description: Pets allowed.
-        portfolioID:
-          type: integer
-          format: int64
-          description: ID of the portfolio associated with this building.
-        postingTitle:
-          type: string
-          description: Marketing posting title.
-        propertyType:
-          type: string
-          description: Property type.
-          enum:
-          - NONE
-          - APARTMENT
-          - CONDO
-          - COMMERCIAL
-          - DU_FOUR_PLEX
-          - HOUSE
-          - SECTION_8_AFFORDABLE
-          - SENIOR
-          - SHORT_TERM_VACATION
-          - STUDENT
-          - TOWNHOUSE
-          - OTHER
-        publishedForRent:
-          type: string
-          description: Published for rent.
-          enum:
-          - 'Yes'
-          - 'No'
-        ready:
-          type: boolean
-          example: false
-          description: Ready to Lease
-        rentable:
-          type: boolean
-          example: false
-          description: This is required field. False value indicates Multifamily building, True value indicates single family building.
-        searchTag:
-          type: string
-          description: Search tag name.
-          minLength: 0
-          maxLength: 25
-        shortDescription:
-          type: string
-          description: Marketing short description.
-        syndicate:
-          type: boolean
-          example: false
-          description: Syndicate
-        targetDeposit:
-          type: string
-          description: Target deposit amount. Applicable for single family buildings
-          enum:
-          - $1.2
-          - '1.2'
-        targetRent:
-          type: number
-          format: double
-          description: Market rent for the building. Applicable for single family buildings
-        targetRentUnits:
-          type: string
-          description: Property target rent units. Applicable for single family buildings
-          enum:
-          - DOLLAR_PER_SQ_FT_MONTH
-          - DOLLAR_PER_SQ_FT_YEAR
-          - DOLLAR_PER_SQ_M_MONTH
-          - DOLLAR_PER_SQ_M_YEAR
-          - DOLLAR_PER_MONTH
-          - DOLLAR_PER_WEEK
-          - DOLLAR_PER_NIGHT
-        totalArea:
-          type: number
-          format: double
-          description: Building area.
-        type:
-          type: string
-          description: Indicates Building type like Office, Industrial, Retail, Healthcare, Government, Airport, Garage/Parking, Apartment Building, Duplex / Triplex, Mobile Home / RV Community etc.
-        unitType:
-          type: string
-          description: Indicates Unit type like Condo,Lower Unit,Side By Side Duplex,Upper Unit,Townhome,Land,Commercial etc.
-        yearBuilt:
-          type: integer
-          format: int32
-          description: Building built year.
-      description: SaveBuilding
   requestBodies:
     SaveCustomField:
       content:

@@ -667,6 +667,269 @@ paths:
           description: Entity not found.
 components:
   schemas:
+    ContactCategory:
+      type: object
+      properties:
+        categoryName:
+          type: string
+          description: Category name.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+      description: ContactCategory
+    Comment:
+      type: object
+      properties:
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        text:
+          type: string
+          description: Comment text.
+      description: Comment
+    CustomField:
+      type: object
+      properties:
+        dataType:
+          type: string
+          description: Data type of the custom field.
+        definitionID:
+          type: integer
+          format: int64
+          description: Id of the custom field definition.
+        fieldName:
+          type: string
+          description: Name of the custom field.
+        value:
+          type: string
+          description: Value of the custom field.
+      description: Custom field.
+    SaveAddress:
+      type: object
+      required:
+      - country
+      properties:
+        address:
+          type: string
+          description: Primary street and/or unit address. Required only if country is USA or Canada.
+          minLength: 0
+          maxLength: 50
+        addressCont:
+          type: string
+          description: Address continuation.
+          minLength: 0
+          maxLength: 20
+        city:
+          type: string
+          description: City. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 30
+        country:
+          type: string
+          description: Country. For US addresses, this value should be "United States". For other countries, this should be the full country name (Canada, United Kingdom, ...)
+          minLength: 0
+          maxLength: 30
+        postalCode:
+          type: string
+          description: Zip. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 20
+        stateRegion:
+          type: string
+          description: State. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 20
+      description: Address.
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    Contact:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/Address'
+        allowESignature:
+          type: boolean
+          example: false
+          description: Indicates if the contact can receive eSignature request e-mail messages sent through Propertyware.
+        altEmail:
+          type: string
+          description: Alternate e-mail address.
+        birthDate:
+          type: string
+          format: date
+          description: Date of birth.
+        category:
+          type: string
+          description: Contact category.
+        comments:
+          type: string
+          description: Comments.
+        company:
+          type: string
+          description: Company where the contact is employed.
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        customFields:
+          type: array
+          description: Custom fields.
+          items:
+            $ref: '#/components/schemas/CustomField'
+        email:
+          type: string
+          description: E-mail address.
+        fax:
+          type: string
+          description: Fax.
+        firstName:
+          type: string
+          description: First name.
+        gender:
+          type: string
+          description: Gender.
+          enum:
+          - UNKNOWN
+          - MALE
+          - FEMALE
+          - DECLINE_TO_STATE
+        homePhone:
+          type: string
+          description: Home phone.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        jobTitle:
+          type: string
+          description: Professional title or position for the contact.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        lastName:
+          type: string
+          description: Last name.
+        middleName:
+          type: string
+          description: Middle name.
+        mobilePhone:
+          type: string
+          description: Mobile phone.
+        nameOnCheck:
+          type: string
+          description: Name on check.
+        namedOnLease:
+          type: boolean
+          example: false
+          description: Indicates if contact is named on lease.
+        otherPhone:
+          type: string
+          description: Other phone.
+        salutation:
+          type: string
+          description: Salutation.
+        suffix:
+          type: string
+          description: Suffix.
+        type:
+          type: string
+          description: Contact type.
+          enum:
+          - TENANT
+          - PROSPECT
+          - OWNER
+          - VENDOR
+          - OTHER
+        workPhone:
+          type: string
+          description: Work phone.
+      description: Contact Response
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
+    CustomFieldSet:
+      type: object
+      required:
+      - name
+      - value
+      properties:
+        name:
+          type: string
+          description: Custom Field name
+        value:
+          type: string
+          description: Custom Field value
+      description: Custom field set for Request
+    SaveCustomField:
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
+          type: integer
+          format: int64
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
+    RESTAPIBulkErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
+          type: integer
+          format: int32
+        success:
+          type: boolean
     ResponseEntity:
       type: object
       properties:
@@ -738,56 +1001,28 @@ components:
           - '509'
           - '510'
           - '511'
-    ErrorResponse:
+    Address:
       type: object
       properties:
-        errorCode:
+        address:
           type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
+          description: Primary street and/or unit address.
+        addressCont:
           type: string
-    RESTAPIBulkSuccessResponse:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-    SaveCustomField:
-      type: object
-      required:
-      - entityId
-      - fieldSet
-      properties:
-        entityId:
-          type: integer
-          format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
-    CustomField:
-      type: object
-      properties:
-        dataType:
+          description: Address continuation.
+        city:
           type: string
-          description: Data type of the custom field.
-        definitionID:
-          type: integer
-          format: int64
-          description: Id of the custom field definition.
-        fieldName:
+          description: City.
+        country:
           type: string
-          description: Name of the custom field.
-        value:
+          description: Country.
+        postalCode:
           type: string
-          description: Value of the custom field.
-      description: Custom field.
+          description: Postal code.
+        stateRegion:
+          type: string
+          description: State/region.
+      description: Address
     SaveContact:
       type: object
       required:
@@ -935,241 +1170,6 @@ components:
           - OWNER
           - TENANT
       description: Conversation
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
-    Comment:
-      type: object
-      properties:
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        text:
-          type: string
-          description: Comment text.
-      description: Comment
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    ContactCategory:
-      type: object
-      properties:
-        categoryName:
-          type: string
-          description: Category name.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-      description: ContactCategory
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
-    SaveAddress:
-      type: object
-      required:
-      - country
-      properties:
-        address:
-          type: string
-          description: Primary street and/or unit address. Required only if country is USA or Canada.
-          minLength: 0
-          maxLength: 50
-        addressCont:
-          type: string
-          description: Address continuation.
-          minLength: 0
-          maxLength: 20
-        city:
-          type: string
-          description: City. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 30
-        country:
-          type: string
-          description: Country. For US addresses, this value should be "United States". For other countries, this should be the full country name (Canada, United Kingdom, ...)
-          minLength: 0
-          maxLength: 30
-        postalCode:
-          type: string
-          description: Zip. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 20
-        stateRegion:
-          type: string
-          description: State. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 20
-      description: Address.
-    Contact:
-      type: object
-      properties:
-        address:
-          $ref: '#/components/schemas/Address'
-        allowESignature:
-          type: boolean
-          example: false
-          description: Indicates if the contact can receive eSignature request e-mail messages sent through Propertyware.
-        altEmail:
-          type: string
-          description: Alternate e-mail address.
-        birthDate:
-          type: string
-          format: date
-          description: Date of birth.
-        category:
-          type: string
-          description: Contact category.
-        comments:
-          type: string
-          description: Comments.
-        company:
-          type: string
-          description: Company where the contact is employed.
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        customFields:
-          type: array
-          description: Custom fields.
-          items:
-            $ref: '#/components/schemas/CustomField'
-        email:
-          type: string
-          description: E-mail address.
-        fax:
-          type: string
-          description: Fax.
-        firstName:
-          type: string
-          description: First name.
-        gender:
-          type: string
-          description: Gender.
-          enum:
-          - UNKNOWN
-          - MALE
-          - FEMALE
-          - DECLINE_TO_STATE
-        homePhone:
-          type: string
-          description: Home phone.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        jobTitle:
-          type: string
-          description: Professional title or position for the contact.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        lastName:
-          type: string
-          description: Last name.
-        middleName:
-          type: string
-          description: Middle name.
-        mobilePhone:
-          type: string
-          description: Mobile phone.
-        nameOnCheck:
-          type: string
-          description: Name on check.
-        namedOnLease:
-          type: boolean
-          example: false
-          description: Indicates if contact is named on lease.
-        otherPhone:
-          type: string
-          description: Other phone.
-        salutation:
-          type: string
-          description: Salutation.
-        suffix:
-          type: string
-          description: Suffix.
-        type:
-          type: string
-          description: Contact type.
-          enum:
-          - TENANT
-          - PROSPECT
-          - OWNER
-          - VENDOR
-          - OTHER
-        workPhone:
-          type: string
-          description: Work phone.
-      description: Contact Response
-    Address:
-      type: object
-      properties:
-        address:
-          type: string
-          description: Primary street and/or unit address.
-        addressCont:
-          type: string
-          description: Address continuation.
-        city:
-          type: string
-          description: City.
-        country:
-          type: string
-          description: Country.
-        postalCode:
-          type: string
-          description: Postal code.
-        stateRegion:
-          type: string
-          description: State/region.
-      description: Address
   requestBodies:
     SaveCustomField:
       content:

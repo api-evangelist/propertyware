@@ -697,201 +697,6 @@ paths:
           description: Entity not found.
 components:
   schemas:
-    ResponseEntity:
-      type: object
-      properties:
-        body:
-          type: object
-        statusCode:
-          type: string
-          enum:
-          - '100'
-          - '101'
-          - '102'
-          - '103'
-          - '200'
-          - '201'
-          - '202'
-          - '203'
-          - '204'
-          - '205'
-          - '206'
-          - '207'
-          - '208'
-          - '226'
-          - '300'
-          - '301'
-          - '302'
-          - '303'
-          - '304'
-          - '305'
-          - '307'
-          - '308'
-          - '400'
-          - '401'
-          - '402'
-          - '403'
-          - '404'
-          - '405'
-          - '406'
-          - '407'
-          - '408'
-          - '409'
-          - '410'
-          - '411'
-          - '412'
-          - '413'
-          - '414'
-          - '415'
-          - '416'
-          - '417'
-          - '418'
-          - '419'
-          - '420'
-          - '421'
-          - '422'
-          - '423'
-          - '424'
-          - '426'
-          - '428'
-          - '429'
-          - '431'
-          - '500'
-          - '501'
-          - '502'
-          - '503'
-          - '504'
-          - '505'
-          - '506'
-          - '507'
-          - '508'
-          - '509'
-          - '510'
-          - '511'
-    CustomFieldSet:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          type: string
-          description: Custom Field name
-        value:
-          type: string
-          description: Custom Field value
-      description: Custom field set for Request
-    Comment:
-      type: object
-      properties:
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        text:
-          type: string
-          description: Comment text.
-      description: Comment
-    RESTAPIBulkErrorResponse:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        index:
-          type: integer
-          format: int32
-        success:
-          type: boolean
-    ManagementSettings:
-      type: object
-      properties:
-        managementContractEndDate:
-          type: string
-          format: date
-          description: End date of the property contract.
-        managementContractStartDate:
-          type: string
-          format: date
-          description: Start date of the property contract.
-        managementFeeType:
-          type: string
-          description: 'Indicates the type of management fee. This field is deprecated and should not be used. Instead, use the new field ''managementFeesType''. '
-        managementFees:
-          type: array
-          description: List of property management fee rules.
-          items:
-            $ref: '#/components/schemas/ManagementFee'
-        managementFeesType:
-          type: string
-          description: Indicates the type of management fee.
-          enum:
-          - MANAGE_FEE_NONE
-          - MANAGE_FEE_GREATER_OF_FLAT_OR_PERCENTAGE
-          - MANAGE_FEE_FLAT_PLUS_PERCENTAGE
-        managementFlatFee:
-          type: number
-          format: double
-          description: Flat management fee amount.
-      description: Property management information
-    RESTAPIError:
-      type: object
-      properties:
-        key:
-          type: string
-        message:
-          type: string
-    SaveAddress:
-      type: object
-      required:
-      - country
-      properties:
-        address:
-          type: string
-          description: Primary street and/or unit address. Required only if country is USA or Canada.
-          minLength: 0
-          maxLength: 50
-        addressCont:
-          type: string
-          description: Address continuation.
-          minLength: 0
-          maxLength: 20
-        city:
-          type: string
-          description: City. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 30
-        country:
-          type: string
-          description: Country. For US addresses, this value should be "United States". For other countries, this should be the full country name (Canada, United Kingdom, ...)
-          minLength: 0
-          maxLength: 30
-        postalCode:
-          type: string
-          description: Zip. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 20
-        stateRegion:
-          type: string
-          description: State. Required only if Country is United States / Canada.
-          minLength: 0
-          maxLength: 20
-      description: Address.
     SaveUnit:
       type: object
       required:
@@ -1034,96 +839,6 @@ components:
           type: string
           description: Indicates Unit type like Business Office,Medical Office,Showroom,R  and  D,Assigned Parking (Indoor),Assigned Parking (Outdoor),Warehouse,Restaurant,Shopping Mall Retail,Street Retail,Manufacturing,House,Town House,Apartment,Flat,Studio,Loft,Assigned Parking (Indoor),Assigned Parking (Outdoor) etc.
       description: SaveUnit
-    ManagementFee:
-      type: object
-      properties:
-        accountCode:
-          type: string
-          description: Management fee account code.
-        accountNumber:
-          type: string
-          description: Management fee account number.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        manager:
-          type: string
-          description: Property manager name.
-        managersCommissionPercentage:
-          type: number
-          format: double
-          description: Property manager commission percentage.
-        passThrough:
-          type: boolean
-          example: false
-          description: Indicates if the commission account is of the passthrough type.
-        percentage:
-          type: number
-          format: double
-          description: Management fee percentage.
-      description: Management Fee
-    Conversation:
-      type: object
-      properties:
-        comments:
-          type: array
-          description: List of comments in the conversation.
-          items:
-            $ref: '#/components/schemas/Comment'
-        createdBy:
-          type: string
-          description: User who created the record.
-        createdDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was created. (Timezone: UTC)'
-        entityID:
-          type: integer
-          format: int64
-          description: Id of the entity related to this conversation.
-        entityType:
-          type: string
-          description: Type of the entity related to this conversation.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
-        lastModifiedBy:
-          type: string
-          description: User who last modified the record.
-        lastModifiedDateTime:
-          type: string
-          format: date-time
-          description: 'Date and time the record was last modified. (Timezone: UTC)'
-        subject:
-          type: string
-          description: Conversation subject.
-        type:
-          type: string
-          description: Conversation type.
-          enum:
-          - MANAGEMENT_TEAM
-          - OWNER
-          - TENANT
-      description: Conversation
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
-    RESTAPIBulkSuccessResponse:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
     CustomField:
       type: object
       properties:
@@ -1141,27 +856,62 @@ components:
           type: string
           description: Value of the custom field.
       description: Custom field.
-    PropertyManager:
+    CustomFieldSet:
       type: object
+      required:
+      - name
+      - value
       properties:
-        email:
-          type: string
-          description: Email address.
-        id:
-          type: integer
-          format: int64
-          description: Unique identifier.
         name:
           type: string
-          description: Name.
-        roleAsString:
+          description: Custom Field name
+        value:
           type: string
-          description: Role name.
-        userID:
+          description: Custom Field value
+      description: Custom field set for Request
+    RESTAPIBulkErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        index:
           type: integer
-          format: int64
-          description: User id.
-      description: PropertyManager
+          format: int32
+        success:
+          type: boolean
+    ManagementSettings:
+      type: object
+      properties:
+        managementContractEndDate:
+          type: string
+          format: date
+          description: End date of the property contract.
+        managementContractStartDate:
+          type: string
+          format: date
+          description: Start date of the property contract.
+        managementFeeType:
+          type: string
+          description: 'Indicates the type of management fee. This field is deprecated and should not be used. Instead, use the new field ''managementFeesType''. '
+        managementFees:
+          type: array
+          description: List of property management fee rules.
+          items:
+            $ref: '#/components/schemas/ManagementFee'
+        managementFeesType:
+          type: string
+          description: Indicates the type of management fee.
+          enum:
+          - MANAGE_FEE_NONE
+          - MANAGE_FEE_GREATER_OF_FLAT_OR_PERCENTAGE
+          - MANAGE_FEE_FLAT_PLUS_PERCENTAGE
+        managementFlatFee:
+          type: number
+          format: double
+          description: Flat management fee amount.
+      description: Property management information
     Unit:
       type: object
       properties:
@@ -1326,6 +1076,202 @@ components:
           format: int32
           description: Property built year.
       description: Unit
+    Comment:
+      type: object
+      properties:
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        text:
+          type: string
+          description: Comment text.
+      description: Comment
+    ManagementFee:
+      type: object
+      properties:
+        accountCode:
+          type: string
+          description: Management fee account code.
+        accountNumber:
+          type: string
+          description: Management fee account number.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        manager:
+          type: string
+          description: Property manager name.
+        managersCommissionPercentage:
+          type: number
+          format: double
+          description: Property manager commission percentage.
+        passThrough:
+          type: boolean
+          example: false
+          description: Indicates if the commission account is of the passthrough type.
+        percentage:
+          type: number
+          format: double
+          description: Management fee percentage.
+      description: Management Fee
+    PropertyManager:
+      type: object
+      properties:
+        email:
+          type: string
+          description: Email address.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        name:
+          type: string
+          description: Name.
+        roleAsString:
+          type: string
+          description: Role name.
+        userID:
+          type: integer
+          format: int64
+          description: User id.
+      description: PropertyManager
+    RESTAPIBulkSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    ResponseEntity:
+      type: object
+      properties:
+        body:
+          type: object
+        statusCode:
+          type: string
+          enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
+    Conversation:
+      type: object
+      properties:
+        comments:
+          type: array
+          description: List of comments in the conversation.
+          items:
+            $ref: '#/components/schemas/Comment'
+        createdBy:
+          type: string
+          description: User who created the record.
+        createdDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was created. (Timezone: UTC)'
+        entityID:
+          type: integer
+          format: int64
+          description: Id of the entity related to this conversation.
+        entityType:
+          type: string
+          description: Type of the entity related to this conversation.
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier.
+        lastModifiedBy:
+          type: string
+          description: User who last modified the record.
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          description: 'Date and time the record was last modified. (Timezone: UTC)'
+        subject:
+          type: string
+          description: Conversation subject.
+        type:
+          type: string
+          description: Conversation type.
+          enum:
+          - MANAGEMENT_TEAM
+          - OWNER
+          - TENANT
+      description: Conversation
     Amenity:
       type: object
       properties:
@@ -1343,6 +1289,40 @@ components:
           type: string
           description: Amenity type.
       description: Amenity
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
+    SaveCustomField:
+      type: object
+      required:
+      - entityId
+      - fieldSet
+      properties:
+        entityId:
+          type: integer
+          format: int64
+          description: Unique identifier of an entity custom field associated to.
+        fieldSet:
+          type: array
+          description: List of Custom fields to update
+          items:
+            $ref: '#/components/schemas/CustomFieldSet'
+      description: Custom field for Request
+    RESTAPIError:
+      type: object
+      properties:
+        key:
+          type: string
+        message:
+          type: string
     Address:
       type: object
       properties:
@@ -1365,22 +1345,6 @@ components:
           type: string
           description: State/region.
       description: Address
-    SaveCustomField:
-      type: object
-      required:
-      - entityId
-      - fieldSet
-      properties:
-        entityId:
-          type: integer
-          format: int64
-          description: Unique identifier of an entity custom field associated to.
-        fieldSet:
-          type: array
-          description: List of Custom fields to update
-          items:
-            $ref: '#/components/schemas/CustomFieldSet'
-      description: Custom field for Request
     Marketing:
       type: object
       properties:
@@ -1468,6 +1432,42 @@ components:
           type: string
           description: Specials of this building/unit.
       description: Marketing Information
+    SaveAddress:
+      type: object
+      required:
+      - country
+      properties:
+        address:
+          type: string
+          description: Primary street and/or unit address. Required only if country is USA or Canada.
+          minLength: 0
+          maxLength: 50
+        addressCont:
+          type: string
+          description: Address continuation.
+          minLength: 0
+          maxLength: 20
+        city:
+          type: string
+          description: City. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 30
+        country:
+          type: string
+          description: Country. For US addresses, this value should be "United States". For other countries, this should be the full country name (Canada, United Kingdom, ...)
+          minLength: 0
+          maxLength: 30
+        postalCode:
+          type: string
+          description: Zip. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 20
+        stateRegion:
+          type: string
+          description: State. Required only if Country is United States / Canada.
+          minLength: 0
+          maxLength: 20
+      description: Address.
   requestBodies:
     SaveCustomField:
       content:

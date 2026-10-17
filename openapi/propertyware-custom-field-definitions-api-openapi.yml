@@ -78,17 +78,6 @@ components:
           type: string
         message:
           type: string
-    ErrorResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTAPIError'
-        userMessage:
-          type: string
     CustomFieldDefinition:
       type: object
       properties:
@@ -103,6 +92,17 @@ components:
         requiredField:
           type: string
       description: Custom field definition.
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTAPIError'
+        userMessage:
+          type: string
   securitySchemes:
     clientId:
       type: apiKey
